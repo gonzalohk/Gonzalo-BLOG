@@ -1,7 +1,7 @@
 ---
 title: 'Hola Mundo'
 published: true
-date: '01-06-2020 19:47'
+date: '01-05-2020 19:47'
 publish_date: '01-05-2020 07:36'
 metadata:
     Keywords: 'Valuer(''Gonzalo Osco'', ''Gonzalo Blog'', ''Desarrollo'')'
