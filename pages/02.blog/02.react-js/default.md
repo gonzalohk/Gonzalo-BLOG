@@ -1,5 +1,5 @@
 ---
-title: 'React,js desde cero'
+title: 'React.js desde cero'
 published: true
 date: '04-05-2020 19:50'
 publish_date: '04-05-2020 19:50'
