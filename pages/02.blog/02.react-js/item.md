@@ -20,11 +20,11 @@ Tratare de explicar dichas características que hacen de esta librería tan espe
 Es una de las propiedades que más caracterizan a react, que es llevada a un nivel diferente. Para tener una idea más clara podemos imaginar que necesitamos obtener el avatar (fotografia y profile URL) de mis usuarios, para ellos tengo un par de funciones que me ayudaran obtener la información necesito. 
 ```js
 function getProfilePic(username){
-	return ‘’’https://photos.myserver.com/’’+username
+	return "https://photos.myserver.com/"+username
 }
 
 function getProfileLink(username){
-	return ‘’’https://myserver.com/’’+username
+	return "https://myserver.com/"+username
 }
 ```
 En tal sentido, partiendo de las anteriores funciones se puede generar una tercera que sea compuesta de ambas y pueda retornar información mejor filtrada en este caso el avatar del usuario
@@ -45,7 +45,7 @@ function profilePic(props) {
 }
 function profileLink(props) {
 	return (
-		<a href={‘https://myserver.com/users/’’+ props.username}>{props.username}</a>
+		<a href={"https://myserver.com/users/"+ props.username}>{props.username}</a>
 	)
 }
 
