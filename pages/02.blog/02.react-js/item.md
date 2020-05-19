@@ -16,7 +16,8 @@ taxonomy:
 ![ReactJS](./images/react-logo.png?classes=center-block)
 
 React es un biblioteca javascript para construir interfaces de usuario (UI) de código abierto que fue creada por Jordan Walke y lanzada el 2013, mantenida por Facebook y la comunidad de software libre. React se destaca por ser declarativo y basado en componentes de una manera muy natural.
-Tratare de explicar dichas características que hacen de esta librería tan especial.
+
+En tal sentido, tiene características que le permite ser fácil de comprender, potente para construir interfaces gráficas, un flujo de datos sencillo con una forma diferente para manejar los estados principalmente. Seguidamente se explicará dichas caracteristicas que hacen de esta biblioteca tan diferente y especial.
 ## Composición
 Es una de las propiedades que más caracterizan a react, que es llevada a un nivel diferente. Para tener una idea más clara podemos imaginar que necesitamos obtener el avatar (fotografia y profile URL) de mis usuarios, para ellos tengo un par de funciones que me ayudaran obtener la información necesito. 
 ```js
