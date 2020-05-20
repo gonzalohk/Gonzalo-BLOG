@@ -109,7 +109,7 @@ Por otra lado, **React es declarativo por lo que se debe describir _QUE_ deberí
 />
 ```
 ## Solo es JavaScript
-![Solo es JavaScript](./images/ecmascript6-js.png?classes=center-block)
+![Solo es JavaScript](./images/ecmascript6-js.png)
 Este punto es controversial porque está acorde al gusto de cada desarrollador, el hecho de recrear una funcionalidad que ya se tenía para usar en un determinado framework o biblioteca implica recordar o memorizar una nueva forma de hacer algo que ya podíamos hacer antes. 
 
 i.e. Listar un array
