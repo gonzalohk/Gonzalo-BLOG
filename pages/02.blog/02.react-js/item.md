@@ -15,15 +15,17 @@ taxonomy:
 
 ![ReactJS](./images/react-logo.png?classes=center-block)
 
-**React es un biblioteca javascript para construir interfaces de usuario (UI) **de código abierto que fue creada por Jordan Walke lanzada el 2013, mantenida por Facebook y la comunidad de software libre. React se destaca por ser **declarativo y basado en componentes** de una manera muy natural.
+**React es un biblioteca javascript para construir interfaces de usuario (UI)** de código abierto que fue creada por Jordan Walke lanzada el 2013, mantenida por Facebook y la comunidad de software libre. React se destaca por ser **declarativo y basado en componentes** de una manera muy natural.
 
-En tal sentido, tiene características que le permite ser fácil de comprender, potente para construir interfaces gráficas, un flujo de datos sencillo con una forma diferente para manejar los estados principalmente. 
+En tal sentido, React tiene características que le permite ser fácil de comprender, potente para construir interfaces gráficas en función a sus estados, con un flujo de datos sencillo es por ello que es tan popular y recomendada. 
 ## Composición
+Es necesario entender que un **componente en React es un elemento independiente y reutilizable** y un **elemento es el bloque más pequeño de aplicaciones react**. Esto significa que los componentes son como las funciones de JavaScript es decir aceptan entradas (props) y devuelven elementos React que describen lo que debe aparecer en la pantalla.
+
 ![ Los react components son como los legos para los programadores](./images/composicion-lego.jpg?classes=center-block)
 
-Es una de las propiedades que más caracterizan a react, que es llevada a un nivel diferente. 
+En efecto, la composición es una de las propiedades que más caracterizan a esta biblioteca debido a que **React tiene el poder de combinar componentes para crear un nuevo componentes más complejo**.
 
-Para tener una idea más clara podemos imaginar que necesitamos obtener el avatar (fotografia y profile URL) de mis usuarios, para ellos tengo un par de funciones que me ayudaran obtener la información necesito. 
+Para tener una idea más clara podemos imaginar que necesitamos obtener el avatar (fotografia y profile URL) de mis usuarios, para ellos tengo un par de funciones que me ayudaran obtener dicha información. 
 ```js
 function getProfilePic(username){
 	return "https://photos.myserver.com/"+username
@@ -32,9 +34,7 @@ function getProfileLink(username){
 	return "https://myserver.com/"+username
 }
 ```
-React tiene el poder de combinar componentes para crear un nuevo componentes más complejo.
-
-En tal sentido, partiendo de las anteriores funciones se puede generar una tercera que sea compuesta de ambas y pueda retornar información mejor filtrada en este caso el avatar del usuario
+Entonces, partiendo de las anteriores funciones se puede generar una tercera que sea compuesta de ambas y pueda retornar información mejor filtrada para nuestro caso el avatar del usuario.
 ```js  
 function getAvatarInfo(username){
 	return {
@@ -43,7 +43,7 @@ function getAvatarInfo(username){
 	}
 }
 ```
-Ahora que pasaria si por alguna razón nos gustaría componer UI en lugar de funciones que obtienen algún valor, esta es una característica que hacen de react una biblioteca muy poderosa. Entonces podemos hacer algo más interesante con el anterior ejemplo. 
+Ahora que pasaria si por alguna razón nos gustaría componer UI en lugar de funciones que obtienen algún determinado valor, esta es una característica que hacen de react una biblioteca muy poderosa. Entonces podemos hacer algo más interesante con el anterior ejemplo. 
 ```js
 function profilePic(props) {
 	return (
@@ -55,7 +55,6 @@ function profileLink(props) {
 		<a href={"https://myserver.com/users/"+ props.username}>{props.username}</a>
 	)
 }
-
 function Avatar(props) {
 	return (
 		<div>
@@ -67,14 +66,14 @@ function Avatar(props) {
 
 <Avatar username=”gonzalohk”>
 ```
-Entonces se tiene un componente llamado Avatar que es compuesto de otros dos más pequeños, es decir podemos combinar componentes para crear nuevos componentes más complejos. En efecto, la composición se considera un principio de programación language-agnostic que es intuitiva que puede aplicarse muy bien a la creación de componentes mediante react por ejemplo podemos un calendario podría ser compuesto de la siguiente manera:
-```js
+Entonces se tiene un componente llamado Avatar que es compuesto de otros dos más pequeños, es decir podemos combinar componentes para crear nuevos componentes más complejos. En efecto, **la composición se considera un principio de programación language-agnostic** que es intuitiva que puede aplicarse muy bien a la creación de componentes mediante react por ejemplo podemos un calendario podría ser compuesto de la siguiente manera:
+```html
 <container>
 	<Navbar/>
 	<Header/>
 	<DatePicker>
 		<Calendar/>
-	</Date Picker>
+	</DatePicker>
 </container>
 ```
 No obstante, un gran beneficio de los react components es que existe un ecosistema muy nutrido donde se tiene a disposición componentes de terceros que pueden ser reutilizados y muchos de ellos están disponibles en NPM.
