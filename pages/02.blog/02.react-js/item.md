@@ -82,13 +82,22 @@ No obstante, un gran beneficio de los react components es que existe un ecosiste
 
 ## Flujo de datos unidireccional
 
-Un factor fundamental que diferencia al desarrollo de aplicaciones robustas es saber cuando y como los estados cambian. En el caso de Jquery se tienen event handlers que son responsables de actualizar los estados en la aplicación manipulando el dom.	
+Un factor fundamental que diferencia al desarrollo de aplicaciones robustas es saber cuando y como los estados cambian. 
 
-Esta práctica es habitual donde en un inicio no se tienen problemas debido a que no existen muchos event handlers. Sin embargo, más adelante el proyecto crecerá siendo más difícil de  mantener debido a que se manejan múltiples estados desde diferente lugares en el proyecto, esto a la larga se vuelve frágil e inestable.
+En el caso de Jquery se tienen event handlers que son responsables de actualizar los estados en la aplicación manipulando el DOM. Esta práctica es habitual donde en un inicio no se tienen problemas debido a que no existen muchos event handlers.
+
+![jQuery flujo de datos ideal](./images/jqueryb.png?classes=center-block)
+
+Sin embargo, más adelante el proyecto crecerá siendo más difícil de  mantener debido a que se manejan múltiples estados desde diferente lugares en el proyecto, esto a la larga se vuelve frágil e inestable.
+
+![jQuery flujo de datos real](./images/jquery.png?classes=center-block)
 
 React tiene una visión distinta del manejo de los estados a diferencia de bibliotecas como Jquery. En efecto, el estado vive en el componente react y desde allí se puede controlar explícitamente cómo y cuando el estado debería cambiar o en este caso como deberia verse el UI basado en el cambio de estado.
+
+![React flujo de datos](./images/react-ui.png?classes=center-block)
+
 Una forma interesante de ver esto, es pensar que el UI solo es una función de su estado
-**UI = fn(state)**
+> UI = fn(state)
 
 ## UI declarativo 
 Este apartado es muy visible en el código fuente, siguiendo el ejemplo anterior para definir como un estado se actualiza al utilizar jQuery se necesita una programación imperativa. Es así que se puede actualizar el dom de la siguiente manera 
