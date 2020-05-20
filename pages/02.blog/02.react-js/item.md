@@ -109,7 +109,6 @@ Por otra lado, **React es declarativo por lo que se debe describir _QUE_ deberí
 />
 ```
 ## Solo es JavaScript
-![Solo es JavaScript](./images/ecmascript6-js.png?classes=center-block)
 Este punto es controversial porque está acorde al gusto de cada desarrollador, el hecho de recrear una funcionalidad que ya se tenía para usar en un determinado framework o biblioteca implica recordar o memorizar una nueva forma de hacer algo que ya podíamos hacer antes. 
 
 i.e. Listar un array
@@ -161,8 +160,8 @@ El construir componentes con React es sencillo siguiendo un logica declarativa y
 La comunidad de react es muy grande debido a la cantidad de proyectos en los utilizan y la gente involucrada en el medio de modo tal que se tiene suficiente información y soporte. Además de tener múltiples eventos en todo el mundo y gigantescas conferencias. También es bueno saber que Facebook invierte mucho en la continua investigación y desarrollo de esta librería que está resolviendo mucho de nuestras limitantes que se tenían con librerias clásicas.
 * [http://reactjsnewsletter.com/](http://reactjsnewsletter.com/)
 * [https://www.reddit.com/r/reactjs/](https://www.reddit.com/r/reactjs/)
-* [https://discord.com/invite/0ZcbPKXt5bZjGY5n](https://www.reddit.com/r/reactjs/)
-* [https://reactjs.org/community/conferences.html](https://www.reddit.com/r/reactjs/)
+* [https://discord.com/invite/0ZcbPKXt5bZjGY5n](https://discord.com/invite/0ZcbPKXt5bZjGY5n)
+* [https://reactjs.org/community/conferences.html](https://reactjs.org/community/conferences.html)
 
 
 
