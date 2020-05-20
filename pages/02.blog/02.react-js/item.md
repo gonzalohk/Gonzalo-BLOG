@@ -15,9 +15,9 @@ taxonomy:
 
 ![ReactJS](./images/react-logo.png?classes=center-block)
 
-**React es un biblioteca javascript para construir interfaces de usuario (UI)** de código abierto que fue creada por Jordan Walke lanzada el 2013, mantenida por Facebook y la comunidad de software libre. React se destaca por ser **declarativo y basado en componentes** de una manera muy natural.
+**React es un biblioteca javascript para construir interfaces de usuario (UI)** de código abierto que fue creada por Jordan Walke, lanzada el 2013, mantenida por Facebook y la comunidad de software libre. React se destaca por ser **declarativo y basado en componentes** de una manera muy natural.
 
-En tal sentido, React tiene características que le permite ser fácil de comprender, potente para construir interfaces gráficas en función a sus estados, con un flujo de datos sencillo es por ello que es tan popular y recomendada. 
+En tal sentido, React tiene características que le permiten ser fácil de comprender, potente para construir interfaces gráficas en función a sus estados, con un flujo de datos sencillo siendo popular y recomendada. 
 ## Composición
 Es necesario entender que un **componente en React es un elemento independiente y reutilizable** y un **elemento es el bloque más pequeño de aplicaciones react**. Esto significa que los componentes son como las funciones de JavaScript es decir aceptan entradas (props) y devuelven elementos React que describen lo que debe aparecer en la pantalla.
 
@@ -66,7 +66,7 @@ function Avatar(props) {
 
 <Avatar username=”gonzalohk”>
 ```
-Entonces se tiene un componente llamado Avatar que es compuesto de otros dos más pequeños, es decir podemos combinar componentes para crear nuevos componentes más complejos. En efecto, **la composición se considera un principio de programación language-agnostic** que es intuitiva que puede aplicarse muy bien a la creación de componentes mediante react. 
+Entonces, se tiene un componente llamado Avatar que es compuesto de otros dos más pequeños, es decir podemos combinar componentes para crear nuevos componentes más complejos. En efecto, **la composición se considera un principio de programación language-agnostic** que es intuitiva que puede aplicarse muy bien a la creación de componentes mediante react. 
 
 No obstante, un gran beneficio de los react components es que existe un ecosistema muy nutrido donde se tiene a disposición componentes de terceros que pueden ser reutilizados y muchos de ellos están disponibles en NPM.
 
@@ -109,7 +109,7 @@ Por otra lado, **React es declarativo por lo que se debe describir _QUE_ deberí
 />
 ```
 ## Solo es JavaScript
-![Solo es JavaScript](./images/ecmascript6-js.png)
+![Solo es JavaScript](./images/ecmascript6-js.png?classes=center-block)
 Este punto es controversial porque está acorde al gusto de cada desarrollador, el hecho de recrear una funcionalidad que ya se tenía para usar en un determinado framework o biblioteca implica recordar o memorizar una nueva forma de hacer algo que ya podíamos hacer antes. 
 
 i.e. Listar un array
@@ -140,9 +140,9 @@ Con react podemos usar solo javaScript, en este caso el método map seria sufici
   	))}
 </ul>
 ```
-En efecto, esto no siginifica que otras bibliotecas y frameworks estan mal solo que se priorizan cosas diferentes. Sin embargo, con React se tiene una ligeria diferencia positiva el no tener que memorizar nueva sintaxis o formas de hacer algo.
+En efecto, esto no siginifica que otras bibliotecas y frameworks estan mal solo que se priorizan cosas diferentes. Sin embargo, con React se tiene una ligeria diferencia positiva al no tener que memorizar nueva sintaxis o formas de hacer algo.
 
-## Abstraccion 
+## Abstracción 
 La abstracción resulta muchas veces difícil debido a que la naturaleza de algunos frameworks que suelen ser difíciles en el sentido de modelar, esta debe dar más versátil para el programador, sin limitantes, permitiendo implementar todo de formas más natural posible y es así como lo hace react. 
 
 El construir componentes con React es sencillo siguiendo un logica declarativa y la abstracción tiende a ser natural, por ejemplo para construir un componente calendario se podria hacer de lo siguiente.
@@ -157,6 +157,10 @@ El construir componentes con React es sencillo siguiendo un logica declarativa y
 ```
 ## Comunidad 
 La comunidad de react es muy grande debido a la cantidad de proyectos en los utilizan y la gente involucrada en el medio de modo tal que se tiene suficiente información y soporte. Además de tener múltiples eventos en todo el mundo y gigantescas conferencias. También es bueno saber que Facebook invierte mucho en la continua investigación y desarrollo de esta librería que está resolviendo mucho de nuestras limitantes que se tenían con librerias clásicas.
+* http://reactjsnewsletter.com/
+* https://www.reddit.com/r/reactjs/
+* https://discord.com/invite/0ZcbPKXt5bZjGY5n
+* https://reactjs.org/community/conferences.html
 
 
 
