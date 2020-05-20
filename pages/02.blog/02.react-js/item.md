@@ -15,20 +15,25 @@ taxonomy:
 
 ![ReactJS](./images/react-logo.png?classes=center-block)
 
-**React es un biblioteca javascript para construir interfaces de usuario (UI) **de código abierto que fue creada por Jordan Walke y lanzada el 2013, mantenida por Facebook y la comunidad de software libre. React se destaca por ser **declarativo y basado en componentes** de una manera muy natural.
+**React es un biblioteca javascript para construir interfaces de usuario (UI) **de código abierto que fue creada por Jordan Walke lanzada el 2013, mantenida por Facebook y la comunidad de software libre. React se destaca por ser **declarativo y basado en componentes** de una manera muy natural.
 
-En tal sentido, tiene características que le permite ser fácil de comprender, potente para construir interfaces gráficas, un flujo de datos sencillo con una forma diferente para manejar los estados principalmente. Seguidamente se explicará dichas caracteristicas que hacen de esta biblioteca tan diferente y especial.
+En tal sentido, tiene características que le permite ser fácil de comprender, potente para construir interfaces gráficas, un flujo de datos sencillo con una forma diferente para manejar los estados principalmente. 
 ## Composición
-Es una de las propiedades que más caracterizan a react, que es llevada a un nivel diferente. Para tener una idea más clara podemos imaginar que necesitamos obtener el avatar (fotografia y profile URL) de mis usuarios, para ellos tengo un par de funciones que me ayudaran obtener la información necesito. 
+![ Los react components son como los legos para los programadores](./images/composicion-lego.jpg?classes=center-block)
+
+Es una de las propiedades que más caracterizan a react, que es llevada a un nivel diferente. 
+
+Para tener una idea más clara podemos imaginar que necesitamos obtener el avatar (fotografia y profile URL) de mis usuarios, para ellos tengo un par de funciones que me ayudaran obtener la información necesito. 
 ```js
 function getProfilePic(username){
 	return "https://photos.myserver.com/"+username
 }
-
 function getProfileLink(username){
 	return "https://myserver.com/"+username
 }
 ```
+React tiene el poder de combinar componentes para crear un nuevo componentes más complejo.
+
 En tal sentido, partiendo de las anteriores funciones se puede generar una tercera que sea compuesta de ambas y pueda retornar información mejor filtrada en este caso el avatar del usuario
 ```js  
 function getAvatarInfo(username){
