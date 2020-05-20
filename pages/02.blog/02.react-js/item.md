@@ -66,16 +66,8 @@ function Avatar(props) {
 
 <Avatar username=”gonzalohk”>
 ```
-Entonces se tiene un componente llamado Avatar que es compuesto de otros dos más pequeños, es decir podemos combinar componentes para crear nuevos componentes más complejos. En efecto, **la composición se considera un principio de programación language-agnostic** que es intuitiva que puede aplicarse muy bien a la creación de componentes mediante react por ejemplo podemos un calendario podría ser compuesto de la siguiente manera:
-```html
-<container>
-	<Navbar/>
-	<Header/>
-	<DatePicker>
-		<Calendar/>
-	</DatePicker>
-</container>
-```
+Entonces se tiene un componente llamado Avatar que es compuesto de otros dos más pequeños, es decir podemos combinar componentes para crear nuevos componentes más complejos. En efecto, **la composición se considera un principio de programación language-agnostic** que es intuitiva que puede aplicarse muy bien a la creación de componentes mediante react. 
+
 No obstante, un gran beneficio de los react components es que existe un ecosistema muy nutrido donde se tiene a disposición componentes de terceros que pueden ser reutilizados y muchos de ellos están disponibles en NPM.
 
 > Los react components son como los legos para los programadores.
@@ -97,8 +89,8 @@ React tiene una visión distinta del manejo de los estados a diferencia de bibli
 ![React flujo de datos](./images/react-ui.png?classes=center-block)
 
 Una forma interesante de ver esto, es pensar que el UI solo es una función de su estado
-> UI = fn(state)
 
+![UI = fn(state)](./images/ui-fn-state.png?classes=center-block)
 ## UI declarativo 
 Este apartado es muy visible en el código fuente, siguiendo el ejemplo anterior para definir como un estado se actualiza al utilizar jQuery se necesita una programación imperativa. Es así que se puede actualizar el dom de la siguiente manera 
 ```js
@@ -109,12 +101,19 @@ $('btn').click(() => {
     : $(this).text('Add Highlight')
 })
 ```
-Por otra lado, React es declarativo por lo que se debe describir que debería hacer la UI y no como debe hacerlo, en otras palabras react se encargará del trabajo duro actualizando el dom haciendo uso de su poderoso dom virtual. Esto nos ayuda de sobremanera porque solo deberemos preocuparnos de cómo el estado en un componente cambia y en función a ese estado que debería hacer (verse) la UI.
-## Solo es Javascript
-Este punto es controversial porque está acorde al gusto de cada desarrollador, el hecho de recrear una funcionalidad que ya se tenía para usar en un determinado framework o librería implica recordar o memorizar una nueva forma de hacer algo que ya podíamos hacer antes. 
+Por otra lado, **React es declarativo por lo que se debe describir _QUE_ debería hacer la UI y no _COMO_ debe hacerlo**, en otras palabras react se encargará del trabajo duro actualizando el dom haciendo uso de su poderoso dom virtual. Esto nos ayuda de sobremanera porque solo deberemos preocuparnos de cómo el estado en un componente cambia y en función a ese estado que debería hacer (verse) la UI. El mismo bloque de codigo anterior puede ser escrito con React de la siguiente manera.
+```html
+<Btn
+  highlight={this.state.highlight}
+  onToggle={this.toggleBtn}
+/>
+```
+## Solo es JavaScript
+![Solo es JavaScript](./images/ecmascript6-js.png?classes=center-block)
+Este punto es controversial porque está acorde al gusto de cada desarrollador, el hecho de recrear una funcionalidad que ya se tenía para usar en un determinado framework o biblioteca implica recordar o memorizar una nueva forma de hacer algo que ya podíamos hacer antes. 
 
-Por ejemplo el listar un array se lo hace de la siguiente manera.
-Vue.js
+i.e. Listar un array
+_Vue.js_
 ```js
 <ul id="friends">
 	<li v-for="friend in friends">
@@ -122,7 +121,7 @@ Vue.js
   	</li>
 </ul>
 ```
-Angular 2 
+_Angular 2_
 ```js
 <ul>
 	<li *ngFor="#friend of friends">
@@ -130,8 +129,8 @@ Angular 2
 	</li>
 </ul>
 ```
-React 
-Con react podemos usar solo java script en este caso el método map seria suficiente
+_React_
+Con react podemos usar solo javaScript, en este caso el método map seria suficiente.
 ```js
 <ul>
 	{friends.map((name) => (
@@ -141,11 +140,23 @@ Con react podemos usar solo java script en este caso el método map seria sufici
   	))}
 </ul>
 ```
-Sin embargo, ninguno está mal solo que se priorizan cosas diferentes.
+En efecto, esto no siginifica que otras bibliotecas y frameworks estan mal solo que se priorizan cosas diferentes. Sin embargo, con React se tiene una ligeria diferencia positiva el no tener que memorizar nueva sintaxis o formas de hacer algo.
+
 ## Abstraccion 
-La abstracción resulta muchas veces difícil debido a que la naturaleza de algunos frameworks suelen ser difíciles en el sentido de modelar, esta debe dar más versátil para el programador, sin limitantes, permitiendo implementar todo de formas más natural posible y es así como lo hace react. 
+La abstracción resulta muchas veces difícil debido a que la naturaleza de algunos frameworks que suelen ser difíciles en el sentido de modelar, esta debe dar más versátil para el programador, sin limitantes, permitiendo implementar todo de formas más natural posible y es así como lo hace react. 
+
+El construir componentes con React es sencillo siguiendo un logica declarativa y la abstracción tiende a ser natural, por ejemplo para construir un componente calendario se podria hacer de lo siguiente.
+```html
+<container>
+	<Navbar/>
+	<Header/>
+	<DatePicker>
+		<Calendar/>
+	</DatePicker>
+</container>
+```
 ## Comunidad 
-La comunidad de react es muy grande debido a la cantidad de proyectos en los utilizan y la gente involucrada en el medio de modo tal que se tiene suficiente información y soporte. Además de tener múltiples eventos en todo el mundo y gigantescas conferencias. También es bueno saber que Facebook invierte mucho en la continua investigación y desarrollo de esta librería que está resolviendo mucho de nuestras limitantes que se tenían con librerias clasicas.
+La comunidad de react es muy grande debido a la cantidad de proyectos en los utilizan y la gente involucrada en el medio de modo tal que se tiene suficiente información y soporte. Además de tener múltiples eventos en todo el mundo y gigantescas conferencias. También es bueno saber que Facebook invierte mucho en la continua investigación y desarrollo de esta librería que está resolviendo mucho de nuestras limitantes que se tenían con librerias clásicas.
 
 
 
