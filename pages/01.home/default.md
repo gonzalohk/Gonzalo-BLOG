@@ -4,6 +4,6 @@ visible: true
 ---
 
  <div class="about">
-   <h1>Gonzalo Osco Hernandez</h1>
-   <h2>DEVELOPER</h2>
+   <h1>Gonzalo Osco Hernández</h1>
+   <h2>THE SUPPORT GUY</h2>
  </div>
