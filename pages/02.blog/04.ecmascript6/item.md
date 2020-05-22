@@ -254,7 +254,7 @@ En ES6 se tienen una formas más _sugar syntax_  de crear los objetos, que se de
 //ES6
 const banda = 'Damas Gratis';
 const genero = 'Cumbia V';
-const canciones = ['Laura', 'Loro', ''No te creas tan importante']
+const canciones = ['Laura', 'Loro', 'No te creas tan importante']
 const damasG = {banda, genero, canciones};
 console.log(damasG);
 ```
@@ -284,7 +284,7 @@ También es posible exportar las funciones usando la siguiente sintaxis
 export function hello(nombre) {...};
 export default function(nombre) {...};
 ```
-En efecto, desde 2015 cada año se introducen nuevas características en JavaScript y se van haciendo nuevas especificaciones para el lenguaje cada año es por ello que se habla del ES2015, ES2016, ES2017, ES2018, ES2019 y ES2020. Por ellos es común encontrar referencias a la versión que expusimos como ES6 o ECMAScript 6 o ES2015 o ECMAScript2015. 
+En efecto, desde 2015 cada año se introducen nuevas características en JavaScript y se van haciendo nuevas especificaciones para el lenguaje cada año es por ello que se habla del ES2015, ES2016, ES2017, ES2018, ES2019 y ES2020. En tal sentido, es común encontrar referencias a la versión que expusimos como ES6 o ECMAScript 6 o ES2015 o ECMAScript2015. 
 
 ES6 fue el cambio más radical que tuvo JS a diferencia de las especificaciones posteriores que solo tienen cambios mínimos. Es decir, JS obtuvo mayor madurez con nuevos features además de aplicar sugar syntax a parte de su código tradicional que fue bien recibido por su comunidad. No obstante, es actualmente el estándar para el manejo de muchos frameworks modernos y la tendencia en el desarrollo web.
 
