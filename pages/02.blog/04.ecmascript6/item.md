@@ -16,6 +16,7 @@ taxonomy:
 
 ![ECMAScript 6 / ES6 / ECMAScript2015 / ES2015](ecmascript6-js.png?classes=center-block)
 
+
 **JavaScript (JS) es un lenguaje de programación interpretado, dialecto del estándar** [ECMA-262](https://www.ecma-international.org/publications/standards/Ecma-262.htm) donde esta es una especificación de lenguaje de programación publicada por ECMA International. 
 
 En tal sentido,  ECMA (_European Computer Manufacturer Association_) se encarga de regular varios estándares entre ellos el lenguaje JavaScript, también conocida como ECMAScript. En efecto, existen las versiones ECMAScript 1, 2, 3 que fueron usadas en un inicio, la versión 4 fue abandonada, pero la versión 5 es aún una de las más usadas y aceptadas por la mayoría de los navegadores. Sin embargo, ECMAScript 6 (ES6) fue lanzada ya el 2015 con el nombre oficial ECMAScript2015. Esto puede ser expuesto de mejor manera en la siguiente línea de tiempo.
@@ -248,7 +249,7 @@ Además que se puede acceder a estos individualmente a los datos de un objeto de
 console.log(persona.nombre);
 console.log(persona.['nombre'])
 ```
-En ES6 se tienen una formas más _sugar syntax_  de crear los objetos, que se denomina _Object Literal Enhancemen_t.  
+En ES6 se tienen una formas más _sugar syntax_  de crear los objetos, que se denomina _Object Literal Enhancement._  
 ```js
 //ES6
 const banda = 'Damas Gratis';
