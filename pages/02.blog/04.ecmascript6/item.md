@@ -64,7 +64,7 @@ En el caso de const, permite declarar constantes y establecer al mismo tiempo su
 })();
 ```
 ## Función Arrow
-También llamadas funciones flecha, son una forma de definir funciones de una manera más limpia y clara con una sintaxis reducida y un this no vinculante. 
+También llamadas funciones flecha, son una forma de definir funciones de una manera más limpia, clara con una sintaxis reducida y un this no vinculante. 
 ```js
 //ES5
 // función tradicional
