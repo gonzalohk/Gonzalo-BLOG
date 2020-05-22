@@ -28,7 +28,7 @@ En tal sentido,  ECMA (_European Computer Manufacturer Association_) se encarga 
 * 2009: ES5 es lanzado junto al estándar JSON
 * 2015: ES6/ECMAScript 2015 es lanzado con nuevos features y mayor syntactic sugar es decir el poder hacer algunas cosas de forma más sencilla.
 
-A pesar que ES6 existe ya hace muchos años, algunos browsers no lo soporta totalmente por que muchas veces es necesario usar un JavaScript compiler o code transformer como Babel para aprovechar todos los features y facilidades que posee.
+A pesar que ES6 existe ya hace muchos años, algunos browsers no lo soporta totalmente por que muchas veces es necesario usar un JavaScript compiler o code transformer como Babel para aprovechar todos los features que posee siendo los siguientes los más relevantes. 
 ## let y const
 Las variables pueden ser declaradas con let en lugar de var si no se quiere que sea accesible fuera de su ámbito o también llamado scope.  
 ```js
@@ -65,7 +65,7 @@ En el caso de const, permite declarar constantes y establecer al mismo tiempo su
 })();
 ```
 ## Función Arrow
-También llamadas funciones flecha, son una forma de definir funciones de una manera más limpia, clara con una sintaxis reducida y un this no vinculante. 
+También llamadas funciones flecha, son una forma de definir funciones de una manera más limpia, clara con una sintaxis reducida y un _this_ no vinculante. 
 ```js
 //ES5
 // función tradicional
@@ -94,9 +94,9 @@ Una función sin argumentos requiere paréntesis:
 () => { sentencias }
 ```
 ## This
-El keyword this muchas veces necesita del ámbito o contexto circundante dentro de una función tradicional  pero no tiene acceso directo al mismo por lo que existen soluciones alternativas que se pueden hacer.
+El _keyword this_ muchas veces necesita del ámbito o contexto circundante dentro de una función tradicional, pero no tiene acceso directo al mismo por lo que existen soluciones alternativas que se pueden hacer.
 
-En  ES3 era necesario cachear el this en una variable ya que al tener una función no se podía acceder al ámbito padre debido a que una función sólo hace referencia al contexto en el que se  encontra. 
+En ES3 era necesario cachear el this en una variable ya que al tener una función tradicional no se podía acceder al ámbito padre debido a que sólo hace referencia al contexto en el que se encuentra. 
 ```js
 //ES3
 var obj = {
