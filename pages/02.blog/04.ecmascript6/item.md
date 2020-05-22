@@ -233,7 +233,7 @@ Con ES6 ya es posible definir los valores por defecto de los parámetros al mome
 })()
 ```
 ## Objetos 
-La forma tradicional de crear objetos es denominada Object Literal, la misma es una colección de datos separados en pares nombre: valor separados por comas y encerrados por comillas 
+La forma tradicional de crear objetos es denominada _Object Literal_, la misma es una colección de datos separados en pares nombre: valor separados por comas y encerrados por comillas 
 ```js
 // Object Literal
 const persona = {
@@ -248,7 +248,7 @@ Además que se puede acceder a estos individualmente a los datos de un objeto de
 console.log(persona.nombre);
 console.log(persona.['nombre'])
 ```
-En ES6 se tienen una formas más sugar syntax  de crear los objetos, que se domina Object Literal Enhancement.  
+En ES6 se tienen una formas más _sugar syntax_  de crear los objetos, que se denomina _Object Literal Enhancemen_t.  
 ```js
 //ES6
 const banda = 'Damas Gratis';
