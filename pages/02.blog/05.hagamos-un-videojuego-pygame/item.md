@@ -1,5 +1,6 @@
 ---
 title: 'Hagamos un videojuego con Python y PyGame'
+media_order: 'castor.png,ciervo.png,gato.png,leon.png,mapache.png,oso.png,tigre.png,zorro.png,mensaje-ganaste.png,mensaje-par.png,tarea-2.png,tarea-6.png,tarea-7.png,tarea-8.png'
 ---
 
 ## Pygame
