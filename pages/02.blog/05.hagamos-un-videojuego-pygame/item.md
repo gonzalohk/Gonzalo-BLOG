@@ -7,9 +7,9 @@ media_order: 'castor.png,ciervo.png,gato.png,leon.png,mapache.png,oso.png,tigre.
 
 El desarrollo de juegos puede ser inicialmente algo complejo debido a que se requiere múltiples skills de programación, diseño y narrativa por lo que suele ser acojonante empezar en este mundo. Sin embargo, resulta ser fácil si ya se tienen bases de programación y se utilizan las librerías adecuadas para iniciarse.
 
-Pygame es un conjunto de módulos Python diseñados para el desarrollo de videojuegos,  portable y multiplataforma bajo la licencia LGPL. En efecto, permite el desarrollo de juegos en dos dimensiones (2D), fácil de entender y amigable siendo ideal para iniciar con el desarrollo de juegos.
+**Pygame es un conjunto de módulos Python diseñados para el desarrollo de videojuegos**,  portable y multiplataforma bajo la licencia LGPL. En efecto, permite el desarrollo de juegos en dos dimensiones (2D), fácil de entender y amigable siendo ideal para iniciar con el desarrollo de juegos.
 
-Programando nuestro primer juego con pygame
+## Programando nuestro primer juego con pygame
 
 Para tener una mejor perspectiva y entendimiento de esta biblioteca es fundamental desarrollar un video juego, por lo que el único prerrequisito es conocer python. 
 
@@ -35,6 +35,7 @@ Así mismo, debemos almacenar las imágenes necesarias que usará nuestro juego 
 ZOOMemoria/assets
 par.png  (512px , 512px)
 gano.png (512px , 512px)
+
 ZOOMemoria/assets/animals
 castor.png (128px, 128px)
 ciervo.png (128px, 128px)
@@ -44,6 +45,23 @@ mapache.png (128px, 128px)
 oso.png (128px, 128px)
 tigre.png (128px, 128px)
 zorro.png (128px, 128px)
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="leon.png"  alt="leon.png"</td>
+      <td>![](gato.png <b>sdd</b></td>
+      <td>![](ciervo.png)</td>
+      <td>![](castor.png)</td>
+    </tr>
+    <tr>
+      <td>![](mapache.png)</td>
+      <td>![](oso.png)</td>
+      <td>![](tigre.png)</td>
+      <td>![](zorro.png)</td>
+    </tr>    
+  </tbody>
+</table>
 
 Es importante respetar la dimensión de las imágenes para luego hacer fácil la lógica que se agregara en los pasos posteriores.  
 
@@ -82,9 +100,11 @@ while running:
 	# En caso de terminar el GAME LOOP mostramos un mensaje en la consola
 print('Fin')
 ```
+![Inicializando el GameLoop](tarea-2.png)
+
 pygame.init:- Inicializa todos los módulos requeridos por PyGame.
 
-Pygame.display.set_caption: establece el título de la ventana actual
+Pygame.display.set_caption: establece el título de la ventana actual.
 
 pygame.display.set_mode: Inicializar una ventana o pantalla para mostrar de en tamaño determinado .
 
