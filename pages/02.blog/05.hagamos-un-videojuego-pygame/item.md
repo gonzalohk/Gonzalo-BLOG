@@ -217,7 +217,7 @@ class Animal:
 
 **_pygame.transform.scale_** : cambia el tamaño a una nueva resolución.
 
-## Tarea 5 Mostrar las cuadros/figuras de los animales en el tablero 
+## Tarea 5 Mostrar los cuadros/figuras de los animales en el tablero 
 
 Una vez que se tiene creada la clase Animal, se declararon los valores constantes en config.js ya podemos mostrar los cuadros/figuras de los animales en nuestro tablero. En una en primera instancia solo desplegamos todas las imágenes en orden aleatorio, más adelante se adicionará la lógica referente a los eventos del mouse, volteo y desbloqueo de cuadros/figuras.
 
