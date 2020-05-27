@@ -35,18 +35,20 @@ Así mismo, debemos almacenar las imágenes necesarias que usará nuestro juego 
 
 * ZOOMemoria/assets/animals
  
-![](leon.png?&display=thumbnail) ![](ciervo.png?&display=thumbnail) ![](castor.png) ![](gato.png) ![](mapache.png) ![](oso.png) ![](tigre.png) ![](zorro.png)
+![](leon.png) ![](ciervo.png) ![](castor.png) ![](gato.png) ![](mapache.png) ![](oso.png) ![](tigre.png) ![](zorro.png)
 
 *  ZOOMemoria/assets
   
-![](mensaje-par.png) ![](mensaje-ganaste.png)
+![](mensaje-par.png) 
+
+![](mensaje-ganaste.png)
 
 Es importante respetar la dimensión de las imágenes para luego hacer fácil la lógica que se agregara en los pasos posteriores.  
 
 ## Tarea 2  Inicializar el Game Loop
 Pygame permite la inicialización y la creación del game loop de una forma sumamente sencilla con unas cuantas líneas de código. 
-En app.py (version 1)
-En este archivo, más adelante se hará refactors y se adicionará la lógica del juego.
+
+En **app.py** (version 1)
 ```js
 import pygame
 
@@ -94,7 +96,7 @@ print('Fin')
 ## Tarea 3 Establecer el archivo config.py
 Por lo visto se tienen varios constantes que son y serán usadas en el archivo principal (app.py) como ser las dimensiones de la ventana, lista de las imágenes, el número de cuadros/figuras, etc. En tal sentido, para mantener el orden en nuestro proyecto estableceremos dichas constantes en un archivo que denominaremos config.py
 
-En config.py (Version Final)
+En **config.py** (Version Final)
 
 Este archivo NO será modificado más adelante.
 
@@ -130,7 +132,7 @@ for img in os.listdir(ASSET_DIR):
 ## Tarea 4 Crear la clase Animal
 Cada cuadro/figura representa a un animal en el tablero donde existen 8 animales y 8 copias de estos animales ordenados al azar. Esto significa que existen 16 cuadros/figuras de animales en total con los mismos atributos por lo que resulta ideal crear la clase Animal para luego instanciarlo 16 veces y construir el tablero.
 
-En animal.py (Version Final)
+En **animal.py** (Version Final)
 
 Este archivo NO será modificado más adelante.
 
@@ -325,7 +327,7 @@ while running:
     pygame.display.flip()
 print('Fin')
 ```
-pygame.mouse.get_pos: obtiene la posición X e Y del cursor del mouse. La posición es relativa a la esquina superior izquierda de la pantalla.
+**_pygame.mouse.get\_pos_** : obtiene la posición X e Y del cursor del mouse. La posición es relativa a la esquina superior izquierda de la pantalla.
 
 ![](tarea-7.png?classes=center-block)
 
