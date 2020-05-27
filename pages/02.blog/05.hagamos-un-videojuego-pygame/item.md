@@ -30,16 +30,20 @@ Una vez realizada la instalación, desde el IDE de nuestra preferencia creamos t
 * app.py
 * animal.py
 * config.py
-*  ./assets
 
-![](mensaje-par.png) 
+En assets
+* mensaje-par.png (512px, 512px)
+* mensaje-ganaste.png (512px, 512px)
 
-![](mensaje-ganaste.png)
-
-
-* ./assets/animals
- 
-![](leon.png) ![](ciervo.png) ![](castor.png) ![](gato.png) ![](mapache.png) ![](oso.png) ![](tigre.png) ![](zorro.png)
+En assets/animals
+* leon.png (128px, 128px)
+* ciervo.png (128px, 128px)
+* castor.png (128px, 128px)
+* gato.png (128px, 128px)
+* mapache.png (128px, 128px)
+* oso.png (128px, 128px)
+* tigre.png (128px, 128px)
+* zorro.png (128px, 128px)
 
 Es importante respetar la dimensión de las imágenes para luego hacer fácil la lógica que se agregara en los pasos posteriores.  
 
@@ -98,7 +102,7 @@ En **config.py** (Version Final)
 
 Este archivo NO será modificado más adelante.
 
-```js
+```python
 import os
 
 # Definimos el tamaño de la ventana y las imágenes
@@ -134,7 +138,7 @@ En **animal.py** (Version Final)
 
 Este archivo NO será modificado más adelante.
 
-```js
+```python
 import config
 
 '''
@@ -212,13 +216,13 @@ class Animal:
 
 **_Pygame.transform.scale_** : cambiar el tamaño a una nueva resolución
 
-## Tarea 6 Mostrar las cuadros/figuras de los animales en el tablero 
+## Tarea 5 Mostrar las cuadros/figuras de los animales en el tablero 
 
 Una vez que se tiene creada la clase Animal, se declararon los valores constantes en config.js ya podemos mostrar los cuadros/figuras de los animales en nuestro tablero. En una en primera instancia solo desplegamos todas las imágenes en orden aleatorio, más adelante se adicionará la lógica referente a los eventos del mouse, volteo y desbloqueo de cuadros/figuras.
 
 En **app.py** (version 2)
 
-```js
+```python
 import pygame
 import config
 from animal import Animal
@@ -269,12 +273,12 @@ print('Fin')
 ![Tarea 6 ZOOMemoria](tarea-6.png?classes=center-block)
 
 
-## Tareas 7 Programar el manejo de eventos
+## Tareas 6 Programar el manejo de eventos
 En en inicio se programó el  manejo de eventos del teclado para salir del vide juego cuando se presione la tecla ESC sin mucha complicación, Se debe realizar de igual forma en volteo de cuadros/figuras de los animales debido a que en una primera instancia estos muestra en cuadro en color plomo que debe ser volteado para descubrir la imagen que tienen. 
 
 En app.py (version 3)
 
-```js
+```python
 import pygame
 import config
 from animal import Animal
@@ -329,11 +333,11 @@ print('Fin')
 
 ![Tarea 7 ZOOMemoria](tarea-7.png?classes=center-block)
 
-## Tarea 8 Adicionar la lógica de selección de cuadros/figuras en el tablero
+## Tarea 7 Adicionar la lógica de selección de cuadros/figuras en el tablero
 Recordemos que luego de voltear el cuadro/figura en el tablero procedemos escoger uno diferente hasta que se encuentre o empareje la figura con su respectiva copia. En efecto, se requiere implementar dicha verificación para luego descartar dicha figura y su copia del tablero para seguir el mismo procedimiento hasta encontrar todas las parejas.
 
 En **app.py** (version 4)
-```js
+```python
 import pygame
 import config
 from animal import Animal
@@ -400,12 +404,12 @@ print('Fin')
 ![Tarea 8 ZOOMemoria](tarea-8.png?classes=center-block)
 
 
-## Tarea 9 Adicionar mensajes y arreglar errores.
+## Tarea 8 Adicionar mensajes y arreglar errores.
 Finalmente, adicionamos los mensajes que nos indican que logramos emparejar en cuadro/figura de una animal y el mensaje que indica que ganamos el juego. Asi mis, arreglar cualquier posible error que pudiera existir.
 
 En **app.py** (Version Final)
 
-```js
+```python
 import pygame
 import config
 from animal import Animal
