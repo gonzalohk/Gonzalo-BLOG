@@ -6,23 +6,23 @@ published: true
 
 ![PYGAME](pygame.png?classes=center-block)
 
-El desarrollo de juegos puede ser inicialmente algo complejo debido a que se requiere múltiples skills de programación, diseño y narrativa por lo que suele ser acojonante empezar en este mundo. Sin embargo, resulta ser fácil si ya se tienen bases de programación y se utilizan las librerías adecuadas para iniciarse.
+El desarrollo de juegos puede ser inicialmente algo complejo debido a que se requiere múltiples skills de programación, diseño y narrativa por lo que suele ser acojonante empezar en este mundo. Sin embargo, resulta ser fácil si ya se tienen bases de programación y se utilizan las librerías adecuadas para iniciar.
 
 **Pygame es un conjunto de módulos Python diseñados para el desarrollo de videojuegos** o cualquier otra aplicación multimedia,  portable y multiplataforma bajo la licencia LGPL. En efecto, permite el desarrollo de juegos en dos dimensiones (2D), fácil de entender y amigable siendo ideal para iniciar con el desarrollo de juegos.
 
-## Programando un juego con pygame
+## Programando un juego con PyGame
 
 Para tener una mejor perspectiva y entendimiento de esta biblioteca es fundamental desarrollar un video juego, por lo que el único prerrequisito es conocer python. 
 
-En tal sentido, el juego que programaremos será el conocido memoria, para fines prácticos lo denominaremos **ZOO Memoria** porque usaremos imagenes de animales. Este consiste en un tablero con 16 cuadros en total, de 4 filas y 4 columnas en primera instancia las imágenes están ocultas, pero existen 8 figuras de animales donde cada uno tiene una copia es decir una pareja, el objetivo es encontrar la figura del animal junto a su pareja en la menor cantidad de intentos posibles. Qué mejor que un video para explicar el juego.
+En tal sentido, el juego que programaremos será el conocido memoria, para fines prácticos lo denominaremos **ZOO Memoria** porque usaremos imagenes de animales. Este consiste en un tablero con 16 cuadros en total, de 4 filas y 4 columnas en primera instancia las imágenes están ocultas, pero existen 8 figuras de animales donde cada uno tiene una copia es decir una pareja, el objetivo es encontrar la figura del animal junto a su pareja en la menor cantidad de intentos posibles. 
 
 ![ZOOMemoria](zoomemoria.gif?classes=center-block)
 
-Para elaborar el juego de la forma ordenada y gradual para su mejor entendimiento dividiremos todo el proceso de desarrollo en 9 tareas.
+Para elaborar el juego de la forma ordenada y gradual para su mejor entendimiento dividiremos todo el proceso de desarrollo en 8 tareas.
 
 ## Tarea 1 Configurar el proyecto
 
-Para empezar debemos descargar e instalar Python desde [https://www.python.org/downloads/](https://www.python.org/downloads/) de acuerdo a nuestro sistema operativo. Una vez instalado, se desde la consola de comandos ya podemos instalar pygame usando el administrador de paquetes de python (PIP).
+Para empezar debemos descargar e instalar Python desde [https://www.python.org/downloads/](https://www.python.org/downloads/) de acuerdo a nuestro sistema operativo. Una vez instalado, se desde la consola de comandos ya podemos instalar pygame usando el administrador de paquetes de python (_PIP_).
 ```sh
 pip install pygame
 ```
@@ -86,11 +86,11 @@ print('Fin')
 
 **_pygame.display.set\_caption_** : establece el título de la ventana actual.
 
-**_pygame.display.set\_mode_** : Inicializar una ventana o pantalla para mostrar de en tamaño determinado .
+**_pygame.display.set\_mode_** : inicializa una ventana o pantalla para mostrar de en tamaño determinado.
 
-**_pygame.event.get_** : Obtiene los eventos de la cola
+**_pygame.event.get_** : obtiene los eventos de la cola.
 
-**_pygame.quit_** :  se envía cuando el usuario ha solicitado que se cierre el programa
+**_pygame.quit_** :  se envía cuando el usuario ha solicitado que se cierre el programa.
 
 ![Tarea 2 Inicializando el GameLoop](tarea-2.png?classes=center-block)
 
@@ -155,7 +155,8 @@ for img in config.ASSET_FILES:
 
 '''
     El diccionario contador de animales permite saber qué animales encontraron su pareja, 
-gracias a ello esta función obtiene a los animales que aún no encontraron su pareja por lo que están disponibles
+    gracias a ello esta función obtiene a los animales que aún no encontraron su pareja 
+    por lo que están disponibles
 '''
 
 
@@ -212,9 +213,9 @@ class Animal:
 ```
 **_random.choice_** :  elige un valor al azar en un conjunto de elementos, cualquier tipo de datos enumerable (tupla, lista, cadena, range) puede utilizarse como conjunto de elementos.
 
-**_Pygame.image.load_** : carga una nueva imagen desde en archivo
+**_pygame.image.load_** : carga una nueva imagen desde en archivo.
 
-**_Pygame.transform.scale_** : cambiar el tamaño a una nueva resolución
+**_pygame.transform.scale_** : cambia el tamaño a una nueva resolución.
 
 ## Tarea 5 Mostrar las cuadros/figuras de los animales en el tablero 
 
@@ -264,17 +265,17 @@ while running:
     pygame.display.flip()
 print('Fin')
 ```
-**_screen.fill_** : Rellena la superficie con un color sólido que es seleccionando con una secuencia RGB o RGBA como parámetro.
+**_screen.fill_** : rellena la superficie con un color sólido que es seleccionando con una secuencia RGB o RGBA como parámetro.
 
-**_screen.blit_** : Dibuja una imagen sobre otra, se puede especificar la posición del dibujo mediante coordenadas.
+**_screen.blit_** : dibuja una imagen sobre otra, se puede especificar la posición del dibujo mediante coordenadas.
 
-**_pygame.display.flip_** :- Actualiza o refresca toda la pantalla, se debe llamar luego de dibujar o adicionar nuevos elementos para visualizar los cambios.
+**_pygame.display.flip_** : actualiza o refresca toda la pantalla, se debe llamar luego de dibujar o adicionar nuevos elementos para visualizar los cambios.
 
-![Tarea 6 ZOOMemoria](tarea-6.png?classes=center-block)
+![Tarea 5 ZOOMemoria](tarea-6.png?classes=center-block)
 
 
 ## Tareas 6 Programar el manejo de eventos
-En en inicio se programó el  manejo de eventos del teclado para salir del vide juego cuando se presione la tecla ESC sin mucha complicación, Se debe realizar de igual forma en volteo de cuadros/figuras de los animales debido a que en una primera instancia estos muestra en cuadro en color plomo que debe ser volteado para descubrir la imagen que tienen. 
+En en inicio se programó el  manejo de eventos del teclado para salir del vide juego cuando se presione la tecla ESC sin mucha complicación, Se debe realizar de igual forma en volteo de cuadros/figuras de los animales debido a que en una primera instancia estos muestran un cuadro en color plomo que debe ser volteado para descubrir la imagen que tienen. 
 
 En app.py (version 3)
 
@@ -331,7 +332,7 @@ print('Fin')
 ```
 **_pygame.mouse.get\_pos_** : obtiene la posición X e Y del cursor del mouse. La posición es relativa a la esquina superior izquierda de la pantalla.
 
-![Tarea 7 ZOOMemoria](tarea-7.png?classes=center-block)
+![Tarea 6 ZOOMemoria](tarea-7.png?classes=center-block)
 
 
 ## Tarea 7 Adicionar la lógica de selección de cuadros/figuras en el tablero
@@ -403,12 +404,13 @@ while running:
 print('Fin')
 ```
 En este punto la funcionalidad ya casi esta terminada, solo quedará adicionar algunos detalles.
-![Tarea 8 ZOOMemoria](tarea-8.png?classes=center-block)
+
+![Tarea 7 ZOOMemoria](tarea-8.png?classes=center-block)
 
 
 
 ## Tarea 8 Adicionar mensajes y arreglar errores
-Finalmente, adicionamos los mensajes que nos indican que logramos emparejar en cuadro/figura de una animal y el mensaje que indica que ganamos el juego. Asi mis, arreglar cualquier posible error que pudiera existir.
+Finalmente, adicionamos los mensajes que nos indican que logramos emparejar en cuadro/figura de una animal y el mensaje que indica que ganamos el juego. Asi mismo, arreglar cualquier posible error que pudiera existir.
 
 En **app.py** (Version Final)
 
@@ -492,13 +494,13 @@ while running:
 print('Fin')
 ```
 
-![Tarea 9 ZOOMemoria](tarea-9.png?classes=center-block)
+![Tarea 8 ZOOMemoria](tarea-9.png?classes=center-block)
 
 
-Finalmente terminamos nuestro juego con pygame,  del cual usamos funciones básica para construir nuestra ventana con el fin de dibujar, cargar, dimensionar y refrescar los elementos creados situando la lógica al python estándar que conocemos. 
+Finalmente terminamos nuestro juego con pygame,  del cual usamos funciones básica para construir nuestra ventana con el fin de dibujar, cargar, dimensionar, refrescar los elementos creados y situando la lógica en python estándar que conocemos. 
 
-El codigo completo puede ser descargado de [https://github.com/gonzalohk/PyGame-zoo-memoria](https://github.com/gonzalohk/PyGame-zoo-memoria)
+El código completo puede ser descargado de [https://github.com/gonzalohk/PyGame-zoo-memoria](https://github.com/gonzalohk/PyGame-zoo-memoria)
 
-En efecto, se tienen muchas ventajas como un código ínfimo a comparacion de otras bibliotecas o lenguajes de programación usados para el desarrollo de videojuegos, así mismo de su fácil manejo y aprendizaje. No obstante,, se tienen limitaciones comparado con otros entornos más complejos eso está muy claro, pero Pygame nos brinda lo necesario para desarrollar videojuegos aceptables, por lo que no está demás darle una pequeña mirada y seguir experimentando.
+En efecto, se tienen muchas ventajas como un código ínfimo a comparacion de otras bibliotecas o lenguajes de programación usados para el desarrollo de videojuegos, así mismo de su fácil manejo y aprendizaje. No obstante, se tienen limitaciones comparado con otros entornos más complejos, pero Pygame nos brinda lo necesario para desarrollar videojuegos aceptables o aplicaciones multimedia, por lo que no está demás darle una pequeña mirada y seguir experimentando.
 
 
