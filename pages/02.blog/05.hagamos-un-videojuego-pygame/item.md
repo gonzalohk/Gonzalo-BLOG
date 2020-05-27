@@ -1,6 +1,6 @@
 ---
 title: 'Hagamos un juego con Python y PyGame'
-media_order: 'castor.png,ciervo.png,gato.png,leon.png,mapache.png,oso.png,tigre.png,zorro.png,mensaje-ganaste.png,mensaje-par.png,tarea-2.png,tarea-6.png,tarea-7.png,tarea-8.png,pygame.png'
+media_order: 'castor.png,ciervo.png,gato.png,leon.png,mapache.png,oso.png,tigre.png,zorro.png,mensaje-ganaste.png,mensaje-par.png,tarea-2.png,tarea-6.png,tarea-7.png,tarea-8.png,pygame.png,tarea-9.png'
 published: true
 ---
 
@@ -90,7 +90,7 @@ print('Fin')
 
 **_pygame.quit_** :  se envía cuando el usuario ha solicitado que se cierre el programa
 
-![Inicializando el GameLoop](tarea-2.png?classes=center-block)
+![Tarea 2 Inicializando el GameLoop](tarea-2.png?classes=center-block)
 
 
 ## Tarea 3 Establecer el archivo config.py
@@ -268,7 +268,7 @@ print('Fin')
 
 **_pygame.display.flip_** :- Actualiza o refresca toda la pantalla, se debe llamar luego de dibujar o adicionar nuevos elementos para visualizar los cambios.
 
-![Mostrar animales en el tablero](tarea-6.png?classes=center-block)
+![Tarea 6 ZOOMemoria](tarea-6.png?classes=center-block)
 
 
 ## Tareas 7 Programar el manejo de eventos
@@ -329,7 +329,7 @@ print('Fin')
 ```
 **_pygame.mouse.get\_pos_** : obtiene la posición X e Y del cursor del mouse. La posición es relativa a la esquina superior izquierda de la pantalla.
 
-![](tarea-7.png?classes=center-block)
+![Tarea 7 ZOOMemoria](tarea-7.png?classes=center-block)
 
 ## Tarea 8 Adicionar la lógica de selección de cuadros/figuras en el tablero
 Recordemos que luego de voltear el cuadro/figura en el tablero procedemos escoger uno diferente hasta que se encuentre o empareje la figura con su respectiva copia. En efecto, se requiere implementar dicha verificación para luego descartar dicha figura y su copia del tablero para seguir el mismo procedimiento hasta encontrar todas las parejas.
@@ -399,7 +399,7 @@ while running:
     pygame.display.flip()
 print('Fin')
 ```
-![](tarea-8.png?classes=center-block)
+![Tarea 8 ZOOMemoria](tarea-8.png?classes=center-block)
 
 
 ## Tarea 9 Adicionar mensajes y arreglar errores.
@@ -486,6 +486,9 @@ while running:
 
 print('Fin')
 ```
+
+![Tarea 9 ZOOMemoria](tarea-9.png?classes=center-block)
+
 
 Finalmente terminamos nuestro juego con pygame,  del cual usamos funciones básica para construir nuestra ventana con el fin de dibujar, cargar, dimensionar y refrescar los elementos creados situando la lógica al python estándar que conocemos. 
 
