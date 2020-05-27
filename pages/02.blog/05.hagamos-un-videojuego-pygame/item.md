@@ -34,11 +34,11 @@ Una vez realizada la instalación, desde el IDE de nuestra preferencia creamos t
 Así mismo, debemos almacenar las imágenes necesarias que usará nuestro juego por lo que  creamos las carpetas o ficheros denominados.
 
 * ZOOMemoria/assets/animals
-* 
+ 
 ![](leon.png) ![](ciervo.png) ![](castor.png) ![](gato.png) ![](mapache.png) ![](oso.png) ![](tigre.png) ![](zorro.png)
 
 *  ZOOMemoria/assets
-*  
+  
 ![](mensaje-par.png) ![](mensaje-ganaste.png)
 
 Es importante respetar la dimensión de las imágenes para luego hacer fácil la lógica que se agregara en los pasos posteriores.  
@@ -78,15 +78,15 @@ while running:
 	# En caso de terminar el GAME LOOP mostramos un mensaje en la consola
 print('Fin')
 ```
-**_pygame.init_**:- Inicializa todos los módulos requeridos por PyGame.
+**_pygame.init_** : Inicializa todos los módulos requeridos por PyGame.
 
-**_Pygame.display.set_caption_**: establece el título de la ventana actual.
+**_Pygame.display.set_caption_** : establece el título de la ventana actual.
 
-**_pygame.display.set_mode_**: Inicializar una ventana o pantalla para mostrar de en tamaño determinado .
+**_pygame.display.set_mode_** : Inicializar una ventana o pantalla para mostrar de en tamaño determinado .
 
-**_pygame.event.get_**: Obtiene los eventos de la cola
+**_pygame.event.get_** : Obtiene los eventos de la cola
 
-**_pygame.quit_**:  se envía cuando el usuario ha solicitado que se cierre el programa
+**_pygame.quit_** :  se envía cuando el usuario ha solicitado que se cierre el programa
 
 ![Inicializando el GameLoop](tarea-2.png?classes=center-block)
 
@@ -123,11 +123,11 @@ for img in os.listdir(ASSET_DIR):
 # ASSET_FILES = [img for img in os.listdir(ASSET_DIR) if img[-3:].lower() == 'png']
 
 ```
-os: el módulo os nos permite acceder a funcionalidades dependientes del Sistema Operativo, además de permitir manipular la estructura de directorios.
+**_os_** : el módulo os nos permite acceder a funcionalidades dependientes del Sistema Operativo, además de permitir manipular la estructura de directorios.
 
-os.listdir: obtiene una lista que contiene los nombres de los archivos y directorios en función al path indicado.
+**_os.listdir_** : obtiene una lista que contiene los nombres de los archivos y directorios en función al path indicado.
 
-## Tarea 4 Creamar la clase Animal
+## Tarea 4 Crear la clase Animal
 Cada cuadro/figura representa a un animal en el tablero donde existen 8 animales y 8 copias de estos animales ordenados al azar. Esto significa que existen 16 cuadros/figuras de animales en total con los mismos atributos por lo que resulta ideal crear la clase Animal para luego instanciarlo 16 veces y construir el tablero.
 
 En animal.py (Version Final)
@@ -206,17 +206,17 @@ class Animal:
         # Esta propiedad bandera ayudará a identificar si el animal fue desbloqueado  
         self.desbloqueado = False
 ```
-random.choice:  elige un valor al azar en un conjunto de elementos, cualquier tipo de datos enumerable (tupla, lista, cadena, range) puede utilizarse como conjunto de elementos.
+**_random.choice_** :  elige un valor al azar en un conjunto de elementos, cualquier tipo de datos enumerable (tupla, lista, cadena, range) puede utilizarse como conjunto de elementos.
 
-Pygame.image.load: carga una nueva imagen desde en archivo
+**_Pygame.image.load_** : carga una nueva imagen desde en archivo
 
-Pygame.transform.scale: cambiar el tamaño a una nueva resolución
+**_Pygame.transform.scale_** : cambiar el tamaño a una nueva resolución
 
 ## Tarea 6 Mostrar las cuadros/figuras de los animales en el tablero 
 
 Una vez que se tiene creada la clase Animal, se declararon los valores constantes en config.js ya podemos mostrar los cuadros/figuras de los animales en nuestro tablero. En una en primera instancia solo desplegamos todas las imágenes en orden aleatorio, más adelante se adicionará la lógica referente a los eventos del mouse, volteo y desbloqueo de cuadros/figuras.
 
-En app.py (version 2)
+En **app.py** (version 2)
 
 ```js
 import pygame
@@ -260,14 +260,14 @@ while running:
     pygame.display.flip()
 print('Fin')
 ```
+**_screen.fill_** : Rellena la superficie con un color sólido que es seleccionando con una secuencia RGB o RGBA como parámetro.
 
-screen.fill : Rellena la superficie con un color sólido que es seleccionando con una secuencia RGB o RGBA como parámetro.
+**_screen.blit_** : Dibuja una imagen sobre otra, se puede especificar la posición del dibujo mediante coordenadas.
 
-screen.blit : Dibuja una imagen sobre otra, se puede especificar la posición del dibujo mediante coordenadas.
-
-pygame.display.flip():- Actualiza o refresca toda la pantalla, se debe llamar luego de dibujar o adicionar nuevos elementos para visualizar los cambios.
+**_pygame.display.flip_** :- Actualiza o refresca toda la pantalla, se debe llamar luego de dibujar o adicionar nuevos elementos para visualizar los cambios.
 
 ![Mostrar animales en el tablero](tarea-6.png?classes=center-block)
+
 
 ## Tareas 7 Programar el manejo de eventos
 En en inicio se programó el  manejo de eventos del teclado para salir del vide juego cuando se presione la tecla ESC sin mucha complicación, Se debe realizar de igual forma en volteo de cuadros/figuras de los animales debido a que en una primera instancia estos muestra en cuadro en color plomo que debe ser volteado para descubrir la imagen que tienen. 
@@ -331,7 +331,8 @@ pygame.mouse.get_pos: obtiene la posición X e Y del cursor del mouse. La posici
 
 ## Tarea 8 Adicionar la lógica de selección de cuadros/figuras en el tablero
 Recordemos que luego de voltear el cuadro/figura en el tablero procedemos escoger uno diferente hasta que se encuentre o empareje la figura con su respectiva copia. En efecto, se requiere implementar dicha verificación para luego descartar dicha figura y su copia del tablero para seguir el mismo procedimiento hasta encontrar todas las parejas.
-En app.py (version 4)
+
+En **app.py** (version 4)
 ```js
 import pygame
 import config
@@ -398,10 +399,11 @@ print('Fin')
 ```
 ![](tarea-8.png?classes=center-block)
 
+
 ## Tarea 9 Adicionar mensajes y arreglar errores.
 Finalmente, adicionamos los mensajes que nos indican que logramos emparejar en cuadro/figura de una animal y el mensaje que indica que ganamos el juego. Asi mis, arreglar cualquier posible error que pudiera existir.
 
-En app.py (Version Final)
+En **app.py** (Version Final)
 
 ```js
 import pygame
@@ -482,6 +484,7 @@ while running:
 
 print('Fin')
 ```
+
 Finalmente terminamos nuestro juego con pygame,  del cual usamos funciones básica para construir nuestra ventana con el fin de dibujar, cargar, dimensionar y refrescar los elementos creados situando la lógica al python estándar que conocemos. 
 
 En efecto, se tienen muchas ventajas como un código ínfimo a comparacion de otras bibliotecas o lenguajes de programación usados para el desarrollo de videojuegos, así mismo de su fácil manejo y aprendizaje. No obstante,, se tienen limitaciones comparado con otros entornos más complejos eso está muy claro, pero Pygame nos brinda lo necesario para desarrollar videojuegos aceptables, por lo que no está demás darle una pequeña mirada y seguir experimentando.
