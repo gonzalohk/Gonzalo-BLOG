@@ -1,6 +1,6 @@
 ---
 title: 'Hagamos un juego con Python y PyGame'
-media_order: 'castor.png,ciervo.png,gato.png,leon.png,mapache.png,oso.png,tigre.png,zorro.png,mensaje-ganaste.png,mensaje-par.png,tarea-2.png,tarea-6.png,tarea-8.png,pygame.png,tarea-9.png'
+media_order: 'castor.png,ciervo.png,gato.png,leon.png,mapache.png,oso.png,tigre.png,zorro.png,mensaje-ganaste.png,mensaje-par.png,tarea-2.png,tarea-6.png,tarea-8.png,pygame.png,tarea-9.png,tarea-7.png,zoomemoria.gif'
 published: true
 ---
 
@@ -16,7 +16,7 @@ Para tener una mejor perspectiva y entendimiento de esta biblioteca es fundament
 
 En tal sentido, el juego que programaremos será el conocido memoria, para fines prácticos lo denominaremos **ZOO Memoria** porque usaremos imagenes de animales. Este consiste en un tablero con 16 cuadros en total, de 4 filas y 4 columnas en primera instancia las imágenes están ocultas, pero existen 8 figuras de animales donde cada uno tiene una copia es decir una pareja, el objetivo es encontrar la figura del animal junto a su pareja en la menor cantidad de intentos posibles. Qué mejor que un video para explicar el juego.
 
-
+![ZOOMemoria](zoomemoria.gif?classes=center-block)
 
 Para elaborar el juego de la forma ordenada y gradual para su mejor entendimiento dividiremos todo el proceso de desarrollo en 9 tareas.
 
