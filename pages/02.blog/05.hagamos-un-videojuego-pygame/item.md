@@ -22,7 +22,7 @@ Para elaborar el juego de la forma ordenada y gradual para su mejor entendimient
 
 ## Tarea 1 Configurar el proyecto
 
-Para empezar debemos descargar e instalar Python desde [https://www.python.org/downloads/](https://www.python.org/downloads/) de acuerdo a nuestro sistema operativo. Una vez instalado, se desde la consola de comandos ya podemos instalar pygame usando el administrador de paquetes de python (PIP).
+Para empezar debemos descargar e instalar Python desde [https://www.python.org/downloads/](https://www.python.org/downloads/){:target='\_blank'} de acuerdo a nuestro sistema operativo. Una vez instalado, se desde la consola de comandos ya podemos instalar pygame usando el administrador de paquetes de python (PIP).
 ```sh
 pip install pygame
 ```
@@ -31,11 +31,11 @@ Una vez realizada la instalación, desde el IDE de nuestra preferencia creamos t
 * animal.py
 * config.py
 
-En assets (Puedes descargarlo de [aqui](https://github.com/gonzalohk/PyGame-zoo-memoria/tree/master/assets))
+En assets (Puedes descargarlo de [aqui](https://github.com/gonzalohk/PyGame-zoo-memoria/tree/master/assets){:target='\_blank'})
 * mensaje-par.png (512px, 512px)
 * mensaje-ganaste.png (512px, 512px)
 
-En assets/animals  (Puedes descargarlo de [aqui](https://github.com/gonzalohk/PyGame-zoo-memoria/tree/master/assets))
+En assets/animals  (Puedes descargarlo de [aqui](https://github.com/gonzalohk/PyGame-zoo-memoria/tree/master/assets){:target='\_blank'})
 * leon.png (128px, 128px)
 * ciervo.png (128px, 128px)
 * castor.png (128px, 128px)
@@ -402,11 +402,12 @@ while running:
     pygame.display.flip()
 print('Fin')
 ```
+En este punto la funcionalidad ya casi esta terminada, solo quedará adicionar algunos detalles.
 ![Tarea 8 ZOOMemoria](tarea-8.png?classes=center-block)
 
 
 
-## Tarea 8 Adicionar mensajes y arreglar errores.
+## Tarea 8 Adicionar mensajes y arreglar errores
 Finalmente, adicionamos los mensajes que nos indican que logramos emparejar en cuadro/figura de una animal y el mensaje que indica que ganamos el juego. Asi mis, arreglar cualquier posible error que pudiera existir.
 
 En **app.py** (Version Final)
