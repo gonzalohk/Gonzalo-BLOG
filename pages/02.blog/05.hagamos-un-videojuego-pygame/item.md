@@ -26,33 +26,27 @@ Para empezar debemos descargar e instalar Python desde https://www.python.org/do
 pip install pygame
 ```
 Una vez realizada la instalación, desde el IDE de nuestra preferencia creamos tres archivos  python
-app.js
-animal.js
-config.js
+* app.py
+* animal.py
+* config.py
 
 Así mismo, debemos almacenar las imágenes necesarias que usará nuestro juego por lo que  creamos las carpetas o ficheros denominados.
 
-|  |  |  |  |
+| ZOOMemoria/assets/animals |
 | :---: | :---: | :---: | :---: |
+|  |  |  |  |
 | ![](leon.png)  | ![](ciervo.png) | ![](castor.png) | ![](gato.png) |
 | leon.png (128px, 128px) | ciervo.png (128px, 128px) | castor.png (128px, 128px) | gato.png (128px, 128px) |
 |  |  |  |  |
 | ![](mapache.png) | ![](oso.png) | ![](tigre.png) | ![](zorro.png) |
 | mapache.png (128px, 128px) | oso.png (128px, 128px) | tigre.png (128px, 128px) | zorro.png (128px, 128px)  |
 
-ZOOMemoria/assets
-par.png  (512px , 512px)
-gano.png (512px , 512px)
-
-ZOOMemoria/assets/animals
-
-
-
-
-
-
-
-
+| ZOOMemoria/assets | 
+| :---: | :---: |
+|  |  | 
+| ![](mensaje-par.png)  | ![](mensaje-ganaste.png) |
+| par.png  (512px , 512px) | gano.png (512px , 512px) | 
+|  |  |
 
 Es importante respetar la dimensión de las imágenes para luego hacer fácil la lógica que se agregara en los pasos posteriores.  
 
