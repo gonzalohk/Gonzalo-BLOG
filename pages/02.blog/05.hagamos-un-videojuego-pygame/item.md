@@ -35,7 +35,7 @@ Así mismo, debemos almacenar las imágenes necesarias que usará nuestro juego 
 
 * ZOOMemoria/assets/animals
  
-![](leon.png) ![](ciervo.png) ![](castor.png) ![](gato.png) ![](mapache.png) ![](oso.png) ![](tigre.png) ![](zorro.png)
+![](leon.png?&display=thumbnail) ![](ciervo.png?&display=thumbnail) ![](castor.png) ![](gato.png) ![](mapache.png) ![](oso.png) ![](tigre.png) ![](zorro.png)
 
 *  ZOOMemoria/assets
   
