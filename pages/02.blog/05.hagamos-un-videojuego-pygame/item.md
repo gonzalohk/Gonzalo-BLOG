@@ -26,22 +26,20 @@ Para empezar debemos descargar e instalar Python desde https://www.python.org/do
 ```sh
 pip install pygame
 ```
-Una vez realizada la instalación, desde el IDE de nuestra preferencia creamos tres archivos  python
+Una vez realizada la instalación, desde el IDE de nuestra preferencia creamos tres archivos python y un folder denominado assets para almacenar nuestras imagenes.
 * app.py
 * animal.py
 * config.py
+*  ./assets
 
-Así mismo, debemos almacenar las imágenes necesarias que usará nuestro juego por lo que  creamos las carpetas o ficheros denominados.
-
-* ZOOMemoria/assets/animals
- 
-![](leon.png) ![](ciervo.png) ![](castor.png) ![](gato.png) ![](mapache.png) ![](oso.png) ![](tigre.png) ![](zorro.png)
-
-*  ZOOMemoria/assets
-  
 ![](mensaje-par.png) 
 
 ![](mensaje-ganaste.png)
+
+
+* ./assets/animals
+ 
+![](leon.png) ![](ciervo.png) ![](castor.png) ![](gato.png) ![](mapache.png) ![](oso.png) ![](tigre.png) ![](zorro.png)
 
 Es importante respetar la dimensión de las imágenes para luego hacer fácil la lógica que se agregara en los pasos posteriores.  
 
