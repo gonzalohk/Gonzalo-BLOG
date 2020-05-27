@@ -1,10 +1,10 @@
 ---
 title: 'Hagamos un juego con Python y PyGame'
-media_order: 'castor.png,ciervo.png,gato.png,leon.png,mapache.png,oso.png,tigre.png,zorro.png,mensaje-ganaste.png,mensaje-par.png,tarea-2.png,tarea-6.png,tarea-7.png,tarea-8.png'
+media_order: 'castor.png,ciervo.png,gato.png,leon.png,mapache.png,oso.png,tigre.png,zorro.png,mensaje-ganaste.png,mensaje-par.png,tarea-2.png,tarea-6.png,tarea-7.png,tarea-8.png,pygame.png'
 published: true
 ---
 
-## Pygame
+![PYGAME](pygame.png?classes=center-block)
 
 El desarrollo de juegos puede ser inicialmente algo complejo debido a que se requiere múltiples skills de programación, diseño y narrativa por lo que suele ser acojonante empezar en este mundo. Sin embargo, resulta ser fácil si ya se tienen bases de programación y se utilizan las librerías adecuadas para iniciarse.
 
@@ -46,14 +46,12 @@ Así mismo, debemos almacenar las imágenes necesarias que usará nuestro juego 
 
 | ZOOMemoria/assets | 
 | :---: | :---: |
-|  |  | 
 | ![](mensaje-par.png)  | ![](mensaje-ganaste.png) |
 | par.png  (512px , 512px) | gano.png (512px , 512px) | 
-|  |  |
 
 Es importante respetar la dimensión de las imágenes para luego hacer fácil la lógica que se agregara en los pasos posteriores.  
 
-Tarea 2  Inicializar el Game Loop
+## Tarea 2  Inicializar el Game Loop
 Pygame permite la inicialización y la creación del game loop de una forma sumamente sencilla con unas cuantas líneas de código. 
 En app.py (version 1)
 En este archivo, más adelante se hará refactors y se adicionará la lógica del juego.
