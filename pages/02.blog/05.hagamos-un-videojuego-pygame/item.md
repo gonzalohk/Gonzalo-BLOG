@@ -1,6 +1,6 @@
 ---
 title: 'Hagamos un juego con Python y PyGame'
-media_order: 'castor.png,ciervo.png,gato.png,leon.png,mapache.png,oso.png,tigre.png,zorro.png,mensaje-ganaste.png,mensaje-par.png,tarea-2.png,tarea-6.png,tarea-8.png,pygame.png,tarea-9.png,tarea-7.png,zoomemoria.gif'
+media_order: 'tarea-2.png,tarea-6.png,tarea-8.png,pygame.png,tarea-9.png,tarea-7.png,zoomemoria.gif'
 published: true
 ---
 
@@ -26,16 +26,16 @@ Para empezar debemos descargar e instalar Python desde [https://www.python.org/d
 ```sh
 pip install pygame
 ```
-Una vez realizada la instalación, desde el IDE de nuestra preferencia creamos tres archivos python y un folder denominado assets para almacenar nuestras imagenes.
+Una vez realizada la instalación, desde el IDE de nuestra preferencia creamos tres archivos python y un folder denominado assets para posteriormente almacenar las siguientes imagenes.
 * app.py
 * animal.py
 * config.py
 
-En assets
+En assets (Puedes descargarlo de [aqui](https://github.com/gonzalohk/PyGame-zoo-memoria/tree/master/assets))
 * mensaje-par.png (512px, 512px)
 * mensaje-ganaste.png (512px, 512px)
 
-En assets/animals
+En assets/animals  (Puedes descargarlo de [aqui](https://github.com/gonzalohk/PyGame-zoo-memoria/tree/master/assets))
 * leon.png (128px, 128px)
 * ciervo.png (128px, 128px)
 * castor.png (128px, 128px)
@@ -333,6 +333,7 @@ print('Fin')
 
 ![Tarea 7 ZOOMemoria](tarea-7.png?classes=center-block)
 
+
 ## Tarea 7 Adicionar la lógica de selección de cuadros/figuras en el tablero
 Recordemos que luego de voltear el cuadro/figura en el tablero procedemos escoger uno diferente hasta que se encuentre o empareje la figura con su respectiva copia. En efecto, se requiere implementar dicha verificación para luego descartar dicha figura y su copia del tablero para seguir el mismo procedimiento hasta encontrar todas las parejas.
 
@@ -402,6 +403,7 @@ while running:
 print('Fin')
 ```
 ![Tarea 8 ZOOMemoria](tarea-8.png?classes=center-block)
+
 
 
 ## Tarea 8 Adicionar mensajes y arreglar errores.
@@ -493,6 +495,8 @@ print('Fin')
 
 
 Finalmente terminamos nuestro juego con pygame,  del cual usamos funciones básica para construir nuestra ventana con el fin de dibujar, cargar, dimensionar y refrescar los elementos creados situando la lógica al python estándar que conocemos. 
+
+El codigo completo puede ser descargado de [https://github.com/gonzalohk/PyGame-zoo-memoria](https://github.com/gonzalohk/PyGame-zoo-memoria)
 
 En efecto, se tienen muchas ventajas como un código ínfimo a comparacion de otras bibliotecas o lenguajes de programación usados para el desarrollo de videojuegos, así mismo de su fácil manejo y aprendizaje. No obstante,, se tienen limitaciones comparado con otros entornos más complejos eso está muy claro, pero Pygame nos brinda lo necesario para desarrollar videojuegos aceptables, por lo que no está demás darle una pequeña mirada y seguir experimentando.
 
