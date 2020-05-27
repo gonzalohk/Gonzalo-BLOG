@@ -80,7 +80,7 @@ print('Fin')
 ```
 **_pygame.init_** : Inicializa todos los módulos requeridos por PyGame.
 
-**_Pygame.display.set_caption_** : establece el título de la ventana actual.
+**_pygame.display.set_caption_** : establece el título de la ventana actual.
 
 **_pygame.display.set_mode_** : Inicializar una ventana o pantalla para mostrar de en tamaño determinado .
 
