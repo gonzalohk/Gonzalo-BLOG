@@ -8,14 +8,15 @@ published: true
 
 El desarrollo de juegos puede ser inicialmente algo complejo debido a que se requiere múltiples skills de programación, diseño y narrativa por lo que suele ser acojonante empezar en este mundo. Sin embargo, resulta ser fácil si ya se tienen bases de programación y se utilizan las librerías adecuadas para iniciarse.
 
-**Pygame es un conjunto de módulos Python diseñados para el desarrollo de videojuegos**,  portable y multiplataforma bajo la licencia LGPL. En efecto, permite el desarrollo de juegos en dos dimensiones (2D), fácil de entender y amigable siendo ideal para iniciar con el desarrollo de juegos.
+**Pygame es un conjunto de módulos Python diseñados para el desarrollo de videojuegos** o cualquier otra aplicación multimedia,  portable y multiplataforma bajo la licencia LGPL. En efecto, permite el desarrollo de juegos en dos dimensiones (2D), fácil de entender y amigable siendo ideal para iniciar con el desarrollo de juegos.
 
-## Programando nuestro primer juego con pygame
+## Programando un juego con pygame
 
 Para tener una mejor perspectiva y entendimiento de esta biblioteca es fundamental desarrollar un video juego, por lo que el único prerrequisito es conocer python. 
 
-En tal sentido, el juego que programaremos será el conocido memoria, para fines prácticos lo denominaremos ZOO Memoria porque usaremos imagenes de animales. Este consiste en un tablero con 16 cuadros en total, de 4 filas y 4 columnas en primera instancia las imágenes están ocultas, pero existen 8 figuras de animales donde cada uno tiene una copia es decir una pareja, el objetivo es encontrar la figura del animal junto a su pareja en la menor cantidad de intentos posibles. Qué mejor que un video para explicar el juego.
- 
+En tal sentido, el juego que programaremos será el conocido memoria, para fines prácticos lo denominaremos **ZOO Memoria** porque usaremos imagenes de animales. Este consiste en un tablero con 16 cuadros en total, de 4 filas y 4 columnas en primera instancia las imágenes están ocultas, pero existen 8 figuras de animales donde cada uno tiene una copia es decir una pareja, el objetivo es encontrar la figura del animal junto a su pareja en la menor cantidad de intentos posibles. Qué mejor que un video para explicar el juego.
+
+
 
 Para elaborar el juego de la forma ordenada y gradual para su mejor entendimiento dividiremos todo el proceso de desarrollo en 9 tareas.
 
@@ -29,24 +30,18 @@ Una vez realizada la instalación, desde el IDE de nuestra preferencia creamos t
 * app.py
 * animal.py
 * config.py
-* assets
-* animals
 
 Así mismo, debemos almacenar las imágenes necesarias que usará nuestro juego por lo que  creamos las carpetas o ficheros denominados.
 
-| ZOOMemoria/assets/animals |
-| :---: | :---: | :---: | :---: |
-|  |  |  |  |
-| ![](leon.png)  | ![](ciervo.png) | ![](castor.png) | ![](gato.png) |
-| leon.png (128px, 128px) | ciervo.png (128px, 128px) | castor.png (128px, 128px) | gato.png (128px, 128px) |
-|  |  |  |  |
-| ![](mapache.png) | ![](oso.png) | ![](tigre.png) | ![](zorro.png) |
+* ZOOMemoria/assets/animals
+![](leon.png) ![](ciervo.png) ![](castor.png) ![](gato.png) ![](mapache.png) ![](oso.png) ![](tigre.png) ![](zorro.png) |
+
+leon.png (128px, 128px) | ciervo.png (128px, 128px) | castor.png (128px, 128px) | gato.png (128px, 128px) |
 | mapache.png (128px, 128px) | oso.png (128px, 128px) | tigre.png (128px, 128px) | zorro.png (128px, 128px)  |
 
+*  ZOOMemoria/assets
+![](mensaje-par.png) ![](mensaje-ganaste.png)
 
-| ZOOMemoria/assets | 
-| :---: | :---: |
-| ![](mensaje-par.png)  | ![](mensaje-ganaste.png) |
 | par.png  (512px , 512px) | gano.png (512px , 512px) | 
 
 Es importante respetar la dimensión de las imágenes para luego hacer fácil la lógica que se agregara en los pasos posteriores.  
