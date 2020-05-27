@@ -31,9 +31,11 @@ animal.js
 config.js
 
 Así mismo, debemos almacenar las imágenes necesarias que usará nuestro juego por lo que  creamos las carpetas o ficheros denominados.
-Solarized dark             |  Solarized Ocean
-:-------------------------:|:-------------------------:
- ![](castor.png) | ![](castor.png)
+
+| --- | --- | --- | --- |
+| ![](leon.png)  | ![](ciervo.png) | ![](castor.png) | ![](gato.png) |
+| ![](mapache.png) | ![](oso.png) | ![](tigre.png) | ![](zorro.png) |
+
 
 ZOOMemoria/assets
 par.png  (512px , 512px)
@@ -48,23 +50,6 @@ mapache.png (128px, 128px)
 oso.png (128px, 128px)
 tigre.png (128px, 128px)
 zorro.png (128px, 128px)
-
-<table>
-  <tbody>
-    <tr>
-      <td><img src="leon.png"  alt="leon.png"</td>
-      <td>![](gato.png <b>sdd</b></td>
-      <td>![](ciervo.png)</td>
-      <td>![](castor.png)</td>
-    </tr>
-    <tr>
-      <td>![](mapache.png)</td>
-      <td>![](oso.png)</td>
-      <td>![](tigre.png)</td>
-      <td>![](zorro.png)</td>
-    </tr>    
-  </tbody>
-</table>
 
 Es importante respetar la dimensión de las imágenes para luego hacer fácil la lógica que se agregara en los pasos posteriores.  
 
