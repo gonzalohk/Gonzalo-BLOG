@@ -22,7 +22,7 @@ Para elaborar el juego de la forma ordenada y gradual para su mejor entendimient
 
 ## Tarea 1 Configurar el proyecto
 
-Para empezar debemos descargar e instalar Python desde [https://www.python.org/downloads/](https://www.python.org/downloads/){:target='\_blank'} de acuerdo a nuestro sistema operativo. Una vez instalado, se desde la consola de comandos ya podemos instalar pygame usando el administrador de paquetes de python (PIP).
+Para empezar debemos descargar e instalar Python desde [https://www.python.org/downloads/](https://www.python.org/downloads/) de acuerdo a nuestro sistema operativo. Una vez instalado, se desde la consola de comandos ya podemos instalar pygame usando el administrador de paquetes de python (PIP).
 ```sh
 pip install pygame
 ```
@@ -31,11 +31,11 @@ Una vez realizada la instalación, desde el IDE de nuestra preferencia creamos t
 * animal.py
 * config.py
 
-En assets (Puedes descargarlo de [aqui](https://github.com/gonzalohk/PyGame-zoo-memoria/tree/master/assets){:target='\_blank'})
+En assets (Puedes descargarlo de [aqui](https://github.com/gonzalohk/PyGame-zoo-memoria/tree/master/assets))
 * mensaje-par.png (512px, 512px)
 * mensaje-ganaste.png (512px, 512px)
 
-En assets/animals  (Puedes descargarlo de [aqui](https://github.com/gonzalohk/PyGame-zoo-memoria/tree/master/assets){:target='\_blank'})
+En assets/animals  (Puedes descargarlo de [aqui](https://github.com/gonzalohk/PyGame-zoo-memoria/tree/master/assets))
 * leon.png (128px, 128px)
 * ciervo.png (128px, 128px)
 * castor.png (128px, 128px)
