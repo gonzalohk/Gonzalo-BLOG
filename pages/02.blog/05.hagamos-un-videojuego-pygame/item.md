@@ -1,7 +1,7 @@
 ---
 title: 'Hagamos un juego con Python y PyGame'
 media_order: 'castor.png,ciervo.png,gato.png,leon.png,mapache.png,oso.png,tigre.png,zorro.png,mensaje-ganaste.png,mensaje-par.png,tarea-2.png,tarea-6.png,tarea-7.png,tarea-8.png'
-published: false
+published: true
 ---
 
 ## Pygame
@@ -29,6 +29,8 @@ Una vez realizada la instalación, desde el IDE de nuestra preferencia creamos t
 * app.py
 * animal.py
 * config.py
+* assets
+* animals
 
 Así mismo, debemos almacenar las imágenes necesarias que usará nuestro juego por lo que  creamos las carpetas o ficheros denominados.
 
@@ -40,6 +42,7 @@ Así mismo, debemos almacenar las imágenes necesarias que usará nuestro juego 
 |  |  |  |  |
 | ![](mapache.png) | ![](oso.png) | ![](tigre.png) | ![](zorro.png) |
 | mapache.png (128px, 128px) | oso.png (128px, 128px) | tigre.png (128px, 128px) | zorro.png (128px, 128px)  |
+
 
 | ZOOMemoria/assets | 
 | :---: | :---: |
@@ -85,7 +88,7 @@ while running:
 	# En caso de terminar el GAME LOOP mostramos un mensaje en la consola
 print('Fin')
 ```
-![Inicializando el GameLoop](tarea-2.png)
+![Inicializando el GameLoop](tarea-2.png?classes=center-block)
 
 pygame.init:- Inicializa todos los módulos requeridos por PyGame.
 
@@ -274,6 +277,8 @@ screen.blit : Dibuja una imagen sobre otra, se puede especificar la posición de
 
 pygame.display.flip():- Actualiza o refresca toda la pantalla, se debe llamar luego de dibujar o adicionar nuevos elementos para visualizar los cambios.
 
+![Mostrar animales en el tablero](tarea-6.png?classes=center-block)
+
 ## Tareas 7 Programar el manejo de eventos
 En en inicio se programó el  manejo de eventos del teclado para salir del vide juego cuando se presione la tecla ESC sin mucha complicación, Se debe realizar de igual forma en volteo de cuadros/figuras de los animales debido a que en una primera instancia estos muestra en cuadro en color plomo que debe ser volteado para descubrir la imagen que tienen. 
 
@@ -332,11 +337,11 @@ print('Fin')
 ```
 pygame.mouse.get_pos: obtiene la posición X e Y del cursor del mouse. La posición es relativa a la esquina superior izquierda de la pantalla.
 
+![](tarea-7.png?classes=center-block)
+
 ## Tarea 8 Adicionar la lógica de selección de cuadros/figuras en el tablero
 Recordemos que luego de voltear el cuadro/figura en el tablero procedemos escoger uno diferente hasta que se encuentre o empareje la figura con su respectiva copia. En efecto, se requiere implementar dicha verificación para luego descartar dicha figura y su copia del tablero para seguir el mismo procedimiento hasta encontrar todas las parejas.
 En app.py (version 4)
-
-
 ```js
 import pygame
 import config
@@ -401,6 +406,8 @@ while running:
     pygame.display.flip()
 print('Fin')
 ```
+![](tarea-8.png?classes=center-block)
+
 ## Tarea 9 Adicionar mensajes y arreglar errores.
 Finalmente, adicionamos los mensajes que nos indican que logramos emparejar en cuadro/figura de una animal y el mensaje que indica que ganamos el juego. Asi mis, arreglar cualquier posible error que pudiera existir.
 
