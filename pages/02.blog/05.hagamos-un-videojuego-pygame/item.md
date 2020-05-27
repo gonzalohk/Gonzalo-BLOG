@@ -2,6 +2,17 @@
 title: 'Hagamos un juego con Python y PyGame'
 media_order: 'tarea-2.png,tarea-6.png,tarea-8.png,pygame.png,tarea-9.png,tarea-7.png,zoomemoria.gif'
 published: true
+date: '27-05-2020 19:21'
+publish_date: '27-05-2020 19:21'
+metadata:
+    keywords: 'python, pygame, game 2d, python for gamers'
+taxonomy:
+    category:
+        - Python
+    tag:
+        - Python
+        - PyGame
+        - 'Game Development'
 ---
 
 ![PYGAME](pygame.png?classes=center-block)
