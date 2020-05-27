@@ -47,7 +47,7 @@ Es importante respetar la dimensión de las imágenes para luego hacer fácil la
 Pygame permite la inicialización y la creación del game loop de una forma sumamente sencilla con unas cuantas líneas de código. 
 
 En **app.py** (version 1)
-```js
+```python
 import pygame
 
     # Inicializar Pygame
