@@ -1,6 +1,6 @@
 ---
 title: 'Hagamos un juego con Python y PyGame'
-media_order: 'castor.png,ciervo.png,gato.png,leon.png,mapache.png,oso.png,tigre.png,zorro.png,mensaje-ganaste.png,mensaje-par.png,tarea-2.png,tarea-6.png,tarea-7.png,tarea-8.png,pygame.png,tarea-9.png'
+media_order: 'castor.png,ciervo.png,gato.png,leon.png,mapache.png,oso.png,tigre.png,zorro.png,mensaje-ganaste.png,mensaje-par.png,tarea-2.png,tarea-6.png,tarea-8.png,pygame.png,tarea-9.png'
 published: true
 ---
 
@@ -22,7 +22,7 @@ Para elaborar el juego de la forma ordenada y gradual para su mejor entendimient
 
 ## Tarea 1 Configurar el proyecto
 
-Para empezar debemos descargar e instalar Python desde https://www.python.org/downloads/ de acuerdo a nuestro sistema operativo. Una vez instalado, se desde la consola de comandos ya podemos instalar pygame usando el administrador de paquetes de python (PIP).
+Para empezar debemos descargar e instalar Python desde [https://www.python.org/downloads/](https://www.python.org/downloads/) de acuerdo a nuestro sistema operativo. Una vez instalado, se desde la consola de comandos ya podemos instalar pygame usando el administrador de paquetes de python (PIP).
 ```sh
 pip install pygame
 ```
