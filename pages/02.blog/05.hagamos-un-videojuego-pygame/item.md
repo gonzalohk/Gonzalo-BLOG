@@ -31,11 +31,11 @@ Una vez realizada la instalación, desde el IDE de nuestra preferencia creamos t
 * animal.py
 * config.py
 
-En assets (Puedes descargarlo de [aqui](https://github.com/gonzalohk/PyGame-zoo-memoria/tree/master/assets))
+En assets (Puedes descargarlo [aqui](https://github.com/gonzalohk/PyGame-zoo-memoria/tree/master/assets))
 * mensaje-par.png (512px, 512px)
 * mensaje-ganaste.png (512px, 512px)
 
-En assets/animals  (Puedes descargarlo de [aqui](https://github.com/gonzalohk/PyGame-zoo-memoria/tree/master/assets))
+En assets/animals  (Puedes descargarlo [aqui](https://github.com/gonzalohk/PyGame-zoo-memoria/tree/master/assets))
 * leon.png (128px, 128px)
 * ciervo.png (128px, 128px)
 * castor.png (128px, 128px)
