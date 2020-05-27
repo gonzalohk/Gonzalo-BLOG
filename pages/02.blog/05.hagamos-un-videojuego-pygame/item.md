@@ -34,15 +34,12 @@ Una vez realizada la instalación, desde el IDE de nuestra preferencia creamos t
 Así mismo, debemos almacenar las imágenes necesarias que usará nuestro juego por lo que  creamos las carpetas o ficheros denominados.
 
 * ZOOMemoria/assets/animals
-![](leon.png) ![](ciervo.png) ![](castor.png) ![](gato.png) ![](mapache.png) ![](oso.png) ![](tigre.png) ![](zorro.png) |
-
-leon.png (128px, 128px) | ciervo.png (128px, 128px) | castor.png (128px, 128px) | gato.png (128px, 128px) |
-| mapache.png (128px, 128px) | oso.png (128px, 128px) | tigre.png (128px, 128px) | zorro.png (128px, 128px)  |
+* 
+![](leon.png) ![](ciervo.png) ![](castor.png) ![](gato.png) ![](mapache.png) ![](oso.png) ![](tigre.png) ![](zorro.png)
 
 *  ZOOMemoria/assets
+*  
 ![](mensaje-par.png) ![](mensaje-ganaste.png)
-
-| par.png  (512px , 512px) | gano.png (512px , 512px) | 
 
 Es importante respetar la dimensión de las imágenes para luego hacer fácil la lógica que se agregara en los pasos posteriores.  
 
@@ -81,17 +78,17 @@ while running:
 	# En caso de terminar el GAME LOOP mostramos un mensaje en la consola
 print('Fin')
 ```
+**_pygame.init_**:- Inicializa todos los módulos requeridos por PyGame.
+
+**_Pygame.display.set_caption_**: establece el título de la ventana actual.
+
+**_pygame.display.set_mode_**: Inicializar una ventana o pantalla para mostrar de en tamaño determinado .
+
+**_pygame.event.get_**: Obtiene los eventos de la cola
+
+**_pygame.quit_**:  se envía cuando el usuario ha solicitado que se cierre el programa
+
 ![Inicializando el GameLoop](tarea-2.png?classes=center-block)
-
-pygame.init:- Inicializa todos los módulos requeridos por PyGame.
-
-Pygame.display.set_caption: establece el título de la ventana actual.
-
-pygame.display.set_mode: Inicializar una ventana o pantalla para mostrar de en tamaño determinado .
-
-pygame.event.get: Obtiene los eventos de la cola
-
-pygame.quit:  se envía cuando el usuario ha solicitado que se cierre el programa
 
 
 ## Tarea 3 Establecer el archivo config.py
