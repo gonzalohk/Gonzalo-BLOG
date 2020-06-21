@@ -321,4 +321,8 @@ Finalmente, clonamos la máquina virtual creando una nueva imagen .qcow2
 ```sh
 virt-clone --original vm-debian10--name vm-debian10-template --auto-clone
 ```
-El modulo kvm junto a QEMU y libvirt permite crear y gestionar máquinas virtuales de una manera muy eficiente con una performance que se compararia a una nativa. En tal sentido,  
+En los ejemplos mencionado se hizo uso de la siguiente arquitectura.
+
+![KVM sobre QEMU y libvirt](qemu.png?classes=center-block)
+
+El módulo kvm junto a QEMU y libvirt permite crear y gestionar máquinas virtuales de una manera muy eficiente con una performance que se compararia a una ejecución nativa. En tal sentido, la facilidad que se tiene para crear, instalar, acoplar, desacoplar y  gestionar máquinas virtuales permiten hacer implementacion de servicios de una manera más óptima capaz de funcionar en entornos de producción.
