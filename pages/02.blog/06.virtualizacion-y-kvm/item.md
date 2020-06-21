@@ -1,5 +1,6 @@
 ---
 title: 'Virtualización y KVM'
+media_order: 'kvm-logo.png,arquitectura-kvm.png,libvirt.png,qemu.png'
 date: '10-06-2020 10:34'
 publish_date: '10-06-2020 10:34'
 metadata:
@@ -12,7 +13,7 @@ taxonomy:
         - Virtualizacion
 ---
 
-
+![KVM](kvm-logo.png?classes=center-block)
 Existen diversas alternativas para virtualizar sistemas operativos como VMware, VirtualBox, Hiper-V. Sin embargo, GNU/Linux va en paso mas adelante debido a que ofrece una alternativa nativa que se denomina KVM que con las herramientas adecuadas como  QEMU y Libvirt nos permiten virtualizar sistemas operativos de manera sencilla y con en alto performance.
 
 ## ¿Qué es KVM?
@@ -31,6 +32,7 @@ Cuando se usa con KVM, QEMU puede virtualizar sistemas guest x86, PowerPC y S390
 
 ## ¿Que es Libvirt?
 Conocida como libvirt virtualization API, es un conjunto de herramientas para interactuar con las capacidades de virtualización de las versiones recientes de Linux y otros sistemas operativos. En efecto, Libvirt soporta un gran conjunto de tecnologías entre las que se destacan:
+
 * KVM/QEMU
 * Xen (en Linux y Solaris)
 * LXC
@@ -57,23 +59,23 @@ En caso de tener un procesador AMD ejecutamos el comando.
 grep svm /proc/cpuinfo
 ```
 O simplemente ejecutamos 
-```
+```sh
 egrep -c '(svm|vmx)' /proc/cpuinfo
 ```
 Es muy probable que nuestro hardware si sea compatible pero no haya sido habilitada esta característica desde el BIOS.
 
 ## Instalación 
 En caso de ser compatible, se deben instalar los siguientes paquetes para crear y manejar nuestras máquinas virtuales.
-``` 
+```sh 
 sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-viewer virt-manager
 ```
 Habilitamos libvirt para que se ejecute desde el arranque
-```
+```sh
 systemctl enable libvirtd
 ```
 Validando la instalación 
 Los siguientes comando 
-```
+```sh
 kvm-ok
 virt-host-validate
 virsh nodeinfo
@@ -81,18 +83,20 @@ virsh nodeinfo
 ## Instalación 
 Creación de Máquinas Virtuales
 Lo primero que hacemos es unir nuestro usuario al grupo KVM para no tener problemas con las tools que instalaremos y las dependencias.
-```
+```sh
 adduser gonzalohk libvirtd
 adduser gonzalohk kvm
 ```
 Para iniciar las pruebas podemos utilizar imágenes en formato QEMU Copy On Write (qcow2). Para ello, se puede descargar Debian en la versión 10 desde el siguiente enlace para probar más adelante.
+
 * https://cloud.debian.org/images/cloud/buster/20200511-260/debian-10-nocloud-amd64-20200511-260.qcow2
+
 Una vez descargada la imagen base esta puede ser copiada y renombrada muchas veces dependiendo a la cantidad de máquinas virtuales que sean necesarias. En este ejemplo crearemos se creará una máquinas virtual Debian 10 por lo que copiamos y renombramos la imagen original.
-```   
+```sh   
 cp /home/gonzalohk/Downloads/debian-10-nocloud-amd64-20200511-260.qcow2 /home/gonzalohk/Documents/vm/vm-debian10.qcow2
 ```
 Para la instalación de una máquina virtual utilizamos virt donde nombramos a la máquina virtual,  asignamos la cantidad de memoria, vcpus, introducimos la ruta y especificamos el os-variant. 
-```
+```sh
 virt-install --name vm-debian10 \
 --memory 2048 \
 --vcpus=1 \
@@ -104,11 +108,11 @@ virt-install --name vm-debian10 \
 En cuestión de segundos ya se tiene la máquina virtual lista para ser usada.
 
 Para obtener el os-variant correcto podemos utilizar el siguiente comando para identificarlo.
-```
+```sh
 osinfo-query os
 ```
 Es posible obtener información de la imagen con el siguiente comando.
-```
+```sh
 qemu-img info vm-debian10.qcow2
 ```
 Para listar las máquinas virtuales podemos ejecutar.
