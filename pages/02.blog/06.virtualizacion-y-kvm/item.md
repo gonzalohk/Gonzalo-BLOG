@@ -48,6 +48,7 @@ Conocida como libvirt virtualization API, es un conjunto de herramientas para in
 libvirt permite hacer la administración de máquinas virtuales incluso de forma remota, manejando redes y almacenamiento con un API cliente portable para Linux, Solaris y Windows.
 
 Tiene gran variedad de aplicaciones donde se destacan: virsh y virt-manager.
+![Virtualizacion KVM,QEMU y Libvirt](arquitectura-kvm.png?classes=center-block)
 
 ## Precondiciones
 En en primera instancia se debe verificar si nuestro hardware soporta virtualización por lo que  determinamos si nuestra CPU es compatible con KVM. Para ello ejecutamos el comando
@@ -80,7 +81,7 @@ kvm-ok
 virt-host-validate
 virsh nodeinfo
 ```
-## Instalación 
+## Creación de maquinas virtuales
 Creación de Máquinas Virtuales
 Lo primero que hacemos es unir nuestro usuario al grupo KVM para no tener problemas con las tools que instalaremos y las dependencias.
 ```sh
@@ -132,7 +133,8 @@ También apagarlo si es que fuera necesario.
 virsh shutdown vm-debian10
 ```
 Para ingresar o conectarnos a la máquina virtual antes de instalar algún servicio ssh o similar. En un inicio podemos acceder con el siguiente comando utilizando el viewer. 
-```virt-viewer vm-debian10
+```
+virt-viewer vm-debian10
 ```
 Adicionalmente podemos conectarnos directamente a la consola.
 ```
