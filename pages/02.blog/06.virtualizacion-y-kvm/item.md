@@ -1,5 +1,5 @@
 ---
-title: 'Virtualización y KVM'
+title: 'Virtualización con KVM'
 media_order: 'arquitectura-kvm.png,qemu.png,kvm-logo.png'
 date: '10-06-2020 10:34'
 publish_date: '10-06-2020 10:34'
