@@ -1,6 +1,6 @@
 ---
 title: 'Virtualización y KVM'
-media_order: 'arquitectura-kvm.png,libvirt.png,qemu.png'
+media_order: 'arquitectura-kvm.png,qemu.png,kvm-logo.png'
 date: '10-06-2020 10:34'
 publish_date: '10-06-2020 10:34'
 metadata:
@@ -18,6 +18,7 @@ Existen diversas alternativas para virtualizar sistemas operativos como VMware, 
 
 
 ![Virtualizacion KVM,QEMU y Libvirt](arquitectura-kvm.png?classes=center-block)
+
 ## ¿Qué es KVM?
 
 KVM (Kernel-based Virtual Machine) es en módulo del kernel de Linux que permite utilizar características de virtualización por hardware ofrecidas por diferentes procesadores. KVM puede convertir a Linux en un hipervisor que permite que una máquina de host ejecute entornos virtuales múltiples y aislados llamados máquinas virtuales (VM) o huéspedes.
@@ -48,7 +49,10 @@ Conocida como libvirt virtualization API, es un conjunto de herramientas para in
 * Almacenamiento en discos IDE/SCSI/USB, FibreChannel, LVM, iSCSI y NFS
 
 libvirt permite hacer la administración de máquinas virtuales incluso de forma remota, manejando redes y almacenamiento con un API cliente portable para Linux, Solaris y Windows.
+
+
 ![Libvirt](libvirt.png?classes=center-block)
+
 
 Tiene gran variedad de aplicaciones donde se destacan: virsh y virt-manager.
 
