@@ -60,47 +60,46 @@ Para tener un concepto mucho mas claro de esta herramienta, esta es capaz de ges
 Tiene gran variedad de aplicaciones o toold donde se destacan **virsh** y **virt-manager**.
 
 ## Precondiciones
-En en primera instancia se debe verificar si nuestro hardware soporta virtualización por lo que determinamos si nuestra CPU es compatible con KVM. Para ello ejecutamos el comando
+En una primera instancia se debe verificar si nuestro hardware soporta virtualización es decir si nuestra CPU es compatible con KVM. Para ello ejecutamos el comando
 ```sh
 egrep -c '(svm|vmx)' /proc/cpuinfo
 ```
 svm hace referencia a procesadores AMD y a vmx a procesadores intel.
 
-En caso de no tener resultados, se debe verificar que las extensiones de virtualización esten habilitados en el BIOS. En efecto, las configuraciones de BIOS para Intel® VT o AMD-V suelen estar en los menús Chipset o Procesador.
-
+En caso de no tener resultados, se debe verificar que las extensiones de virtualización esten habilitados en el BIOS. 
+En efecto, las configuraciones de BIOS para Intel® VT o AMD-V suelen estar en los menús Chipset o Procesador.
 
 ## Instalación 
-En caso de ser compatible, se deben instalar los siguientes paquetes para crear y manejar nuestras máquinas virtuales.
+En caso de ser compatible, se deben instalar los siguientes paquetes para crear y gestionar nuestras máquinas virtuales.
 ```sh 
 sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-viewer virt-manager
 ```
-Habilitamos libvirt para que se ejecute desde el arranque
+Habilitamos libvirt para que se ejecute desde el arranque.
 ```sh
 systemctl enable libvirtd
 ```
-Validando la instalación 
-Los siguientes comando 
+La validación de la instalación se puede realizar con los siguientes comando 
 ```sh
 kvm-ok
 virt-host-validate
 virsh nodeinfo
 ```
 ## Creación de maquinas virtuales
-Creación de Máquinas Virtuales
-Lo primero que hacemos es unir nuestro usuario al grupo KVM para no tener problemas con las tools que instalaremos y las dependencias.
+La primera acción a realizar es unir nuestro usuario al grupo libvirt y kvm para no tener problemas con las tools que instalaremos y las dependencias.
 ```sh
 adduser gonzalohk libvirtd
 adduser gonzalohk kvm
 ```
-Para iniciar las pruebas podemos utilizar imágenes en formato QEMU Copy On Write (qcow2). Para ello, se puede descargar Debian en la versión 10 desde el siguiente enlace para probar más adelante.
+Para iniciar las pruebas podemos utilizar imágenes en formato _QEMU Copy On Write_ .qcow2
+Para ello, se puede descargar Debian en la versión 10 desde el siguiente enlace para probar más adelante.
 
-* https://cloud.debian.org/images/cloud/buster/20200511-260/debian-10-nocloud-amd64-20200511-260.qcow2
+* [https://cloud.debian.org/images/cloud/buster/20200511-260/debian-10-nocloud-amd64-20200511-260.qcow2](https://cloud.debian.org/images/cloud/buster/20200511-260/debian-10-nocloud-amd64-20200511-260.qcow2)
 
-Una vez descargada la imagen base esta puede ser copiada y renombrada muchas veces dependiendo a la cantidad de máquinas virtuales que sean necesarias. En este ejemplo crearemos se creará una máquinas virtual Debian 10 por lo que copiamos y renombramos la imagen original.
+Una vez descargada la imagen base esta puede ser copiada y renombrada muchas veces dependiendo a la cantidad de máquinas virtuales que sean necesarias. En este ejemplo se creará una máquinas virtual Debian 10 por lo que copiamos y renombramos la imagen original.
 ```sh   
 cp /home/gonzalohk/Downloads/debian-10-nocloud-amd64-20200511-260.qcow2 /home/gonzalohk/Documents/vm/vm-debian10.qcow2
 ```
-Para la instalación de una máquina virtual utilizamos virt donde nombramos a la máquina virtual,  asignamos la cantidad de memoria, vcpus, introducimos la ruta y especificamos el os-variant. 
+Para la instalación de una máquina virtual utilizamos virt donde nombramos a la máquina virtual,  asignamos la cantidad de memoria, vcpus, introducimos la ruta de la imagen y especificamos el os-variant. 
 ```sh
 virt-install --name vm-debian10 \
 --memory 2048 \
@@ -124,23 +123,24 @@ Para listar las máquinas virtuales podemos ejecutar.
 ```sh
 virsh list –all
 ```
-Lo primero que hacemos es asignar una contraseña al usuario root y quitamos características cloud que no son necesarias en este ejemplo.
+Seguidamente se procede a establecer una contraseña al usuario root y quitamos características cloud que no son necesarias en este ejemplo.
 ```sh
 virt-customize -a vm-debian10.qcow2 --root-password password:h45er2$ --uninstall cloud-init
 ```
-Acceso 
+## Acceso 
 Una vez instalada la máquina virtual se debe iniciar la misma con el siguiente comando. 
+```sh
 virsh start vm-debian10
-
-También apagarlo si es que fuera necesario.
+```
+En caso de tener que apagar o detener la maquina virtual se puede ejecutar.
 ```sh
 virsh shutdown vm-debian10
 ```
-Para ingresar o conectarnos a la máquina virtual antes de instalar algún servicio ssh o similar. En un inicio podemos acceder con el siguiente comando utilizando el viewer. 
+Para ingresar o conectarnos a la máquina virtual antes de instalar algún servicio ssh o similar en un inicio podemos acceder con el siguiente comando utilizando el viewer. 
 ```sh
 virt-viewer vm-debian10
 ```
-Adicionalmente podemos conectarnos directamente a la consola.
+Adicionalmente tambien podemos conectarnos directamente a la consola.
 ```sh
 virsh console vm-debian10
 ```
