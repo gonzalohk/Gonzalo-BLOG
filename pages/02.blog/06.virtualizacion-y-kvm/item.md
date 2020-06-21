@@ -56,7 +56,7 @@ En en primera instancia se debe verificar si nuestro hardware soporta virtualiza
 grep vmx /proc/cpuinfo
 ````
 En caso de tener un procesador AMD ejecutamos el comando.
-```bash
+```sh
 grep svm /proc/cpuinfo
 ```
 O simplemente ejecutamos 
@@ -117,11 +117,11 @@ Es posible obtener información de la imagen con el siguiente comando.
 qemu-img info vm-debian10.qcow2
 ```
 Para listar las máquinas virtuales podemos ejecutar.
-```
+```sh
 virsh list –all
 ```
 Lo primero que hacemos es asignar una contraseña al usuario root y quitamos características cloud que no son necesarias en este ejemplo.
-```
+```sh
 virt-customize -a vm-debian10.qcow2 --root-password password:h45er2$ --uninstall cloud-init
 ```
 Acceso 
@@ -129,35 +129,35 @@ Una vez instalada la máquina virtual se debe iniciar la misma con el siguiente 
 virsh start vm-debian10
 
 También apagarlo si es que fuera necesario.
-```
+```sh
 virsh shutdown vm-debian10
 ```
 Para ingresar o conectarnos a la máquina virtual antes de instalar algún servicio ssh o similar. En un inicio podemos acceder con el siguiente comando utilizando el viewer. 
-```
+```sh
 virt-viewer vm-debian10
 ```
 Adicionalmente podemos conectarnos directamente a la consola.
-```
+```sh
 virsh console vm-debian10
 ```
 En ambos casos es posible realizar todas la operaciones que se harían en debian real como instalar paquete, configurar servicios, manipular ficheros, etc.
 
 ## Network
 Para listar la redes disponibles se puede utilizar el siguiente comando.
-```
+```sh
 virsh net-list --all
 ```
 Por defecto se crea en archivo xml denominado default.xml en /etc/libvirt/qemu/networks/ en el mismo folder se pueden adicionar más redes creando otros archivos xml. 
 
 Para crear nuevas redes podemos copiar y modificar el default.xml, una forma de hacerlo es con los siguientes comandos.
-```
+```sh
 virsh net-dumpxml default > dev-network.xml
 nano dev-network.xml
 ```
 Ahora se puede configurar la nueva red, para ello debemos insertar el nombre, definir el bridge y establecer el segmento de red al cual representa. Es necesario borrar el uuid y el mac address que fueron obtenidos del archivo original.
 
 Esta es en red isolate.
-```
+```xml
 <network>
 <name>dev-network</name>
 <bridge name='virbr1' stp='on' delay='0'/>
@@ -170,7 +170,7 @@ Esta es en red isolate.
 </network>
 ```
 En caso de necesitar en red NAT se debe especificar el forward mode de la siguiente manera.
-```
+```xml
 <network connections='1'>
 <name>dev-nat-network</name>
 <forward mode='nat'>
@@ -187,20 +187,19 @@ En caso de necesitar en red NAT se debe especificar el forward mode de la siguie
 </network>
 ```
 Una vez que el archivo xml fue creado, es necesario definir la red con el comando siguiente.
-```
+```sh
 virsh net-define dev-network.xml
 ```
-
 Se debe iniciar la red luego de definirla
-```
+```sh
 virsh net-start dev-network
 ```
 También se puede establecer que la red se autoinicie la siguiente vez de forma automática.
-```
+```sh
 virsh net-autostart dev-network
 ```
 La red ya se encuentra definida, pero debe ser asociada o acoplada a una máquina virtual. Esto es posible utilizando el siguiente comando enviando como parámetro el nombre de la máquina virtual como dominio, red virtual y para fines prácticos seleccionado en modelo virtio. Incluso es posible hacerlo en caliente con el parámetro --live.
-```
+```sh
 sudo virsh attach-interface \
 --domain vm-debian10 \
 --source dev-network \
@@ -210,7 +209,7 @@ sudo virsh attach-interface \
 --live
 ```
 De la misma forma es posible desasociar o desacoplar la interfaz creada de la máquina virtual, enviando los parámetros que identifican a la máquina virtual y mac address de la interfaz virtual.
-```
+```sh
 sudo virsh detach-interface \
 --domain vm-debian10 \
 --type network \
@@ -220,41 +219,41 @@ sudo virsh detach-interface \
 ```
 ## Storage
 Es posible añadir o acoplar unidades de disco virtuales de forma muy sencilla. Para el ejemplo se creará en disco virtual de 2Gb con el siguiente comando.
-```
+```sh
 dd if=/dev/zero of=/home/gonzalohk/Documents/vm/vm-debian10-disk1.img bs=1G count=2
 ```
 Para ver los detalles del disco creado y verificar la integridad podemos hacer uso de los comandos.
-```
+```sh
 qemu-img info vm-debian10-disk1.img
 qemu-img check vm-debian10-disk1.img
 ```
 El acoplar en disco a una máquina virtual resulta sencillo debido a que solo se especifica la máquina virtual, la ruta del disco y su identificador. También es posible hacerlo en caliente. 
-```
+```sh
 virsh attach-disk vm-debian10 home/gonzalohk/Documents/vm/vm-debian10-disk1.img vdb --config --live
 ```
 El desacople se realiza de forma similar.
-```
+```sh
 virsh detach-disk vm-debian10 /home/gonzalohk/Documents/vm/vm-debian10-disk1.img --config --live
 ```
 Anteriormente se insertó en disco nuevo que necesita ser particionado, formateado y montado. Para ello, dentro de la máquina virtual ejecutamos los siguientes comandos de la siguiente manera.
-```
+```sh
 lsblk -a
 fdisk /dev/vdb
 mkfs.ext3 /dev/vdb1
 mount -t ext3 /dev/vdb1 /home/projects
 ```
 En caso de querer desmontar el disco es necesario ejecutar en la máquina virtual.
-```
+```sh
 umount /dev/vdb1
 ```
 En aspecto interesante que solo es posible hacer en virtualización es el acople del mismo disco a dos o más máquinas virtuales simultáneamente, esto es posible con el parámetro –mode shareable 
 
 Otra forma de acoplar el disco es editando directamente el archivo de configuración de la máquina virtual. También permite adicionar una nueva bahia PCI en el caso de que ya no se tengan disponibles.
-```
+```sh
 virsh edit vm-debian10
 ```
 Se adiciona
-```
+```xml
 <disk type='file' device='disk'>
  <driver name='qemu' type='raw'/>
  <source file=' /home/gonzalohk/Documents/vm/vm-debian10-disk1.img'/>
@@ -266,56 +265,56 @@ Se adiciona
 En aspecto importante de la virtualización es el poder que se tiene de crear snapshots de forma sencilla y constante en caso de tener que revertir cambios,
 
 Para poder listar los snapshots creados o disponibles ejecutamos.
-```
+```sh
 virsh snapshot-list vm-debian10
 ```
 El detalle del snapshot puede ser visualizado de la siguiente manera especificando el id correspondiente.
-```
+```sh
 virsh snapshot-info vm-debian10 1555695775
 ```
 Para eliminar el snapshot se realiza una accion similar.
-```
+```sh
 virsh snapshot-delete vm-debian10 1555695775
 ```
 Para crear el snapshot de forma rápida simplemente especificamos el nombre de la máquina virtual.
-```
+```sh
 virsh snapshot-create vm-debian10
 ```
 Otra forma de crear el snapshot controlando más aspecto puede ser realizado de la siguiente manera. 
-```
+```sh
 virsh snapshot-create-as vm-debian10 \
 --name "Snapshot 0" \
 --description"Primer snapshot" \
 --atomic
 ```
 Los snapshot puede ser visualizados con los siguientes comandos.
-```
+```sh
 virsh snapshot-list vm-debian10  --parent
 virsh snapshot-list vm-debian10  --tree
 ```
 En caso de querer revertir la máquina virtual a un estado anterior procedemos a ejecutar el comando.
-```
+```sh
 virsh snapshot-revert vm-debian10  --snapshotname "Snapshot 0"
 ```
 ## Templates
 Cuando uno personaliza una máquina virtual con los paquetes, servicios que necesita puede convertirlo en una imagen que será considerada como template, que servirá para nuevas instalaciones más adelante o que sean compartidas para diferentes objetivos. 
 
 Antes de crear el template o clonar la imagen actual, es muy importante limpiar la máquina virtual. Se pueden hacer la limpieza de operaciones específicas como: 
-```
+```sh
 virt-sysprep --list-operation
 ```
 Es decir, podemos ejecutar el siguiente comando y especificar las operaciones de limpieza.
-```
+```sh
 virt-sysprep \
 --operations ssh-hostkeys,udev-persistent-net \
 -d vm-debian10
 ```
 Por otra lado, también se puede hacer en limpieza general de la siguiente manera.
-```
+```sh
 virt-sysprep -d vm-debian10
 ```
 Finalmente, clonamos la máquina virtual creando una nueva imagen .qcow2
-```
+```sh
 virt-clone --original vm-debian10--name vm-debian10-template --auto-clone
 ```
 Virtualizar con KVM, QEMU y libvirt proporciona muchas ventajas como buena performance, personalización   que se obtiene, 
