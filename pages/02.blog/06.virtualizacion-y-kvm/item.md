@@ -16,25 +16,26 @@ taxonomy:
 ![KVM](kvm-logo.png?classes=center-block)
 Existen diversas alternativas para virtualizar sistemas operativos como VMware, VirtualBox, Hiper-V. Sin embargo, GNU/Linux va en paso mas adelante debido a que ofrece una alternativa nativa que se denomina KVM que con las herramientas adecuadas como  QEMU y Libvirt nos permiten virtualizar sistemas operativos de manera sencilla y con en alto performance.
 
+En tal sentido, KVM ofrece una virtualización con un alto performance de sencilla implementación con una amplica gama de opciones al momento de gestionar dichas maquinas virtuales. Internamente el funcionamiento de este módulo con las herramientas mencionadas responden a la siguiente arquitectura descrita en el gráfico:
 
 ![Virtualizacion KVM,QEMU y Libvirt](arquitectura-kvm.png?classes=center-block)
 
 ## ¿Qué es KVM?
 
-KVM (Kernel-based Virtual Machine) es en módulo del kernel de Linux que permite utilizar características de virtualización por hardware ofrecidas por diferentes procesadores. KVM puede convertir a Linux en un hipervisor que permite que una máquina de host ejecute entornos virtuales múltiples y aislados llamados máquinas virtuales (VM) o huéspedes.
+KVM o _Kernel-based Virtual Machine_ es en **módulo del kernel de Linux que permite utilizar características de virtualización por hardware** ofrecidas por diferentes procesadores. KVM puede convertir a Linux en un hipervisor que permite que una máquina de host ejecute entornos virtuales múltiples y aislados llamados máquinas virtuales (VM) o huéspedes.
 
 Se basa en extensiones de virtualización Intel VT-X y AMD-V. 
 
 ## ¿Qué es QEMU?
 
-Es un emulador de máquinas virtuales genérico open source que permite emular en sistema completo, incluidos periféricos y el espacio de usuario.
+Es un **emulador de máquinas virtuales** genérico open source que permite emular en sistema completo, incluidos periféricos y el espacio de usuario.
 
 QEMU tiene el poder de alcanzar casi la performance nativa debido a que ejecuta el código guest directamente en el CPU host. QEMU soporta virtualización cuando se ejecuta bajo el hipervisor Xen o a través del módulo del kernel KVM en Linux. 
 
 Cuando se usa con KVM, QEMU puede virtualizar sistemas guest x86, PowerPC y S390, entre otros.
 
 ## ¿Que es Libvirt?
-Conocida como libvirt virtualization API, es un conjunto de herramientas para interactuar con las capacidades de virtualización de las versiones recientes de Linux y otros sistemas operativos. En efecto, Libvirt soporta un gran conjunto de tecnologías entre las que se destacan:
+Conocida como _libvirt virtualization API_, es un **conjunto de herramientas para interactuar con las capacidades de virtualización** de las versiones recientes de Linux y otros sistemas operativos. En efecto, Libvirt soporta un gran conjunto de tecnologías entre las que se destacan:
 
 * KVM/QEMU
 * Xen (en Linux y Solaris)
@@ -50,26 +51,23 @@ Conocida como libvirt virtualization API, es un conjunto de herramientas para in
 
 libvirt permite hacer la administración de máquinas virtuales incluso de forma remota, manejando redes y almacenamiento con un API cliente portable para Linux, Solaris y Windows.
 
+Para tener un concepto mucho mas claro de esta herramienta, esta es capaz de gestionar diversas tecnologías de virtualización como KVM, Xen, VMware a traves de sus _managment tools_ como se muestra en la gráfico.
+
 
 ![Libvirt](libvirt.png?classes=center-block)
 
 
-Tiene gran variedad de aplicaciones donde se destacan: virsh y virt-manager.
+Tiene gran variedad de aplicaciones o toold donde se destacan **virsh** y **virt-manager**.
 
 ## Precondiciones
-En en primera instancia se debe verificar si nuestro hardware soporta virtualización por lo que  determinamos si nuestra CPU es compatible con KVM. Para ello ejecutamos el comando
- ```sh
-grep vmx /proc/cpuinfo
-````
-En caso de tener un procesador AMD ejecutamos el comando.
-```sh
-grep svm /proc/cpuinfo
-```
-O simplemente ejecutamos 
+En en primera instancia se debe verificar si nuestro hardware soporta virtualización por lo que determinamos si nuestra CPU es compatible con KVM. Para ello ejecutamos el comando
 ```sh
 egrep -c '(svm|vmx)' /proc/cpuinfo
 ```
-Es muy probable que nuestro hardware si sea compatible pero no haya sido habilitada esta característica desde el BIOS.
+svm hace referencia a procesadores AMD y a vmx a procesadores intel.
+
+En caso de no tener resultados, se debe verificar que las extensiones de virtualización esten habilitados en el BIOS. En efecto, las configuraciones de BIOS para Intel® VT o AMD-V suelen estar en los menús Chipset o Procesador.
+
 
 ## Instalación 
 En caso de ser compatible, se deben instalar los siguientes paquetes para crear y manejar nuestras máquinas virtuales.
