@@ -213,7 +213,7 @@ sudo virsh attach-interface \
 --config \
 --live
 ```
-De la misma forma es posible desasociar o desacoplar la interfaz creada de la máquina virtual, enviando los parámetros que identifican a la máquina virtual y mac address de la interfaz virtual.
+De la misma forma es posible desasociar o desacoplar la interfaz creada de la máquina virtual, enviando los parámetros que identifican a la máquina virtual incluyendo la mac address de la interfaz virtual.
 ```sh
 sudo virsh detach-interface \
 --domain vm-debian10 \
@@ -223,7 +223,9 @@ sudo virsh detach-interface \
 --live
 ```
 ## Storage
-Es posible añadir o acoplar unidades de disco virtuales de forma muy sencilla. Para el ejemplo se creará en disco virtual de 2Gb con el siguiente comando.
+Es posible añadir o acoplar unidades de disco virtuales de forma muy sencilla dependiendo a la cantidad de bahias pci que se dispongan, sin embargo estas pueden ser incrementadas posteriormente. 
+
+Para el ejemplo se creará en disco virtual de 2Gb con el siguiente comando.
 ```sh
 dd if=/dev/zero of=/home/gonzalohk/Documents/vm/vm-debian10-disk1.img bs=1G count=2
 ```
@@ -232,7 +234,7 @@ Para ver los detalles del disco creado y verificar la integridad podemos hacer u
 qemu-img info vm-debian10-disk1.img
 qemu-img check vm-debian10-disk1.img
 ```
-El acoplar en disco a una máquina virtual resulta sencillo debido a que solo se especifica la máquina virtual, la ruta del disco y su identificador. También es posible hacerlo en caliente. 
+El acoplar en disco a una máquina virtual resulta sencillo debido a que solo se especifica la máquina virtual, la ruta del nuevo disco y su identificador. También es posible hacerlo en caliente con el parámetro --live. 
 ```sh
 virsh attach-disk vm-debian10 home/gonzalohk/Documents/vm/vm-debian10-disk1.img vdb --config --live
 ```
@@ -240,18 +242,19 @@ El desacople se realiza de forma similar.
 ```sh
 virsh detach-disk vm-debian10 /home/gonzalohk/Documents/vm/vm-debian10-disk1.img --config --live
 ```
-Anteriormente se insertó en disco nuevo que necesita ser particionado, formateado y montado. Para ello, dentro de la máquina virtual ejecutamos los siguientes comandos de la siguiente manera.
+Anteriormente se insertó en disco nuevo, pero este necesita ser particionado, formateado y montado. Para ello, dentro de la máquina virtual ejecutamos los siguientes comandos de la siguiente manera.
 ```sh
 lsblk -a
 fdisk /dev/vdb
 mkfs.ext3 /dev/vdb1
+mkdir /home/projects
 mount -t ext3 /dev/vdb1 /home/projects
 ```
 En caso de querer desmontar el disco es necesario ejecutar en la máquina virtual.
 ```sh
 umount /dev/vdb1
 ```
-En aspecto interesante que solo es posible hacer en virtualización es el acople del mismo disco a dos o más máquinas virtuales simultáneamente, esto es posible con el parámetro –mode shareable 
+Un aspecto interesante que solo es posible hacer en virtualización es el acople del mismo disco a dos o más máquinas virtuales simultáneamente, esto es posible con el parámetro **–mode shareable** 
 
 Otra forma de acoplar el disco es editando directamente el archivo de configuración de la máquina virtual. También permite adicionar una nueva bahia PCI en el caso de que ya no se tengan disponibles.
 ```sh
@@ -267,7 +270,7 @@ Se adiciona
 </disk>
 ```
 ## Snapshots
-En aspecto importante de la virtualización es el poder que se tiene de crear snapshots de forma sencilla y constante en caso de tener que revertir cambios,
+Una caráteristica importante de la virtualización es el poder que se tiene de crear snapshots de forma sencilla y constante en caso de tener que establecer hitos y revertir cambios si es que fueran necesarios.
 
 Para poder listar los snapshots creados o disponibles ejecutamos.
 ```sh
@@ -285,19 +288,19 @@ Para crear el snapshot de forma rápida simplemente especificamos el nombre de l
 ```sh
 virsh snapshot-create vm-debian10
 ```
-Otra forma de crear el snapshot controlando más aspecto puede ser realizado de la siguiente manera. 
+Otra forma de crear el snapshot controlando más aspecto se realiza de la siguiente manera. 
 ```sh
 virsh snapshot-create-as vm-debian10 \
 --name "Snapshot 0" \
 --description"Primer snapshot" \
 --atomic
 ```
-Los snapshot puede ser visualizados con los siguientes comandos.
+La estructura de los snapshots para una determinada máquina virtual puede ser visualizada con los siguientes comandos.
 ```sh
 virsh snapshot-list vm-debian10  --parent
 virsh snapshot-list vm-debian10  --tree
 ```
-En caso de querer revertir la máquina virtual a un estado anterior procedemos a ejecutar el comando.
+En caso de querer revertir la máquina virtual a un estado anterior procedemos a ejecutar el comando siguiente, especificando el nombre del snapshot al cual se quiere regresar.
 ```sh
 virsh snapshot-revert vm-debian10  --snapshotname "Snapshot 0"
 ```
@@ -314,7 +317,7 @@ virt-sysprep \
 --operations ssh-hostkeys,udev-persistent-net \
 -d vm-debian10
 ```
-Por otra lado, también se puede hacer en limpieza general de la siguiente manera.
+Por otra lado, también se puede hacer una limpieza general de la siguiente manera.
 ```sh
 virt-sysprep -d vm-debian10
 ```
