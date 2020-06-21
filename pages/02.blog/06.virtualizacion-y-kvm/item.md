@@ -84,13 +84,13 @@ Habilitamos libvirt para que se ejecute desde el arranque.
 ```sh
 systemctl enable libvirtd
 ```
-## Creación de maquinas virtuales
+## Creación de máquinas virtuales
 La primera acción a realizar es unir nuestro usuario al grupo libvirt y kvm para no tener problemas con las tools que instalaremos y las dependencias correspondientes.
 ```sh
 adduser gonzalohk libvirtd
 adduser gonzalohk kvm
 ```
-Para iniciar las pruebas podemos utilizar imágenes en formato convencionales como .img o se puede obtar por el _QEMU Copy On Write_ es decir .qcow2
+Para iniciar las pruebas podemos utilizar imágenes en formato convencionales como .img o se puede optar por el _QEMU Copy On Write_ es decir .qcow2
 
 Para ello, se puede descargar la imgagen .qcow2 de Debian en la versión 10 desde el siguiente enlace para probar más adelante.
 
