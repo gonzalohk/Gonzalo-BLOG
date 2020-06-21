@@ -16,6 +16,8 @@ taxonomy:
 ![KVM](kvm-logo.png?classes=center-block)
 Existen diversas alternativas para virtualizar sistemas operativos como VMware, VirtualBox, Hiper-V. Sin embargo, GNU/Linux va en paso mas adelante debido a que ofrece una alternativa nativa que se denomina KVM que con las herramientas adecuadas como  QEMU y Libvirt nos permiten virtualizar sistemas operativos de manera sencilla y con en alto performance.
 
+
+![Virtualizacion KVM,QEMU y Libvirt](arquitectura-kvm.png?classes=center-block)
 ## ¿Qué es KVM?
 
 KVM (Kernel-based Virtual Machine) es en módulo del kernel de Linux que permite utilizar características de virtualización por hardware ofrecidas por diferentes procesadores. KVM puede convertir a Linux en un hipervisor que permite que una máquina de host ejecute entornos virtuales múltiples y aislados llamados máquinas virtuales (VM) o huéspedes.
@@ -46,9 +48,9 @@ Conocida como libvirt virtualization API, es un conjunto de herramientas para in
 * Almacenamiento en discos IDE/SCSI/USB, FibreChannel, LVM, iSCSI y NFS
 
 libvirt permite hacer la administración de máquinas virtuales incluso de forma remota, manejando redes y almacenamiento con un API cliente portable para Linux, Solaris y Windows.
+![Libvirt](libvirt.png?classes=center-block)
 
 Tiene gran variedad de aplicaciones donde se destacan: virsh y virt-manager.
-![Virtualizacion KVM,QEMU y Libvirt](arquitectura-kvm.png?classes=center-block)
 
 ## Precondiciones
 En en primera instancia se debe verificar si nuestro hardware soporta virtualización por lo que  determinamos si nuestra CPU es compatible con KVM. Para ello ejecutamos el comando
