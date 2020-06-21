@@ -163,31 +163,31 @@ Ahora se puede configurar la nueva red, para ello debemos insertar el nombre, de
 Esta es en red isolate.
 ```xml
 <network>
-<name>dev-network</name>
-<bridge name='virbr1' stp='on' delay='0'/>
-<domain name='dev-network'/>
-<ip address='10.11.12.1' netmask='255.255.255.0'>
-<dhcp>
-<range start='10.11.12.2' end='10.11.12.128'/>
-</dhcp>
-</ip>
+	<name>dev-network</name>
+	<bridge name='virbr1' stp='on' delay='0'/>
+	<domain name='dev-network'/>
+	<ip address='10.11.12.1' netmask='255.255.255.0'>
+		<dhcp>
+			<range start='10.11.12.2' end='10.11.12.128'/>
+		</dhcp>
+	</ip>
 </network>
 ```
 En caso de necesitar en red NAT se debe especificar el forward mode de la siguiente manera.
 ```xml
 <network connections='1'>
-<name>dev-nat-network</name>
-<forward mode='nat'>
-<nat>
-<port start='1024' end='65535'/>
-</nat>
-</forward>
-<bridge name='virbr3' stp='on' delay='0'/>
-<ip address='192.168.66.1' netmask='255.255.255.0'>
-<dhcp>
-<range start='192.168.66.2' end='192.168.66.254'/>
-</dhcp>
-</ip>
+	<name>dev-nat-network</name>
+	<forward mode='nat'>
+		<nat>
+			<port start='1024' end='65535'/>
+		</nat>
+	</forward>
+	<bridge name='virbr3' stp='on' delay='0'/>
+	<ip address='192.168.66.1' netmask='255.255.255.0'>
+		<dhcp>
+			<range start='192.168.66.2' end='192.168.66.254'/>
+		</dhcp>
+	</ip>
 </network>
 ```
 Una vez que el archivo xml fue creado, es necesario definir la red con el comando siguiente.
@@ -259,10 +259,10 @@ virsh edit vm-debian10
 Se adiciona
 ```xml
 <disk type='file' device='disk'>
- <driver name='qemu' type='raw'/>
- <source file=' /home/gonzalohk/Documents/vm/vm-debian10-disk1.img'/>
- <target dev='vdb' bus='virtio'/>
- <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x1'/>
+ 	<driver name='qemu' type='raw'/>
+ 	<source file=' /home/gonzalohk/Documents/vm/vm-debian10-disk1.img'/>
+ 	<target dev='vdb' bus='virtio'/>
+ 	<address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x1'/>
 </disk>
 ```
 ## Snapshots
@@ -321,4 +321,4 @@ Finalmente, clonamos la máquina virtual creando una nueva imagen .qcow2
 ```sh
 virt-clone --original vm-debian10--name vm-debian10-template --auto-clone
 ```
-Virtualizar con KVM, QEMU y libvirt proporciona muchas ventajas como buena performance, personalización   que se obtiene, 
+El modulo kvm junto a QEMU y libvirt permite crear y gestionar máquinas virtuales de una manera muy eficiente con una performance que se compararia a una nativa. En tal sentido,  
