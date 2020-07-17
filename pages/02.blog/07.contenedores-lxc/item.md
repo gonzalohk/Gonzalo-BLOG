@@ -38,7 +38,7 @@ LXC define su arquitectura de la siguiente manera.
 
 Linux Containers tiene como objetivo crear un ambiente lo más cercano posible a una instalación estándar de Linux pero sin la necesidad de un kernel separado.
 
-## Instalacion
+## Instalación
 Para instalar lxc utilizaremos el gestor de paquete snappy o snap, en efecto lo instalamos en caso de no contar con el mismo.
 ```sh
 apt update
@@ -52,7 +52,7 @@ Es necesario inicializar lxd, de modo tal que procedemos a establecer configurac
 ```sh
 lxd init
 ```
-## Imagenes
+## Imágenes
 Las imágenes son obtenidas por defecto de https://images.linuxcontainers.org, esto puede ser comprobado ejecutando el siguiente comando. 
 ```sh
 lxc remote list
