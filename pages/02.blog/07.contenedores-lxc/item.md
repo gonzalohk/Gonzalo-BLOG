@@ -1,6 +1,7 @@
 ---
 title: 'Contenedores con Linux Containers'
-published: false
+media_order: 'lxc-architecture.jpg,lxc-logo.png'
+published: true
 date: '10-07-2020 15:01'
 publish_date: '10-07-2020 15:01'
 metadata:
@@ -13,7 +14,7 @@ taxonomy:
         - Contenedores
 ---
 
-
+![Linux Containers](lxc-logo.png?classes=center-block)
 Los contenedores son tecnologías que permiten **empaquetar y aislar las aplicaciones junto a todo el entorno que necesitan durante su tiempo ejecución**.  En efecto, los contenedores comparten el mismo kernel del sistema operativo y separan los procesos de las aplicaciones del resto del sistema. 
 
 Existen varias opciones entre las que se que aplican esta tecnología, pero es necesario diferenciar entre contendores de sistema operativo como LXC (LinuX Containers), OpenVZ y contenedores de aplicación como Docker.
@@ -33,9 +34,8 @@ Para ser más específicos LXC usa las siguientes características del kernel pa
 
 LXC define su arquitectura de la siguiente manera.
 
-<p align="center">
-<img src="img/lxc-architecture.jpg">
-</p>
+![Arquitectura LXC](lxc-architecture.jpg?classes=center-block))
+
 
 Linux Containers tiene como objetivo crear un ambiente lo más cercano posible a una instalación estándar de Linux pero sin la necesidad de un kernel separado.
 
