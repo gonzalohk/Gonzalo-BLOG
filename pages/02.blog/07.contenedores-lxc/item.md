@@ -33,7 +33,7 @@ Para ser más específicos LXC usa las siguientes características del kernel pa
 
 LXC define su arquitectura de la siguiente manera.
 
-![Arquitectura LXC](lxc-architecture.jpg?classes=center-block))
+![Arquitectura LXC](lxc-architecture.jpg?classes=center-block)
 
 
 Linux Containers tiene como objetivo crear un ambiente lo más cercano posible a una instalación estándar de Linux pero sin la necesidad de un kernel separado.
