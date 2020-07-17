@@ -18,6 +18,7 @@ taxonomy:
 Los contenedores son tecnologías que permiten **empaquetar y aislar las aplicaciones junto a todo el entorno que necesitan durante su tiempo ejecución**.  En efecto, los contenedores comparten el mismo kernel del sistema operativo y separan los procesos de las aplicaciones del resto del sistema. 
 
 Existen varias opciones entre las que se que aplican esta tecnología, pero es necesario diferenciar entre contendores de sistema operativo como LXC (LinuX Containers), OpenVZ y contenedores de aplicación como Docker.
+
 ## ¿Que es es LXC?
 LXC o  Linux Containers, ofrece un **entorno de virtualización a nivel del sistema operativo para linux.**  En efecto, este tipo de virtualización permite que sistemas operativos se ejecuten simultáneamente en un solo sistema de hardware.
 
@@ -118,6 +119,7 @@ lxc exec webserver -- apt-get update
 lxc exec webserver -- ps -ef
 ```
 LXC permite obtener archivos del contenedor y mover archivos al contenedor.
+
 Extraer archivos del contenedor
 ```sh
 lxc file pull webserver/etc/hosts
@@ -208,6 +210,7 @@ Cuando los contenedores fueron creados con el profile por defecto, este usa exac
 lxc exec webserver -- cat /proc/cpuinfo | grep ^proces
 ```
 CPU
+
 Para limitar el uso de cores del CPU, se puede establecer la cantidad o especificar que cores trabajaran con el contenedor.
 ```sh
 lxc config set webserver limits.cpu 2
@@ -217,6 +220,7 @@ Hacer uso de los cores 1 y 4.
 lxc config set webserver limits.cpu 1,4
 ```
 RAM
+
 Limites de memoria
 ```sh
 lxc config set webserver limits.memory 256MB
@@ -226,6 +230,7 @@ Deshabilitar el swap del contenedor
 lxc config set webserver limits.memory.swap false
 ```
 DISCO
+
 Verificar el espacio de un contenedor
 ```sh
 lxc exec webserver -- df -h
@@ -240,6 +245,7 @@ lxc config device set webserver root limits.read 30MB
 lxc config device set webserver root limits.write 10MB
 ```
 RED
+
 Limites por medio del profile
 ```sh
 lxc profile device set default eth0 limits.ingress 100Mbit
@@ -369,11 +375,7 @@ Detener un contenedor remoto.
 ```sh
 lxc stop mirepodeimagenes:printserver
 ```
-
-
-
-
-
+LXC permite en despliegue sencillo e inmediato de contenedores permitiendo el ahorro en hardware, recursos al no ser una virtualización completa además permite tener en ahorro de recursos y la asignación no estática de los mismos. Por otro lado, el uso del mismo está limitado a máquinas con núcleo linux de tal modo que el SO de los contenedores deberán ser compatibles con el núcleo anfitrión . No obstante, es una herramienta muy recomendada para el despliegue adecuado de servicios y establecer virtualización a nivel de sistema operativo para una diversidad de objetivos.  
 
 
 
