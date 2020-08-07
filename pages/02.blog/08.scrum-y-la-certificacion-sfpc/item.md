@@ -134,7 +134,7 @@ En efecto, el incremento es un paso hacia una visión o meta y debe estar en con
 
 El esquema global de Scrum es mejor visualizado en el siguiente gráfico.
 
-![Esquema SCRUM](scrum-schema-small.jpg)
+![Esquema SCRUM](scrum-schema-small.jpg?classes=center-block)
 
 
 ## 12 Principios Del Manifiesto Ágil
@@ -146,7 +146,7 @@ Scrum está sumamente relacionado con el manifiesto ágil, los pilares y valores
 ## SFPC
 Scrum Foundations Professional Certificate 
 
-Esta es la certificación inicial de SCRUM que evalúa los conocimientos básicos de este marco de trabajo. Scrum Foundation se basa en la Guía oficial de Scrum denominada The Scrum Guide™, The Definitive Guide to Scrum. 
+Esta es la certificación inicial de SCRUM que evalúa los conocimientos básicos de este marco de trabajo. Scrum Foundation se basa en la Guía oficial de Scrum denominada [The Scrum Guide™, The Definitive Guide to Scrum](https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Spanish-European.pdf). 
 
 * Formato: opción múltiple
 * Preguntas: 40
