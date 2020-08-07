@@ -14,7 +14,9 @@ taxonomy:
         - Certificacion
 ---
 
-![SCRUM](Scrum-init.jpg?classes=center-block)
+![Scrum](Scrum.jpg?classes=center-block)
+
+
 Scrum es un **marco de trabajo (framework)** para desarrollar, entregar y mantener productos complejos. En tal sentido, se ha usado para desarrollar software, hardware, en variedad de entornos como empresas, escuelas, gobiernos e incluso para gestionar la operación de organizaciones en diversidad de áreas.
 
 Este marco de trabajo propone una implementación del control de procesos empíricos bajo tres pilares:
@@ -22,7 +24,7 @@ Este marco de trabajo propone una implementación del control de procesos empír
 * Insprecion
 * Adaptacion
 
-Se incorporan valores que permiten al equipo ser mucho más virtuoso.en todo el proceso, estos son: 
+Se incorporan valores que permiten al equipo ser mucho más virtuoso en todo el proceso, estos son: 
 * Compromiso
 * Coraje
 * Foco
