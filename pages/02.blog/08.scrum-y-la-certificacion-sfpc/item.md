@@ -1,6 +1,6 @@
 ---
 title: 'Scrum y la certificación SFPC'
-media_order: 'Scrum.jpg,scrum-schema.jpg,12-agile-principles.jpg,scrum-schema-small.jpg'
+media_order: 'Scrum.jpg,scrum-schema.jpg,12-agile-principles.jpg,scrum-schema-small.jpg,Scrum-init.jpg'
 published: true
 date: '24-07-2020 17:08'
 publish_date: '24-07-2020 17:09'
@@ -14,8 +14,7 @@ taxonomy:
         - Certificacion
 ---
 
-![Scrum](Scrum.jpg?classes=center-block)
-
+![SCRUM](Scrum-init.jpg?classes=center-block)
 
 
 Scrum es un **marco de trabajo (framework)** para desarrollar, entregar y mantener productos complejos. En tal sentido, se ha usado para desarrollar software, hardware, en variedad de entornos como empresas, escuelas, gobiernos e incluso para gestionar la operación de organizaciones en diversidad de áreas.
