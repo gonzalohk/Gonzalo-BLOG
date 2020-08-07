@@ -50,10 +50,11 @@ Responsable del trabajo para el Producto Terminado, en el mismo no se reconoce t
 * Multifucionales
 * Flexible y adaptativo
 	
-El tamaño óptimo del Equipo de Desarrollo es lo suficientemente pequeño como para permanecer ágil y lo suficientemente grande como para completar una cantidad de trabajo significativa.
+> El tamaño óptimo del Equipo de Desarrollo es lo suficientemente pequeño como para permanecer ágil y lo suficientemente grande como para completar una cantidad de trabajo significativa.
 
 #### c) Scrum Master
 Es responsable de promover y apoyar Scrum. 
+
 Por ello, es un líder que está al servicio del Equipo Scrum por lo que ayuda al equipo a entender la teoría, prácticas, reglas y valores. 
 
 Scrum Master al servicio del Dueño del Producto:
@@ -73,13 +74,14 @@ Scrum Master al servicio de la Organización
 * Ayudar a los empleados a entender y llevar a cabo  la implementación Scrum.
 
 ### Eventos Scrum
-Scrum define eventos predefinidos con el fin de crear regularidad y minimizar la necesidad
-de reuniones no definidas. En efecto, todos los eventos son bloques de tiempo (time-boxes) de tal modo que todos tienen una duración máxima, estos son:
+Scrum define eventos predefinidos con el fin de crear regularidad y minimizar la necesidad de reuniones no definidas. 
+
+En efecto, todos los eventos son bloques de tiempo (time-boxes) de tal modo que todos tienen una duración máxima, estos son:
 
 #### a) Sprint
 **El corazón de Scrum es el Sprint**, este tiene un bloque de tiempo (time-box) de un mes o menos durante el cual se crea un incremento de producto “Terminado”. 
 
-Cada nuevo Sprint comienza inmediatamente después de la finalización del Sprint anterior  y solo el Dueño de producto tiene la autoridad para cancelar el Sprint en caso .
+Cada nuevo Sprint comienza inmediatamente después de la finalización del Sprint anterior  y solo el Dueño de Producto tiene la autoridad para cancelar el Sprint en caso fuera necesario.
 
 Durante el Sprint:
 * No se realizan cambios que puedan afectar al Objetivo del Sprint (Sprint Goal);
@@ -91,23 +93,23 @@ Diarios (Daily Scrums), el trabajo de desarrollo, la Revisión del Sprint (Sprin
 Retrospectiva del Sprint (Sprint Retrospective). 
 
 #### b) Planificación del Sprint (Sprint Planning)
-El trabajo a realizar durante el Sprint se planifica en el Sprint Planning, se lleva a cabo en un máximo de ocho horas para un Sprint de un mes donde se responde a 2 preguntas:
+El trabajo a realizar durante el Sprint se planifica en el Sprint Planning, se lleva a cabo en un máximo de 8 horas para un Sprint de un mes donde se responde a 2 preguntas:
 * ¿QUÉ PUEDE hacerse en este Sprint?
 * ¿CÓMO SE CONSEGUIRÁ completar el trabajo?
 
 #### c) Objetivo del Sprint (Sprint Goal)
-Es una meta establecida para el Sprint creada durante la Planificación así mismo este puede representar en nexo con otro sprint.
+Es una meta establecida para el Sprint creada durante la Planificación así mismo este puede representar un nexo con otro Sprint.
 
 #### d) Scrum Diario (Daily Scrum)
 Es una reunión con un bloque de tiempo de 15 minutos para el Equipo de Desarrollo que tiene el objetivo de planear el trabajo de las 24 horas siguientes.
 
-El Equipo de Desarrollo es el encargado de establecer la estructura de la reunión donde generalmente se responde a 3 preguntas 
+El Equipo de Desarrollo es el encargado de establecer la estructura de la reunión donde generalmente se responde a 3 preguntas:
 * ¿Qué hice ayer que ayudó al Equipo de Desarrollo a lograr el Objetivo del Sprint?
 * ¿Qué haré hoy para ayudar al Equipo de Desarrollo a lograr el Objetivo del Sprint?
 * ¿Veo algún impedimento que evite que el Equipo de Desarrollo o yo logremos el Objetivo del Sprint?
 
 #### e) Revisión del Sprint (Sprint Review)
-Se lleva al final del Sprint para inspeccionar el Incremento y adaptar la Lista de Producto si fuese necesario tiene en máximo de 4 horas donde el Scrum Master debe asegurar la reunión. . 
+Se lleva al final del Sprint para inspeccionar el Incremento y adaptar la Lista de Producto si fuese necesario, tiene en máximo de 4 horas donde el Scrum Master debe asegurar la reunión. . 
 
 #### f) Retrospectiva del Sprint (Sprint Retrospective)
 Tiene lugar después de la revisión y antes de la planificación del siguiente Sprint. Esta es una oportunidad para el Equipo Scrum de inspeccionarse a sí mismo y de crear un plan de mejoras que sean aplicados durante el siguiente Sprint.
@@ -135,7 +137,6 @@ En efecto, el incremento es un paso hacia una visión o meta y debe estar en con
 El esquema global de Scrum es mejor visualizado en el siguiente gráfico.
 
 
-
 ![Esquema SCRUM](scrum-schema-0.jpg?classes=center-block)
 
 
@@ -149,8 +150,9 @@ Scrum está sumamente relacionado con el manifiesto ágil, los pilares y valores
 ## SFPC
 Scrum Foundations Professional Certificate 
 
-Esta es la certificación inicial de SCRUM que evalúa los conocimientos básicos de este marco de trabajo. Scrum Foundation se basa en la Guía oficial de Scrum denominada [The Scrum Guide™, The Definitive Guide to Scrum](https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Spanish-European.pdf). 
+Esta es la certificación inicial de Scrum que evalúa los conocimientos básicos de este marco de trabajo. Scrum Foundation se basa en la Guía oficial de Scrum denominada [The Scrum Guide™, The Definitive Guide to Scrum](https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Spanish-European.pdf). 
 
+La evaluaciónconsiste en:
 * Formato: opción múltiple
 * Preguntas: 40
 * Idioma: ingles/español
@@ -159,4 +161,4 @@ Esta es la certificación inicial de SCRUM que evalúa los conocimientos básico
 * Dificultad: Baja
 
 Puede ser evaluada con diferentes centros certificadores, uno de ellos es [CertiProf](https://certiprof.com/pages/sfpc). 
-El examen es accesible incluso para una persona que recién inician a adoptar metodologías ágiles siendo recomendable hacerlo.
+El exámen es accesible incluso para una persona que recién inician a adoptar metodologías ágiles siendo recomendable hacerlo.
