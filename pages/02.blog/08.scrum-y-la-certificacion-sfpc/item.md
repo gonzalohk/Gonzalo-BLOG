@@ -1,6 +1,6 @@
 ---
 title: 'Scrum y la certificación SFPC'
-media_order: 'Scrum.jpg,scrum-schema.jpg,12-agile-principles.jpg,scrum-schema-small.jpg,Scrum-init.jpg'
+media_order: 'Scrum.jpg,scrum-schema.jpg,12-agile-principles.jpg,Scrum-init.jpg,12-agile-principles-0.jpg,scrum-schema-0.jpg'
 published: true
 date: '24-07-2020 17:08'
 publish_date: '24-07-2020 17:09'
@@ -136,14 +136,14 @@ El esquema global de Scrum es mejor visualizado en el siguiente gráfico.
 
 
 
-![Esquema SCRUM](scrum-schema-small.jpg?classes=center-block)
+![Esquema SCRUM](scrum-schema-0.jpg?classes=center-block)
 
 
 
 ## 12 Principios Del Manifiesto Ágil
 Scrum está sumamente relacionado con el manifiesto ágil, los pilares y valores son muestra clara de aquello. Los artefactos, roles y eventos tiene como objetivo seguir estos lineamientos.
 
-![Los 12 princios Del Manifierto Agil](12-agile-principles.jpg?classes=center-block)
+![Los 12 princios Del Manifierto Agil](12-agile-principles-0.jpg?classes=center-block)
 
 
 ## SFPC
