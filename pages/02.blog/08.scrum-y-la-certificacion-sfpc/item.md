@@ -17,7 +17,7 @@ taxonomy:
 ![Scrum](Scrum.jpg?classes=center-block)
 
 
-Scrum es un **marco de trabajo (framework)** para desarrollar, entregar y mantener productos complejos. En tal sentido, se ha usado para desarrollar software, hardware, en variedad de entornos como empresas, escuelas, gobiernos e incluso para gestionar la operación de organizaciones en diversidad de áreas.
+Scrum es un **marco de trabajo (framework) para desarrollar, entregar y mantener productos complejos** . En tal sentido, se ha usado para desarrollar software, hardware, en variedad de entornos como empresas, escuelas, gobiernos e incluso para gestionar la operación de organizaciones en diversidad de áreas.
 
 Este marco de trabajo propone una implementación del control de procesos empíricos bajo tres pilares:
 * Transparencia 
@@ -77,7 +77,7 @@ Scrum define eventos predefinidos con el fin de crear regularidad y minimizar la
 de reuniones no definidas. En efecto, todos los eventos son bloques de tiempo (time-boxes) de tal modo que todos tienen una duración máxima, estos son:
 
 #### a) Sprint
-El corazón de Scrum es el Sprint, este tiene un bloque de tiempo (time-box) de un mes o menos durante el cual se crea un incremento de producto “Terminado”. 
+**El corazón de Scrum es el Sprint**, este tiene un bloque de tiempo (time-box) de un mes o menos durante el cual se crea un incremento de producto “Terminado”. 
 
 Cada nuevo Sprint comienza inmediatamente después de la finalización del Sprint anterior  y solo el Dueño de producto tiene la autoridad para cancelar el Sprint en caso .
 
