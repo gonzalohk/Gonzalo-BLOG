@@ -21,8 +21,8 @@ Scrum es un **marco de trabajo (framework) para desarrollar, entregar y mantener
 
 Este marco de trabajo propone una implementación del control de procesos empíricos bajo tres pilares:
 * Transparencia 
-* Insprecion
-* Adaptacion
+* Inspección
+* Adaptación
 
 Se incorporan valores que permiten al equipo ser mucho más virtuoso en todo el proceso, estos son: 
 * Compromiso
