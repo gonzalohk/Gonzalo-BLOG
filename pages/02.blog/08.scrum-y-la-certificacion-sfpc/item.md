@@ -15,8 +15,6 @@ taxonomy:
 ---
 
 ![SCRUM](Scrum-init.jpg?classes=center-block)
-
-
 Scrum es un **marco de trabajo (framework)** para desarrollar, entregar y mantener productos complejos. En tal sentido, se ha usado para desarrollar software, hardware, en variedad de entornos como empresas, escuelas, gobiernos e incluso para gestionar la operación de organizaciones en diversidad de áreas.
 
 Este marco de trabajo propone una implementación del control de procesos empíricos bajo tres pilares:
