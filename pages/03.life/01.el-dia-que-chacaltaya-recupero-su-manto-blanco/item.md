@@ -1,6 +1,6 @@
 ---
 title: 'El día que el Chacaltaya recuperó su manto blanco'
-media_order: 'chacaltaya.jpg,IMG_20200112_092524.jpg,1-ChacaltayaBase.jpg,3-milluni.jpg,2-ChacaltayaCabana.jpg,4-chacaltayaNieve.jpg,4-chacaltayaNieve2.jpg'
+media_order: 'chacaltaya.jpg,IMG_20200112_092524.jpg,1-ChacaltayaBase.jpg,3-milluni.jpg,2-ChacaltayaCabana.jpg'
 published: true
 date: '03-08-2020 10:58'
 publish_date: '03-08-2020 10:58'
