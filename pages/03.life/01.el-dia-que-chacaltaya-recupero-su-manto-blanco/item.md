@@ -14,7 +14,7 @@ taxonomy:
         - Escalada
 ---
 
-Una de mis rutas favoritas es el Chacaltaya que se encuentra alrededor de los 5200 msnm, no solo porque está cerca a mi ciudad o es en lugar seguro libre de automóviles y gente. Esta es una de las montañas más difíciles de coronar en la La Paz-Bolivia debido a que requiere cierta técnica para escalar/descender ya que tiene un terreno muy accidentado que exige muy buena resistencia para llegar de forma continua y en un tiempo aceptable debido a la inclinación que tienen la ruta (alrededor del 5%-9%) y claro sobre todo mucho coraje.  A pesar de no ser en trayecto demasiado largo las condiciones meteorológicas son muy cambiantes donde el frío es muy fuerte incluso en días soleados o de pronto llueve en el camino, incluso el ver a la montaña ya es intimidante.  
+Una de mis rutas favoritas es el Chacaltaya que se encuentra alrededor de los 5200 msnm, no solo porque está cerca a mi ciudad o es en lugar seguro libre de automóviles y gente. Esta es una de las montañas más difíciles de coronar en la La Paz-Bolivia debido a que requiere cierta técnica para escalar/descender ya que tiene un terreno muy accidentado que exige muy buena resistencia para llegar de forma continua y en un tiempo aceptable debido a la inclinación que tienen la ruta (alrededor del 5%-9%) y claro sobre todo mucho coraje.  A pesar de no ser en trayecto demasiado largo las condiciones meteorológicas son muy cambiantes donde el frío es muy fuerte incluso en días soleados o de pronto llueve en el camino, incluso el ver a la montaña ya es intimidante (_Foto Extraida de https://boliviamia.net/lugares-turisticos/la-paz/chacaltaya_).  
 
 ![https://boliviamia.net/lugares-turisticos/la-paz/chacaltaya](chacaltaya.jpg)
 
