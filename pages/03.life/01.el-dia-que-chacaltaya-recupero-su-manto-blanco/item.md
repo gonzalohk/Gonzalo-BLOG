@@ -1,6 +1,6 @@
 ---
 title: 'El día que el Chacaltaya recuperó su manto blanco'
-media_order: 'chacaltaya.jpg,IMG_20200112_092524.jpg,1-ChacaltayaBase.jpg,3-milluni.jpg,2-ChacaltayaCabana.jpg'
+media_order: 'chacaltaya.jpg,IMG_20200112_092524.jpg,1-ChacaltayaBase.jpg,3-milluni.jpg,2-ChacaltayaCabana.jpg,4-chacaltayaNieve2.jpg,4-chacaltayaNieve.jpg,Strava.jpg'
 published: true
 date: '03-08-2020 10:58'
 publish_date: '03-08-2020 10:58'
@@ -53,3 +53,5 @@ Llegó un punto en el que la rueda ya no avanzada, también habían vehículos p
 En la parte de arriba, solo me quede pensando en todo lo que me decían o contaban de el Chacaltaya hace 20 años atrás y como esta fue antes que el calentamiento global le quitara su manto blanco. En efecto, era uno de los lugares más visitados por gente local y de todo el mundo para practicar sky. Pasaron unos 10 minutos o quizá menos pero decidí bajar inmediatamente a pesar que aún quería descansar un poco, esto porque tenía la ropa muy mojada y seguir mas tiempo alli solo seria un paso a la hipotermia por lo que hice lo mejor que podía hacer que es descender muy rápido aprovechando que ya tenía una mejor suspensión en la bicicleta y con muchas ganas de volver a casa a almorzar y tomar algo caliente.
  
 Fue una de las experiencias más gratificantes no solo por el paisaje si no por la sensación que te da ver el mundo tan hermoso en el que vivimos y tenemos la suerte de conocer. Desde entonces sigo subiendo cada vez que puedo en grupo o solo y tambien si mi estado físico está preparado. Sin embargo, recuerdo más lo que significa esta montaña, es decir estar en el techo del mundo del ciclismo el algo que muy pocos se atreverían a hacer, más aún volver una y otra vez sin perder el gusto ni la satisfacción que representa.
+
+![Chacaltaya Strava](Strava.jpg?classes=center-block) 
