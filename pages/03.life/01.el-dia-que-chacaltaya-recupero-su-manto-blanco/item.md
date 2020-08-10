@@ -48,7 +48,7 @@ En los meses de diciembre, enero y febrero llueve mucho en toda Bolivia, pero pa
 
 Llegó un punto en el que la rueda ya no avanzada, también habían vehículos por allí con turistas pero que tampoco se animaban a subir por la cantidad de nieva y quizá por lo peligroso que sería bajar ya en última pendiente, así que cargué la bici y seguí subiendo hasta llegar finalmente a coronar la ruta. 
 
-![Cargando la bici para subir al Chacaltaya](4-chacaltayaNieve.jpg)
+![Cargando la bici para subir al Chacaltaya](4-chacaltayaNieve2.jpg)
 
 En la parte de arriba, solo me quede pensando en todo lo que me decían o contaban de el Chacaltaya hace 20 años atrás y como esta fue antes que el calentamiento global le quitara su manto blanco. En efecto, era uno de los lugares más visitados por gente local y de todos el mundo para practicar sky. Pasaron unos 10 minutos o quizá menos pero decidí bajar inmediatamente a pesar que aún quería descansar un poco, esto porque tenía la ropa muy mojada y seguir mas tiempo alli solo seria una paso a la hipotermia por lo que hice lo mejor que podía hacer que es descender muy rápido aprovechando que ya tenía una mejor suspensión en la bicicleta y con muchas ganas de volver a casa a almorzar y sobre tomar algo caliente.
  
