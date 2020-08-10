@@ -20,7 +20,7 @@ Una de mis rutas favoritas en bicicleta es el Chacaltaya que se encuentra alrede
 
 La característica más notoria de esta ruta es el hecho del pedalear arriba de los 5000 msnm con una saturación de oxígeno incluso del 78% que en muchos otros países se considera una total locura o simplemente se pensaría que no fuese posible. En efecto, probablemente algún extranjero que está acostumbrado a alturas sobre el nivel del mar le costaría demasiado escalar, esto es muy fácil de ver en el fútbol donde equipos de países vecinos llegan con tiempo de anticipación a los encuentros deportivos para tener una buena aclimatación aunque aún así siempre existen quejas al respecto. 
 
-Sin embargo, aún sin considerar el factor de la oxigenación en el ciclista, el Chacaltaya podría ser catalogado como un puerto especial por la gran inclinación que esta presenta si uno parte desde la ciudad de La Paz con un grado de dificultad de 169GD. 
+Sin embargo, aún sin considerar el factor de la oxigenación en el ciclista, el Chacaltaya podría ser catalogado como un [Puerto de Categoria Especial](https://es.wikipedia.org/wiki/Puerto_(monta%C3%B1a)) por la gran inclinación y ascenso que tiene si uno parte desde la ciudad de La Paz. En decir, este tiene un grado de dificultad de 169 GD. 
 
 GD=(h/10) + p = (1600/10) + 9 = **169 GD**
 * Especial: de 140 a 250 GD
