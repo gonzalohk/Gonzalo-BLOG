@@ -1,6 +1,6 @@
 ---
 title: 'El día que el Chacaltaya recuperó su manto blanco'
-media_order: 'IMG_20200209_111225.jpg,IMG_20200209_112218.jpg,chacaltaya.jpg,IMG_20200112_110538 (1).jpg,IMG_20200112_092524.jpg,IMG_20200126_094853.jpg'
+media_order: 'chacaltaya.jpg,IMG_20200112_092524.jpg'
 published: true
 date: '03-08-2020 10:58'
 publish_date: '03-08-2020 10:58'
@@ -30,6 +30,7 @@ GD=(h/10) + p = (1600/10) + 9 = **169 GD**
 * 4ª: de 20 a 30 GD
 
 ![Base del Chacaltaya](IMG_20200112_092524.jpg)
+![](1-ChacaltayaBase.jpg)
  
 En efecto, muchos visitantes se quedan muy sorprendidos con la gran altitud a la que muchos ciclistas de La Paz estamos acostumbrados a pedalear, debido a que en el caso de España y Colombia que son potencia en ciclismo tienen puertos muy duros pero estos no superan los 3500 msnm o Japón donde el puerto más alto para competencia es el conocido monte Fuji que tiene 3776 msnm. Pero vamos aún más alla, si lo pensamos bien los paceños (quienes viven en La Paz) estamos a 3600 msnm o nuestros vecinos en El Alto están alrededor de los 4000 msnm. Sin duda es una gran ventaja estar a una altura de estas características y más aún en un terreno tan accidentado ideal para el MTB, obviamente también tiene sus desventajas como el no tener muchas rutas de llano o tener dificultad para competir en áreas más tropicales. 
  
