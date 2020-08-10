@@ -1,6 +1,6 @@
 ---
 title: 'El día que Chacaltaya recuperó su manto blanco'
-media_order: 'IMG_20200112_092524.jpg,IMG_20200126_094853.jpg,IMG_20200209_111225.jpg,IMG_20200209_112218.jpg,IMG_20200308_120628.jpg,IMG_20200809_104205.jpg,chacaltaya.jpg,IMG_20200112_105602.jpg'
+media_order: 'IMG_20200112_092524.jpg,IMG_20200126_094853.jpg,IMG_20200209_111225.jpg,IMG_20200209_112218.jpg,IMG_20200308_120628.jpg,IMG_20200809_104205.jpg,chacaltaya.jpg,IMG_20200112_110538 (1).jpg'
 published: true
 date: '03-08-2020 10:58'
 publish_date: '03-08-2020 10:58'
@@ -41,7 +41,7 @@ Ahora bien algo que hacemos con mis amigos del equipo de MTB para entrenar es ir
 
 Luego de ello el siguiente objetivo es ir a Milluni, es un camino de tierra que agota mentalmente porque representa aún la mitad del camino y desde allí ya las condiciones climáticas van cambiando constantemente por el viento, lluvia y frío lo bonito es que se visualiza toda la familia de nevados que acompañan al Huayna Potosí como una especie de mirador ideal para sacar alguna foto y ver lo imponente de este paisaje acompañado de llamas que van pastando por el lugar. Posteriormente,  se llega a la base del chacaltaya donde ya uno tiene que mentalizarse para escalar por tanto terminar de coronar en una ruta que pareciera no acabar con tanta curva, subida que representa en gran reto y a lo lejos en el cielo ya se va viendo la cabaña que fue en algún momento referente del sky como actividad deportiva. Finalmente, luego de subir incansablemente una y otra vez por este camino uno se encuentra con una cruz que representa que ya falta muy poco para llegar, efectivamente se ve una casa grande que en su momento fue en hotel y desde allí es que comienza la última pendiente ya para llegar al final del camino junto a dos cabañas instaladas allí donde finalmente ya se habrá conseguido el objetivo.
  
-![Cbaña](IMG_20200112_105602.jpg)
+![Cabaña](IMG_20200112_110538%20%281%29.jpg)
  
 En los meses de diciembre, enero y febrero llueve mucho en toda Bolivia, pero particularmente en la ciudad de La Paz incluso puede llegar a granizar o nevar. Una de las veces que mas disfrute ir por esta ruta justamente fue en Febrero donde semanas antes llovió mucho lo cual no nos permitan entrenar en equipo como los hacemos cada fin de semana. Hasta que llegó un fin de semana en el que parecía que al fin el sol estaría presente pero resulto ser momentaneo ya que llovio y llovio demasiado, pero ya con planes de salir todos los amigos cancelaron. No obstante,  yo estaba decidio a ir porque a pesar del frio parecia que no iba a llover por lo que me aventure, fui a la ruta que les comente con anterioridad y la verdad que en en inicio me arrepentí porque los camino estaba demasiado mal, había un río por el tuve que pasar porque cortaba todo el camino pero no hice más que mojar mis zapatos congelando las manos, ya en la parte de arriba para ir a milluni el clima estaba relativamente bien asi que continue y subiendo pero el frío fue incrementando más y más luego casi en las últimas curvas antes de llegar empecé a notar que mucha nieve cayó dia antes lo cual fue algo que nunca había visto por allí, pero sin duda representó algo totalmente distinto a lo que estaba acostumbrado ya con mucho cuidado al momento de subir seguí escalando ya que la nieve era muy resbalosa y no tenía el equipo adecuado para escalar rápidamente.
 
