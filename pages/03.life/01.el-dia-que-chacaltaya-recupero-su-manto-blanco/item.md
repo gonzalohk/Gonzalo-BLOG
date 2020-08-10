@@ -1,6 +1,6 @@
 ---
 title: 'El día que Chacaltaya recuperó su manto blanco'
-media_order: 'IMG_20200112_092524.jpg,IMG_20200126_094853.jpg,IMG_20200209_111225.jpg,IMG_20200209_112218.jpg,cabana.jpg,IMG_20200308_120628.jpg'
+media_order: 'IMG_20200112_092524.jpg,IMG_20200126_094853.jpg,IMG_20200209_111225.jpg,IMG_20200209_112218.jpg,cabana.jpg,IMG_20200308_120628.jpg,IMG_20200809_104205.jpg,chacaltaya.jpg'
 published: true
 date: '03-08-2020 10:58'
 publish_date: '03-08-2020 10:58'
@@ -16,9 +16,7 @@ taxonomy:
 
 Una de mis rutas favoritas es el Chacaltaya que se encuentra alrededor de los 5200 msnm, no solo porque está cerca a mi ciudad o es en lugar seguro libre de automóviles y gente. Esta es una de las montañas más difíciles de coronar en la La Paz-Bolivia debido a que requiere cierta técnica para escalar/descender ya que tiene un terreno muy accidentado que exige muy buena resistencia para llegar de forma continua y en un tiempo aceptable debido a la inclinación que tienen la ruta (alrededor del 5%-9%) y claro sobre todo mucho coraje.  A pesar de no ser en trayecto demasiado largo las condiciones meteorológicas son muy cambiantes donde el frío es muy fuerte incluso en días soleados o de pronto llueve en el camino, incluso el ver a la montaña ya es intimidante.  
 
-![Chacaltaya desde arriba](IMG_20200809_104205.jpg)
-
-![Coroando el Chacaltaya](IMG_20200308_120628.jpg)
+![Chacaltaya visto desde arriba](chacaltaya.jpg)
 
 La característica más notoria de esta ruta es el hecho del pedalear arriba de los 5000 msnm con una saturación de oxígeno incluso del 78% que en muchos otros países se considera una total locura o simplemente pensarían que no fuese posible. Muy probablemente algún extranjero que está acostumbrado a alturas sobre el nivel del mar o no muy altas le costaría demasiado escalar, esto es muy fácil de ver en el fútbol donde equipos de países vecinos llegan con tiempo de anticipación a los encuentros deportivos para tener una buena aclimatación aunque aún así siempre existen quejas al respecto. 
 
