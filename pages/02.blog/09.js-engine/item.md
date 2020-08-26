@@ -25,7 +25,7 @@ También conocido como motor JavaScript, es el software que interpreta el códig
 
 Existe una variedad de engines, cada navegador tiende a tener su propio engine, siendo los más relevantes: 
 * V8 en Chrome
-* SpiderMonkey en Mozilla 
+* SpiderMonkey en Mozilla Firefox
 * JavaScriptCore en Safari
 
 V8 es de los más potentes motores debido a que no solo es usado y desarrollado por Chrome también fue adoptado por NodeJS, Electron, MarkLogic, Couchbase, entre muchos otros incluyendo a Microsoft Edge.
