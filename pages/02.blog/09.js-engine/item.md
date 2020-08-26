@@ -78,7 +78,7 @@ El bytecode aún tiene que ser optimizado, V8 cuenta con un compilador llamado [
 
 TurboFan tiene como tarea principal tomar las instrucciones retornadas por el intérprete Ignition para compilarlo a la arquitectura destino. Es decir, según la arquitectura destino Turbofan elige las instrucciones adecuadas de bajo nivel, esto  resulta en una ejecución altamente optimizada del código JavaScript.
 
-Para resumir el funcionamiento de un JS Engine o más propiamente V8 veamos el siguiente gráfico.
+Para resumir el funcionamiento de un JS Engine o más propiamente V8, veamos el siguiente gráfico.
 
 ![V8](howV8Works.png?classes=center-block)
 
