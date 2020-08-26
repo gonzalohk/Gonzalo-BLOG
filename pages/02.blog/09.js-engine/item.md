@@ -41,25 +41,35 @@ Pero veamos más a detalle este proceso en 5 pasos con ayuda de unas animaciones
 
 #### Paso 1
 El código fuente es enviado como UTF-16 byte stream y pasado al byte stream decoder para ser procesado.
+
 ![Carga del código fuente](js1.gif?classes=center-block)
+
 #### Paso 2
 El byte stream decoder decodifica los bytes, para que el parser se descomponga y convierta las instrucciones de JavaScript en una lista de tokens (fichas).
+
 ![Parseado](js2.gif?classes=center-block)
+
 El parser analiza el programa verificando que se siguen las reglas del lenguaje de programación, si encuentra errores como partes de código que no forman parte de la sintaxis del lenguaje ocurre un Syntax Error. 
 
 #### Paso 3
 En función a los tokens creados, el parser genera nodos para producir un Abstract Syntax Tree (AST), es decir las instrucciones iniciales se transforman en una representación en árbol de la estructura sintáctica de nuestro código.
+
 ![Tokens -> AST](js3.gif?classes=center-block)
+
 Abstract Syntax Tree (AST) es una estructura de datos ampliamente usada por compiladores, debido a su propiedad de representar la estructura del código del programa en un grafo. Es decir, es el resultado del análisis de la sintaxis de un compilador.
 
 #### Paso 4
 El intérprete llamado Ignition recorre el AST generado para generar el bytecode. 
+
 ![AST -> Bytecode](js4.gif?classes=center-block)
+
 El intérprete tiene dos roles: generar bytecode e interpretar este bytecode para poder ejecutarlo. En este punto el bytecode generado por Ignition sí es ejecutable en el computador, pero aún falta un paso muy importante
 
 #### Paso 5
 El bytecode aún tiene que ser optimizado, V8 cuenta con un compilador llamado TurboFan, que se encargará de este problema el cual genera machine code altamente optimizado. 
+
 ![Bytecode -> MachineCode](js4.gif?classes=center-block)
+
 TurboFan tiene como tarea principal tomar las instrucciones retornadas por el intérprete Ignition para compilarlo para la arquitectura de destino. Es decir, según la arquitectura de destino Turbofan elige las instrucciones adecuadas de bajo nivel para la arquitectura destino, esto  resulta en una ejecución altamente optimizada del código JavaScript.
 
 
