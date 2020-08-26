@@ -1,6 +1,6 @@
 ---
 title: 'Scrum y la certificación SFPC'
-media_order: 'Scrum.jpg,scrum-schema.jpg,12-agile-principles.jpg,Scrum-init.jpg,12-agile-principles-0.jpg,scrum-schema-0.jpg'
+media_order: 'Scrum.jpg,scrum-schema.jpg,12-agile-principles.jpg,12-agile-principles-0.jpg,scrum-schema-0.jpg'
 published: true
 date: '24-07-2020 17:08'
 publish_date: '24-07-2020 17:09'
@@ -16,6 +16,7 @@ taxonomy:
 
 ![Scrum](Scrum.jpg?classes=center-block)
 
+Hagamos un resumen de como Scrum funciona. Estas notas fueron tomadas de  [The Scrum Guide](https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Spanish-European.pdf), podríamos usarlas para estudiar y aplicar al examen de certificación inicial de este marco de trabajo, pues empecemos.
 
 Scrum es un **marco de trabajo (framework) para desarrollar, entregar y mantener productos complejos** . En tal sentido, se ha usado para desarrollar software, hardware, en variedad de entornos como empresas, escuelas, gobiernos e incluso para gestionar la operación de organizaciones en diversidad de áreas.
 
