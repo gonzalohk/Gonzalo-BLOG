@@ -4,6 +4,8 @@ media_order: 'js1.gif,js2.gif,js3.gif,js4.gif,js5.gif,jsEngine.png'
 published: true
 date: '24-08-2020 23:10'
 publish_date: '24-08-2020 23:10'
+metadata:
+    Keywords: '"JS, Javascrip Engine, V8, Ignition, Turbofun"'
 taxonomy:
     category:
         - Frontend
