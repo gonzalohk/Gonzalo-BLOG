@@ -24,9 +24,9 @@ JS es una de los lenguajes más populares de los últimos tiempos debido a la gr
 También conocido como motor JavaScript, es el software que interpreta el código JavaScript y que a su vez, ejecuta un script acorde a las instrucciones dadas. Es decir, **el motor es la parte encargada de leer y ejecutar el código fuente**. Todos los navegadores web tienen un motor JavaScript.
 
 Existe una variedad de engines, cada navegador tiende a tener su propio engine, siendo los más relevantes: 
-* V8 empleado en Chrome
-* SpiderMonkey empleado en Mozilla 
-* JavaScriptCore empleado en Safari
+* V8 en Chrome
+* SpiderMonkey en Mozilla 
+* JavaScriptCore en Safari
 
 V8 es de los más potentes motores debido a que no solo es usado y desarrollado por Chrome también fue adoptado por NodeJS, Electron, MarkLogic, Couchbase, entre muchos otros incluyendo a Microsoft Edge.
 
