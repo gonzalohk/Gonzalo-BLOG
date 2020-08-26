@@ -62,7 +62,7 @@ En función a los tokens creados, el parser genera nodos para producir un Abstra
 
 Abstract Syntax Tree (AST) es una estructura de datos ampliamente usada por compiladores, debido a su propiedad de representar la estructura del código del programa en un grafo. Es decir, es el resultado del análisis de la sintaxis de un compilador.
 
-imaginar como estos nodos están enlazados es difícil, así es que podemos ver esto de mejor manera en [https://astexplorer.net/](https://astexplorer.net/).
+Imaginar como estos nodos están enlazados es difícil, así es que podemos ver esto de mejor manera en [https://astexplorer.net/](https://astexplorer.net/).
 
 #### Paso 4
 El intérprete llamado [Ignition](https://v8.dev/docs/ignition) recorre el AST para generar el bytecode. 
@@ -81,4 +81,6 @@ TurboFan tiene como tarea principal tomar las instrucciones retornadas por el in
 Para resumir el funcionamiento de un JS Engine o más propiamente V8 veamos el siguiente gráfico.
 
 ![V8](howV8Works.png?classes=center-block)
+
+Sin duda, JS con el paso del tiempo se consolida en un lenguaje robusto capaz de ser usado en diferentes contextos de una forma muy optima a pesar de ser sincrono o contar solo con un call stack. Así mismo, es importante señalar que JS se cataloga como un lenguaje interpretado, pero luego de analizar el como funciona nos damos cuenta que también realiza un proceso de compilación, de modo tal que obtiene lo mejor de ambos mundos para tener código altamente optimizado.
 
