@@ -32,7 +32,7 @@ V8 es de los más potentes motores debido a que no solo es usado y desarrollado 
 
 Los JS engines tienen un funcionamiento similar, donde el navegador descarga los archivos fuente de JavaScript, luego se interpretan las instrucciones del código y se realiza un proceso en tiempo real que se denomina [Just-In-Time Compiler](https://www.freecodecamp.org/news/just-in-time-compilation-explained/) (JIT Compiler) en dónde convierte el código fuente en algo que sí pueden entender las computadoras como lo es el machine code.
 
-## Proceso De Compilación
+## ¿Cómo funciona V8?
 Tomando como ejemplo V8,  este procesa nuestro código JS hasta poder ser ejecutado por el computador, para ello:
 * Recibe el código fuente.
 * Parsea el código y produce un Abstract Syntax Tree (AST).
