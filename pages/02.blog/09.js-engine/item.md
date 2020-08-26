@@ -1,5 +1,15 @@
 ---
 title: 'El JavaScript Engine'
+published: true
+date: '24-08-2020 23:10'
+publish_date: '24-08-2020 23:10'
+taxonomy:
+    category:
+        - JS
+        - Frontend
+    tag:
+        - JavaScript
+        - 'JS Engine'
 ---
 
 JS es una de los lenguajes más populares de los últimos tiempos debido a la gran cantidad de frameworks, librerías y nuevas características que se van implementando e impulsada por su enorme comunidad. En efecto, JS casi siempre está presente en el stack de desarrollo de aplicaciones modernas en todo tipo de proyectos a diferentes escalas y muy probablemente en nuestros propios proyectos. Sin embargo, pocas veces nos preguntamos cómo es que JS se ejecuta e interactúa con los browsers, siendo el JavaScript Engine el encargado de realizar este proceso de forma muy interesante. 
