@@ -74,7 +74,7 @@ El intérprete tiene dos roles: generar bytecode e interpretar este bytecode par
 #### Paso 5
 El bytecode aún tiene que ser optimizado, V8 cuenta con un compilador llamado [TurboFan](https://v8.dev/docs/turbofan), que se encargará de este problema, el cual genera machine code altamente optimizado. 
 
-![Bytecode -> MachineCode](js4.gif?classes=center-block)
+![Bytecode -> MachineCode](js5.gif?classes=center-block)
 
 TurboFan tiene como tarea principal tomar las instrucciones retornadas por el intérprete Ignition para compilarlo a la arquitectura destino. Es decir, según la arquitectura destino Turbofan elige las instrucciones adecuadas de bajo nivel, esto  resulta en una ejecución altamente optimizada del código JavaScript.
 
