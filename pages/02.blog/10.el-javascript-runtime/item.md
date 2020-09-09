@@ -34,7 +34,7 @@ Es donde se realiza la asignación de memoria a variables, funciones, objetos, a
 ### Call Stack
 Esta es una estructura de datos de pila donde el runtime mantiene un seguimiento de las llamadas a las funciones bajo el modelo LIFO (último en entrar, primero en salir). Recordemos que Javascript es single-threaded por lo tanto solo tiene una pila de llamadas o Call Stack. 
 
-La tarea que realiza es simple, cuando se está a punto de ejecutar una función, esta es añadida al Call Stack, si esta función llama a su vez a otra función, esta es agregada sobre la anterior y así sucesivamente. Esto puede ser mejor entendido con el siguiente ejemplo.
+La tarea que realiza es relativamente simple, cuando se está a punto de ejecutar una función, esta es añadida al Call Stack, si esta función llama a su vez a otra función, esta es agregada sobre la anterior y así sucesivamente. Esto puede ser mejor entendido con el siguiente ejemplo, donde ejecutamos un funcion denominada _printSquare(x)_ para mostrar el area de un cuadrado, pero esta misma funcion hace uso de otra funcion denominada _multiply(x,y)_ para realizar la multiplicación y finalmente muestra el resultado usando el _console.log()_ .
 ```js
 function multiply(x, y) {
     return x * y;
@@ -119,7 +119,8 @@ Inmediatamente la función dentro del Call Stack es ejecutada.
 
 ![Call Stack execution](el5.gif?classes=center-block)
 
-Ahora veamos un ejemplo y su funcionamiento de manera completa. Este ejemplo fue presentado por Philip Roberts en la JSConf del 2014, creo que hasta hoy es el mejor recurso en internet para entender cómo funciona realmente el JS Runtime, puedes ver la charla [aquí](https://www.youtube.com/watch?v=8aGhZQkoFbQ)  
+## Ejemplo
+Ahora veamos un ejemplo y su funcionamiento de manera completa. Este ejemplo fue presentado por [Philip Roberts](https://twitter.com/philip_roberts) en la JSConf del 2014, creo que hasta hoy es el mejor recurso en internet para entender cómo funciona realmente el JS Runtime, puedes ver la charla [aquí](https://www.youtube.com/watch?v=8aGhZQkoFbQ)  
 
 El objetivo de este ejemplo es mostrar la ejecución del código fuente utilizando un Timer y un Evento, ambos tiene Funciones CallBack que serán ejecutadas de forma asincrona. La herramienta que nos ayudará a ver graficamente como nuestro codigo se ejecuta se llama [loupe](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
 ```js
