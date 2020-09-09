@@ -2,8 +2,8 @@
 title: 'El JavaScript Runtime'
 media_order: 'callstack-stackoverflow.png,callstack-working.png,JSR.png,JSR-2.png,el1.gif,el2.gif,el3.gif,el4.gif,el5.gif,JSRuntimeExampleFinal.gif'
 published: true
-date: '08-09-2020 12:42'
-publish_date: '08-09-2020 12:42'
+date: '07-09-2020 12:42'
+publish_date: '07-09-2020 12:42'
 metadata:
     Keywords: '''JS Runtime'', ''Call Stack JavaScript'',''JavaScript'',''Callback Queue'',''WebAPI Js'',''setTimeout'',''JS Engine'''
 taxonomy:
