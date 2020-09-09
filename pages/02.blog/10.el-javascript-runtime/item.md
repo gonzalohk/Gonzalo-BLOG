@@ -62,7 +62,7 @@ Solo con el JS Engine se podría manejar la ejecución del programa, pero no pod
 ## Web APIs
 Son APIs proveídas por el mismo navegador donde JavaScript es el encargado de facilitar su acceso. 
 
-Por ejemplo, JS no puede manipular por sí solo HTML y CSS por lo que debe usar la API DOM que el navegador le ofrece, de la misma forma ocurre con HTTP requests, Timers, Eventos siendo estos lo más relevantes. Sin embargo, existe una amplia lista de [Web APIs](https://developer.mozilla.org/es/docs/Web/API){:target="_blank"} que podemos utilizar. 
+Por ejemplo, JS no puede manipular por sí solo HTML y CSS por lo que debe usar la API DOM que el navegador le ofrece, de la misma forma ocurre con HTTP requests, Timers, Eventos siendo estos lo más relevantes. Sin embargo, existe una amplia lista de [Web APIs](https://developer.mozilla.org/es/docs/Web/API) que podemos utilizar. 
 
 ## Event Loop
 Es el componente más importante, debido a que tiene el objetivo de ayudar a que el código se ejecute en un solo hilo tanto de forma síncrona como asincrónica. Para ello, realiza dos tareas: 
