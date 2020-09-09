@@ -121,7 +121,7 @@ Inmediatamente la función dentro del Call Stack es ejecutada.
 
 Ahora veamos un ejemplo y su funcionamiento de manera completa. Este ejemplo fue presentado por Philip Roberts en la JSConf del 2014, creo que hasta hoy es el mejor recurso en internet para entender cómo funciona realmente el JS Runtime, puedes ver la charla [aquí](https://www.youtube.com/watch?v=8aGhZQkoFbQ)  
 
-Empecemos, el objetivo de este script es mostrar la ejecución del código de un Timer y un Evento, ambos tiene Funciones CallBack que serán ejecutadas de forma asincrona. La herramienta que nos ayudará a ver graficamente como nuestro codigo se ejecuta se llama [loupe](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
+El objetivo de este ejemplo es mostrar la ejecución del código fuente utilizando un Timer y un Evento, ambos tiene Funciones CallBack que serán ejecutadas de forma asincrona. La herramienta que nos ayudará a ver graficamente como nuestro codigo se ejecuta se llama [loupe](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
 ```js
 $.on('button', 'click', function onClick() {
     setTimeout(function timer() {
@@ -146,6 +146,4 @@ Las función evento y el timer son responsabilidad del Web API. En el caso del o
 Por otro lado, cualquier momento en el que se haga click al botón, el onClick() es movido al Callback Queue y luego pasado al Call Stack para ser ejecutado inmediatamente siempre y cuando esté vacío. 
 
 Evidenciamos que JS funciona de una manera muy particular y cómo necesita e interactúa de forma constante con el navegador mediante las Web APIs. Así mismo, el JS Engine y el JS Runtime en su conjunto realizan algo increíble, que es la ejecución síncrona y asíncrona de código fuente solo con un hilo (monoproceso) a diferencia de otros lenguajes de programación  tradicionales. Sin embargo, ahora que ya entendemos el cómo funciona es responsabilidad de cada uno optimizar nuestro código para obtener una mejor performance y sobretodo evitar código bloqueante en tiempo de ejecución. 
-
-https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf
 
