@@ -82,5 +82,5 @@ Para resumir el funcionamiento de un JS Engine o más propiamente V8, veamos el 
 
 ![V8](howV8Works.png?classes=center-block)
 
-Sin duda, JS con el paso del tiempo se consolida en un lenguaje robusto capaz de ser usado en diferentes contextos de una forma muy optima a pesar de ser sincrono o contar solo con un call stack. Así mismo, es importante señalar que JS se cataloga como un lenguaje interpretado, pero luego de analizar el como funciona nos damos cuenta que también realiza un proceso de compilación, de modo tal que obtiene lo mejor de ambos mundos para tener código altamente optimizado.
+Sin duda, JS con el paso del tiempo se consolida en un lenguaje robusto capaz de ser usado en diferentes contextos de una forma muy optima a pesar de ser single-threaded o contar solo con un call stack. Así mismo, es importante señalar que JS se cataloga como un lenguaje interpretado, pero luego de analizar el como funciona nos damos cuenta que también realiza un proceso de compilación, de modo tal que obtiene lo mejor de ambos mundos para tener código altamente optimizado.
 
