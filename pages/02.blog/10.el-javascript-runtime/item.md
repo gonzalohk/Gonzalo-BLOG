@@ -1,6 +1,6 @@
 ---
 title: 'El JavaScript Runtime'
-media_order: 'callstack-stackoverflow.png,callstack-working.png,JSR.png,JSR-2.png,el1.gif,el2.gif,el3.gif,el4.gif,el5.gif,JSRuntimeExampleFinal.gif'
+media_order: 'callstack-stackoverflow.png,callstack-working.png,JSR.png,JSR-2.png,el1.gif,el2.gif,el3.gif,el4.gif,el5.gif,JSRuntimeExampleFinal.gif,js.png'
 published: true
 date: '07-09-2020 12:42'
 publish_date: '07-09-2020 12:42'
@@ -15,6 +15,8 @@ taxonomy:
         - 'JS Runtime'
         - 'JS Engine'
 ---
+
+![JS](js.png?classes=center-block)
 
 El cómo funciona JavaScript es muy interesante, siendo este denominado un lenguaje **single-threaded non-blocking asynchronous concurrent**, esto significa que la ejecución de un script se hace solo en un hilo, es decir solo va suceder una cosa a la vez. Sin embargo, aún así JavaScript puede ser asíncrono y no bloqueante gracias al Javascript Runtime.
 
