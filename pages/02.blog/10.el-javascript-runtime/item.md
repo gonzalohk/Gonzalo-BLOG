@@ -36,7 +36,7 @@ Esta es una estructura de datos de pila donde el runtime mantiene un seguimiento
 
 La tarea que realiza es relativamente simple, cuando se está a punto de ejecutar una función, esta es añadida al Call Stack, si esta función llama a su vez a otra función, esta es agregada sobre la anterior y así sucesivamente. 
 
-Esto puede ser mejor entendido con el siguiente ejemplo con su gráfica, donde ejecutamos un funcion denominada _printSquare(x)_ para mostrar el área de un cuadrado, pero esta misma funcion hace uso de otra funcion denominada _multiply(x,y)_ para realizar la multiplicación y finalmente mostrar el resultado usando el _console.log()_ .
+Esto puede ser mejor entendido con el siguiente ejemplo, donde ejecutamos un función denominada _printSquare(x)_ para mostrar el área de un cuadrado, pero esta hace uso de otra función denominada _multiply(x,y)_ para realizar la multiplicación y finalmente mostrar el resultado usando el _console.log()_ .
 ```js
 function multiply(x, y) {
     return x * y;
@@ -47,9 +47,9 @@ function printSquare(x) {
 }
 printSquare(5);
 ```
-![Callstack working](callstack-working.png?classes=center-block)
+![Call Stack working](callstack-working.png?classes=center-block)
 
-El Call Stack tiene un límite por defecto de 16000, pasado este valor se produce un Stack Overflow  que indica que la pila se desbordó y no puede atender tantas funciones apiladas. Los bucles infinitos y funciones recursivas tienden a producir este tipo de errores.
+El Call Stack tiene un límite por defecto de 16000, pasado este valor se produce un Stack Overflow que indica que la pila se desbordó y no puede atender tantas funciones apiladas. Los bucles infinitos y funciones recursivas tienden a producir este tipo de errores.
 ```js
 function foo() {    
   foo(); 
@@ -72,16 +72,15 @@ Es el componente más importante, debido a que tiene el objetivo de ayudar a que
 - Mover las funciones pendientes del Callback Queue y el Job Queue al Call Stack. Si y solo si el Call Stack está libre.
 
 ## Callback Queue 
-Es una estructura de datos cola que almacena todas las Funciones Callback que son requeridas bajo el modelo FIFO (Primero en entrar, primero en salir) de modo tal que mantienen el orden en el que fueron agregadas para luego ser enviadas al Call Stack, posteriormente ser ejecutadas siempre y cuando el Call Stack esté vacio. 
+Es una estructura de datos cola que almacena todas las funciones Callback que son requeridas bajo el modelo FIFO (Primero en entrar, primero en salir) de modo tal que mantienen el orden en el que fueron agregadas para luego ser enviadas al Call Stack y posteriormente ser ejecutadas si el Call Stack esta vacio. 
 
 ## Job Queue
-**Desde ES2015 o ES6,** fue añadido el Job Queue que también es una estructura de datos cola, es utilizada por las Promises que almacena funciones asíncronas. El Event Loop nuevamente es el encargado de mover las tareas de esta cola al Call Stack siempre y cuando esté vacío. Un detalle importante es que **los elementos del Job Queue tienen mayor prioridad que el Callback Queue**.
+**Desde ES2015 o ES6,** fue añadido el Job Queue que también es una estructura de datos cola, es utilizada por las Promises para almacenar funciones asíncronas. El Event Loop nuevamente es el encargado de mover las tareas de esta cola al Call Stack siempre y cuando esté vacío. Un detalle importante es que **los elementos del Job Queue tienen mayor prioridad que los del Callback Queue**.
 
 # ¿Cómo funciona el Javascript Runtime?
 Ahora que ya conocemos los componentes del JS Runtime, veamos cómo es que los componentes interactúan y hace posible que nuestro código se ejecute de forma organizada y asíncrona. 
 
-Este ejemplo y animaciones fueron hechas por [Lydia Hallie](https://twitter.com/lydiahallie). 
-Tenemos dos funciones simples que son ejecutadas, una de ellas _greet()_ que devuelve un saludo y _respond()_ que también retorna un saludo luego de 1 segundo.
+En este ejemplo, las animaciones fueron hechas por [Lydia Hallie](https://twitter.com/lydiahallie) quien siempre tiene recursos muy didácticos e interesantes. Tenemos dos funciones simples que son ejecutadas, una de ellas _greet()_ que devuelve un saludo y _respond()_ que también retorna un saludo luego de 1 segundo.
 ```js
 function greet(){
 console.log("Hello!")
@@ -98,7 +97,7 @@ respond()
 ```
 Hagamos la ejecución paso a paso para ver qué sucede.
 #### Paso 1
-El código fuente es analizado y las funciones que son invocadas son enviadas al Call Stack, _greet()_ es ejecutado inmediatamente debido a que en su interior no invoca a otras funciones mientras que _respond()_ tiene una función dentro que luego también es instroducida en la pila.
+El código fuente es analizado y las funciones que son invocadas son enviadas al Call Stack, _greet()_ es ejecutado inmediatamente debido a que en su interior no invoca a otras funciones, mientras que _respond()_ tiene una función dentro que luego también es introducida en la pila.
 
 ![Callstack](el1.gif?classes=center-block)
 
@@ -125,7 +124,7 @@ Inmediatamente la función dentro del Call Stack es ejecutada y finaliza nuestro
 ## Ejemplo
 Ahora veamos un ejemplo más completo, esta fue presentada en una charla denominada [What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ) por [Philip Roberts](https://twitter.com/philip_roberts) en la JSConf del 2014, creo que hasta hoy es la mejor explicación en internet para entender cómo funciona realmente el JS Runtime. Asi mismo, un herramienta que se mostro para ver gráficamente como nuestro código se ejecuta es [loupe](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D). 
 
-El objetivo de este ejemplo es mostrar la ejecución del código fuente utilizando un Timer y un Evento, ambos tiene funciones CallBack que serán ejecutadas de forma asincrona. La herramienta que nos ayudará se llama 
+El objetivo de este ejemplo es mostrar la ejecución del código fuente utilizando un Timer y un Evento, ambos tiene funciones CallBack que serán ejecutadas de forma asincrona.
 ```js
 $.on('button', 'click', function onClick() {
     setTimeout(function timer() {
@@ -145,7 +144,6 @@ console.log("Welcome to loupe.");
 
 En una primera instancia se observa que el código es leído, analizado de arriba a abajo de modo tal que se ejecuta inmediatamente, pero las funciones se mueven al Call Stack.
 
-Tomemos en cuenta que Events y Timers son responsabilidad del Web API. Por lo que, el onClick() responde a un evento que no fue ejecutado aún, pero si está a la espera que se lance. Sin embago, cualquier momento en el que se haga click al botón, el onClick() es movido al Callback Queue y luego pasado al Call Stack para ser ejecutado inmediatamente siempre y cuando esté vacío. Mientras la función timeout() que responde a un timer, espera 5 segundos y es movida al Callback Queue para luego ser llevada al Call Stack mediante el Event Loop y posteriormente ser ejecutada.
+Tomemos en cuenta que Events y Timers son responsabilidad del Web API. Por lo que, el onClick() responde a un evento que no fue ejecutado aún, pero si está a la espera que se lance por lo que cualquier momento en el que se haga click al botón, el onClick() es movido al Callback Queue y luego pasado al Call Stack para ser ejecutado inmediatamente si esta libre. Mientras tanto la función timeout() que responde a un timer, espera 5 segundos y es movida al Callback Queue para luego ser llevada al Call Stack con ayuda del Event Loop y posteriormente ser ejecutada.
 
-Evidenciamos que JS funciona de una manera muy particular y cómo necesita e interactúa de forma constante con el navegador mediante las Web APIs. Así mismo, el JS Engine y el JS Runtime en su conjunto realizan algo increíble, que es la ejecución síncrona y asíncrona de código fuente solo con un hilo (monoproceso) a diferencia de otros lenguajes de programación  tradicionales. Sin embargo, ahora que ya entendemos el cómo funciona es responsabilidad de cada uno optimizar nuestro código para obtener una mejor performance y sobretodo evitar código bloqueante en tiempo de ejecución. 
-
+En efecto, evidenciamos que JS funciona de una manera muy particular y cómo necesita e interactúa de forma constante con el navegador mediante las Web APIs. Así mismo, el JS Engine y el JS Runtime realizan algo increíble, que es la ejecución síncrona y asíncrona de código fuente solo con un hilo (monoproceso) a diferencia de otros lenguajes de programación  tradicionales. Sin embargo, ahora que ya entendemos el cómo funciona es responsabilidad de cada uno optimizar nuestro código para obtener una mejor performance y sobretodo evitar código bloqueante en tiempo de ejecución. 
