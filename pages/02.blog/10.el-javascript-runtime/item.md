@@ -1,5 +1,6 @@
 ---
 title: 'El JavaScript Runtime'
+media_order: 'callstack-stackoverflow.png,callstack-working.png,JSR.png,JSR-2.png,el1.gif,el2.gif,el3.gif,el4.gif,el5.gif,JSRuntimeExampleFinal.gif'
 published: true
 date: '08-09-2020 12:42'
 publish_date: '08-09-2020 12:42'
@@ -7,18 +8,21 @@ metadata:
     Keywords: '''JS Runtime'', ''Call Stack JavaScript'',''JavaScript'',''Callback Queue'',''WebAPI Js'',''setTimeout'',''JS Engine'''
 taxonomy:
     category:
-        - JS
         - Frontend
+        - JS
     tag:
         - JavaScript
         - 'JS Runtime'
         - 'JS Engine'
 ---
 
-El cómo funciona JavaScript es muy interesante, siendo este denominado un lenguaje single-threaded non-blocking asynchronous concurrent, esto significa que la ejecución de un script se hace solo en un hilo, es decir solo va suceder una cosa a la vez. Sin embargo, aún así JavaScript puede ser asíncrono y no bloqueante gracias al Javascript Runtime.
+El cómo funciona JavaScript es muy interesante, siendo este denominado un lenguaje **single-threaded non-blocking asynchronous concurrent**, esto significa que la ejecución de un script se hace solo en un hilo, es decir solo va suceder una cosa a la vez. Sin embargo, aún así JavaScript puede ser asíncrono y no bloqueante gracias al Javascript Runtime.
 
 # ¿Qué es el Javascript Runtime Environment?
 El JavaScript Runtime proporciona características adicionales a nuestra aplicación en el tiempo de ejecución, siendo básicamente el responsable de hacer que JavaScript sea asíncrono y no bloqueante. Para ello, está compuesto del JavaScript Engine, Event Loop, Web APIs, Callback Queue y el Job Queue (desde ES6) donde cada uno tiene una tarea en particular..
+
+![Javascript Runtime Environtment](JSR-2.png?classes=center-block)
+
 
 ## JS Engine
 El motor de JavaScript es el encargado de leer, analizar, convertir y ejecutar el código fuente. Este tiene una forma particular de realizar estos procesos, podemos ver más detalles [aquí](http://gonzalohk.xyz/blog/js-engine). 
@@ -41,6 +45,8 @@ function printSquare(x) {
 }
 printSquare(5);
 ```
+![Callstack working](callstack-working.png?classes=center-block)
+
 El Call Stack tiene un límite por defecto de 16000, pasado este valor se produce un Stack Overflow  que indica que la pila se desbordó y no puede atender tantas funciones apiladas. Los bucles infinitos y funciones recursivas tienden a producir este tipo de errores.
 ```js
 function foo() {    
@@ -49,12 +55,14 @@ function foo() {
 
 foo();
 ```
+![Stack Overflow](callstack-stackoverflow.png?classes=center-block)
+
 Solo con el JS Engine se podría manejar la ejecución del programa, pero no podríamos hablar de asincronismo. Ahí es donde intervienen otros componentes del JS Runtime.
 
 ## Web APIs
 Son APIs proveídas por el mismo navegador donde JavaScript es el encargado de facilitar su acceso. 
 
-Por ejemplo, JS no puede manipular por sí solo HTML y CSS por lo que debe usar la API DOM que el navegador le ofrece, de la misma forma ocurre con HTTP requests, Timers, Eventos siendo estos lo más relevantes. Sin embargo, existe una amplia lista de Web APIs que podemos utilizar https://developer.mozilla.org/es/docs/Web/API , 
+Por ejemplo, JS no puede manipular por sí solo HTML y CSS por lo que debe usar la API DOM que el navegador le ofrece, de la misma forma ocurre con HTTP requests, Timers, Eventos siendo estos lo más relevantes. Sin embargo, existe una amplia lista de [Web APIs](https://developer.mozilla.org/es/docs/Web/API) que podemos utilizar. 
 
 ## Event Loop
 Es el componente más importante, debido a que tiene el objetivo de ayudar a que el código se ejecute en un solo hilo tanto de forma síncrona como asincrónica. Para ello, realiza dos tareas: 
@@ -70,7 +78,7 @@ Desde ES2015 o ES6, fue añadido el Job Queue que también es una estructura de 
 # ¿Cómo funciona el Javascript Runtime?
 Ahora que ya conocemos los componentes del JS Runtime, veamos cómo es que los componentes interactúan y hace posible que nuestro código se ejecute de forma organizada y asíncrona. 
 
-Veamos una vez más un ejemplo y animaciones hechas por Lydia Hallie. Tenemos dos funciones simples que son ejecutadas, una de ellas greet() que devuelve un saludo y respond() que también retorna un saludo luego de 1 segundo.
+Veamos una vez más un ejemplo y animaciones hechas por [Lydia Hallie](https://twitter.com/lydiahallie). Tenemos dos funciones simples que son ejecutadas, una de ellas greet() que devuelve un saludo y respond() que también retorna un saludo luego de 1 segundo.
 ```js
 function greet(){
 console.log("Hello!")
@@ -89,17 +97,27 @@ Veamos paso a paso qué sucede.
 #### Paso 1
 El código fuente es analizado y las funciones que son invocadas son enviadas al Call Stack. greet() es ejecutado inmediatamente debido a que en su interior no invoca a otras funciones mientras que respond() tiene una función dentro que también es posicionada en la pila.
 
+![Callstack](el1.gif?classes=center-block)
+
 #### Paso 2
 Nuestro ejemplo tiene un setTimeout, este ejecuta una función luego que expire el temporizador, siendo este un timer se considera un Web API. Veamos que este se ejecuta e  inmediatamente sale del Call Stack, pero el Web API se hace cargo de esperar el temporizador.
+
+![WebAPI](el2.gif?classes=center-block)
 
 #### Paso 3 
 Cuando el timer finaliza, la función Callback que fue definida dentro del setTimeout es movida al Callback Queue
 
+![Callback Queue](el3.gif?classes=center-block)
+
 #### Paso 4
 El Event Loop que está siempre atento, se da cuenta que el Call Stack está vacío y existe una tarea en el Callback Queue, por tanto el Event Loop mueve la función mencionada al Call Stack.
 
+![Callback Queue -> Call Stack](el4.gif?classes=center-block)
+
 #### Paso 5
 Inmediatamente la función dentro del Call Stack es ejecutada.
+
+![Call Stack execution](el5.gif?classes=center-block)
 
 Ahora veamos un ejemplo y su funcionamiento de manera completa. Este ejemplo fue presentado por Philip Roberts en la JSConf del 2014, creo que hasta hoy es el mejor recurso en internet para entender cómo funciona realmente el JS Runtime, puedes ver la charla [aquí](https://www.youtube.com/watch?v=8aGhZQkoFbQ)  
 
@@ -119,6 +137,7 @@ setTimeout(function timeout() {
 
 console.log("Welcome to loupe.");
 ```
+![JS Runtime Example](JSRuntimeExampleFinal.gif?classes=center-block)
 
 En una primera instancia se observa que el código es leído y analizado de arriba a abajo, de modo tal que se ejecuta inmediatamente, pero las funciones se mueven al Call Stack.
 
