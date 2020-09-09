@@ -19,7 +19,7 @@ taxonomy:
 El cómo funciona JavaScript es muy interesante, siendo este denominado un lenguaje **single-threaded non-blocking asynchronous concurrent**, esto significa que la ejecución de un script se hace solo en un hilo, es decir solo va suceder una cosa a la vez. Sin embargo, aún así JavaScript puede ser asíncrono y no bloqueante gracias al Javascript Runtime.
 
 # ¿Qué es el Javascript Runtime Environment?
-El JavaScript Runtime proporciona características adicionales a nuestra aplicación en el tiempo de ejecución, siendo básicamente el responsable de hacer que JavaScript sea asíncrono y no bloqueante. Para ello, está compuesto del JavaScript Engine, Event Loop, Web APIs, Callback Queue y el Job Queue (desde ES6) donde cada uno tiene una tarea en particular..
+El JavaScript Runtime proporciona características adicionales a nuestra aplicación en el tiempo de ejecución, siendo básicamente **el responsable de hacer que JavaScript sea asíncrono y no bloqueante**. Para ello, está compuesto del JavaScript Engine, Event Loop, Web APIs, Callback Queue y el Job Queue (desde ES6) donde cada uno tiene una tarea en particular..
 
 ![Javascript Runtime Environtment](JSR-2.png?classes=center-block)
 
