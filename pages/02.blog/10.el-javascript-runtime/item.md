@@ -19,7 +19,7 @@ taxonomy:
 El cómo funciona JavaScript es muy interesante, siendo este denominado un lenguaje **single-threaded non-blocking asynchronous concurrent**, esto significa que la ejecución de un script se hace solo en un hilo, es decir solo va suceder una cosa a la vez. Sin embargo, aún así JavaScript puede ser asíncrono y no bloqueante gracias al Javascript Runtime.
 
 # ¿Qué es el Javascript Runtime Environment?
-El JavaScript Runtime proporciona características adicionales a nuestra aplicación en el tiempo de ejecución, siendo básicamente **el responsable de hacer que JavaScript sea asíncrono y no bloqueante**. Para ello, está compuesto del JavaScript Engine, Event Loop, Web APIs, Callback Queue y el Job Queue (desde ES6) donde cada uno tiene una tarea en particular..
+El JavaScript Runtime proporciona características adicionales a nuestra aplicación en el tiempo de ejecución, siendo básicamente **el responsable de hacer que JavaScript sea asíncrono y no bloqueante**. Para ello, está compuesto del JavaScript Engine, Event Loop, Web APIs, Callback Queue y el Job Queue (desde ES6) donde cada uno tiene una tarea en particular.
 
 ![Javascript Runtime Environtment](JSR-2.png?classes=center-block)
 
@@ -62,7 +62,7 @@ Solo con el JS Engine se podría manejar la ejecución del programa, pero no pod
 ## Web APIs
 Son APIs proveídas por el mismo navegador donde JavaScript es el encargado de facilitar su acceso. 
 
-Por ejemplo, JS no puede manipular por sí solo HTML y CSS por lo que debe usar la API DOM que el navegador le ofrece, de la misma forma ocurre con HTTP requests, Timers, Eventos siendo estos lo más relevantes. Sin embargo, existe una amplia lista de [Web APIs](https://developer.mozilla.org/es/docs/Web/API) que podemos utilizar. 
+Por ejemplo, JS no puede manipular por sí solo HTML y CSS por lo que debe usar la API DOM que el navegador le ofrece, de la misma forma ocurre con HTTP requests, Timers, Eventos siendo estos lo más relevantes. Sin embargo, existe una amplia lista de [Web APIs](https://developer.mozilla.org/es/docs/Web/API){:target="_blank"} que podemos utilizar. 
 
 ## Event Loop
 Es el componente más importante, debido a que tiene el objetivo de ayudar a que el código se ejecute en un solo hilo tanto de forma síncrona como asincrónica. Para ello, realiza dos tareas: 
