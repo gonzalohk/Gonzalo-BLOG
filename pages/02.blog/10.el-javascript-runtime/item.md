@@ -18,6 +18,7 @@ taxonomy:
 
 ![JS](js.png?classes=center-block)
 
+
 El cómo funciona JavaScript es muy interesante, siendo este denominado un lenguaje **single-threaded non-blocking asynchronous concurrent**, esto significa que la ejecución de un script se hace solo en un hilo, es decir solo va suceder una cosa a la vez. Sin embargo, aún así JavaScript puede ser asíncrono y no bloqueante gracias al Javascript Runtime.
 
 # ¿Qué es el Javascript Runtime Environment?
