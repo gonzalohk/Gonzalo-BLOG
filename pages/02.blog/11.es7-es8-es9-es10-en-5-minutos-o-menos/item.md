@@ -1,5 +1,6 @@
 ---
 title: 'ES7, ES8, ES9 y ES10 en 5 minutos'
+media_order: banner-js.jpg
 date: '23-09-2020 11:20'
 publish_date: '23-09-2020 11:21'
 metadata:
@@ -12,6 +13,8 @@ taxonomy:
         - JavaScript
         - EcmaScript
 ---
+
+![EcmaScript](banner-js.jpg?classes=center-block)
 
 ES6 sin duda fue un antes y después de JS, tal como se señaló en un post anterior (aquí). Sin embargo, nos preguntamos qué pasó después o cómo es que se sigue hoy en día adicionando nuevos features. 
 
