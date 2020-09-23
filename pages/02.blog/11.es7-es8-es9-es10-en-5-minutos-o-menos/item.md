@@ -20,7 +20,7 @@ ES6 sin duda fue un antes y después de JavaScript, tal como se señaló en un [
 
 Primero debemos saber que **la especificación de JavaScript propuesta por ECMA international se actualiza cada año en el mes de junio**. En efecto, los estándares ES7, ES8, ES9, ES10, ES11 ya fueron lanzados, ahora bien muchos de los cambios no son muy sustanciales, pero resultan muy útiles al momento del desarrollo e implícitamente ya venimos usando muchos de estos en frameworks y librerías que usamos día a día.
 ## ES7 (Ecmascript 2016)
-#### Includes (Array.prototype.includes)
+#### Includes
 Este método determina si una matriz incluye un determinado elemento, devuelve true o false según corresponda.
 
 ```js
@@ -63,8 +63,7 @@ const coolSongAsync = async () => {
 };
 coolSongAsync(); // The coolest song is... Welcome to the jungle
 ```
-
-Object.entries
+#### Object.entries
 Es un nuevo método de la clase Object que devuelve una matriz de pares propios de una propiedad enumerable [key, value] de un objeto dado.
 ```js
 const data = {
@@ -90,7 +89,6 @@ console.log(entries); // [ 'Gonzalo', 28, 'M' ]
 Se agregaron dos métodos de instancia String que permiten el agregar o anteponer una cadena al inicio o al final de la cadena original.  Es decir, permite rellenar la cadena actual con una cadena dada (repetida eventualmente) de modo que la cadena resultante alcance una longitud dada.
 
 #### PadStart
-String.prototype.padEnd
 En el ejemplo se antepone la cadena “X” cuantas veces sea necesario para que la cadena original tenga la longitud establecida.
 ```js
 const string = 'hi';
@@ -98,7 +96,6 @@ const newString = string.padStart(5, 'X');
 console.log(newString); // 'XXXhi'
 ```
 #### PadEnd
-String.prototype.padStart
 A diferencia del anterior ejemplo, ahora se agrega la cadena “X” cuantas veces sea necesario para que la cadena original tenga la longitud establecida.
 ```js
 const string = 'hi';
@@ -111,7 +108,7 @@ Para muchos es un cambio menor casi innecesario, pero permite tener comas finale
 Imaginemos que necesitamos modificar una función adicionando un nuevo parámetro, esto significa adicionar una coma para agregar el nuevo parámetro de modo tal que se modificarían dos líneas de código según nuestro versionador de código. Pero si utilizamos trailing commas el cambio sólo sería agregar el parámetro con una línea de código, de tal modo que la visualización de los cambios realizados será más limpio.
 
 ## ES9 (Ecmascript2018)
-#### Spread en objetos (Object Rest/Spread Properties)
+#### Spread en objetos 
 Se lo conoce como operador de propagación o spread operator, este permite que una expresión sea expandida en situaciones donde se esperan múltiples argumentos como llamadas a funciones o múltiples elementos en arrays. Ahora en ES9 también puede ser aplicado a objetos.  
 ```js 
 const data = {
@@ -176,7 +173,7 @@ const day = match[3];
 console.log(year, month, day); // 2020 06 02
 ```
 ## ES10 (Ecmascript2019)
-#### Flat (Array.flat)
+#### Flat 
 Es un método que crea una nueva matriz con todos los elementos de sub-array concatenados recursivamente hasta la profundidad o nivel especificado.
 ```js
 const messedArray = [1, 2, 3, [1, 2, 3, [1, 2, 3]], [4, 5, 6]];
@@ -185,7 +182,7 @@ const flatedArray2 = messedArray.flat(2);
 console.log(flatedArray); // [ 1, 2, 3, 1, 2, 3, [ 1, 2, 3 ], 4, 5, 6 ]
 console.log(flatedArray2); // [ 1, 2, 3, 1, 2, 3, 1, 2, 3, 4, 5, 6 ]
 ```
-#### Flatmap (Array.prototype.flatMap())
+#### Flatmap
 Tiene el mismo efecto que usar el método map() seguido inmediatamente del método flat() con una profundidad por defecto de 1. Es decir, flatMap(), mapea cada valor a un nuevo valor y el resultado es aplanado a una profundidad de 1.
 ```js
 const messedArray = [1, 2, 3, 4, 5, 6];
