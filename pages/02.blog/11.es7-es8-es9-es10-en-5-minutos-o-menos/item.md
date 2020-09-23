@@ -26,8 +26,7 @@ let numbers = [1, 2, 4, 5, 9];
 console.log(numbers.includes(5));// true
 console.log(numbers.includes(11));// false
 ```
-### Exponencial 
-**
+#### Exponencial 
 Este es un nuevo operador que permite calcular la potencia de un número donde se indica el número base y el exponente, similar a Math.pow(base, exponente), pero ahora no es necesario utilizarla gracias al operador ** .
 
 ```js
@@ -37,7 +36,7 @@ console.log(base ** exponent); // 65536
 ```
 
 ## ES8 (Ecmascript 2017)
-### async y await
+#### async y await
 La declaración de función async define una función asíncrona, la cual devuelve un objeto AsyncFunction. 
 
 Es decir, las funciones asíncronas devuelven promesas que son declaradas con la keyword async delante de la declaración de la función, dentro de este tipo funciones se puede utilizar el keyword await e indicará que se detenga hasta que la promesa no esté resuelta. Una vez  resuelta, continuará con la ejecución normal. De esta forma  ya no son necesarios el .then ni el .catch de las promesas simplificando un poco el código y viéndose de manera más legible. 
@@ -74,7 +73,7 @@ const data = {
 const entries = Object.entries(data);
 console.log(entries); // [ [ 'name', 'Manuel' ], [ 'age', 24 ], [ 'rocks', true ] ]
 ```
-### Object.values
+#### Object.values
 Es un nuevo método de la clase Object que devuelve un array que contiene solamente los valores de las propiedades enumerables de un objeto dado.
 ```js
 const data = {
@@ -85,10 +84,10 @@ const data = {
 const entries = Object.values(data);
 console.log(entries); // [ 'Gonzalo', 28, 'M' ]
 ```
-### Padding de Strings
+#### Padding de Strings
 Se agregaron dos métodos de instancia String que permiten el agregar o anteponer una cadena al inicio o al final de la cadena original.  Es decir, permite rellenar la cadena actual con una cadena dada (repetida eventualmente) de modo que la cadena resultante alcance una longitud dada.
 
-### PadStart
+#### PadStart
 String.prototype.padEnd
 En el ejemplo se antepone la cadena “X” cuantas veces sea necesario para que la cadena original tenga la longitud establecida.
 ```js
@@ -96,7 +95,7 @@ const string = 'hi';
 const newString = string.padStart(5, 'X'); 
 console.log(newString); // 'XXXhi'
 ```
-### PadEnd
+#### PadEnd
 String.prototype.padStart
 A diferencia del anterior ejemplo, ahora se agrega la cadena “X” cuantas veces sea necesario para que la cadena original tenga la longitud establecida.
 ```js
@@ -104,13 +103,13 @@ const string = 'hi';
 const newString = string.padEnd(5, 'X');
 console.log(newString); // 'hiXXX'
 ```
-### Trailing commas
+#### Trailing commas
 Para muchos es un cambio menor casi innecesario, pero permite tener comas finales después del último parámetro de una función. 
 
 Imaginemos que necesitamos modificar una función adicionando un nuevo parámetro, esto significa adicionar una coma para agregar el nuevo parámetro de modo tal que se modificarían dos líneas de código según nuestro versionador de código. Pero si utilizamos trailing commas el cambio sólo sería agregar el parámetro con una línea de código, de tal modo que la visualización de los cambios realizados será más limpio.
 
 ## ES9 (Ecmascript2018)
-### Spread en objetos (Object Rest/Spread Properties)
+#### Spread en objetos (Object Rest/Spread Properties)
 Se lo conoce como operador de propagación o spread operator, este permite que una expresión sea expandida en situaciones donde se esperan múltiples argumentos como llamadas a funciones o múltiples elementos en arrays. Ahora en ES9 también puede ser aplicado a objetos.  
 ```js 
 const data = {
@@ -121,7 +120,7 @@ const data = {
 const { name, ...rest } = data;
 console.log(rest); // { age: 28, gender: 'M' }
 ```
-### Composición de objetos
+#### Composición de objetos
 Con el operador spread no solamente podemos agrupar elementos, también podemos componer nuevos objetos. 
 ```js
 const data = {
@@ -139,7 +138,7 @@ const person = {
 }
 console.log(person);
 ```
-### Finally en Promises
+#### Finally en Promises
 Es una función introducida en las promesas que se ejecuta siempre al finalizar la promesa sin importar si fue ejecutada con éxito o fue rechazada. Esta funciona de la misma forma que el always del Ajax de jQuery o el finally de Java.
 
 ```js
@@ -163,7 +162,7 @@ coolSong()
 		console.log('Bye!');
 	})
 ```
-### Regex
+#### Regex
 Se introdujeron varias mejoras y cambios al prototype de Regex una de ellas es la captura de grupos en bloques.
 
 ```js
@@ -175,7 +174,7 @@ const day = match[3];
 console.log(year, month, day); // 2020 06 02
 ```
 ## ES10 (Ecmascript2019)
-### Flat (Array.flat)
+#### Flat (Array.flat)
 Es un método que crea una nueva matriz con todos los elementos de sub-array concatenados recursivamente hasta la profundidad o nivel especificado.
 ```js
 const messedArray = [1, 2, 3, [1, 2, 3, [1, 2, 3]], [4, 5, 6]];
@@ -184,14 +183,14 @@ const flatedArray2 = messedArray.flat(2);
 console.log(flatedArray); // [ 1, 2, 3, 1, 2, 3, [ 1, 2, 3 ], 4, 5, 6 ]
 console.log(flatedArray2); // [ 1, 2, 3, 1, 2, 3, 1, 2, 3, 4, 5, 6 ]
 ```
-### Flatmap (Array.prototype.flatMap())
+#### Flatmap (Array.prototype.flatMap())
 Tiene el mismo efecto que usar el método map() seguido inmediatamente del método flat() con una profundidad por defecto de 1. Es decir, flatMap(), mapea cada valor a un nuevo valor y el resultado es aplanado a una profundidad de 1.
 ```js
 const messedArray = [1, 2, 3, 4, 5, 6];
 const mapFlatArray = messedArray.flatMap((value) => [value * 2, value * 3]);
 console.log(mapFlatArray); // [ 2, 3, 4, 6, 6, 9, 8, 12, 10, 15, 12, 18 ]
 ```
-### trimStart y trimEnd
+#### trimStart y trimEnd
 Elimina los espacios en blanco al inicio o al final de la cadena.
 ```js
 const hello = '     Hello World      '
@@ -199,7 +198,7 @@ console.log(`${hello} here is the end`); //     Hello World       here is the en
 console.log(`${hello.trimStart()} here is the end`); //Hello World       here is the end
 console.log(`${hello.trimEnd()} here is the end`); //     Hello World here is the end
 ```
-### Optional catch bind
+#### Optional catch bind
 Permite hacer bloques de try y catch sin el parámetro (Error) del catch si no queremos usarlo de modo tal que ahora es opcional.
 ```js
 let res;
@@ -211,7 +210,7 @@ try {
 	console.log("#¡Div/0!")
 } // no es necesario pasar error al catch
 ```
-### Object.fromEntries
+#### Object.fromEntries
 Hace lo inverso al Object.entries(), permite pasar de un array de arrays a un Objecto.
 
 ```js
@@ -223,7 +222,7 @@ const data = [
 const object = Object.fromEntries(data);
 console.log(object); // { name: 'Manuel', age: 24, rocks: true }
 ```
-### Symbol description
+#### Symbol description
 Ésta nueva propiedad permite acceder a la descripción de un símbolo sin tener que usar el método toString().
 ```js
 const symbolDescription = 'My Symbol description';
