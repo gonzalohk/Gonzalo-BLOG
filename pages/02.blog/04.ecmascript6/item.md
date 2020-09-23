@@ -5,7 +5,7 @@ published: true
 date: '18-05-2020 22:16'
 publish_date: '18-05-2020 22:16'
 metadata:
-    Keywords: '''ECMAScript 6, ES6, ECMAScript2015, ES2015'''
+    '"Keywords"': '"ECMAScript 6", "ES6", "ECMAScript2015", "ES2015"'
 taxonomy:
     category:
         - Frontend
