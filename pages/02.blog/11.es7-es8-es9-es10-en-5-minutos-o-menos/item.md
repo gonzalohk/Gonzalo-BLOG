@@ -18,8 +18,7 @@ taxonomy:
 
 ES6 sin duda fue un antes y después de JavaScript, tal como se señaló en un [post anterior](http://gonzalohk.xyz/blog/ecmascript6). Sin embargo, nos preguntamos qué pasó después o cómo es que se sigue hoy en día adicionando nuevos features. 
 
-Primero debemos saber que **la especificación de JavaScript propuesto por ECMA international se actualiza cada año en el mes de junio**. En efecto, los estándares ES7, ES8, ES9, ES10, ES11 ya fueron lanzados, ahora bien muchos de los cambios no son muy sustanciales, pero resultan muy útiles al momento del desarrollo e implícitamente ya venimos usando muchos de estos en frameworks y librerías que usamos día a día. Pues empecemos a describir estos features. 
-
+Primero debemos saber que **la especificación de JavaScript propuesta por ECMA international se actualiza cada año en el mes de junio**. En efecto, los estándares ES7, ES8, ES9, ES10, ES11 ya fueron lanzados, ahora bien muchos de los cambios no son muy sustanciales, pero resultan muy útiles al momento del desarrollo e implícitamente ya venimos usando muchos de estos en frameworks y librerías que usamos día a día.
 ## ES7 (Ecmascript 2016)
 #### Includes (Array.prototype.includes)
 Este método determina si una matriz incluye un determinado elemento, devuelve true o false según corresponda.
