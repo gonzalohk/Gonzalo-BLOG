@@ -1,5 +1,5 @@
 ---
-title: 'ES7, ES8, ES9, ES10 en 5 minutos'
+title: 'ES7, ES8, ES9 y ES10 en 5 minutos'
 date: '23-09-2020 11:20'
 publish_date: '23-09-2020 11:21'
 metadata:
