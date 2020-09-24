@@ -1,6 +1,5 @@
 ---
 title: 'ES7, ES8, ES9 y ES10 en 5 minutos'
-media_order: 'banner-js.jpg,EcmaScript.gif'
 date: '23-09-2020 11:20'
 publish_date: '23-09-2020 11:21'
 metadata:
