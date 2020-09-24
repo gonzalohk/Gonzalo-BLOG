@@ -20,7 +20,7 @@ ES6 sin duda fue un antes y después de JavaScript, tal como se señaló en un [
 
 Primero debemos saber que **la especificación de JavaScript propuesta por ECMA international se actualiza cada año en el mes de junio**. En efecto, los estándares ES7, ES8, ES9, ES10, ES11 ya fueron lanzados, ahora bien muchos de los cambios no son muy sustanciales, pero resultan muy útiles al momento del desarrollo e implícitamente ya venimos usando muchos de estos en frameworks y librerías que usamos día a día.
 ## ES7 (Ecmascript 2016)
-#### Includes
+##### Includes
 Este método determina si una matriz incluye un determinado elemento, devuelve true o false según corresponda.
 
 ```js
@@ -28,7 +28,7 @@ let numbers = [1, 2, 4, 5, 9];
 console.log(numbers.includes(5));// true
 console.log(numbers.includes(11));// false
 ```
-#### Exponencial 
+##### Exponencial 
 Este es un nuevo operador que permite calcular la potencia de un número donde se indica el número base y el exponente, similar a Math.pow(base, exponente), pero ahora no es necesario utilizarla gracias al operador ** .
 
 ```js
