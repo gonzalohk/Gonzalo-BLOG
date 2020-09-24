@@ -19,7 +19,7 @@ taxonomy:
 ES6 sin duda fue un antes y después de JavaScript, tal como se señaló en un [post anterior](http://gonzalohk.xyz/blog/ecmascript6). Sin embargo, nos preguntamos qué pasó después o cómo es que se sigue hoy en día adicionando nuevos features. 
 
 Primero debemos saber que **la especificación de JavaScript propuesta por ECMA international se actualiza cada año en el mes de junio**. En efecto, los estándares ES7, ES8, ES9, ES10, ES11 ya fueron lanzados, ahora bien muchos de los cambios no son muy sustanciales, pero resultan muy útiles al momento del desarrollo e implícitamente ya venimos usando muchos de estos en frameworks y librerías que usamos día a día.
-## ES7 (Ecmascript 2016)
+## ES7 (ECMAScript 2016)
 ##### Includes
 Este método determina si una matriz incluye un determinado elemento, devuelve true o false según corresponda.
 
@@ -37,7 +37,7 @@ const exponent = 16;
 console.log(base ** exponent); // 65536
 ```
 
-## ES8 (Ecmascript 2017)
+## ES8 (ECMAScript 2017)
 ##### async y await
 La declaración de función async define una función asíncrona, la cual devuelve un objeto AsyncFunction. 
 
@@ -107,7 +107,7 @@ Para muchos es un cambio menor casi innecesario, pero permite tener comas finale
 
 Imaginemos que necesitamos modificar una función adicionando un nuevo parámetro, esto significa adicionar una coma para agregar el nuevo parámetro de modo tal que se modificarían dos líneas de código según nuestro versionador de código. Pero si utilizamos trailing commas el cambio sólo sería agregar el parámetro con una línea de código, de tal modo que la visualización de los cambios realizados será más limpio.
 
-## ES9 (Ecmascript2018)
+## ES9 (ECMAScript 2018)
 ##### Spread en objetos 
 Se lo conoce como operador de propagación o spread operator, este permite que una expresión sea expandida en situaciones donde se esperan múltiples argumentos como llamadas a funciones o múltiples elementos en arrays. Ahora en ES9 también puede ser aplicado a objetos.  
 ```js 
@@ -172,7 +172,7 @@ const month = match[2];
 const day = match[3];
 console.log(year, month, day); // 2020 06 02
 ```
-## ES10 (Ecmascript2019)
+## ES10 (ECMAScript 2019)
 ##### Flat 
 Es un método que crea una nueva matriz con todos los elementos de sub-array concatenados recursivamente hasta la profundidad o nivel especificado.
 ```js
