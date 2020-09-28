@@ -14,9 +14,9 @@ taxonomy:
 
 Estas últimas semanas estaba adentrándome un poco más a lo que es QA, más propiamente   Automation Testing, pienso que es interesante y no muy complicado de aplicar. Por lo que me gustaría compartir lo que voy aprendiendo, si bien es relativamente básico sé que es una base para quien este interesado en ingresar a esta área. 
 
-En efecto, haremos la configuración de un entorno de testing funcional automatizado para aplicaciones móviles con Java, Gradle, Selenium, Appium y Junit. Todo esto desde cero sin utilizar algún framework, para tener un mejor entendimiento y estructurarlo según nuestras necesidades.
+En efecto, haremos la configuración de un entorno de testing funcional automatizado para aplicaciones móviles con Java, Gradle, Selenium, Appium y Junit. Todo esto desde cero sin utilizar algún framework, para tener un mejor entendimiento y estructurarlo mejor según nuestras necesidades.
 
-Para iniciar con nuestras pruebas automatizadas debemos establecer un ambiente de desarrollo inicialmente local. Para ello, este debe ser capaz de proporcionarnos comunicación con nuestros dispositivos móviles (incluso virtuales), hacer uso de herramientas para administrar dichos dispositivos y mediante un lenguaje de programación junto a librerías adicionales correr nuestros casos de prueba.
+Para iniciar con nuestras pruebas automatizadas debemos establecer un ambiente de desarrollo inicialmente local. Para ello, este debe ser capaz de proporcionarnos comunicación con nuestros dispositivos móviles (también virtuales), adicionalmente debe hacer uso de herramientas para administrar los dispositivos y mediante un lenguaje de programación junto a librerías adicionales debería poder correr nuestros casos de prueba.
 
 ### 1 Precondiciones 
 En primera instancia descargamos e instalamos las siguientes herramientas de desarrollo, gestor de dependencias y herramienta de automatización.
