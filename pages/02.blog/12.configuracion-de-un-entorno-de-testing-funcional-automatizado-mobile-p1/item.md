@@ -1,5 +1,6 @@
 ---
 title: 'Como configurar y correr Mobile Automation Test con Java + Gradle + Selenium + Appium + JUnit (Parte 1)'
+media_order: preconditions.png
 published: true
 date: '27-09-2020 11:17'
 publish_date: '27-09-2020 11:17'
@@ -42,6 +43,7 @@ Así mismo, se deben adicionar variables de entorno a nuestro Java JDK, Android 
 	*  _C:\Users\{MI-USUARIO}\AppData\Local\Android\Sdk\platform-tools_
 
 Posterior a ello, verificamos que podamos ejecutar en la consola los comandos siguientes.
+![Verificando](preconditions.png?classes=center-block)
 
 ### 2. Conexión con nuestros dispositivos
 
