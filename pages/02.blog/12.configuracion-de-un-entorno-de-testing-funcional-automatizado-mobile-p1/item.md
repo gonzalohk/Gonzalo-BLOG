@@ -1,5 +1,5 @@
 ---
-title: 'Configuración de un entorno de testing funcional automatizado para aplicaciones móviles con Java + Gradle + Selenium + Appium + JUnit (Parte 1)'
+title: 'Como configurar y correr mobile automation test con Java + Gradle + Selenium + Appium + JUnit (Parte 1)'
 published: true
 date: '27-09-2020 11:17'
 publish_date: '27-09-2020 11:17'
@@ -12,19 +12,21 @@ taxonomy:
         - mobile
 ---
 
+Configuración de un entorno de testing funcional automatizado para aplicaciones móviles con Java + Gradle + Selenium + Appium + JUnit 
+
 Para iniciar con nuestras pruebas automatizadas de pruebas funcionales debemos establecer un ambiente de desarrollo inicialmente local. Para ello este debe ser capaz de proporcionarnos comunicación con nuestros dispositivos móviles (incluso virtuales), hacer uso de herramientas para administrar dichos dispositivos y mediante un lenguaje de programación junto a librerías adicionales correr nuestros casos de prueba.
 
 ### 1 Precondiciones 
 En primera instancia descargamos e instalamos las siguientes herramientas de desarrollo, gestor de dependencias y herramienta de automatización.
 
-* Java 11 - http://jdk.java.net/java-se-ri/11
-* Android Studio 4.0.1 - https://developer.android.com/studio?hl=en
-* Gradle 5.6.4 -  https://gradle.org/releases/ 
-* Appium 1.18.0-2 - http://appium.io/ 
+* Java 11 - [[Download]](http://jdk.java.net/java-se-ri/11) [[Documentation]](https://docs.oracle.com/en/java/javase/11/)
+* Android Studio 4.0.1 - [[Download]](https://developer.android.com/studio?hl=en) [[Documentation]](https://developer.android.com/studio/intro)
+* Gradle 5.6.4 -  [[Download]](https://gradle.org/releases/) [[Documentation]](https://docs.gradle.org/current/userguide/userguide.html)
+* Appium 1.18.0-2 - [[Download]](http://appium.io/) [[Documentation]](http://appium.io/docs/en/about-appium/api/)
 
 Adicionalmente podemos usar el IDE de nuestra preferencia, pero Intellij IDEA en su versión gratuita tiene lo suficiente para llevar a cabo nuestras pruebas. 
 
-* IntelliJ IDEA 2020.2.2 Community - https://www.jetbrains.com/es-es/idea/download/#section=windows
+* IntelliJ IDEA 2020.2.2 Community - [[Download]](https://www.jetbrains.com/es-es/idea/download/#section=windows)
 
 Así mismo, se deben adicionar variables de entorno a nuestro Java JDK, Android SDK, Gradle y Android tools para hacer uso principalmente del ADB. En efecto, se deberá tener una configuración de la siguiente manera donde en el caso de Windows se vería de esta forma.
 
