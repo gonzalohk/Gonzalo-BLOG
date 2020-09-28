@@ -37,9 +37,9 @@ Así mismo, se deben adicionar variables de entorno a nuestro Java JDK, Android 
 * ANDROID_SDK_ROOT= _C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk_
 * GRADLE_HOME = _C:\gradle-5.6.4_
 * Path
-**  _C:\gradle-5.6.4\bin_
-**  _C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk\tools_
-**  _C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk\platform-tools_
+	*  _C:\gradle-5.6.4\bin_
+	*  _C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk\tools_
+	*  _C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk\platform-tools_
 
 Posterior a ello, verificamos que podamos ejecutar en la consola los comandos siguientes.
 
