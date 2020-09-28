@@ -1,5 +1,5 @@
 ---
-title: 'Como configurar y correr mobile automation test con Java + Gradle + Selenium + Appium + JUnit (Parte 1)'
+title: 'Como configurar y correr Mobile Automation Test con Java + Gradle + Selenium + Appium + JUnit (Parte 1)'
 published: true
 date: '27-09-2020 11:17'
 publish_date: '27-09-2020 11:17'
