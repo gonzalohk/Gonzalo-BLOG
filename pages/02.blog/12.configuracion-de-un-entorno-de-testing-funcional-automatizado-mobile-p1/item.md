@@ -22,10 +22,10 @@ Para iniciar con nuestras pruebas automatizadas debemos establecer un ambiente d
 ### Inicio
 Primeramente descargamos e instalamos las siguientes herramientas de desarrollo, gestor de dependencias y herramienta de automatización respectivamente.
 
-* Java 11 - [[Download]](http://jdk.java.net/java-se-ri/11) [[Documentation]](https://docs.oracle.com/en/java/javase/11/)
-* Android Studio 4.0.1 - [[Download]](https://developer.android.com/studio?hl=en) [[Documentation]](https://developer.android.com/studio/intro)
-* Gradle 5.6.4 -  [[Download]](https://gradle.org/releases/) [[Documentation]](https://docs.gradle.org/current/userguide/userguide.html)
-* Appium 1.18.0-2 - [[Download]](http://appium.io/) [[Documentation]](http://appium.io/docs/en/about-appium/api/)
+* Java 11 - [[Download]](http://jdk.java.net/java-se-ri/11) [[Doc]](https://docs.oracle.com/en/java/javase/11/)
+* Android Studio 4.0.1 - [[Download]](https://developer.android.com/studio?hl=en) [[Doc]](https://developer.android.com/studio/intro)
+* Gradle 5.6.4 -  [[Download]](https://gradle.org/releases/) [[Doc]](https://docs.gradle.org/current/userguide/userguide.html)
+* Appium 1.18.0-2 - [[Download]](http://appium.io/) [[Doc]](http://appium.io/docs/en/about-appium/api/)
 
 Adicionalmente podemos usar el IDE de nuestra preferencia, pero Intellij IDEA en su versión gratuita tiene lo suficiente para llevar a cabo nuestras pruebas. 
 
