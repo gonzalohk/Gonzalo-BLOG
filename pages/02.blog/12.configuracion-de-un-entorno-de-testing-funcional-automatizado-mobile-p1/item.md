@@ -32,14 +32,14 @@ Adicionalmente podemos usar el IDE de nuestra preferencia, pero Intellij IDEA en
 
 Así mismo, se deben adicionar variables de entorno a nuestro Java JDK, Android SDK, Gradle y Android tools para hacer uso principalmente del ADB. En efecto, se deberá tener una configuración de la siguiente manera donde en el caso de Windows se vería de esta forma.
 
-* JAVA_HOME=_C:\Program Files\Java\jdk-11.0.8_
-* ANDROID_HOME=_C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk_
+* JAVA_HOME= _C:\Program Files\Java\jdk-11.0.8_
+* ANDROID_HOME= _C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk_
 * ANDROID_SDK_ROOT= _C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk_
-* GRADLE_HOME =_C:\gradle-5.6.4_
+* GRADLE_HOME = _C:\gradle-5.6.4_
 * Path
-* * _C:\gradle-5.6.4\bin_
-* * _C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk\tools_
-* * _C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk\platform-tools_
+**  _C:\gradle-5.6.4\bin_
+**  _C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk\tools_
+**  _C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk\platform-tools_
 
 Posterior a ello, verificamos que podamos ejecutar en la consola los comandos siguientes.
 
