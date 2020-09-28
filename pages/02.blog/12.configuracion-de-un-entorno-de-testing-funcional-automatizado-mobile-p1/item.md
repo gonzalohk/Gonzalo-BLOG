@@ -18,7 +18,7 @@ En efecto, haremos la configuración de un entorno de testing funcional automati
 
 Para iniciar con nuestras pruebas automatizadas debemos establecer un ambiente de desarrollo inicialmente local. Para ello, este debe ser capaz de proporcionarnos comunicación con nuestros dispositivos móviles (también virtuales), adicionalmente debe hacer uso de herramientas para administrar los dispositivos y mediante un lenguaje de programación junto a librerías adicionales debería poder correr nuestros casos de prueba.
 
-### 1. Inicio
+### Inicio
 Primeramente descargamos e instalamos las siguientes herramientas de desarrollo, gestor de dependencias y herramienta de automatización respectivamente.
 
 * Java 11 - [[Download]](http://jdk.java.net/java-se-ri/11) [[Documentation]](https://docs.oracle.com/en/java/javase/11/)
@@ -33,13 +33,13 @@ Adicionalmente podemos usar el IDE de nuestra preferencia, pero Intellij IDEA en
 Así mismo, se deben adicionar variables de entorno a nuestro Java JDK, Android SDK, Gradle y Android tools para hacer uso principalmente del ADB. En efecto, se deberá tener una configuración de la siguiente manera donde en el caso de Windows se vería de esta forma.
 
 * JAVA_HOME= _C:\Program Files\Java\jdk-11.0.8_
-* ANDROID_HOME= _C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk_
-* ANDROID_SDK_ROOT= _C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk_
+* ANDROID_HOME= _C:\Users\{MI-USUARIO}\AppData\Local\Android\Sdk_
+* ANDROID_SDK_ROOT= _C:\Users\{MI-USUARIO}\AppData\Local\Android\Sdk_
 * GRADLE_HOME = _C:\gradle-5.6.4_
 * Path
 	*  _C:\gradle-5.6.4\bin_
-	*  _C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk\tools_
-	*  _C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk\platform-tools_
+	*  _C:\Users\{MI-USUARIO}\AppData\Local\Android\Sdk\tools_
+	*  _C:\Users\{MI-USUARIO}\AppData\Local\Android\Sdk\platform-tools_
 
 Posterior a ello, verificamos que podamos ejecutar en la consola los comandos siguientes.
 
