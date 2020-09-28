@@ -1,5 +1,5 @@
 ---
-title: 'Como configurar y correr Mobile Automation Test con Java + Gradle + Selenium + Appium + JUnit (Parte 1)'
+title: 'Como configurar y correr Mobile Automation Tests con Java + Gradle + Selenium + Appium + JUnit (Parte 1)'
 media_order: preconditions.png
 published: true
 date: '27-09-2020 11:17'
@@ -22,14 +22,14 @@ Para iniciar con nuestras pruebas automatizadas debemos establecer un ambiente d
 ### Inicio
 Primeramente descargamos e instalamos las siguientes herramientas de desarrollo, gestor de dependencias y herramienta de automatización respectivamente.
 
-* Java 11 - [[Download]](http://jdk.java.net/java-se-ri/11) [[Doc]](https://docs.oracle.com/en/java/javase/11/)
-* Android Studio 4.0.1 - [[Download]](https://developer.android.com/studio?hl=en) [[Doc]](https://developer.android.com/studio/intro)
-* Gradle 5.6.4 -  [[Download]](https://gradle.org/releases/) [[Doc]](https://docs.gradle.org/current/userguide/userguide.html)
-* Appium 1.18.0-2 - [[Download]](http://appium.io/) [[Doc]](http://appium.io/docs/en/about-appium/api/)
+* Java 11 - [Download](http://jdk.java.net/java-se-ri/11) [Doc](https://docs.oracle.com/en/java/javase/11/)
+* Android Studio 4.0.1 - [Download](https://developer.android.com/studio?hl=en) [Doc](https://developer.android.com/studio/intro)
+* Gradle 5.6.4 -  [Download](https://gradle.org/releases/) [Doc](https://docs.gradle.org/current/userguide/userguide.html)
+* Appium 1.18.0-2 - [Download](http://appium.io/) [Doc](http://appium.io/docs/en/about-appium/api/)
 
 Adicionalmente podemos usar el IDE de nuestra preferencia, pero Intellij IDEA en su versión gratuita tiene lo suficiente para llevar a cabo nuestras pruebas. 
 
-* IntelliJ IDEA 2020.2.2 Community - [[Download]](https://www.jetbrains.com/es-es/idea/download/#section=windows)
+* IntelliJ IDEA 2020.2.2 Community - [Download](https://www.jetbrains.com/es-es/idea/download/#section=windows)
 
 Así mismo, se deben adicionar variables de entorno a nuestro Java JDK, Android SDK, Gradle y Android tools para hacer uso principalmente del ADB. En efecto, se deberá tener una configuración de la siguiente manera donde en el caso de Windows se vería de esta forma.
 
@@ -43,6 +43,7 @@ Así mismo, se deben adicionar variables de entorno a nuestro Java JDK, Android 
 	*  _C:\Users\{MI-USUARIO}\AppData\Local\Android\Sdk\platform-tools_
 
 Posterior a ello, verificamos que podamos ejecutar en la consola los comandos siguientes.
+
 ![Verificando](preconditions.png?classes=center-block)
 
 ### 2. Conexión con nuestros dispositivos
