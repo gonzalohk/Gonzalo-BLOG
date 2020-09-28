@@ -1,0 +1,566 @@
+---
+title: 'Configuración de un entorno de testing funcional automatizado para aplicaciones móviles con Java + Gradle + Selenium + Appium + JUnit (Parte 1)'
+published: true
+date: '27-09-2020 11:17'
+publish_date: '27-09-2020 11:17'
+taxonomy:
+    category:
+        - QA
+        - 'QA Automation'
+    tag:
+        - 'automation testing mobile'
+        - mobile
+---
+
+Para iniciar con nuestras pruebas automatizadas de pruebas funcionales debemos establecer un ambiente de desarrollo inicialmente local. Para ello este debe ser capaz de proporcionarnos comunicación con nuestros dispositivos móviles (incluso virtuales), hacer uso de herramientas para administrar dichos dispositivos y mediante un lenguaje de programación junto a librerías adicionales correr nuestros casos de prueba.
+
+### 1 Precondiciones 
+En primera instancia descargamos e instalamos las siguientes herramientas de desarrollo, gestor de dependencias y herramienta de automatización.
+
+* Java 11 - http://jdk.java.net/java-se-ri/11
+* Android Studio 4.0.1 - https://developer.android.com/studio?hl=en
+* Gradle 5.6.4 -  https://gradle.org/releases/ 
+* Appium 1.18.0-2 - http://appium.io/ 
+
+Adicionalmente podemos usar el IDE de nuestra preferencia, pero Intellij IDEA en su versión gratuita tiene lo suficiente para llevar a cabo nuestras pruebas. 
+
+* IntelliJ IDEA 2020.2.2 Community - https://www.jetbrains.com/es-es/idea/download/#section=windows
+
+Así mismo, se deben adicionar variables de entorno a nuestro Java JDK, Android SDK, Gradle y Android tools para hacer uso principalmente del ADB. En efecto, se deberá tener una configuración de la siguiente manera donde en el caso de Windows se vería de esta forma.
+
+* JAVA_HOME=C:\Program Files\Java\jdk-11.0.8
+* ANDROID_HOME=C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk
+* ANDROID_SDK_ROOT= C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk
+* GRADLE_HOME =C:\gradle-5.6.4
+* Path
+* * C:\gradle-5.6.4\bin
+* * C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk\tools
+* * C:\Users\{MI_USUARIO}\AppData\Local\Android\Sdk\platform-tools
+
+Posterior a ello, verificamos que podamos ejecutar en la consola los comandos siguientes.
+
+### 2. Conexión con nuestros dispositivos
+
+Necesitaremos ejecutar nuestras pruebas en dispositivos móviles, para ello tenemos varias opciones, una de ellas es poder crear dispositivos virtuales mediante Android Studio y el AVD (Tools -> AVD Manager -> Create Virtual Device). Esto representa una gran ventajas porque podemos escoger entre una variedad de dispositivos o también  podemos personalizar las características de los mismos junto a la versión de android que necesitemos.
+
+Sin embargo, el uso de recursos de Android Studio más aún los dispositivos virtuales representan una gran carga memoria y recursos por lo que podemos también usar los dispositivos móviles reales que tengamos a la mano.  
+
+En efecto, para hacer uso de un dispositivo Android reales debemos habilitar las Developer Options junto al USB Debugging  en nuestro dispositivo virtual (https://developer.android.com/studio/debug/dev-options#enable). Una vez configurado podemos hacer uso de una aplicación mirroring para visualizar y manejar nuestro celular desde nuestra computadora de manera más cómoda. Para ello instalamos:
+
+* Vysor - https://www.vysor.io/download/
+
+Para verificar que nuestros dispositivos están funcionando correctamente luego de ser iniciados y conectados por cable a nuestro equipo respectivamente podemos ejecutar el comando siguiente. En mi caso, tengo dos dispositivos como se muestra en la imagen.
+
+```sh
+adb devices
+```
+### 3. Instalando When.Do (aplicación a probar)
+Para nuestras pruebas instalaremos una aplicación para registrar notas similar a un TODO, para ello descargamos la siguiente aplicación.
+https://drive.google.com/file/d/1qvl-pTmCmMaTPty-DClIkGec2ItE8KNP/view?usp=sharing
+Existen diferentes formas de instalar un .apk en nuestro dispositivo, pero ahora lo haremos desde la terminal usando el Android Debug Bridge o adb indicando el número de serie del dispositivo y la aplicación a instalar.
+
+```sh
+adb -s emulator-5554 install Todo.apk
+adb -s 310012c7b2929300 install Todo.apk
+```
+#### 3.1. Identificando el Package y Activity de When.Do App
+Una vez instalada la aplicación que será testeada necesitamos identificar el package y el activity al cual responden, esto para conectarnos posteriormente. Para ello, abrimos la aplicación y la ponemos en foco para luego ingresar a la Shell de nuestro teléfono desde la consola.
+
+```sh
+adb -s 310012c7b2929300 install Todo.apk
+```
+Para luego ejecutar el siguiente comando.
+```sh
+dumpsys window windows | grep -E 'CurrentFocus'
+```
+* mCurrentFocus=Window{21a187f9 u0 d0 com.vrproductiveapps.whendo/com.vrproductiveapps.whendo.ui.HomeActivity}
+Ahora bien ya tenemos suficiente datos para obtener el package y el activity.
+* Package: com.vrproductiveapps.whendo
+* Activity: ui.HomeActivity
+
+### 4. Conectandonos a APPIUM
+
+Seguidamente, para conectar nuestro dispositivo móvil con APPIUM necesitamos mínimamente de 5 datos importantes que son: deviceName, plataformVersion, appPackage, appActivity y platformName. Todos estos pueden ser obtenidos fácilmente desde las configuraciones del teléfono. 
+
+En tal sentido, la configuración necesaria para establecer una conexión de nuestra aplicación When.do con Appium sera: 
+```json
+{
+  "deviceName": "Galaxy Tab A (2016)",
+  "platformVersion": "5.1.1",
+  "appPackage": "com.vrproductiveapps.whendo",
+  "appActivity": ".ui.HomeActivity",
+  "platformName": "Android"
+}
+```
+Ahora bien, iniciamos el Appium Server con los valores por defecto. 
+
+Con ayuda del Inspector Session adicionamos las configuraciones mínimas que señalamos anteriormente, para luego iniciar la sesión.
+
+Si la conexión fue exitosa veremos la siguiente pantalla donde se visualiza el dispositivo, los sources y el detalle del selected element actual. Este último es muy importante porque nos ayudará a encontrar los locators de cada elemento en la vista para luego manipularlos como buttons, labels, text boxes, check boxes, etc.
+
+### 5. Creando el proyecto
+
+Intellij IDEA Community será suficiente para implementar y correr nuestras pruebas automatizadas, por lo que creamos un nuevo proyecto Gradle con Java. 
+
+#### 5.1 Dependencias y el build.gradle
+Nuestro ambiente necesita ser capaz de conectarse al dispositivo móvil, efectuar los test de forma automatizados y ordenada. Para ello utilizamos las siguientes dependencias que son especificadas en el archivo build.gradle
+* JUnit v.4.12
+* Appium Java-client v.7.3.0
+* Selenium-java v.3.141.59
+
+```
+plugins {
+    id 'java'
+}
+
+group 'gohk'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/io.appium/java-client
+    compile group: 'io.appium', name: 'java-client', version: '7.3.0'
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+}
+```
+#### 5.2. Creando el configure Package
+
+El primer paquete que creamos se denomina configuration en este adicionamos una clase denominada Conf.java  donde adicionaremos variables constantes que necesitaremos para conectarnos a APPIUM tal como lo hicimos anteriormente con el appium desktop.
+```java
+package configuration;
+
+public class Conf {
+    public static final String DEVICE_NAME = "deviceName";
+    public static final String PLATFORM_VERSION = "platformVersion";
+    public static final String APP_PACKAGE = "appPackage";
+    public static final String APP_ACTIVITY = "appActivity";
+    public static final String PLATFORM_NAME = "platformName";
+
+    // APPIUM Server
+    public static final String APPIUM_SERVER = "http://127.0.0.1:4723/wd/hub";
+    public static final int DEFAULT_IMPLICIT_WAIT = 25;
+    
+    // Device Information
+    public static final String DEVICE_NAME_VALUE = "Galaxy Tab A (2016)";
+    public static final String PLATFORM_VERSION_VALUE = "5.1.1";
+    public static final String APP_PACKAGE_VALUE = "com.vrproductiveapps.whendo";
+    public static final String APP_ACTIVITY_VALUE = ".ui.HomeActivity";
+    public static final String PLATFORM_NAME_VALUE = "Android";
+}
+```
+#### 5.3. Creando el deviceFactory Package
+Ahora creamos el paquete deviceFactory donde configuraremos nuestros drivers para conectarnos con nuestro dispositivo Android, iPhone o Windows Phone. 
+
+Aca aplicaremos el patrón de diseño Factory debido a que los drivers de los distintos sistemas operativos tendrán los mismos métodos sin embargo diferente implementación. En otras palabras, los objetos fabricados tendrán tareas similares pero con detalles de implementación diferentes. 
+
+Creamos la interfaz IDevice.java para especificar que deben hacer los drivers.
+```java
+package deviceFactory;
+
+import io.appium.java_client.AppiumDriver;
+import java.net.MalformedURLException;
+
+public interface IDevice {
+    AppiumDriver create() throws MalformedURLException;
+}
+```
+En el AndroidDriver.java implementamos el método create que nos ayudará a conectaremos con Appium con ayuda de la configuración que establecimos en el anterior paquete.
+```java
+package deviceFactory;
+
+import configuration.Conf;
+import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+public class AndroidDriver implements IDevice {
+
+    @Override
+    public AppiumDriver create() throws MalformedURLException {
+
+        DesiredCapabilities capabilities=new DesiredCapabilities();
+        capabilities.setCapability(Conf.DEVICE_NAME, Conf.DEVICE_NAME_VALUE);
+        capabilities.setCapability(Conf.PLATFORM_VERSION, Conf.PLATFORM_VERSION_VALUE);
+        capabilities.setCapability(Conf.APP_PACKAGE, Conf.APP_PACKAGE_VALUE);
+        capabilities.setCapability(Conf.APP_ACTIVITY, Conf.APP_ACTIVITY_VALUE);
+        capabilities.setCapability(Conf.PLATFORM_NAME, Conf.PLATFORM_NAME_VALUE);
+
+        AppiumDriver driver=new io.appium.java_client.android.AndroidDriver(new URL(Conf.APPIUM_SERVER),capabilities);
+        driver.manage().timeouts().implicitlyWait(Conf.DEFAULT_IMPLICIT_WAIT, TimeUnit.SECONDS);
+        return driver;
+    }
+}
+```
+De la misma forma será necesario implementar el create para IOS, Windows Phone o cualquier otro driver que queramos utilizar, pudiendo ser también alguno remoto como los que ofrece browserstack.
+```java
+package deviceFactory;
+
+import io.appium.java_client.AppiumDriver;
+
+public class IOSDriver implements IDevice{
+    @Override
+    public AppiumDriver create() {
+        // TODO Add implementation
+        return null;
+    }
+}
+```
+```java
+package deviceFactory;
+
+import io.appium.java_client.AppiumDriver;
+
+public class WindowsPhoneDriver implements IDevice {
+    @Override
+    public AppiumDriver create() {
+        // TODO Add implementation
+        return null;
+    }
+}
+```
+De modo tal que el FactoryDevice.java será el encargado de fabricar los drivers en función al parámetro que indiquemos posteriormente.
+```java
+package deviceFactory;
+
+public class FactoryDevice {
+
+    public static IDevice make(String type){
+        IDevice device;
+        switch (type){
+            case "ios":
+                device = new IOSDriver();
+                break;
+            case "windowsphone":
+                device = new WindowsPhoneDriver();
+                break;
+            case "android":
+            default:
+                device = new AndroidDriver();
+                break;
+        }
+        return device;
+    }
+}
+```
+#### 5.4. Creando el sessionManager Package
+Ahora bien, en el paquete sessionManager el Session.java nos ayuda a gestionar la conexión que establecemos con un driver en particular, para fines de prueba un driver Android. Al ser este un singleton evitaremos problemas comunes que se tendrían con múltiples instancias o el crear o cerrar las conexiones.
+
+```java
+package sessionManager;
+
+import deviceFactory.FactoryDevice;
+import io.appium.java_client.AppiumDriver;
+import java.net.MalformedURLException;
+
+public class Session {
+    public static Session session= null;
+    private AppiumDriver driver;
+    private Session() throws MalformedURLException {
+        driver = FactoryDevice.make("android").create();
+    }
+
+    public static Session getInstance() {
+        if (session == null){
+            try {
+                session = new Session();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        }
+        return session;
+    }
+
+    public void closeSession (){
+        driver.quit();
+        session = null;
+    }
+
+    public AppiumDriver getDriver(){
+        return driver;
+    }
+}
+```
+#### 5.5. Creando el appiumControl Package
+El paquete appiumControl representa una abstracción de los elementos que pueden llegar a tener nuestras aplicaciones como botones, cajas de texto, labels, checkboxes, etc. 
+
+Muchas de las acciones que realizan estos elementos son exactamente iguales por lo que es conveniente abstraer estas funcionalidades y características. En efecto, el establecer relaciones de herencia para evitar código redundante es importante, el Control.java tiene muchas acciones que son compartidas por otros elementos, así mismo existen acciones propias de cada elemento por lo que también son implementadas en sus respectivas clases. 
+Esto permite tener código más limpio y abierto a ser extendido según las necesidades de nuestra aplicación.
+
+```java
+package appiumControl;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import sessionManager.Session;
+
+public class Control {
+    protected WebElement control;
+    protected By locator;
+
+    public Control(By locator){
+        this.locator = locator;
+    }
+
+    public void findControl() {
+        this.control = Session.getInstance().getDriver().findElement(this.locator);
+    }
+
+    public void click() {
+        this.findControl();
+        this.control.click();
+    }
+
+    public String getText(){
+        this.findControl();
+        return this.control.getText();
+    }
+
+    public boolean isDisplayed(){
+        try{
+            this.findControl();
+            return this.control.isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
+    }
+}
+```
+```java
+package appiumControl;
+
+import org.openqa.selenium.By;
+import java.net.MalformedURLException;
+
+public class TextBox extends Control {
+    public TextBox(By locator){
+        super(locator);
+    }
+    public void write(String value) throws MalformedURLException {
+        this.findControl();
+        this.control.sendKeys(value);
+    }
+}
+```
+```java
+package appiumControl;
+
+import org.openqa.selenium.By;
+
+public class CheckBox extends Control {
+
+   public CheckBox(By locator) {
+       super(locator);
+   }
+
+   public void check(){
+       // TODO Add implementation
+       // Workaround
+       click();
+   }
+
+   public void unCheck(){
+       // TODO Add implementation
+   }
+}
+```
+```java
+package appiumControl;
+
+import org.openqa.selenium.By;
+
+public class Label extends Control {
+    public Label(By locator){
+        super(locator);
+    }
+}
+```
+```java
+package appiumControl;
+
+import org.openqa.selenium.By;
+
+public class Button extends Control {
+    public Button(By locator){
+        super(locator);
+    }
+}
+```
+#### 5.6. Creando el activity Package
+El paquete activity sigue parte del patrón SinglePage donde cada clase representa a una vista y donde cada atributo es un elemento de la misma. Es decir, que cada clase definirá objetos Control del paquete appiumControl para ser localizado mediante un locator y ser manipulado posteriormente.
+
+```java
+package activity;
+
+import appiumControl.Button;
+import appiumControl.CheckBox;
+import appiumControl.Label;
+import org.openqa.selenium.By;
+import sessionManager.Session;
+
+public class MainActivity {
+    public Button searchButton;
+    public Button plusButton;
+    public Button moreOptionsButton;
+
+    public MainActivity(){
+        moreOptionsButton = new Button(By.xpath("//android.widget.ImageView[@content-desc=\"M\u00e1s opciones\"]"));
+        plusButton = new Button(By.id("com.vrproductiveapps.whendo:id/fab"));
+        searchButton = new Button(By.id("com.vrproductiveapps.whendo:id/search"));
+    }
+
+    public void checkFirstNote(){
+        String locator = "(//android.widget.ImageButton[@content-desc=\"Marcar como Hecha\"])[1]";
+        CheckBox fistCheckBox = new CheckBox(By.xpath(locator));
+        if (fistCheckBox != null) {
+            fistCheckBox.check();
+        }
+    }
+
+    public boolean isNoteDisplayed(String noteTitle){
+        String locator = "//android.widget.TextView[@text='"+noteTitle+"']";
+        Label note = new Label(By.xpath(locator));
+        return note.isDisplayed();
+    }
+
+    public int countNotes(){
+        // Workaround
+        String locator = "//android.widget.ImageButton[@content-desc=\"Marcar como Hecha\"]";
+        int numNotes = Session.getInstance().getDriver().findElements(By.xpath(locator)).size();
+        return numNotes;
+    }
+}
+```
+```java
+package activity;
+
+import appiumControl.Button;
+import appiumControl.TextBox;
+import org.openqa.selenium.By;
+
+public class AddNoteActivity {
+    public Button saveNoteButton;
+    public Button saveAndNewNoteButton;
+    public Button closeButton;
+    public TextBox titleTextBox;
+    public TextBox noteTextBox;
+
+    public AddNoteActivity(){
+        saveNoteButton = new Button(By.id("com.vrproductiveapps.whendo:id/saveItem"));
+        saveAndNewNoteButton = new Button(By.id("com.vrproductiveapps.whendo:id/saveAndNew"));
+        closeButton = new Button(By.xpath("//android.widget.ImageButton[@content-desc=\"Navegar hacia arriba\"]"));
+        titleTextBox = new TextBox(By.id("com.vrproductiveapps.whendo:id/noteTextTitle"));
+        noteTextBox = new TextBox(By.id("com.vrproductiveapps.whendo:id/noteTextNotes"));
+    }
+}
+```
+```java
+package activity;
+
+import appiumControl.Button;
+import org.openqa.selenium.By;
+
+public class MoreOptionsActivity {
+    public Button deleteButton;
+
+    public MoreOptionsActivity() {
+        deleteButton = new Button(By.xpath("//android.widget.TextView[@text='Eliminar Completadas']"));
+    }
+}
+```
+```java
+package activity;
+
+import appiumControl.Button;
+import org.openqa.selenium.By;
+
+public class ConfirmationActivity {
+    public Button deleteButton;
+
+    public ConfirmationActivity() {
+        deleteButton = new Button(By.id("android:id/button1"));
+    }
+}
+```
+#### 5.7. Creando el test Package
+Finalmente, creamos el paquete test donde implementamos el WhenDoTest.java donde definimos 3 test que serán evaluados con ayuda de JUnit.
+
+* addNote
+* addNotes
+* removeNote
+
+Con ayuda de los activities y controles, la implementación de los test automatizados resulta en código sencillo, limpio y legible de modo tal que cualquier miembro del equipo es capaz de leer estos test y entenderlos. Esto es posible porque especificamos donde el elemento realiza una acción (Activity + element + action), esto se refleja mejor en los steps y en la verificación que se realiza al final.
+```java
+package test;
+
+import activity.AddNoteActivity;
+import activity.ConfirmationActivity;
+import activity.MainActivity;
+import activity.MoreOptionsActivity;
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.net.MalformedURLException;
+
+public class WhenDoTest {
+    MainActivity mainActivity = new MainActivity();
+    AddNoteActivity addNoteActivity = new AddNoteActivity();
+    MoreOptionsActivity moreOptionsActivity = new MoreOptionsActivity();
+    ConfirmationActivity confirmationActivity = new ConfirmationActivity();
+
+    @Test
+    public void addNote() throws MalformedURLException {
+        //Steps
+        mainActivity.plusButton.click();
+        addNoteActivity.titleTextBox.write("title test");
+        addNoteActivity.noteTextBox.write("Note test");
+        addNoteActivity.saveNoteButton.click();
+
+        //Verification
+        Assert.assertTrue("New note was not created", mainActivity.isNoteDisplayed("title test"));
+    }
+
+    @Test
+    public void addNotes() throws MalformedURLException {
+        //Steps
+        mainActivity.plusButton.click();
+        addNoteActivity.titleTextBox.write("title test 1");
+        addNoteActivity.noteTextBox.write("Note test 1");
+        addNoteActivity.saveAndNewNoteButton.click();
+
+        addNoteActivity.titleTextBox.write("title test 2");
+        addNoteActivity.noteTextBox.write("Note test 2");
+        addNoteActivity.saveNoteButton.click();
+
+        //Verification
+        Assert.assertTrue("First new note was not created", mainActivity.isNoteDisplayed("title test 1"));
+        Assert.assertTrue("Second new note was not created", mainActivity.isNoteDisplayed("title test 2"));
+    }
+
+    @Test
+    public void removeNote() {
+        //Steps
+        int numNotes = mainActivity.countNotes();
+        mainActivity.checkFirstNote();
+        mainActivity.moreOptionsButton.click();
+        moreOptionsActivity.deleteButton.click();
+        confirmationActivity.deleteButton.click();
+
+        //Verification
+        Assert.assertEquals("Error, Note was not deleted", numNotes -1, mainActivity.countNotes());
+    }
+}
+```
+### 6. Ejecutando Tests
+Por último ejecutamos el WhenDoTest.java y verificamos que sean exitosos.
+
+### 7. Repositorio
+El código completo se encuentra en el siguiente repositorio.
+* https://github.com/gonzalohk/automation-mobile-testing-when.do
