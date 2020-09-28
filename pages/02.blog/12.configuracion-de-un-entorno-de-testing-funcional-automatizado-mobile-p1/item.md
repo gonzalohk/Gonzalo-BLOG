@@ -1,6 +1,6 @@
 ---
 title: 'Como configurar y correr Mobile Automation Tests con Java + Gradle + Selenium + Appium + JUnit (Parte 1)'
-media_order: 'preconditions.png,virtualDevice.png,adb-devices.png,devices.png,adb-install-todo.png,adb-shell.png,appium-inicio.png,appium-configuration.png,appium-running.png'
+media_order: 'preconditions.png,virtualDevice.png,adb-devices.png,devices.png,adb-install-todo.png,adb-shell.png,appium-inicio.png,appium-configuration.png,appium-running.png,MavenProject.png,configurationPackage.png,deviceFactoryPackage.png,sessionManagerPackage.png,appiumControlPackage.png,activityPackage.png,MainActivity.png,AddNote.png,MoreOptions.png,confirmation.png,test-results.png'
 published: true
 date: '27-09-2020 11:17'
 publish_date: '27-09-2020 11:17'
@@ -19,17 +19,17 @@ En efecto, haremos la configuración de un entorno de testing funcional automati
 
 Para iniciar con nuestras pruebas automatizadas debemos establecer un ambiente de desarrollo inicialmente local. Para ello, este debe ser capaz de proporcionarnos comunicación con nuestros dispositivos móviles (también virtuales), adicionalmente debe hacer uso de herramientas para administrar los dispositivos y mediante un lenguaje de programación junto a librerías adicionales debería poder correr nuestros casos de prueba.
 
-### Inicio
+## Inicio
 Primeramente descargamos e instalamos las siguientes herramientas de desarrollo, gestor de dependencias y herramienta de automatización respectivamente.
 
-* Java 11 - [Download](http://jdk.java.net/java-se-ri/11) [Doc](https://docs.oracle.com/en/java/javase/11/)
-* Android Studio 4.0.1 - [Download](https://developer.android.com/studio?hl=en) [Doc](https://developer.android.com/studio/intro)
-* Gradle 5.6.4 -  [Download](https://gradle.org/releases/) [Doc](https://docs.gradle.org/current/userguide/userguide.html)
-* Appium 1.18.0-2 - [Download](http://appium.io/) [Doc](http://appium.io/docs/en/about-appium/api/)
+* Java 11 - [Descargar](http://jdk.java.net/java-se-ri/11) [Doc](https://docs.oracle.com/en/java/javase/11/)
+* Android Studio 4.0.1 - [Descargar](https://developer.android.com/studio?hl=en) [Doc](https://developer.android.com/studio/intro)
+* Gradle 5.6.4 -  [Descargar](https://gradle.org/releases/) [Doc](https://docs.gradle.org/current/userguide/userguide.html)
+* Appium 1.18.0-2 - [Descargar](http://appium.io/) [Doc](http://appium.io/docs/en/about-appium/api/)
 
 Adicionalmente podemos usar el IDE de nuestra preferencia, pero Intellij IDEA en su versión gratuita tiene lo suficiente para llevar a cabo nuestras pruebas. 
 
-* IntelliJ IDEA 2020.2.2 Community - [Download](https://www.jetbrains.com/es-es/idea/download/#section=windows)
+* IntelliJ IDEA 2020.2.2 Community - [Descargar](https://www.jetbrains.com/es-es/idea/download/#section=windows)
 
 Así mismo, se deben adicionar variables de entorno a nuestro Java JDK, Android SDK, Gradle y Android tools para hacer uso principalmente del ADB. En efecto, se deberá tener una configuración de la siguiente manera donde en el caso de Windows se vería de esta forma.
 
@@ -46,7 +46,7 @@ Posterior a ello, verificamos que podamos ejecutar en la consola los comandos si
 
 ![Verificando](preconditions.png?classes=center-block)
 
-### Conectando dispositivos
+## Conectando dispositivos
 Necesitaremos ejecutar nuestras pruebas en dispositivos móviles, para ello tenemos varias opciones siendo una de ellas el crear dispositivos virtuales mediante Android Studio y el AVD (_Tools -> AVD Manager -> Create Virtual Device_). Esto representa una gran ventaja porque podemos escoger entre una variedad de dispositivos o también podemos personalizar las características de los mismos junto a la versión de android que necesitemos.
 
 ![VirtualDevice](virtualDevice.png?classes=center-block)
@@ -55,19 +55,21 @@ Sin embargo, el uso de recursos de Android Studio más aún los dispositivos vir
 
 Por otro lado, podemos hacer uso de dispositivos reales, en el caso de android debemos habilitar las Developer Options junto al USB Debugging (ver [aqui](https://developer.android.com/studio/debug/dev-options#enable)). Una vez habilitado podemos hacer uso de una aplicación mirroring para visualizar y manejar nuestro celular desde nuestra computadora de manera más cómoda. Para ello instalamos:
 
-* Vysor - [Download](https://www.vysor.io/download/)
+* Vysor - [Descargar](https://www.vysor.io/download/)
 
 Para verificar que nuestros dispositivos están funcionando correctamente luego de ser iniciados y conectados por cable a nuestro equipo respectivamente podemos ejecutar el comando siguiente. En mi caso, tengo dos dispositivos como se muestra en la imagen.
+
 ```sh
 adb devices
 ```
+
 
 ![adb-devices](adb-devices.png?classes=center-block)
 
 
 ![Dispositivo real y virtual](devices.png?classes=center-block)
 
-### Instalando When.Do (Aplicación A Testear)
+## Instalando When.Do (Aplicación A Testear)
 Para nuestras pruebas instalaremos una aplicación para registrar notas similar a un TODO denominada When.do, para ello descargamos.
 
 * When.Do [Descagar](https://drive.google.com/file/d/1qvl-pTmCmMaTPty-DClIkGec2ItE8KNP/view?usp=sharing)
@@ -81,7 +83,7 @@ adb -s 310012c7b2929300 install Todo.apk
 
 ![Instalar When.do](adb-install-todo.png?classes=center-block)
 
-#### Package y Activity de When.Do
+## Package y Activity de When.Do
 Una vez instalada la aplicación que será testeada necesitamos identificar el package y el activity al cual responden, esto para conectarnos posteriormente. Para ello, abrimos la aplicación y la ponemos en foco para luego ingresar a la Shell de nuestro teléfono desde la consola.
 
 ```sh
@@ -93,12 +95,15 @@ dumpsys window windows | grep -E 'CurrentFocus'
 ```
 ![adb shell](adb-shell.png?classes=center-block)
 
-El mensaje que nos muestra la consola corresponde a la aplicación que esta en foco actualmente, en nuestro caso when.do  _mCurrentFocus=Window{21a187f9 u0 d0 com.vrproductiveapps.whendo/com.vrproductiveapps.whendo.ui.HomeActivity}_ . Ahora bien ya lo suficiente para obtener el package y el activity.
+El mensaje que nos muestra la consola corresponde a la aplicación que esta en foco actualmente, en nuestro caso when.do.
+* _mCurrentFocus=Window{21a187f9 u0 d0 com.vrproductiveapps.whendo/com.vrproductiveapps.whendo.ui.HomeActivity}_ . 
+ 
+Ahora bien ya lo suficiente para obtener el package y el activity.
 
 * Package: _com.vrproductiveapps.whendo_
 * Activity: _ui.HomeActivity_
 
-### Conectandonos a APPIUM
+## Conectandonos a APPIUM
 Seguidamente, para conectar nuestro dispositivo móvil con Appium necesitamos mínimamente de 5 datos importantes que son: deviceName, plataformVersion, appPackage, appActivity y platformName. Sin embargo, ya identificamos al package junto al activity, los otros datos pueden ser obtenidos fácilmente desde la configuracion del teléfono.  En tal sentido, la configuración necesaria para establecer una conexión de mi dispositvo y Appium usando When.do es: 
 ```json
 {
@@ -115,17 +120,20 @@ Ahora bien, iniciamos el Appium Server con los valores por defecto.
 
 Con ayuda del Inspector Session adicionamos las configuraciones mínimas que señalamos anteriormente, para luego iniciar la sesión.
 
-![Appium configuracion](appium-configuration.png)
+![Appium configuracion](appium-configuration.png?classes=center-block)
 
 Si la conexión fue exitosa veremos la siguiente pantalla donde se visualiza el dispositivo, los sources y el detalle del element seleccionado. Este último es muy importante porque nos ayudará a encontrar los locators de cada elemento en la vista para luego manipularlos como buttons, labels, text boxes, check boxes, etc.
 
-![Appium corriendo](appium-running.png)
+![Appium corriendo](appium-running.png?classes=center-block)
 
-### 5. Creando el proyecto
+## Creando el proyecto
 
 Intellij IDEA Community será suficiente para implementar y correr nuestras pruebas automatizadas, por lo que creamos un nuevo proyecto Gradle con Java. 
 
-#### 5.1 Dependencias y el build.gradle
+![Gradle project](MavenProject.png?classes=center-block)
+
+
+#### Dependencias y el build.gradle
 Nuestro ambiente necesita ser capaz de conectarse al dispositivo móvil, efectuar los test de forma automatizados y ordenada. Para ello utilizamos las siguientes dependencias que son especificadas en el archivo build.gradle
 * JUnit v.4.12
 * Appium Java-client v.7.3.0
@@ -151,9 +159,11 @@ dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
 }
 ```
-#### 5.2. Creando el configure Package
+#### Creando el configure Package
+![configure package](configurationPackage.png?classes=center-block)
 
 El primer paquete que creamos se denomina configuration en este adicionamos una clase denominada Conf.java  donde adicionaremos variables constantes que necesitaremos para conectarnos a APPIUM tal como lo hicimos anteriormente con el appium desktop.
+
 ```java
 package configuration;
 
@@ -176,7 +186,9 @@ public class Conf {
     public static final String PLATFORM_NAME_VALUE = "Android";
 }
 ```
-#### 5.3. Creando el deviceFactory Package
+#### Creando el deviceFactory Package
+![deviceFactory package](deviceFactoryPackage.png?classes=center-block)
+
 Ahora creamos el paquete deviceFactory donde configuraremos nuestros drivers para conectarnos con nuestro dispositivo Android, iPhone o Windows Phone. 
 
 Aca aplicaremos el patrón de diseño Factory debido a que los drivers de los distintos sistemas operativos tendrán los mismos métodos sin embargo diferente implementación. En otras palabras, los objetos fabricados tendrán tareas similares pero con detalles de implementación diferentes. 
@@ -273,7 +285,9 @@ public class FactoryDevice {
     }
 }
 ```
-#### 5.4. Creando el sessionManager Package
+#### Creando el sessionManager Package
+![sessionManager package](sessionManagerPackage.png?classes=center-block)
+
 Ahora bien, en el paquete sessionManager el Session.java nos ayuda a gestionar la conexión que establecemos con un driver en particular, para fines de prueba un driver Android. Al ser este un singleton evitaremos problemas comunes que se tendrían con múltiples instancias o el crear o cerrar las conexiones.
 
 ```java
@@ -311,7 +325,9 @@ public class Session {
     }
 }
 ```
-#### 5.5. Creando el appiumControl Package
+#### Creando el appiumControl Package
+![appiumControl package](appiumControlPackage.png?classes=center-block)
+
 El paquete appiumControl representa una abstracción de los elementos que pueden llegar a tener nuestras aplicaciones como botones, cajas de texto, labels, checkboxes, etc. 
 
 Muchas de las acciones que realizan estos elementos son exactamente iguales por lo que es conveniente abstraer estas funcionalidades y características. En efecto, el establecer relaciones de herencia para evitar código redundante es importante, el Control.java tiene muchas acciones que son compartidas por otros elementos, así mismo existen acciones propias de cada elemento por lo que también son implementadas en sus respectivas clases. 
@@ -416,9 +432,12 @@ public class Button extends Control {
     }
 }
 ```
-#### 5.6. Creando el activity Package
+#### Creando el activity Package
+![activity package](activityPackage.png?classes=center-block)
+
 El paquete activity sigue parte del patrón SinglePage donde cada clase representa a una vista y donde cada atributo es un elemento de la misma. Es decir, que cada clase definirá objetos Control del paquete appiumControl para ser localizado mediante un locator y ser manipulado posteriormente.
 
+![MainActivity](MainActivity.png?classes=center-block)
 ```java
 package activity;
 
@@ -461,6 +480,7 @@ public class MainActivity {
     }
 }
 ```
+![AddNoteActivity](AddNote.png?classes=center-block)
 ```java
 package activity;
 
@@ -484,6 +504,8 @@ public class AddNoteActivity {
     }
 }
 ```
+
+![MoreOptionsActivity](MoreOptions.png?classes=center-block)
 ```java
 package activity;
 
@@ -498,6 +520,7 @@ public class MoreOptionsActivity {
     }
 }
 ```
+![confirmationActivity](confirmation.png?classes=center-block)
 ```java
 package activity;
 
@@ -512,7 +535,7 @@ public class ConfirmationActivity {
     }
 }
 ```
-#### 5.7. Creando el test Package
+#### Creando el test Package
 Finalmente, creamos el paquete test donde implementamos el WhenDoTest.java donde definimos 3 test que serán evaluados con ayuda de JUnit.
 
 * addNote
@@ -581,9 +604,11 @@ public class WhenDoTest {
     }
 }
 ```
-### 6. Ejecutando Tests
+## Ejecutando Tests
 Por último ejecutamos el WhenDoTest.java y verificamos que sean exitosos.
 
-### 7. Repositorio
+![Ejecuanto Tests](test-results.png?classes=center-block)
+
+## Repositorio
 El código completo se encuentra en el siguiente repositorio.
 * https://github.com/gonzalohk/automation-mobile-testing-when.do
