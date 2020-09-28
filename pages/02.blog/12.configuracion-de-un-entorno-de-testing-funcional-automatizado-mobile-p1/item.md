@@ -1,6 +1,6 @@
 ---
 title: 'Como configurar y correr Mobile Automation Tests con Java + Gradle + Selenium + Appium + JUnit (Parte 1)'
-media_order: preconditions.png
+media_order: 'preconditions.png,virtualDevice.png,adb-devices.png,devices.png'
 published: true
 date: '27-09-2020 11:17'
 publish_date: '27-09-2020 11:17'
@@ -13,7 +13,7 @@ taxonomy:
         - mobile
 ---
 
-Estas últimas semanas estaba adentrándome un poco más a lo que es QA, más propiamente   Automation Testing, pienso que es interesante y no muy complicado de aplicar. Por lo que me gustaría compartir lo que voy aprendiendo, si bien es relativamente básico sé que es una base para quien este interesado en ingresar a esta área. 
+Estas últimas semanas estaba adentrándome un poco más a lo que es QA, más propiamente   Automation Testing, pienso que es interesante y no muy complicado de aplicar. Por lo que me gustaría compartir lo que voy aprendiendo, si bien es una introducción sé que es una base para quien este interesado en ingresar a esta área. 
 
 En efecto, haremos la configuración de un entorno de testing funcional automatizado para aplicaciones móviles con Java, Gradle, Selenium, Appium y Junit. Todo esto desde cero sin utilizar algún framework, para tener un mejor entendimiento y estructurarlo mejor según nuestras necesidades.
 
@@ -46,21 +46,26 @@ Posterior a ello, verificamos que podamos ejecutar en la consola los comandos si
 
 ![Verificando](preconditions.png?classes=center-block)
 
-### 2. Conexión con nuestros dispositivos
+### Conectando dispositivos
+Necesitaremos ejecutar nuestras pruebas en dispositivos móviles, para ello tenemos varias opciones siendo una de ellas el crear dispositivos virtuales mediante Android Studio y el AVD (_Tools -> AVD Manager -> Create Virtual Device_). Esto representa una gran ventaja porque podemos escoger entre una variedad de dispositivos o también podemos personalizar las características de los mismos junto a la versión de android que necesitemos.
 
-Necesitaremos ejecutar nuestras pruebas en dispositivos móviles, para ello tenemos varias opciones, una de ellas es poder crear dispositivos virtuales mediante Android Studio y el AVD (Tools -> AVD Manager -> Create Virtual Device). Esto representa una gran ventajas porque podemos escoger entre una variedad de dispositivos o también  podemos personalizar las características de los mismos junto a la versión de android que necesitemos.
+![VirtualDevice](virtualDevice.png?classes=center-block)
 
 Sin embargo, el uso de recursos de Android Studio más aún los dispositivos virtuales representan una gran carga memoria y recursos por lo que podemos también usar los dispositivos móviles reales que tengamos a la mano.  
 
-En efecto, para hacer uso de un dispositivo Android reales debemos habilitar las Developer Options junto al USB Debugging  en nuestro dispositivo virtual (https://developer.android.com/studio/debug/dev-options#enable). Una vez configurado podemos hacer uso de una aplicación mirroring para visualizar y manejar nuestro celular desde nuestra computadora de manera más cómoda. Para ello instalamos:
+Por otro lado, podemos hacer uso de dispositivos reales, en el caso de android debemos habilitar las Developer Options junto al USB Debugging (ver [aqui](https://developer.android.com/studio/debug/dev-options#enable)). Una vez habilitado podemos hacer uso de una aplicación mirroring para visualizar y manejar nuestro celular desde nuestra computadora de manera más cómoda. Para ello instalamos:
 
-* Vysor - https://www.vysor.io/download/
+* Vysor - [Download](https://www.vysor.io/download/)
 
 Para verificar que nuestros dispositivos están funcionando correctamente luego de ser iniciados y conectados por cable a nuestro equipo respectivamente podemos ejecutar el comando siguiente. En mi caso, tengo dos dispositivos como se muestra en la imagen.
-
 ```sh
 adb devices
 ```
+
+![adb-devices](adb-devices.png)
+
+![Dispositivo real y virtual](devices.png)
+
 ### 3. Instalando When.Do (aplicación a probar)
 Para nuestras pruebas instalaremos una aplicación para registrar notas similar a un TODO, para ello descargamos la siguiente aplicación.
 https://drive.google.com/file/d/1qvl-pTmCmMaTPty-DClIkGec2ItE8KNP/view?usp=sharing
