@@ -1,6 +1,6 @@
 ---
 title: 'Como configurar y correr Mobile Automation Tests con Java + Gradle + Selenium + Appium + JUnit (Parte 1)'
-media_order: 'preconditions.png,virtualDevice.png,adb-devices.png,devices.png'
+media_order: 'preconditions.png,virtualDevice.png,adb-devices.png,devices.png,adb-install-todo.png,adb-shell.png,appium-inicio.png,appium-configuration.png,appium-running.png'
 published: true
 date: '27-09-2020 11:17'
 publish_date: '27-09-2020 11:17'
@@ -62,39 +62,44 @@ Para verificar que nuestros dispositivos están funcionando correctamente luego 
 adb devices
 ```
 
-![adb-devices](adb-devices.png)
+![adb-devices](adb-devices.png?classes=center-block)
 
-![Dispositivo real y virtual](devices.png)
 
-### 3. Instalando When.Do (aplicación a probar)
-Para nuestras pruebas instalaremos una aplicación para registrar notas similar a un TODO, para ello descargamos la siguiente aplicación.
-https://drive.google.com/file/d/1qvl-pTmCmMaTPty-DClIkGec2ItE8KNP/view?usp=sharing
+![Dispositivo real y virtual](devices.png?classes=center-block)
+
+### Instalando When.Do (Aplicación A Testear)
+Para nuestras pruebas instalaremos una aplicación para registrar notas similar a un TODO denominada When.do, para ello descargamos.
+
+* When.Do [Descagar](https://drive.google.com/file/d/1qvl-pTmCmMaTPty-DClIkGec2ItE8KNP/view?usp=sharing)
+
 Existen diferentes formas de instalar un .apk en nuestro dispositivo, pero ahora lo haremos desde la terminal usando el Android Debug Bridge o adb indicando el número de serie del dispositivo y la aplicación a instalar.
 
 ```sh
 adb -s emulator-5554 install Todo.apk
 adb -s 310012c7b2929300 install Todo.apk
 ```
-#### 3.1. Identificando el Package y Activity de When.Do App
+
+![Instalar When.do](adb-install-todo.png?classes=center-block)
+
+#### Package y Activity de When.Do
 Una vez instalada la aplicación que será testeada necesitamos identificar el package y el activity al cual responden, esto para conectarnos posteriormente. Para ello, abrimos la aplicación y la ponemos en foco para luego ingresar a la Shell de nuestro teléfono desde la consola.
 
 ```sh
-adb -s 310012c7b2929300 install Todo.apk
+adb -s 310012c7b2929300 shell
 ```
 Para luego ejecutar el siguiente comando.
 ```sh
 dumpsys window windows | grep -E 'CurrentFocus'
 ```
-* mCurrentFocus=Window{21a187f9 u0 d0 com.vrproductiveapps.whendo/com.vrproductiveapps.whendo.ui.HomeActivity}
-Ahora bien ya tenemos suficiente datos para obtener el package y el activity.
-* Package: com.vrproductiveapps.whendo
-* Activity: ui.HomeActivity
+![adb shell](adb-shell.png?classes=center-block)
 
-### 4. Conectandonos a APPIUM
+El mensaje que nos muestra la consola corresponde a la aplicación que esta en foco actualmente, en nuestro caso when.do  _mCurrentFocus=Window{21a187f9 u0 d0 com.vrproductiveapps.whendo/com.vrproductiveapps.whendo.ui.HomeActivity}_ . Ahora bien ya lo suficiente para obtener el package y el activity.
 
-Seguidamente, para conectar nuestro dispositivo móvil con APPIUM necesitamos mínimamente de 5 datos importantes que son: deviceName, plataformVersion, appPackage, appActivity y platformName. Todos estos pueden ser obtenidos fácilmente desde las configuraciones del teléfono. 
+* Package: _com.vrproductiveapps.whendo_
+* Activity: _ui.HomeActivity_
 
-En tal sentido, la configuración necesaria para establecer una conexión de nuestra aplicación When.do con Appium sera: 
+### Conectandonos a APPIUM
+Seguidamente, para conectar nuestro dispositivo móvil con Appium necesitamos mínimamente de 5 datos importantes que son: deviceName, plataformVersion, appPackage, appActivity y platformName. Sin embargo, ya identificamos al package junto al activity, los otros datos pueden ser obtenidos fácilmente desde la configuracion del teléfono.  En tal sentido, la configuración necesaria para establecer una conexión de mi dispositvo y Appium usando When.do es: 
 ```json
 {
   "deviceName": "Galaxy Tab A (2016)",
@@ -106,9 +111,15 @@ En tal sentido, la configuración necesaria para establecer una conexión de nue
 ```
 Ahora bien, iniciamos el Appium Server con los valores por defecto. 
 
+![Appium](appium-inicio.png?classes=center-block)
+
 Con ayuda del Inspector Session adicionamos las configuraciones mínimas que señalamos anteriormente, para luego iniciar la sesión.
 
-Si la conexión fue exitosa veremos la siguiente pantalla donde se visualiza el dispositivo, los sources y el detalle del selected element actual. Este último es muy importante porque nos ayudará a encontrar los locators de cada elemento en la vista para luego manipularlos como buttons, labels, text boxes, check boxes, etc.
+![Appium configuracion](appium-configuration.png)
+
+Si la conexión fue exitosa veremos la siguiente pantalla donde se visualiza el dispositivo, los sources y el detalle del element seleccionado. Este último es muy importante porque nos ayudará a encontrar los locators de cada elemento en la vista para luego manipularlos como buttons, labels, text boxes, check boxes, etc.
+
+![Appium corriendo](appium-running.png)
 
 ### 5. Creando el proyecto
 
