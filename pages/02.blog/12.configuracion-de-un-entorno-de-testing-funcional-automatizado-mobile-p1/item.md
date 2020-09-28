@@ -1,6 +1,6 @@
 ---
-title: 'Como configurar y correr Mobile Automation Tests con Java + Gradle + Selenium + Appium + JUnit (Parte 1)'
-media_order: 'preconditions.png,virtualDevice.png,adb-devices.png,devices.png,adb-install-todo.png,adb-shell.png,appium-inicio.png,appium-configuration.png,appium-running.png,MavenProject.png,configurationPackage.png,deviceFactoryPackage.png,sessionManagerPackage.png,appiumControlPackage.png,activityPackage.png,MainActivity.png,AddNote.png,MoreOptions.png,confirmation.png,test-results.png'
+title: 'Como configurar y correr Mobile Automation Tests (Parte 1)'
+media_order: 'preconditions.png,virtualDevice.png,adb-devices.png,devices.png,adb-install-todo.png,adb-shell.png,appium-inicio.png,appium-configuration.png,appium-running.png,MavenProject.png,configurationPackage.png,deviceFactoryPackage.png,sessionManagerPackage.png,appiumControlPackage.png,activityPackage.png,MainActivity.png,AddNote.png,MoreOptions.png,confirmation.png,test-results.png,automation-mobile-test.jpg'
 published: true
 date: '27-09-2020 11:17'
 publish_date: '27-09-2020 11:17'
@@ -13,9 +13,12 @@ taxonomy:
         - mobile
 ---
 
+![Como configurar y correr Mobile Automation Tests con Java + Gradle + Selenium + Appium + JUnit (Parte 1)](automation-mobile-test.jpg?classes=center-block)
+
+
 Estas últimas semanas estaba adentrándome un poco más a lo que es QA, más propiamente   Automation Testing, pienso que es interesante y no muy complicado de aplicar. Por lo que me gustaría compartir lo que voy aprendiendo, si bien es una introducción sé que es una base para quien este interesado en ingresar a esta área. 
 
-En efecto, haremos la configuración de un entorno de testing funcional automatizado para aplicaciones móviles con Java, Gradle, Selenium, Appium y Junit. Todo esto desde cero sin utilizar algún framework, para tener un mejor entendimiento y estructurarlo mejor según nuestras necesidades.
+En efecto, haremos la **configuración de un entorno de testing funcional automatizado para aplicaciones móviles con Java, Gradle, Selenium, Appium y Junit**. Todo esto desde cero sin utilizar algún framework, para tener un mejor entendimiento y estructurarlo mejor según nuestras necesidades.
 
 Para iniciar con nuestras pruebas automatizadas debemos establecer un ambiente de desarrollo inicialmente local. Para ello, este debe ser capaz de proporcionarnos comunicación con nuestros dispositivos móviles (también virtuales), adicionalmente debe hacer uso de herramientas para administrar los dispositivos y mediante un lenguaje de programación junto a librerías adicionales debería poder correr nuestros casos de prueba.
 
@@ -160,6 +163,7 @@ dependencies {
 }
 ```
 #### Creando el configure Package
+
 ![configure package](configurationPackage.png?classes=center-block)
 
 El primer paquete que creamos se denomina configuration en este adicionamos una clase denominada Conf.java  donde adicionaremos variables constantes que necesitaremos para conectarnos a APPIUM tal como lo hicimos anteriormente con el appium desktop.
@@ -187,6 +191,7 @@ public class Conf {
 }
 ```
 #### Creando el deviceFactory Package
+
 ![deviceFactory package](deviceFactoryPackage.png?classes=center-block)
 
 Ahora creamos el paquete deviceFactory donde configuraremos nuestros drivers para conectarnos con nuestro dispositivo Android, iPhone o Windows Phone. 
@@ -286,6 +291,7 @@ public class FactoryDevice {
 }
 ```
 #### Creando el sessionManager Package
+
 ![sessionManager package](sessionManagerPackage.png?classes=center-block)
 
 Ahora bien, en el paquete sessionManager el Session.java nos ayuda a gestionar la conexión que establecemos con un driver en particular, para fines de prueba un driver Android. Al ser este un singleton evitaremos problemas comunes que se tendrían con múltiples instancias o el crear o cerrar las conexiones.
@@ -326,6 +332,7 @@ public class Session {
 }
 ```
 #### Creando el appiumControl Package
+
 ![appiumControl package](appiumControlPackage.png?classes=center-block)
 
 El paquete appiumControl representa una abstracción de los elementos que pueden llegar a tener nuestras aplicaciones como botones, cajas de texto, labels, checkboxes, etc. 
@@ -433,9 +440,12 @@ public class Button extends Control {
 }
 ```
 #### Creando el activity Package
+
 ![activity package](activityPackage.png?classes=center-block)
 
 El paquete activity sigue parte del patrón SinglePage donde cada clase representa a una vista y donde cada atributo es un elemento de la misma. Es decir, que cada clase definirá objetos Control del paquete appiumControl para ser localizado mediante un locator y ser manipulado posteriormente.
+
+###### MainActivity.java
 
 ![MainActivity](MainActivity.png?classes=center-block)
 ```java
@@ -480,6 +490,8 @@ public class MainActivity {
     }
 }
 ```
+###### AddNoteActivity.java
+
 ![AddNoteActivity](AddNote.png?classes=center-block)
 ```java
 package activity;
@@ -504,6 +516,7 @@ public class AddNoteActivity {
     }
 }
 ```
+###### MoreOptionsActivity.java
 
 ![MoreOptionsActivity](MoreOptions.png?classes=center-block)
 ```java
@@ -520,6 +533,8 @@ public class MoreOptionsActivity {
     }
 }
 ```
+###### ConfirmationActivity.java
+
 ![confirmationActivity](confirmation.png?classes=center-block)
 ```java
 package activity;
@@ -611,4 +626,6 @@ Por último ejecutamos el WhenDoTest.java y verificamos que sean exitosos.
 
 ## Repositorio
 El código completo se encuentra en el siguiente repositorio.
-* https://github.com/gonzalohk/automation-mobile-testing-when.do
+* [https://github.com/gonzalohk/automation-mobile-testing-when.do](https://github.com/gonzalohk/automation-mobile-testing-when.do)
+
+Hasta aquí ya tenemos un ambiente para testear nuestras aplicaciones móviles aprovechando patrones de diseño y buenas prácticas que pueden ser mejoras u adecuadas a otras necesidades. Por otro lado, existen frameworks que establecen marcos de trabajo más complejos, pero muchas veces no se acoplan a requerimientos que pudiéramos tener. En efecto, Automation Testing es una área que tiene mucho que explotar y al mismo tiempo tiene mucha madurez en los procesos que lleva a cabo, más adelante intentare compartir mas de lo que voy aprendiendo.
