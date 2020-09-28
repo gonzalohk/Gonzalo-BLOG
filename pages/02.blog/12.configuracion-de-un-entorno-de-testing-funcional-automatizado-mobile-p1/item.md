@@ -620,7 +620,7 @@ public class WhenDoTest {
 }
 ```
 ## Ejecutando Tests
-Por último ejecutamos el WhenDoTest.java y verificamos que sean exitosos.
+Por último ejecutamos el WhenDoTest.java y verificamos que los tests sean exitosos.
 
 ![Ejecutando Tests](AutomationTestRunning.gif?classes=center-block)
 
