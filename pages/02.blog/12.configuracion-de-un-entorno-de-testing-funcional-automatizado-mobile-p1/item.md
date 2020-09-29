@@ -97,10 +97,7 @@ dumpsys window windows | grep -E 'CurrentFocus'
 ```
 ![adb shell](adb-shell.png?classes=center-block)
 
-El mensaje que nos muestra la consola corresponde a la aplicación que esta en foco actualmente, en nuestro caso when.do.
-* com.vrproductiveapps.whendo / com.vrproductiveapps.whendo.ui.HomeActivity_ . 
- 
-Ahora bien ya lo suficiente para obtener el package y el activity.
+El mensaje que nos muestra la consola corresponde a la aplicación que esta en foco actualmente, en nuestro caso when.do. Ahora bien ya lo suficiente para obtener el package y el activity.
 
 * Package: _com.vrproductiveapps.whendo_
 * Activity: _ui.HomeActivity_
