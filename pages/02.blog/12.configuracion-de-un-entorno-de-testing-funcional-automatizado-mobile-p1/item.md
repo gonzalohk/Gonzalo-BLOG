@@ -1,5 +1,5 @@
 ---
-title: 'Como configurar y correr Mobile Automation Tests (Parte 1)'
+title: 'Como configurar e implementar Mobile Test Automation (Parte 1)'
 media_order: 'preconditions.png,virtualDevice.png,adb-devices.png,devices.png,adb-install-todo.png,adb-shell.png,appium-inicio.png,appium-configuration.png,appium-running.png,MavenProject.png,configurationPackage.png,deviceFactoryPackage.png,sessionManagerPackage.png,appiumControlPackage.png,activityPackage.png,MainActivity.png,AddNote.png,MoreOptions.png,confirmation.png,test-results.png,automation-mobile-test.jpg,AutomationTestRunning.gif,testPackage.png'
 published: true
 date: '27-09-2020 11:17'
