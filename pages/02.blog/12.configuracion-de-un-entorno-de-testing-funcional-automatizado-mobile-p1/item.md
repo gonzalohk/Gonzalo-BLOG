@@ -192,7 +192,7 @@ public class Conf {
 
 Ahora creamos el paquete deviceFactory donde configuraremos nuestros drivers para conectarnos con nuestro dispositivo Android, iPhone o Windows Phone. 
 
-Aca aplicaremos el patrón de diseño Factory debido a que los drivers de los distintos sistemas operativos tienen tareas similares pero con detalles de implementación diferentes. En tal sentido, creamos la interfaz _IDevice.java_ para especificar que deben hacer los drivers.
+En estas clases aplicamos el patrón de diseño Factory debido a que los drivers de los distintos sistemas operativos tienen tareas similares pero con detalles de implementación diferentes. En tal sentido, creamos la interfaz _IDevice.java_ para especificar que deben hacer los drivers.
 ```java
 package deviceFactory;
 
@@ -233,7 +233,7 @@ public class AndroidDriver implements IDevice {
     }
 }
 ```
-De la misma forma posteriormente será necesario implementar el create() para IOS, Windows Phone o cualquier otro driver que queramos utilizar, pudiendo ser también alguno remoto como los que ofrece browserstack.
+De la misma forma posteriormente será necesario implementar el create() para IOS, Windows Phone o cualquier otro driver que queramos utilizar, pudiendo ser también alguno remoto como los que ofrece [Browserstack](https://www.browserstack.com/).
 ```java
 package deviceFactory;
 
@@ -288,7 +288,7 @@ public class FactoryDevice {
 
 ![sessionManager package](sessionManagerPackage.png?classes=center-block)
 
-Ahora bien, en el paquete _sessionManager_ el _Session.java_ nos ayuda a gestionar la conexión que establecemos con un driver en particular, para fines de prueba un driver Android. Al ser este un singleton evitaremos problemas comunes que se tendrían con múltiples instancias o el crear o cerrar las conexiones.
+Ahora bien, en el paquete _sessionManager_ el _Session.java_ nos ayuda a gestionar la conexión que establecemos con un driver en particular, para fines de prueba un driver Android. Al ser este un singleton evitaremos problemas comunes que se tendrían con múltiples instancias al crear o cerrar las conexiones.
 
 ```java
 package sessionManager;
@@ -438,7 +438,7 @@ public class Button extends Control {
 
 ![activity package](activityPackage.png?classes=center-block)
 
-El paquete _activity_ sigue parte del patrón SinglePage donde cada clase representa a una vista y donde cada atributo es un elemento de la misma. Es decir, que cada clase definirá objetos Control del paquete _appiumControl_ para ser localizado mediante un locator y ser manipulado posteriormente. Estos locators pueden ser facilmente identificados con Appium como se vio anteriormente.
+El paquete _activity_ sigue parte del patrón SinglePage donde cada clase representa a una vista y donde cada atributo es un elemento de la misma. Es decir, que cada clase definirá objetos Control del paquete _appiumControl_ para ser localizado mediante un locator y ser manipulado posteriormente. Los locators pueden ser facilmente identificados con Appium como se vio anteriormente.
 
 ###### MainActivity.java
 
@@ -555,7 +555,7 @@ Finalmente, creamos el paquete _test_ donde implementamos el _WhenDoTest.java_ d
 * addNotes
 * removeNote
 
-En efecto, con ayuda de los activities y controles que fueron añadidos anteriormente, la implementación de los test automatizados resulta en código sencillo, limpio y muy legible donde que cualquier miembro del equipo es capaz de leer y entender los mismos. Siguiendo un orden particular donde se especifica donde el elemento realiza una acción (Activity + element + action) esto se refleja en los steps y la verificación final.
+En efecto, con ayuda de los activities y controles que fueron añadidos anteriormente, la implementación de los test automatizados resulta en código sencillo, limpio y muy legible donde que cualquier miembro del equipo es capaz de leer y entender los mismos. Siguiendo un orden particular donde se especifica donde el elemento realiza una acción (Activity + element + action) esto se refleja en los steps y en la verificación final.
 ```java
 package test;
 
@@ -627,6 +627,5 @@ Por último nos aseguramos que el Appium server esta corriendo para luego ejecut
 ## Repositorio
 El código completo se encuentra en el siguiente repositorio.
 * [https://github.com/gonzalohk/automation-mobile-testing-when.do](https://github.com/gonzalohk/automation-mobile-testing-when.do)
-
 
 Hasta aquí ya tenemos un ambiente para testear nuestras aplicaciones móviles aprovechando patrones de diseño y buenas prácticas que pueden ser mejoras u adecuadas a otras necesidades. Por otro lado, existen frameworks que establecen marcos de trabajo más complejos, pero muchas veces no se acoplan a requerimientos que pudiéramos tener. En efecto, Automation Testing es una área que tiene mucho que explotar y al mismo tiempo tiene mucha madurez en los procesos que lleva a cabo, más adelante intentare compartir mas de lo que voy aprendiendo.
