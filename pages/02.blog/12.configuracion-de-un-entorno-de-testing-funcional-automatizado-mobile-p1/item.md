@@ -4,6 +4,8 @@ media_order: 'preconditions.png,virtualDevice.png,adb-devices.png,devices.png,ad
 published: true
 date: '27-09-2020 11:17'
 publish_date: '27-09-2020 11:17'
+metadata:
+    '"Keywords"': '"Automation","QA Automation","Automation Mobile","Testing mobile"'
 taxonomy:
     category:
         - QA
