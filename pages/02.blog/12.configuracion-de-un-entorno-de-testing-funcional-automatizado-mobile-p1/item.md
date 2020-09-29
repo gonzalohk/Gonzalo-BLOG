@@ -624,7 +624,7 @@ Por último nos aseguramos que el Appium server esta corriendo para luego ejecut
 
 ![Resultados](test-results.png?classes=center-block)
 
-## Repositorio
+## Repo
 El código completo se encuentra en el siguiente repositorio.
 * [https://github.com/gonzalohk/automation-mobile-testing-when.do](https://github.com/gonzalohk/automation-mobile-testing-when.do)
 
