@@ -192,7 +192,7 @@ public class Conf {
 
 ![deviceFactory package](deviceFactoryPackage.png?classes=center-block)
 
-Ahora creamos el paquete deviceFactory donde configuraremos nuestros drivers para conectarnos con nuestro dispositivo Android, iPhone o Windows Phone. 
+Ahora creamos el paquete deviceFactory donde configuraremos nuestros drivers para conectarnos con nuestro dispositivo Android, iPhone o Windows Phone (lo puse solo como ejemplo). 
 
 En estas clases aplicamos el patrón de diseño Factory debido a que los drivers de los distintos sistemas operativos tienen tareas similares pero con detalles de implementación diferentes. En tal sentido, creamos la interfaz _IDevice.java_ para especificar que deben hacer los drivers.
 ```java
@@ -235,7 +235,7 @@ public class AndroidDriver implements IDevice {
     }
 }
 ```
-De la misma forma posteriormente será necesario implementar el create() para IOS, Windows Phone o cualquier otro driver que queramos utilizar, pudiendo ser también alguno remoto como los que ofrece [Browserstack](https://www.browserstack.com/).
+De la misma forma posteriormente será necesario implementar el create() para IOS o cualquier otro driver que queramos utilizar, pudiendo ser también alguno remoto como los que ofrece [Browserstack](https://www.browserstack.com/).
 ```java
 package deviceFactory;
 
