@@ -42,8 +42,8 @@ Así mismo, se deben adicionar variables de entorno a nuestro Java JDK, Android 
 * GRADLE_HOME = _C:\gradle-5.6.4_
 * Path
 	*  _C:\gradle-5.6.4\bin_
-	*  _C:\Users\{MI-USUARIO}\AppData\Local\Android\Sdk\tools_
-	*  _C:\Users\{MI-USUARIO}\AppData\Local\Android\Sdk\platform-tools_
+	*  _C:\Users\{MI - USUARIO}\AppData\Local\Android\Sdk\tools_
+	*  _C:\Users\{MI - USUARIO}\AppData\Local\Android\Sdk\platform-tools_
 
 Posterior a ello, verificamos que podamos ejecutar en la consola los comandos siguientes.
 
@@ -98,7 +98,7 @@ dumpsys window windows | grep -E 'CurrentFocus'
 ![adb shell](adb-shell.png?classes=center-block)
 
 El mensaje que nos muestra la consola corresponde a la aplicación que esta en foco actualmente, en nuestro caso when.do.
-* com.vrproductiveapps.whendo/com.vrproductiveapps.whendo.ui.HomeActivity_ . 
+* com.vrproductiveapps.whendo / com.vrproductiveapps.whendo.ui.HomeActivity_ . 
  
 Ahora bien ya lo suficiente para obtener el package y el activity.
 
