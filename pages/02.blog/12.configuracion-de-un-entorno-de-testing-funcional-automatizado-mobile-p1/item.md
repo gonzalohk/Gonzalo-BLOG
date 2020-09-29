@@ -104,7 +104,7 @@ El mensaje que nos muestra la consola corresponde a la aplicación que esta en f
 * Package: _com.vrproductiveapps.whendo_
 * Activity: _ui.HomeActivity_
 
-## Conectandonos a APPIUM
+## Conectandonos a Appium
 Seguidamente, para conectar nuestro dispositivo móvil con Appium necesitamos al menos de cinco datos importantes que son: deviceName, plataformVersion, appPackage, appActivity y platformName. Sin embargo, ya identificamos al package junto al activity, los otros datos pueden ser obtenidos fácilmente desde la configuracion del teléfono.  En tal sentido, la configuración necesaria para establecer una conexión de mi dispositvo y Appium usando When.do es: 
 ```json
 {
