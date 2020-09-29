@@ -97,13 +97,13 @@ dumpsys window windows | grep -E 'CurrentFocus'
 ```
 ![adb shell](adb-shell.png?classes=center-block)
 
-El mensaje que nos muestra la consola corresponde a la aplicación que esta en foco actualmente, en nuestro caso when.do. Ahora bien ya lo suficiente para obtener el package y el activity.
+El mensaje que nos muestra la consola corresponde a la aplicación que esta en foco actualmente, en nuestro caso when.do. Ahora bien ya tenemos lo suficiente para obtener el package y el activity.
 
 * Package: _com.vrproductiveapps.whendo_
 * Activity: _ui.HomeActivity_
 
 ## Conectandonos a APPIUM
-Seguidamente, para conectar nuestro dispositivo móvil con Appium necesitamos al menos de 5 datos importantes que son: deviceName, plataformVersion, appPackage, appActivity y platformName. Sin embargo, ya identificamos al package junto al activity, los otros datos pueden ser obtenidos fácilmente desde la configuracion del teléfono.  En tal sentido, la configuración necesaria para establecer una conexión de mi dispositvo y Appium usando When.do es: 
+Seguidamente, para conectar nuestro dispositivo móvil con Appium necesitamos al menos de cinco datos importantes que son: deviceName, plataformVersion, appPackage, appActivity y platformName. Sin embargo, ya identificamos al package junto al activity, los otros datos pueden ser obtenidos fácilmente desde la configuracion del teléfono.  En tal sentido, la configuración necesaria para establecer una conexión de mi dispositvo y Appium usando When.do es: 
 ```json
 {
   "deviceName": "Galaxy Tab A (2016)",
@@ -113,7 +113,7 @@ Seguidamente, para conectar nuestro dispositivo móvil con Appium necesitamos al
   "platformName": "Android"
 }
 ```
-Ahora bien, iniciamos el Appium Server con los valores por defecto. 
+Ahora bien, iniciamos el Appium Server con los valores por defecto debido a que lo estamos corriendo localmente. 
 
 ![Appium](appium-inicio.png?classes=center-block)
 
