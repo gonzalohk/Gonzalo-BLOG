@@ -42,15 +42,15 @@ Así mismo, se deben adicionar variables de entorno a nuestro Java JDK, Android 
 * GRADLE_HOME = _C:\gradle-5.6.4_
 * Path
 	*  _C:\gradle-5.6.4\bin_
-	*  _C:\Users\{MI - USUARIO}\AppData\Local\Android\Sdk\tools_
-	*  _C:\Users\{MI - USUARIO}\AppData\Local\Android\Sdk\platform-tools_
+	*  _C:\Users\{MI-USUARIO}\AppData\Local\Android\Sdk\tools_
+	*  _C:\Users\{MI-USUARIO}\AppData\Local\Android\Sdk\platform-tools_
 
 Posterior a ello, verificamos que podamos ejecutar en la consola los comandos siguientes.
 
 ![Verificando](preconditions.png?classes=center-block)
 
 ## Conectando dispositivos
-Necesitaremos ejecutar nuestras pruebas en dispositivos móviles, para ello tenemos varias opciones siendo una de ellas el crear dispositivos virtuales mediante Android Studio y el AVD (_Tools -> AVD Manager -> Create Virtual Device_). Esto representa una gran ventaja porque podemos escoger entre una variedad de dispositivos o también podemos personalizar las características de los mismos junto a la versión de android que necesitemos.
+Necesitaremos ejecutar nuestras pruebas en dispositivos móviles, para ello tenemos varias opciones siendo una de ellas el crear dispositivos virtuales mediante Android Studio y el AVD (_Tools -> AVD Manager -> Create Virtual Device_). Esto representa una gran ventaja porque podemos escoger entre una variedad de dispositivos o también personalizar las características de los mismos junto a la versión de android que necesitemos.
 
 ![VirtualDevice](virtualDevice.png?classes=center-block)
 
