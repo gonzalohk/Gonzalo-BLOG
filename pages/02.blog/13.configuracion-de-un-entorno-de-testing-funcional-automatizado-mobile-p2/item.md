@@ -1,8 +1,8 @@
 ---
 title: 'Como configurar e implementar Mobile Test Automation (Parte 2)'
 published: true
-date: '11-10-2020 11:41'
-publish_date: '11-10-2020 11:41'
+date: '11-10-2020 15:50'
+publish_date: '11-10-2020 15:50'
 metadata:
     '"Keywords"': '"Automation","QA Automation","Automation Mobile","Testing mobile"'
 taxonomy:
