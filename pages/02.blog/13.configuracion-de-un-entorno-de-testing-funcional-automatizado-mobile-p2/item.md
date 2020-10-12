@@ -1,6 +1,6 @@
 ---
 title: 'Como configurar e implementar Mobile Test Automation (Parte 2)'
-media_order: 'browserstack.png,browserstack-appautomate.png,package-deviceFactory.png,runtest-automaton.png,javaAndroid-running.png,javaAndroid-running-finishi.png,browserStack-video.png,javaAndroid-running-summary.png,stats.png,browserStack-testbug.png,browserStack-video.png,step1.png,step2.png,step3.png'
+media_order: 'browserstack.png,browserstack-appautomate.png,package-deviceFactory.png,runtest-automaton.png,javaAndroid-running.png,javaAndroid-running-finishi.png,browserStack-video.png,javaAndroid-running-summary.png,stats.png,browserStack-testbug.png,step1.png,step2.png,step3.png,browserstack-textlogs.png'
 published: true
 date: '11-10-2020 15:50'
 publish_date: '11-10-2020 15:50'
@@ -242,13 +242,15 @@ Una vez finalizado ya se puede ver el detalle completo sobre lo que pasó en dic
 
 ![runningTests-browserStack-summary](javaAndroid-running-summary.png?classes=center-block)
 
-Una gran ventaja es que se tiene mucha información respecto a la ejecución, una grabación de video y estadísticas referentes al uso de cpu, memoria, batería y network.
+Una gran ventaja es que se tiene mucha información respecto a la ejecución, incluyendo una grabación de video con los steps proporcionados en el codigo fuente.
 
 ![BrowserStack Test Video](browserStack-video.png?classes=center-block)
 
+El tema de logs es completo como se muestra en la siguiente captura.
 
 ![BrowserStack Textlogs](browserstack-textlogs.png?classes=center-block)
 
+Así mismo, las estadísticas referentes al uso de CPU, memoria, batería y network se visualizan de forma clara.
 
 ![BrowserStack Stats](stats.png?classes=center-block)
 
