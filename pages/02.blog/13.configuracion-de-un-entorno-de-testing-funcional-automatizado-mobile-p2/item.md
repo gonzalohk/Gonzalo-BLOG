@@ -38,7 +38,7 @@ Para nuestras pruebas bastará con registrarse y validar el mismo. Posteriorment
 
 #### App Automate
 Para nuestras pruebas haremos uso de App Automate, para iniciar podemos hacer clic en el menu correspondiente o ir directamente al siguiente enlace.
-* [https://app-automate.browserstack.com/dashboard/v2/getting-started](https://app-automate.browserstack.com/dashboard/v2/getting-started)
+* [Getting started](https://app-automate.browserstack.com/dashboard/v2/getting-started)
 
 Nótese que se está escogiendo APPIUM junto a JAVA. 
 
