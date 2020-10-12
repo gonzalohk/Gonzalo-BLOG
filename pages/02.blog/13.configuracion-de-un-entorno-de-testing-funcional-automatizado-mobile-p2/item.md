@@ -260,7 +260,7 @@ Por otro lado, si existieran problemas o bugs en los test, este se presenta deta
 
 ![Test Bug](browserStack-testbug.png?classes=center-block)
 
-Así mismo, las estadísticas referentes al uso de CPU, memoria, batería y network se visualizan de forma clara siendo esta un detalla de mucho valor que en un dispositvo normal necesitaria de más herramientas.
+Así mismo, las estadísticas referentes al uso de CPU, memoria, batería y network se visualizan de forma clara siendo esta un detalle de mucho valor que en un dispositvo normal necesitaria de más herramientas.
 
 ![BrowserStack Stats](stats.png?classes=center-block)
 
