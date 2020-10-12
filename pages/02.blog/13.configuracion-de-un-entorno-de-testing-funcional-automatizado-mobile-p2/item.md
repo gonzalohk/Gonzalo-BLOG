@@ -1,6 +1,6 @@
 ---
 title: 'Como configurar e implementar Mobile Test Automation (Parte 2)'
-media_order: 'browserstack.png,browserstack-appautomate.png,step1.png,step2.png,step2b.png,step3.png,package-deviceFactory.png,runtest-automaton.png,javaAndroid-running.png,javaAndroid-running-finishi.png,browserStack-video.png,javaAndroid-running-summary.png'
+media_order: 'browserstack.png,browserstack-appautomate.png,package-deviceFactory.png,runtest-automaton.png,javaAndroid-running.png,javaAndroid-running-finishi.png,browserStack-video.png,javaAndroid-running-summary.png,stats.png,browserStack-testbug.png,browserStack-video.png,step1.png,step2.png,step3.png'
 published: true
 date: '11-10-2020 15:50'
 publish_date: '11-10-2020 15:50'
@@ -54,10 +54,6 @@ Sin embargo, ya implementamos nuestra propia estructura en un post anterior por 
  La aplicación que será testeada necesita estar en browserstack de modo tal que debemos seleccionar el .apk para luego subirlo.
 
 ![Step2](step2.png?classes=center-block)
-
-
-![Step2-uploaded](step2b.png?classes=center-block)
-
 
 **Paso 3**
 Posteriormente, seleccionamos el device mas propiamente el sistema operativo y el modelo. Quizá no se tengan todos los modelos, esto debido a que estamos usando aún una versión de prueba.
