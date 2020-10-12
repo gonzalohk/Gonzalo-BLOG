@@ -17,7 +17,7 @@ taxonomy:
 
 ![Automation Mobile Test](automation-testing.png?classes=center-block)
 
-La pruebas automatizadas necesitan ser ejecutadas con diversos dispositivos, esto debido a que la ejecución en cierto modelos no suele ser igual a pesar de que tengan la misma versión del sistema operativo, de la misma forma sucede cuando los fabricantes son distintos. Por otro lado, el reproducir bugs muchas veces requiere de un dispositivo específico respecto a un modelo, fabricante o sistema operativo lo cual suele ser un problema recurrente.
+La pruebas automatizadas necesitan ser ejecutadas con diversos dispositivos, esto debido a que la ejecución en ciertos modelos no suele ser igual a pesar de que tengan la misma versión del sistema operativo, de la misma forma sucede cuando los fabricantes son distintos. Por otro lado, el reproducir bugs muchas veces requiere de un dispositivo específico respecto a un modelo, fabricante o sistema operativo lo cual suele ser un problema recurrente.
 
 En tal sentido, muchas veces no se tienen los recursos suficientes para tener todos los dispositivos e incluso teniéndolos estos representan una carga de trabajo adicional en respecto al mantenimiento, instalación y configuración que pudieran requerir. En efecto, existen varias soluciones siendo browserstack una de las más importantes hoy en día donde no solo proporcionan dispositivos, vienen con gran valor agregado al registrar toda la información referente a logs y uso recursos.
  
