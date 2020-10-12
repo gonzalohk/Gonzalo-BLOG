@@ -1,6 +1,6 @@
 ---
 title: 'Como configurar e implementar Mobile Test Automation (Parte 2)'
-media_order: 'browserstack.png,browserstack-appautomate.png,package-deviceFactory.png,runtest-automaton.png,browserStack-video.png,javaAndroid-running-summary.png,browserStack-testbug.png,step1.png,step2.png,browserstack-textlogs.png,automation-mobile-test.jpg,step3.png,testRunningVideo.gif,javaAndroid-running-finishi.png,javaAndroid-running.png'
+media_order: 'browserstack.png,browserstack-appautomate.png,package-deviceFactory.png,runtest-automaton.png,browserStack-video.png,javaAndroid-running-summary.png,browserStack-testbug.png,step1.png,step2.png,browserstack-textlogs.png,automation-mobile-test.jpg,step3.png,testRunningVideo.gif,javaAndroid-running-finishi.png,javaAndroid-running.png,stats.png,automation-testing.png'
 published: true
 date: '11-10-2020 15:50'
 publish_date: '11-10-2020 15:50'
@@ -15,7 +15,7 @@ taxonomy:
         - mobile
 ---
 
-![Automation Mobile Test](automation-mobile-test.jpg?classes=center-block)
+![Automation Mobile Test](automation-testing.png?classes=center-block)
 
 La pruebas automatizadas necesitan ser ejecutadas con diversos dispositivos, esto debido a que la ejecución en cierto modelos no suele ser igual a pesar de que tengan la misma versión del sistema operativo, de la misma forma sucede cuando los fabricantes son distintos. Por otro lado, el reproducir bugs muchas veces requiere de un dispositivo específico respecto a un modelo, fabricante o sistema operativo lo cual suele ser un problema recurrente.
 
