@@ -1,6 +1,6 @@
 ---
 title: 'Como configurar e implementar Mobile Test Automation (Parte 2)'
-media_order: 'browserstack.png,browserstack-appautomate.png,package-deviceFactory.png,runtest-automaton.png,browserStack-video.png,javaAndroid-running-summary.png,browserStack-testbug.png,step1.png,step2.png,browserstack-textlogs.png,automation-mobile-test.jpg,step3.png,testRunningVideo.gif,javaAndroid-running-finishi.png,javaAndroid-running.png,stats.png'
+media_order: 'browserstack.png,browserstack-appautomate.png,package-deviceFactory.png,runtest-automaton.png,browserStack-video.png,javaAndroid-running-summary.png,step1.png,step2.png,automation-mobile-test.jpg,step3.png,testRunningVideo.gif,javaAndroid-running-finishi.png,javaAndroid-running.png,stats.png,automation-testing.png'
 published: true
 date: '11-10-2020 15:50'
 publish_date: '11-10-2020 15:50'
@@ -256,14 +256,13 @@ El tema de logs es completo como se muestra en la siguiente captura teniedo Text
 
 ![BrowserStack Textlogs](browserstack-textlogs.png?classes=center-block)
 
-Así mismo, las estadísticas referentes al uso de CPU, memoria, batería y network se visualizan de forma clara siendo esta un detalla de mucho valor que en un dispositvo normal necesitaria de más herramientas.
-
-![BrowserStack Stats](stats.png?classes=center-block)
-
 Por otro lado, si existieran problemas o bugs en los test, este se presenta detalladamente indicando cuando sucedió con una captura de pantalla y el tiempo exacto en el que pasó.
 
 ![Test Bug](browserStack-testbug.png?classes=center-block)
 
+Así mismo, las estadísticas referentes al uso de CPU, memoria, batería y network se visualizan de forma clara siendo esta un detalla de mucho valor que en un dispositvo normal necesitaria de más herramientas.
+
+![BrowserStack Stats](stats.png?classes=center-block)
 
 ### Repo
 El código completo se encuentra en el siguiente repositorio.
