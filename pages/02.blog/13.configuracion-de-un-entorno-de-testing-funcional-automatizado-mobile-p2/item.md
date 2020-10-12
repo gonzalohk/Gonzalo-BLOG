@@ -24,6 +24,8 @@ En tal sentido, muchas veces no se tienen los recursos suficientes para tener to
 ## BrowserStack
 Es una **solución basada en cloud que funciona como plataforma de testeo** que permite a los desarrolladores testear sus sitios web y sus aplicaciones móviles a través de navegadores web, sistemas operativos y dispositivos móviles. 
 
+* [https://www.browserstack.com/](https://www.browserstack.com/)
+
 ![BrowserStack](browserstack.png?classes=center-block)
 
 Para ello, tienen cuatro productos principales.
@@ -224,16 +226,16 @@ Las siguientes pruebas fueron implementadas anteriormente, las mismas no requier
 * addNote
 * removeNote
 
-Para correr las pruebas simplemente ejecutamos en consola, si todo fue correcto este mostrara un mensaje en consola o caso contrario detallara el mensaje de error y su excepción.
+Para correr las pruebas simplemente ejecutamos en consola, si todo fue correcto este mostrará un mensaje en consola o caso contrario detallara el mensaje de error y su excepción.
 
 ```sh
 gradle clean test
 ```
 
+
 ![runTests](runtest-automaton.png?classes=center-block)
 
-
-Una vez ejecutado inmediatamente se realiza el build,  este se visualiza en el dashboard de App Automate.
+Una vez ejecutado inmediatamente se realiza el build en BrowserStack,  este se visualiza en el dashboard de App Automate.
 
 ![runningTests-browserStack](javaAndroid-running.png?classes=center-block)
 
