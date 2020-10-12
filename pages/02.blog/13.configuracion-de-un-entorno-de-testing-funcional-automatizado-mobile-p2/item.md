@@ -124,7 +124,7 @@ public class BrowserStackSample {
 
 ### Implementación
 
-Como ya tenemos una estructura base implementada en el [anterior post](http://gonzalohk.xyz/blog/configuracion-de-un-entorno-de-testing-funcional-automatizado-mobile-p1), solo será necesario crear un nuevo driver que el nuestro FactoryDriver manejara. En una primera instancia creamos la clase _BrowserStack.java_ en el paquete _deviceFactory_ con una estructura similar a nuestros otros drivers.
+Como ya tenemos una estructura base implementada en el [anterior post](http://gonzalohk.xyz/blog/configuracion-de-un-entorno-de-testing-funcional-automatizado-mobile-p1), solo será necesario crear un nuevo driver que el nuestro FactoryDriver manejará. En una primera instancia creamos la clase _BrowserStack.java_ en el paquete _deviceFactory_ con una estructura similar a nuestros otros drivers.
 
 ![DeviceFactoryPackage](package-deviceFactory.png?classes=center-block)
 
