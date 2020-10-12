@@ -258,7 +258,7 @@ Así mismo, las estadísticas referentes al uso de CPU, memoria, batería y netw
 
 ![BrowserStack Stats](stats.png?classes=center-block)
 
-Por otro lado, si existieran problemas o bugs en los test, este se presenta detalladamente indicando cuando sucedió, una captura de pantalla y el tiempo exacto en el que pasó.
+Por otro lado, si existieran problemas o bugs en los test, este se presenta detalladamente indicando cuando sucedió con una captura de pantalla y el tiempo exacto en el que pasó.
 
 ![Test Bug](browserStack-testbug.png?classes=center-block)
 
