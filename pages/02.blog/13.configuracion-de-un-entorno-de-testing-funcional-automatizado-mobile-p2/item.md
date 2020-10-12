@@ -22,7 +22,7 @@ La pruebas automatizadas necesitan ser ejecutadas con diversos dispositivos, est
 En tal sentido, muchas veces no se tienen los recursos suficientes para tener todos los dispositivos e incluso teniéndolos estos representan una carga de trabajo adicional en respecto al mantenimiento, instalación y configuración que pudieran requerir. En efecto, existen varias soluciones siendo browserstack una de las más importantes hoy en día donde no solo proporcionan dispositivos, vienen con gran valor agregado al registrar toda la información referente a logs y uso recursos.
  
 ## BrowserStack
-Es una solución basada en cloud que funciona como plataforma de testeo que permite a los desarrolladores testear sus sitios web y sus aplicaciones móviles a través de navegadores web, sistemas operativos y dispositivos móviles. 
+Es una **solución basada en cloud que funciona como plataforma de testeo** que permite a los desarrolladores testear sus sitios web y sus aplicaciones móviles a través de navegadores web, sistemas operativos y dispositivos móviles. 
 
 ![BrowserStack](browserstack.png?classes=center-block)
 
@@ -126,7 +126,7 @@ Como ya tenemos una estructura base implementada en el [anterior post](http://go
 
 ![DeviceFactoryPackage](package-deviceFactory.png?classes=center-block)
 
-Sin embargo, necesitamos una configuración diferente para ello usamos el template generado y lo adecuamos a nuestra clase BrowserStack.java.
+Sin embargo, necesitamos una configuración diferente para ello usamos el template generado y lo adecuamos a nuestra clase _BrowserStack.java_
 ```java
 package deviceFactory;
 
@@ -224,7 +224,9 @@ Las siguientes pruebas fueron implementadas anteriormente, las mismas no requier
 * addNote
 * removeNote
 
+
 Para correr las pruebas simplemente ejecutamos en consola, si todo fue correcto este mostrara un mensaje en consola o caso contrario detallara el mensaje de error y su excepción.
+
 ```sh
 gradle clean test
 ```
