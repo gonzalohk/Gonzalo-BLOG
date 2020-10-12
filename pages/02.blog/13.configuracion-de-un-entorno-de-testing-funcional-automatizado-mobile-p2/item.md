@@ -224,7 +224,6 @@ Las siguientes pruebas fueron implementadas anteriormente, las mismas no requier
 * addNote
 * removeNote
 
-
 Para correr las pruebas simplemente ejecutamos en consola, si todo fue correcto este mostrara un mensaje en consola o caso contrario detallara el mensaje de error y su excepción.
 
 ```sh
@@ -246,19 +245,20 @@ Una vez finalizado ya se puede ver el detalle completo sobre lo que pasó en dic
 
 ![runningTests-browserStack-summary](javaAndroid-running-summary.png?classes=center-block)
 
+### Resultados
 Una gran ventaja es que se tiene mucha información respecto a la ejecución, incluyendo una grabación de video con los steps proporcionados en el codigo fuente.
 
 ![BrowserStack Test Video](testRunningVideo.gif?classes=center-block)
 
-El tema de logs es completo como se muestra en la siguiente captura.
+El tema de logs es completo como se muestra en la siguiente captura teniedo Text Logs, Network Logs, Device Logs y App profiling.
 
 ![BrowserStack Textlogs](browserstack-textlogs.png?classes=center-block)
 
-Así mismo, las estadísticas referentes al uso de CPU, memoria, batería y network se visualizan de forma clara.
+Así mismo, las estadísticas referentes al uso de CPU, memoria, batería y network se visualizan de forma clara siendo esta un detalla de mucho valor que en un dispositvo normal necesitaria de más herramientas.
 
 ![BrowserStack Stats](stats.png?classes=center-block)
 
-Por otro lado, si existieran problemas o bugs en los test, este se presenta detalladamente indicando cuando sucedió, una captura de pantalla y el tiempo exacto en el que pasó
+Por otro lado, si existieran problemas o bugs en los test, este se presenta detalladamente indicando cuando sucedió, una captura de pantalla y el tiempo exacto en el que pasó.
 
 ![Test Bug](browserStack-testbug.png?classes=center-block)
 
