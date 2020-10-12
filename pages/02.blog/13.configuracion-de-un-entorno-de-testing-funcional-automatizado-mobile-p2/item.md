@@ -260,4 +260,10 @@ Por otro lado, si existieran problemas o bugs en los test, este se presenta deta
 
 ![Test Bug](browserStack-testbug.png?classes=center-block)
 
+
+### Repo
+El código completo se encuentra en el siguiente repositorio.
+* [https://github.com/gonzalohk/automation-mobile-testing-when.do](https://github.com/gonzalohk/automation-mobile-testing-when.do)
+
+
 Como vemos el tema de probar diversos dispositivos es sumamente importante junto a la información que estos generan para ser usados posteriormente en reportes para su mayor entendimiento. Browserstack es una solución que cumple con estas expectativas y seria bueno probar los otros productos o adentrarnos más en la potencia de esta plataformo para el bien de nuestros proyectos. 
