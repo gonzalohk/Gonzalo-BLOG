@@ -1,6 +1,6 @@
 ---
 title: 'Como configurar e implementar Mobile Test Automation (Parte 2)'
-media_order: 'browserstack.png,browserstack-appautomate.png,step1.png,step2.png,step2b.png,step3.png,package-deviceFactory.png,runtest-automaton.png,javaAndroid-running.png,javaAndroid-running-finishi.png,browserStack-video.png,browserstack-textlogs.png,stats.png,browserStack-testbug.png'
+media_order: 'browserstack.png,browserstack-appautomate.png,step1.png,step2.png,step2b.png,step3.png,package-deviceFactory.png,runtest-automaton.png,javaAndroid-running.png,javaAndroid-running-finishi.png,browserStack-video.png,browserstack-textlogs.png,stats.png,browserStack-testbug.png,javaAndroid-running-summary.png'
 published: true
 date: '11-10-2020 15:50'
 publish_date: '11-10-2020 15:50'
@@ -226,20 +226,30 @@ Para correr las pruebas simplemente ejecutamos en consola, si todo fue correcto 
 ```sh
 gradle clean test
 ```
+
 ![runTests](runtest-automaton.png?classes=center-block)
+
 
 Una vez ejecutado inmediatamente se realiza el build,  este se visualiza en el dashboard de App Automate.
 
 ![runningTests-browserStack](javaAndroid-running.png?classes=center-block)
 
+
 Una vez finalizado ya se puede ver el detalle completo sobre lo que pasó en dichas pruebas
 
+
 ![runningTests-browserStack-finish](javaAndroid-running-finishi.png?classes=center-block)
+
+![runningTests-browserStack-summary](javaAndroid-running-summary.png?classes=center-block)
 
 Una gran ventaja es que se tiene mucha información respecto a la ejecución, una grabación de video y estadísticas referentes al uso de cpu, memoria, batería y network.
 
 ![BrowserStack Test Video](browserStack-video.png?classes=center-block)
+
+
 ![BrowserStack Textlogs](browserstack-textlogs.png?classes=center-block)
+
+
 ![BrowserStack Stats](stats.png?classes=center-block)
 
 Por otro lado, si existieran problemas o bugs en los test, este se presenta detalladamente indicando cuando sucedió, una captura de pantalla y el tiempo exacto en el que pasó
