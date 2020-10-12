@@ -38,25 +38,28 @@ Para nuestras pruebas bastará con registrarse y validar el mismo. Posteriorment
 Para nuestras pruebas haremos uso de App Automate, para iniciar podemos hacer clic en el menu correspondiente o ir directamente al siguiente enlace.
 * [https://app-automate.browserstack.com/dashboard/v2/getting-started](https://app-automate.browserstack.com/dashboard/v2/getting-started)
 
-![BrowserStack - AppAutomate](browserstack-appautomate.png?classes=center-block)
-
 Nótese que se está escogiendo APPIUM junto a JAVA. 
 
-Paso 1 
+![BrowserStack - AppAutomate](browserstack-appautomate.png?classes=center-block)
+
+
+**Paso 1** 
 Browserstack nos proporciona documentación para implementar nuestros test con ciertas librerías y test engines. Así mismo, nos da una plantilla con una estructura que podemos usar en nuestros proyecto. 
 
 ![Step1](step1.png?classes=center-block)
 
 Sin embargo, ya implementamos nuestra propia estructura en un post anterior por lo que no será necesario elaborarlo nuevamente, pero siempre es útil consultar los recursos que se nos proporcionan.  
 
-Paso 2
+**Paso 2**
  La aplicación que será testeada necesita estar en browserstack de modo tal que debemos seleccionar el .apk para luego subirlo.
 
 ![Step2](step2.png?classes=center-block)
 
+
 ![Step2-uploaded](step2b.png?classes=center-block)
 
-Paso 3
+
+**Paso 3**
 Posteriormente, seleccionamos el device mas propiamente el sistema operativo y el modelo. Quizá no se tengan todos los modelos, esto debido a que estamos usando aún una versión de prueba.
 
 ![Step3](step3.png?classes=center-block)
@@ -87,8 +90,8 @@ public class BrowserStackSample {
       DesiredCapabilities caps = new DesiredCapabilities();
       
       // Set your access credentials
-      caps.setCapability("browserstack.user", "gonzalo73");
-      caps.setCapability("browserstack.key", "XhNJFhBfc3ARUy3CpCnt");
+      caps.setCapability("browserstack.user", "gonzalo63");
+      caps.setCapability("browserstack.key", "XhNJFhBfa3ARUy3CpCnt");
       
       // Set URL of the application under test
       caps.setCapability("app", "bs://29915571a1a915db18d82c84a0be27b155f21fb0");
@@ -140,8 +143,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BrowserStack implements IDevice{
 
-   public static String userName = "gonzalo73";
-   public static String accessKey = "XhNJFhBfc3ARUy3CpCnt";
+   public static String userName = "gonzalo63";
+   public static String accessKey = "XhNJFhBfa3ARUy3CpCnt";
 
    @Override
    public AppiumDriver create() throws MalformedURLException {
@@ -213,6 +216,7 @@ public class Conf {
 ...
 }
 ```
+
 Una gran ventaja de utilizar patrones de diseño y estructura del proyecto de forma ordenada es que los cambios efectuados más adelante son mínimos e inclusos estos aún pueden ser mejorados para que se ajusten a nuestras necesidades. 
 
 ### Ejecución 
