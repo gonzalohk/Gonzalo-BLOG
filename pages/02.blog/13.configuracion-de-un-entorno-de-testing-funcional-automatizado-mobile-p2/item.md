@@ -1,6 +1,6 @@
 ---
 title: 'Como configurar e implementar Mobile Test Automation (Parte 2)'
-media_order: 'browserstack.png,browserstack-appautomate.png,package-deviceFactory.png,runtest-automaton.png,browserStack-video.png,javaAndroid-running-summary.png,browserStack-testbug.png,step1.png,step2.png,browserstack-textlogs.png,automation-mobile-test.jpg,step3.png,testRunningVideo.gif,javaAndroid-running-finishi.png,javaAndroid-running.png,stats.png,automation-testing.png'
+media_order: 'browserstack.png,browserstack-appautomate.png,package-deviceFactory.png,runtest-automaton.png,browserStack-video.png,javaAndroid-running-summary.png,browserStack-testbug.png,step1.png,step2.png,browserstack-textlogs.png,automation-mobile-test.jpg,step3.png,testRunningVideo.gif,javaAndroid-running-finishi.png,javaAndroid-running.png,stats.png'
 published: true
 date: '11-10-2020 15:50'
 publish_date: '11-10-2020 15:50'
