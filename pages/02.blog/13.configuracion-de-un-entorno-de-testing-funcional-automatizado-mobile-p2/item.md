@@ -13,6 +13,7 @@ taxonomy:
     tag:
         - 'automation testing mobile'
         - mobile
+        - browserstack
 ---
 
 ![Automation Mobile Test](automation-testing.png?classes=center-block)
