@@ -1,6 +1,6 @@
 ---
 title: 'API REST Testing con Cucumber y Rest-Assured'
-media_order: 'apirest.png,clientapi-package.png,gherkinexample.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png'
+media_order: 'apirest.png,clientapi-package.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png'
 ---
 
 Probar y validar servicios API Rest en Java puede ser complejo si no se usan las herramientas adecuadas más aún si estas son automatizadas. En efecto, dichas pruebas se centran en los request y responses que se generan, estos deben probar una serie de aspectos como ser:
@@ -54,7 +54,7 @@ Para definir descripciones funcionales se necesitan de 5 palabras reservadas par
 * When: Especifica el conjunto de acciones que lanzan el test y la interacción del usuario que acciona la funcionalidad que deseamos probar.
 * Then: Especifica el resultado esperado en el test.
 
-![Ejemplo Gherkin](gherkinexample.png?classes=center-block)
+![Ejemplo Gherkin](gherkin2.png?classes=center-block)
 
 ## ¿Rest - Assured?
 
