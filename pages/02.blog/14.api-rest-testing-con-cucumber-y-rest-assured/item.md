@@ -94,7 +94,7 @@ Así mismo, se deben adicionar variables de entorno para Java y Gradle. En el ca
 * JAVA_HOME=C:\Program Files\Java\jdk-11.0.8
 * GRADLE_HOME =C:\gradle-5.6.4
 * Path
-* *  C:\gradle-5.6.4\bin
+	*  _C:\gradle-5.6.4\bin_
 
 Posterior a ello, verificamos ejecutando en consola los comandos siguientes.
 
@@ -102,9 +102,11 @@ Posterior a ello, verificamos ejecutando en consola los comandos siguientes.
 
 #### API REST Pública - dummy.restapiexample.com 
 
-Para hacer nuestras pruebas, utilizaremos **restapiexample.com** la cual proporciona un API Rest público de prueba que nos permitirá registrar, actualizar, listar y eliminar empleados.
+Para hacer nuestras pruebas, utilizaremos **restapiexample.com** la cual proporciona un API Rest público de prueba,
 
 * [http://dummy.restapiexample.com/](http://dummy.restapiexample.com/)
+
+En efecto, nos permitirá registrar, actualizar, listar y eliminar empleados.
 
 * Get all employees
 * Get employee by Id
@@ -114,7 +116,7 @@ Para hacer nuestras pruebas, utilizaremos **restapiexample.com** la cual proporc
 
 ![DummyRestAPI ejemplo](DummyRestAPIExample.png?classes=center-block)
 
-En una primera instancia exploramos y probaremos estas APIs con Postman. Una vez realizado esto, tenemos más detalle de los servicios mencionados.
+En una primera instancia exploramos y probaremos estas API con Postman. Una vez realizado esto ya se tiene más detalle de los servicios mencionados.
 
 **a) Listar empleados**
 
@@ -250,21 +252,19 @@ Intellij IDEA Community será suficiente para implementar y correr nuestras prue
 
 #### Dependencias y el build.gradle
 
-Las dependencias necesarias están especificadas en el archivo build.gradle además de establecer la tarea que correrá los tests y que generará el reporte.
-
-En tal sentido, necesitamos ser capaz de ejecutar requests y manipular responses a una API Rest, para ello agregamos. 
-* rest-assured v. 4.3.1
-* rest-assured-common v. 4.3.1
-* json-path v. 4.3.1
-* json-schema-validator v. 4.3.1
+Las dependencias necesarias están especificadas en el archivo _build.gradle_ además de establecer la tarea que correrá los tests y que generará el reporte. En tal sentido, necesitamos ser capaz de ejecutar requests y manipular responses a una API Rest, para ello agregamos. 
+* rest-assured v4.3.1
+* rest-assured-common v4.3.1
+* json-path v4.3.1
+* json-schema-validator v4.3.1
 * Json-20090211
 
-Así mismo, efectuar los test de forma automatizada utilizando Gherkin utilizando cucumber requieren de las siguientes dependencias. 
-* JUnit v.4.12
+Así mismo, escribiremos las pruebas en lenguaje Gherkin que sera ejecutado por cucumber.
+* JUnit v4.12
 * cucumber-java v1.2.5
 * cucumber-junit v1.2.5
 
-Por otro lado, será sumamente útil el visualizar reportes acerca de la ejecución de nuestras pruebas, por ello adicionamos.
+Por otro lado, será sumamente útil el visualizar reportes acerca de la ejecución de nuestras pruebas, por ello agregamos.
 * cucumber-reporting v5.3.1
 
 ```gradle
@@ -321,7 +321,7 @@ task cucumber() {
 
 ![clientapi package](clientapi-package.png?classes=center-block)
 
-Ahora bien, en el paquete clientapi crearemos clases capaces de hacer las peticiones a un API cualquiera. Para ello, hacemos uso de clases proporcionadas por rest-assured.
+Ahora bien, en el paquete _clientapi_ crearemos clases capaces de hacer las peticiones a un API cualquiera. Para ello, hacemos uso de clases proporcionadas por rest-assured.
 
 Las peticiones de tipo POST, PUT, DELETE y GET tienen un comportamiento similar, pero una implementación algo diferente. En tal sentido, el patrón de diseño Factory resulta útil en esta ocasión donde el RequestClient.java inicializara el cliente y describe el comportamiento de los request siendo estas sus clases hijas.  
 ```java
