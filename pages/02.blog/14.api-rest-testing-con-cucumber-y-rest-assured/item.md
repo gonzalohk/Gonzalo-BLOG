@@ -1,9 +1,10 @@
 ---
 title: 'API REST Testing con Cucumber y Rest-Assured'
-media_order: 'apirest.png,clientapi-package.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png,gherkin2.png,apitestingbanner.gif'
+media_order: 'clientapi-package.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png,gherkin2.png,apirest.png,banner.gif'
 ---
 
-![API REST Testing con Cucumber y Rest-Assured](apitestingbanner.gif?classes=center-block)
+![API REST Testing con Cucumber y Rest-Assured](banner.gif?classes=center-block)
+
 Probar y validar servicios API Rest en Java puede ser complejo si no se usan las herramientas adecuadas más aún si estas son automatizadas. En efecto, dichas pruebas se centran en los request y responses que se generan, estos deben probar una serie de aspectos como ser:
 
 * El código de respuesta HTTP (response code)
@@ -18,7 +19,9 @@ Un API (Application Programming Interface) es un conjunto de reglas y protocolos
 
 En otras palabras, API REST define un conjunto de funciones para realizar solicitudes (Request) y recibir respuestas (Responses) a través del protocolo HTTP bajo una arquitectura cliente servidor,. 
 
+
 ![API-Rest Esquema](apirest.png?classes=center-block)
+
 
 En efecto, API REST utiliza los métodos HTTP (HTTP verbs) para realizar las peticiones, cada uno con una función particular siendo estos:
 
