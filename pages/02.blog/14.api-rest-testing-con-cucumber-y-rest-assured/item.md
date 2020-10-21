@@ -9,32 +9,32 @@ media_order: 'clientapi-package.png,plugin-gherkin.png,report-package.png,resour
 Probar y validar servicios API Rest en Java puede ser complejo si no se usan las herramientas adecuadas más aún si estas son automatizadas. En efecto, dichas pruebas se centran en los request y responses que se generan, estos deben probar una serie de aspectos como ser:
 
 * El código de respuesta HTTP (response code)
-* Las cabeceras HTTP de la respuesta
+* Las cabeceras HTTP de la respuesta (headers)
 * El contenido de la respuesta en JSON o XML (payload)
 
-Quizá no estemos familiarizados con estos conceptos aún por lo que podemos definirlos.
+Quizá no estemos familiarizados con estos conceptos aún por lo que podemos explorarlos.
 
 ## ¿Qué es API Rest?
 
-Un API (Application Programming Interface) es un conjunto de reglas y protocolos que permiten la comunicación entre aplicaciones software. Ahora bien, REST (Representational State Transfer) se originó en el año 2000 fue descrito en la tesis de Roy Fielding. En efecto, API Rest es una interfaz de programación de aplicaciones que se ajusta al estilo de arquitectura REST.
+Un API (Application Programming Interface) es un conjunto de reglas y protocolos que permiten la comunicación entre aplicaciones software. Ahora bien, REST (Representational State Transfer) se originó en el año 2000 fue descrito en la tesis de Roy Fielding. En efecto, **API Rest es una interfaz de programación de aplicaciones que se ajusta al estilo de arquitectura REST**.
 
-En otras palabras, API REST define un conjunto de funciones para realizar solicitudes (Request) y recibir respuestas (Responses) a través del protocolo HTTP bajo una arquitectura cliente servidor,. 
+En otras palabras, API REST define un conjunto de funciones para realizar solicitudes (Request) y recibir respuestas (Responses) a través del protocolo HTTP bajo una arquitectura cliente servidor. 
 
 
 ![API-Rest Esquema](apirest.png?classes=center-block)
 
 
-En efecto, API REST utiliza los métodos HTTP (HTTP verbs) para realizar las peticiones, cada uno con una función particular siendo estos:
+En efecto, API REST utiliza los métodos HTTP (HTTP verbs) para realizar las peticiones, cada uno tiene una función en particular.
 
-* GET: es utilizado únicamente para consultar información.
-* POST: usado para solicitar la creación de un nuevo registro (soporta payload).
-* PUT: se emplea para actualizar por completo un registro existente (soporta payload)
-* PATCH: similar al método PUT, permite actualizar solo un fragmento del registro y no su totalidad (soporta payload)
-* DELETE: se lo usa para eliminar un registro existente
-* HEAD: utilizado para obtener información sobre un determinado recurso sin retornar el registro.
-* OPTIONS: permite describir las opciones de comunicación para el recurso de destino
+* GET es utilizado únicamente para consultar información.
+* POST usado para solicitar la creación de un nuevo registro (soporta payload).
+* PUT se emplea para actualizar por completo un registro existente (soporta payload).
+* PATCH similar al método PUT, permite actualizar solo un fragmento del registro y no su totalidad (soporta payload).
+* DELETE se lo usa para eliminar un registro existente.
+* HEAD utilizado para obtener información sobre un determinado recurso sin retornar el registro.
+* OPTIONS permite describir las opciones de comunicación para el recurso de destino.
 
-Los códigos de estado HTTP (HTTP Status code) describen de forma abreviada la respuesta obtenida, cada uno indica un estado en particular, pero de forma general estos son:
+Los códigos de estado HTTP (HTTP Status code) describen de forma abreviada la respuesta obtenida en las peticiones, estos son:
 
 * 1XX Respuestas informativas
 * 2XX Peticiones correctas
@@ -44,7 +44,7 @@ Los códigos de estado HTTP (HTTP Status code) describen de forma abreviada la r
 
 
 ## ¿Qué es Cucumber?
-Es una herramienta que permite ejecutar descripciones funcionales en texto plano como pruebas de software automatizados. Cucumber ayuda a implementar la metodología Behaviour Driven Development (BDD o Desarrollo Dirigido por Comportamiento) donde primero se escriben las pruebas antes que el código fuente.
+Es una **herramienta que permite ejecutar descripciones funcionales** en texto plano como pruebas de software automatizados. Cucumber ayuda a implementar la metodología Behaviour Driven Development (BDD o Desarrollo Dirigido por Comportamiento) donde primero se escriben las pruebas antes que el código fuente.
 
 En tal sentido, el lenguaje usado por Cucumber para estas descripciones funcionales se denomina Gherkin. 
 
