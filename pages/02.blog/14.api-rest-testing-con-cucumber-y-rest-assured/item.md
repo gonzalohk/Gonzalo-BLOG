@@ -44,7 +44,7 @@ Los códigos de estado HTTP (HTTP Status code) describen de forma abreviada la r
 
 
 ## ¿Qué es Cucumber?
-Es una **herramienta que permite ejecutar descripciones funcionales** en texto plano como pruebas de software automatizados. Cucumber **implementa la metodología Behaviour Driven Development** ([BDD o Desarrollo Dirigido por Comportamiento](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_comportamiento)) donde primero se escriben las pruebas antes que el código fuente.
+Es una **herramienta que permite ejecutar descripciones funcionales** en texto plano como pruebas de software automatizados. Cucumber implementa la metodología Behaviour Driven Development ([BDD o Desarrollo Dirigido por Comportamiento](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_comportamiento)) donde primero se escriben las pruebas antes que el código fuente.
 
 En tal sentido, el lenguaje usado por Cucumber para estas descripciones funcionales se denomina Gherkin. 
 
