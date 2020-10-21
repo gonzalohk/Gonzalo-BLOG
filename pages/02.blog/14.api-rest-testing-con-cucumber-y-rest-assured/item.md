@@ -250,4 +250,457 @@ Response:
 }
 ```
 
+
+### Creando el proyecto
+
+Intellij IDEA Community será suficiente para implementar y correr nuestras pruebas automatizadas, por lo que creamos un nuevo proyecto Gradle con Java. 
+
+#### a) Dependencias y el build.gradle
+
+Las dependencias necesarias están especificadas en el archivo build.gradle además de establecer la tarea que correrá los tests y que generará el reporte.
+
+En tal sentido, necesitamos ser capaz de ejecutar requests y manipular responses a una API Rest, para ello agregamos. 
+* rest-assured v. 4.3.1
+* rest-assured-common v. 4.3.1
+* json-path v. 4.3.1
+* json-schema-validator v. 4.3.1
+* Json-20090211
+
+Así mismo, efectuar los test de forma automatizada utilizando Gherkin utilizando cucumber requieren de las siguientes dependencias. 
+* JUnit v.4.12
+* cucumber-java v1.2.5
+* cucumber-junit v1.2.5
+
+Por otro lado, será sumamente útil el visualizar reportes acerca de la ejecución de nuestras pruebas, por ello adicionamos.
+* cucumber-reporting v5.3.1
+
+```gradle
+plugins {
+   id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+   testCompile group: 'junit', name: 'junit', version: '4.12'
+
+   // CUCUMBER BDD
+   testCompile 'info.cukes:cucumber-java:1.2.5'
+   testCompile group: 'info.cukes', name: 'cucumber-junit', version: '1.2.5'
+   compile group: 'info.cukes', name: 'cucumber-java', version: '1.2.5'
+   compile group: 'net.masterthought', name: 'cucumber-reporting', version: '5.3.1'
+
+   // REST Assured
+   testCompile group: 'io.rest-assured', name: 'rest-assured', version: '4.3.1'
+   compile group: 'io.rest-assured', name: 'json-path', version: '4.3.1'
+   compile group: 'io.rest-assured', name: 'json-schema-validator', version: '4.3.1'
+   compile group: 'io.rest-assured', name: 'rest-assured-common', version: '4.3.1'
+   compile group: 'io.rest-assured', name: 'rest-assured-all', version: '4.3.1'
+
+   // JSON
+   compile 'com.googlecode.json-simple:json-simple:1.1.1'
+   compile 'org.json:json:20090211'
+}
+
+configurations {
+   cucumberRuntime {
+       extendsFrom testImplementation
+   }
+}
+
+task cucumber() {
+   dependsOn assemble, compileTestJava
+   doLast {
+       javaexec {
+           main = "cucumber.api.cli.Main"
+           classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+           args = ['--plugin','json:build/reports/cucumber/report.json', '-f','pretty','--glue', 'runner', 'src/test/resources', '--tags']+[suite]
+       }
+   }
+}
+```
+### b) Creando el clientapi Package
+Ahora bien, en el paquete clientapi crearemos clases capaces de hacer las peticiones a un API cualquiera. Para ello, hacemos uso de clases proporcionadas por rest-assured.
+
+Las peticiones de tipo POST, PUT, DELETE y GET tienen un comportamiento similar, pero una implementación algo diferente. En tal sentido, el patrón de diseño Factory resulta útil en esta ocasión donde el RequestClient.java inicializara el cliente y describe el comportamiento de los request siendo estas sus clases hijas.  
+```java
+package clientapi;
+
+import io.restassured.response.Response;
+
+public interface IRequest {
+   Response send(String url,String payload);
+}
+```
+Post.java
+```java
+package clientapi;
+
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.given;
+
+public class Post  implements IRequest{
+   @Override
+   public Response send(String url, String payload) {
+       Response response = given()
+               .contentType(ContentType.JSON)
+               .body(payload)
+               .when()
+               .post(url);
+       return response;
+   }
+}
+```
+Get.java
+```java
+package clientapi;
+
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.given;
+
+public class Get implements IRequest{
+   @Override
+   public Response send(String url, String payload) {
+       Response response = given()
+               .contentType(ContentType.JSON)
+               .when()
+               .get(url);
+
+       return response;
+   }
+}
+```
+Put.java
+```java
+package clientapi;
+
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.given;
+
+public class Put implements IRequest{
+
+   @Override
+   public Response send(String url,String payload) {
+       Response response = given()
+               .contentType(ContentType.JSON)
+               .when()
+               .put(url);
+       return response;
+   }
+}
+```
+Delete.java
+```java
+package clientapi;
+
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.given;
+
+public class Delete implements IRequest {
+   @Override
+   public Response send(String url, String payload) {
+       Response response = given()
+               .contentType(ContentType.JSON)
+               .when()
+               .delete(url);
+       return response;
+   }
+}
+```
+Finalmente el FactoryRequest.java será el encargado de fabricar nuestros request de una forma más organizada sin tener código redundante.
+
+FactoryRequest.java
+```java
+package clientapi;
+
+public class FactoryRequest {
+   public static IRequest make(String httpVerb){
+       IRequest request;
+
+       switch (httpVerb.toUpperCase()){
+           case "POST":
+               request = new Post();
+               break;
+           case "PUT":
+               request = new Put();
+               break;
+           case "DELETE":
+               request = new Delete();
+               break;
+           case "GET":
+           default:
+               request = new Get();
+       }
+       return request;
+   }
+}
+```
+### c) Creando el util Package
+```java
+package utils;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Iterator;
+
+public class JsonUtils {
+   //Convert STRING -> JSON
+   public static JSONObject convertJSON(String json) throws JSONException {
+       return new JSONObject(json);
+   }
+
+   //Get a "property" value
+   public static String getValueFromJSON(String json, String propertyName) throws JSONException {
+       String value = convertJSON(JsonUtils.convertJSON(json).get("data").toString()).getString(propertyName);
+       return  value;
+   }
+
+   //Compare expectedResult vs actualResult
+   public static boolean areEqualJSON(String expectedResult, String actualResult) throws JSONException {
+       boolean areEqual = true;
+       //String -> JSON
+       JSONObject jsonExpectedResult = JsonUtils.convertJSON(expectedResult);
+       JSONObject jsonActualResult = JsonUtils.convertJSON(actualResult);
+       //Iterate jsonExpectedResult Data
+       Iterator<?> keys = jsonExpectedResult.keys();
+       while (keys.hasNext()) {
+           String key = (String) keys.next();
+           String actualValue = jsonActualResult.get(key).toString();
+           String expectedValue = jsonExpectedResult.get(key).toString();
+           if (actualValue.startsWith("{")) {
+               areEqual = areEqualJSON(expectedValue,actualValue);
+           } else {
+               //DO NOT compare fields with value "EXCLUDE"
+               if (expectedValue.equals("EXCLUDE")) {
+                   System.out.println("INFO: EXCLUDE, the attribute [" + key + "]");
+               } else if (!expectedValue.equals(actualValue)) {
+                   areEqual = false;
+               }
+               System.out.println("INFO: COMPARING, the attribute [" + key + "]:  actual value [" + actualValue + "] vs expected [" + expectedValue + "]");
+           }
+       }
+       return areEqual;
+   }
+}
+```
+
+### d) Creando el test feature
+
+El paquete resources alberga a todos nuestros archivos .feature que representa los test en lenguaje Gherkins. En tal sentido, el EmployeesAPI.feature representa las pruebas que haremos con todo.ly
+```gherkin
+ Feature: Employee CRUD feature
+ As a user
+ I would like to create/update/delete/get an employee
+ @Regression
+ Scenario Outline: create new employee
+   Given I have access to http://dummy.restapiexample.com/ API
+   When I send POST request to '/api/v1/create' with json
+   """
+   {"name":"<name>","salary":"<salary>","age":"<age>"}
+   """
+   Then I expect the response code 200
+   And I get the property 'id' and save its value on EMPLOYEE_ID
+   And I expect the response body is equal
+   """
+   {
+     "status": "success",
+     "data": {
+         "name": "<name>",
+         "salary": "<salary>",
+         "age": "<age>",
+         "id": "EXCLUDE"
+     },
+     "message": "Successfully! Record has been added."
+   }
+   """
+   Examples:
+     | name | salary | age |
+     | jimmmy plaza | 2800 | 55 |
+```
+```gherkin
+ @Regression
+ Scenario: delete employee by id
+   Given I have access to http://dummy.restapiexample.com/ API
+   When I send DELETE request to '/api/v1/delete/EMPLOYEE_ID' with json
+   """
+   """
+   Then I expect the response code 200
+```
+```gherkin
+ @Regression
+ Scenario: update employee data
+   Given I have access to http://dummy.restapiexample.com/ API
+   When I send PUT request to '/api/v1/update/10' with json
+   """
+   {"name":"Updated Name","salary":"10000","age":"30"}
+   """
+   Then I expect the response code 200
+```
+```gherkin
+ @Regression
+ Scenario: get an employee data by id
+   Given I have access to http://dummy.restapiexample.com/ API
+   When I send GET request to '/api/v1/employee/10' with json
+   """
+   """
+   Then I expect the response code 200
+```
+```gherkin
+ @Regression
+ Scenario: get employees
+   Given I have access to http://dummy.restapiexample.com/ API
+   When I send GET request to '/api/v1/employees' with json
+   """
+   """
+   Then I expect the response code 200
+```
+### e) Creando el runner Package
+
+El paquete runner se encarga de correr los test y se añaden los steps definitions. El StepDefinitions.java es en donde se implementan los tests que serán ejecutados y que están estrechamente relacionado al EmployeesAPI.feature.
+```java
+package runner;
+
+import clientapi.FactoryRequest;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import io.restassured.response.Response;
+import org.json.JSONException;
+import org.junit.Assert;
+import utils.JsonUtils;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+public class StepDefinitions {
+   public final String HOST="https://dummy.restapiexample.com";
+   public Response response;
+   public Map<String, String> globalVariables = new HashMap<>();
+
+   @Given("^I have access to http://dummy\\.restapiexample\\.com/ API$")
+   public void iHaveAccessToHttpDummyRestapiexampleComAPI() {
+   }
+
+   @When("^I send (POST|PUT|DELETE|GET) request to '(.*)' with json$")
+   public void iSendARequestWithJson(String httpVerb, String url, String jsonBody) {
+       response = FactoryRequest.make(httpVerb).send(HOST+this.replaceStoredVariables(url),this.replaceStoredVariables(jsonBody));
+       System.out.println("[INFO] REQUEST WAS EXECUTED " + url + " - " + response.timeIn(TimeUnit.MILLISECONDS) + " milliseconds");
+       response.prettyPrint();
+   }
+
+   @Then("^I expect the response code (\\d+)$")
+   public void iExpectTheResponseCode(int expectedResponseCode) {
+       Assert.assertEquals("Error! Wrong response data.",expectedResponseCode, response.getStatusCode());
+   }
+
+   @And("^I expect the response body is equal$")
+   public void iExpectTheResponseBodyIsEqual(String expectedJsonBody) throws JSONException {
+       Assert.assertTrue("Error!, wrong response data",
+               JsonUtils.areEqualJSON(expectedJsonBody,response.getBody().asString()));
+   }
+
+   @And("^I get the property '(.*)' and save its value on (.*)$")
+   public void iGetThePropertyAndSaveItsValue(String property, String key) throws JSONException {
+       String valueToSave = JsonUtils.getValueFromJSON(response.getBody().asString(), property);
+       globalVariables.put(key, valueToSave);
+       System.out.println("[INFO] Property "+ property + " ("+globalVariables.get(key)+") was stored on "+ key);
+   }
+
+   // Util
+   private String replaceStoredVariables(String value){
+       for (String key: this.globalVariables.keySet()){
+           value= value.replace(key,this.globalVariables.get(key));
+       }
+       return value;
+   }
+}
+```
+Runnercucumber.java
+```java
+package runner;
+
+import cucumber.api.junit.Cucumber;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+public class RunnerCucumber {
+   @Before
+   public void before(){}
+   @After
+   public void after(){}
+}
+```
+
+### Ejecutando TEST
+
+Para ejecutar nuestros test, ejecutamos el siguiente comando desde nuestra consola el cual llama a una tarea que fue definida en el buid.gradle, esta tarea es correr los test automatizados para todos los escenarios que tengan el tag @Regression.
+gradle clean cucumber -Psuite=@Regression
+
+
+Así mismo, también el report.json fue generado una vez finalizados los test. Este puede ser utilizado como fuente de datos para usar plantillas de reportes y ver una presentación mejor organizada y limpia. Para ello, añadimos un ReportGenerator.java con las siguientes instrucciones. 
+```java
+package report;
+
+import net.masterthought.cucumber.Configuration;
+import net.masterthought.cucumber.ReportBuilder;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ReportGenerator {
+
+   public static void main(String[]args){
+       //Relative path to generate report.json
+       String path="build/reports/cucumber/";
+
+       //JSON report file
+       File reportOutPut= new File(path + "Generated-ReportAPI");
+       List<String> jsonFiles = new ArrayList<>();
+       jsonFiles.add(path+"report.json");
+
+       //Configuration
+       Configuration configuration =  new Configuration(reportOutPut,"Todo.ly - API Rest test");
+       configuration.setBuildNumber("v0.1");
+       configuration.addClassifications("Platform","Windows");
+       configuration.addClassifications("Owner","Gonzalo");
+       configuration.addClassifications("Branch","master");
+       configuration.addClassifications("Type Report","Local");
+
+       //Build
+       ReportBuilder reportBuilder = new ReportBuilder(jsonFiles,configuration);
+       reportBuilder.generateReports();
+       System.out.println(System.getProperty("buildNumber"));
+   }
+}
+```
+Finalmente, ejecutamos la última clase creada para generar una mejor vista del reporte en archivos .html Esto se verá de la siguiente manera. 
+
+Ahora ya podemos visualizar los reportes desde cualquier navegador web.
+
+
+## Repositorio
+
+El código completo se encuentra en el siguiente repositorio.
+
+* https://github.com/gonzalohk/automation-api-testing-with-cucumber
+
 Por ello, existen variedad de herramientas siendo una buena opción es Rest-Assured que permite simplificar la construcción de los pruebas API Rest, permitiendo la fácil manipulación de los endpoints. Por otro lado, sería muy interesante usar una metodología BDD usando Cucumber para ejecutar descripciones funcionales de pruebas en texto plano en lenguaje Gherkin, de modo tal que sea entendible para cualquier persona incluso sin conocimiento técnico. Así mismo, podríamos usar JUnit como test engine base para hacer nuestras verificaciones finales.
