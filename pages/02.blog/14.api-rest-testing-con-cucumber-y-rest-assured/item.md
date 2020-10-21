@@ -1,5 +1,6 @@
 ---
 title: 'API REST Testing con Cucumber y Rest-Assured'
+media_order: 'apirest.png,clientapi-package.png,gherkinexample.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png'
 ---
 
 Probar y validar servicios API Rest en Java puede ser complejo si no se usan las herramientas adecuadas más aún si estas son automatizadas. En efecto, dichas pruebas se centran en los request y responses que se generan, estos deben probar una serie de aspectos como ser:
@@ -12,9 +13,11 @@ Quizá no estemos familiarizados con estos conceptos aún por lo que podemos def
 
 ## ¿Que es API Rest?
 
-Un API (Application Programming Interface) es un conjunto de reglas y protocolos que permiten la comunicación entre aplicaciones software. Ahora bien, REST (Representational State Transfer) se originó en el año 2000 fue descrito en la tesis de Roy Fielding. Es efecto, API Rest es una interfaz de programación de aplicaciones que se ajusta al estilo de arquitectura REST.
+Un API (Application Programming Interface) es un conjunto de reglas y protocolos que permiten la comunicación entre aplicaciones software. Ahora bien, REST (Representational State Transfer) se originó en el año 2000 fue descrito en la tesis de Roy Fielding. En efecto, API Rest es una interfaz de programación de aplicaciones que se ajusta al estilo de arquitectura REST.
 
 En otras palabras, API REST define un conjunto de funciones para realizar solicitudes (Request) y recibir respuestas (Responses) a través del protocolo HTTP bajo una arquitectura cliente servidor,. 
+
+![API-Rest Esquema](apirest.png?classes=center-block)
 
 En efecto, API REST utiliza los métodos HTTP (HTTP verbs) para realizar las peticiones, cada uno con una función particular siendo estos:
 
@@ -51,6 +54,8 @@ Para definir descripciones funcionales se necesitan de 5 palabras reservadas par
 * When: Especifica el conjunto de acciones que lanzan el test y la interacción del usuario que acciona la funcionalidad que deseamos probar.
 * Then: Especifica el resultado esperado en el test.
 
+![Ejemplo Gherkin](gherkinexample.png?classes=center-block)
+
 ## ¿Rest - Assured?
 
 Rest-Assured es un Java DSL (Domain Specific Language) construido sobre la capa HTTP Builder que permite simplificar la construcción de test sobre una API REST. Es decir, tiene una sintaxis DSL que sigue el formato Given – When – Then como Gherkin.
@@ -79,6 +84,8 @@ Usaremos Cucumber con Gherkin para realizar los test, por lo que instalaremos en
 * Gherkin
 * Cucumber for Java
 
+![Plugins](plugin-gherkin.png?classes=center-block)
+
 Así mismo, se deben adicionar variables de entorno para Java y Gradle. Por ello, se deberá tener una configuración de la siguiente manera donde en el caso de Windows se vería de esta forma.
 
 * JAVA_HOME=C:\Program Files\Java\jdk-11.0.8
@@ -87,6 +94,8 @@ Así mismo, se deben adicionar variables de entorno para Java y Gradle. Por ello
 ** C:\gradle-5.6.4\bin
 
 Posterior a ello, verificamos que podamos ejecutar en la consola los comandos siguientes.
+
+![Verificando Variables de entorno](verificar.png?classes=center-block)
 
 #### dummy.restapiexample.com y su API Rest
 
@@ -106,17 +115,13 @@ En una primera instancia probaremos estas APIs con Postman, para ello creamos un
 
 **a) Listar empleados**
 
-URL: http://dummy.restapiexample.com/api/v1/employees
+* URL: http://dummy.restapiexample.com/api/v1/employees
+* Formato: json
+* Metodo HTTP: GET
+* Requiere autenticación: No
+* Payload: Ninguno
 
-Formato: json
-
-Metodo HTTP: GET
-
-Requiere autenticación: No
-
-Payload: Ninguno
-
-URL: http://dummy.restapiexample.com/api/v1/employees
+GET http://dummy.restapiexample.com/api/v1/employees
 
 Response:
 ```json
@@ -136,17 +141,13 @@ Response:
 ```
 **b) Listar empleado**
 
-URL: http://dummy.restapiexample.com/api/v1/employee/{id}
+> URL: http://dummy.restapiexample.com/api/v1/employee/{id}
+> Formatos: json
+> Metodo HTTP: GET
+> Requiere autenticación: No
+> Payload: Ninguno
 
-Formatos: json
-
-Metodo HTTP: GET
-
-Requiere autenticación: No
-
-Payload: Ninguno
-
-URL: http://dummy.restapiexample.com/api/v1/employee/1
+GET http://dummy.restapiexample.com/api/v1/employee/1
 
 Response:
 ```json
@@ -161,20 +162,15 @@ Response:
 	}
 }
 ```
-
 **c) Crear Empleado**
 
-URL: http://dummy.restapiexample.com/api/v1/create
+> URL: http://dummy.restapiexample.com/api/v1/create
+> Formatos: json
+> Metodo HTTP: POST
+> Requiere autenticación: No
+> Payload: Employee Object
 
-Formatos: json
-
-Metodo HTTP: POST
-
-Requiere autenticación: No
-
-Payload: Se requiere un Employee Object como parámetro de entrada, pero no requiere todos los campos. 
-
-URL: http://dummy.restapiexample.com/api/v1/create
+POST http://dummy.restapiexample.com/api/v1/create
 
 Content:
 ```json
@@ -197,17 +193,14 @@ Response:
 }
 ```
 **d) Actualizar Empleado**
-URL: http://dummy.restapiexample.com/api/v1/update/{id}
 
-Formatos: json
+> URL: http://dummy.restapiexample.com/api/v1/update/{id}
+> Formatos: json
+> Metodo HTTP: PUT
+> Requiere autenticación: No
+> Payload: Employee Object
 
-Metodo HTTP: PUT
-
-Requiere autenticación: No
-
-Payload: Se requiere un Employee Object como parámetro de entrada, pero no requiere todos los campos. 
-
-URL: http://dummy.restapiexample.com/api/v1/update/21
+PUT http://dummy.restapiexample.com/api/v1/update/21
 
 Content:
 ```json
@@ -217,7 +210,7 @@ Content:
     "age":"30"
 }
 ```
-Response
+Response:
 ```json
 {
     "status": "success",
@@ -230,17 +223,13 @@ Response
 }
 ```
 **e) Eliminar Item**
-URL: http://dummy.restapiexample.com/api/v1/delete/{id}
+> URL: http://dummy.restapiexample.com/api/v1/delete/{id}
+> Formatos: xml, json
+> Metodo HTTP: DELETE
+> Requiere autenticación: No
+> Parámetros: Ninguno
 
-Formatos: xml, json
-
-Metodo HTTP: DELETE
-
-Requiere autenticación: No
-
-Parámetros: Ninguno
-
-URL: http://dummy.restapiexample.com/api/v1/delete/2
+DELETE http://dummy.restapiexample.com/api/v1/delete/2
 
 Response:
 ```json
@@ -250,10 +239,11 @@ Response:
 }
 ```
 
-
 ### Creando el proyecto
 
 Intellij IDEA Community será suficiente para implementar y correr nuestras pruebas automatizadas, por lo que creamos un nuevo proyecto Gradle con Java. 
+
+
 
 #### a) Dependencias y el build.gradle
 
@@ -325,6 +315,9 @@ task cucumber() {
 }
 ```
 ### b) Creando el clientapi Package
+
+![clientapi package](clientapi-package.png?classes=center-block)
+
 Ahora bien, en el paquete clientapi crearemos clases capaces de hacer las peticiones a un API cualquiera. Para ello, hacemos uso de clases proporcionadas por rest-assured.
 
 Las peticiones de tipo POST, PUT, DELETE y GET tienen un comportamiento similar, pero una implementación algo diferente. En tal sentido, el patrón de diseño Factory resulta útil en esta ocasión donde el RequestClient.java inicializara el cliente y describe el comportamiento de los request siendo estas sus clases hijas.  
@@ -449,6 +442,9 @@ public class FactoryRequest {
 }
 ```
 ### c) Creando el util Package
+
+![Util package](utils-package.png?classes=center-block)
+
 ```java
 package utils;
 
@@ -499,6 +495,8 @@ public class JsonUtils {
 ```
 
 ### d) Creando el test feature
+
+![Test feature](resources-package.png?classes=center-block)
 
 El paquete resources alberga a todos nuestros archivos .feature que representa los test en lenguaje Gherkins. En tal sentido, el EmployeesAPI.feature representa las pruebas que haremos con todo.ly
 ```gherkin
@@ -569,6 +567,8 @@ El paquete resources alberga a todos nuestros archivos .feature que representa l
    Then I expect the response code 200
 ```
 ### e) Creando el runner Package
+
+![Runner package](runnerpackage.png?classes=center-block)
 
 El paquete runner se encarga de correr los test y se añaden los steps definitions. El StepDefinitions.java es en donde se implementan los tests que serán ejecutados y que están estrechamente relacionado al EmployeesAPI.feature.
 ```java
@@ -701,6 +701,6 @@ Ahora ya podemos visualizar los reportes desde cualquier navegador web.
 
 El código completo se encuentra en el siguiente repositorio.
 
-* https://github.com/gonzalohk/automation-api-testing-with-cucumber
+* [https://github.com/gonzalohk/automation-api-testing-with-cucumber](https://github.com/gonzalohk/automation-api-testing-with-cucumber)
 
-Por ello, existen variedad de herramientas siendo una buena opción es Rest-Assured que permite simplificar la construcción de los pruebas API Rest, permitiendo la fácil manipulación de los endpoints. Por otro lado, sería muy interesante usar una metodología BDD usando Cucumber para ejecutar descripciones funcionales de pruebas en texto plano en lenguaje Gherkin, de modo tal que sea entendible para cualquier persona incluso sin conocimiento técnico. Así mismo, podríamos usar JUnit como test engine base para hacer nuestras verificaciones finales.
+Como se vio en este post,  Rest-Assured que permite simplificar la construcción de los pruebas API Rest, permitiendo la fácil manipulación de los endpoints. Por otro lado, aplicar una metodología BDD usando Cucumber para ejecutar descripciones funcionales de pruebas en texto plano en lenguaje Gherkin tiene muchas ventajs. En tal sentido, una de las principales es poder ser entendido por cualquier persona incluso sin conocimiento técnico y permitiendo verificaciones finales mas sencillas.
