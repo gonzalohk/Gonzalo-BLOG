@@ -1,6 +1,6 @@
 ---
 title: 'API REST Testing con Cucumber y Rest-Assured'
-media_order: 'clientapi-package.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png,gherkin2.png,apirest.png,banner.gif,apitestbanner.gif'
+media_order: 'clientapi-package.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png,gherkin2.png,apirest.png'
 ---
 
 ![API REST Testing con Cucumber y Rest-Assured](apitestbanner.gif?classes=center-block)
@@ -14,7 +14,7 @@ Probar y validar servicios API Rest en Java puede ser complejo si no se usan las
 
 Quizá no estemos familiarizados con estos conceptos aún por lo que podemos definirlos.
 
-## ¿Que es API Rest?
+## ¿Qué es API Rest?
 
 Un API (Application Programming Interface) es un conjunto de reglas y protocolos que permiten la comunicación entre aplicaciones software. Ahora bien, REST (Representational State Transfer) se originó en el año 2000 fue descrito en la tesis de Roy Fielding. En efecto, API Rest es una interfaz de programación de aplicaciones que se ajusta al estilo de arquitectura REST.
 
@@ -43,12 +43,12 @@ Los códigos de estado HTTP (HTTP Status code) describen de forma abreviada la r
 * 5XX Errores de servidor
 
 
-## ¿Que es Cucumber?
+## ¿Qué es Cucumber?
 Es una herramienta que permite ejecutar descripciones funcionales en texto plano como pruebas de software automatizados. Cucumber ayuda a implementar la metodología Behaviour Driven Development (BDD o Desarrollo Dirigido por Comportamiento) donde primero se escriben las pruebas antes que el código fuente.
 
 En tal sentido, el lenguaje usado por Cucumber para estas descripciones funcionales se denomina Gherkin. 
 
-## ¿Que es Gherkin?
+## ¿Qué es Gherkin?
 Se define como un Lenguaje Específico de Dominio, que puede ser entendido por humanos y por ordenadores. 
 
 Para definir descripciones funcionales se necesitan de 5 palabras reservadas para construir nuestras pruebas :
