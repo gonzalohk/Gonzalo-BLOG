@@ -1,6 +1,6 @@
 ---
-title: 'API REST Testing con Cucumber y Rest-Assured'
-media_order: 'clientapi-package.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png,gherkin2.png,apirest.png'
+title: 'API REST Testing con Cucumber y Rest Assured'
+media_order: 'clientapi-package.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png,gherkin2.png,apirest.png,apitestbanner.gif,DummyRestAPIExample.png,newproject.png'
 ---
 
 ![API REST Testing con Cucumber y Rest-Assured](apitestbanner.gif?classes=center-block)
@@ -44,7 +44,7 @@ Los códigos de estado HTTP (HTTP Status code) describen de forma abreviada la r
 
 
 ## ¿Qué es Cucumber?
-Es una **herramienta que permite ejecutar descripciones funcionales** en texto plano como pruebas de software automatizados. Cucumber **implementa la metodología Behaviour Driven Development** (BDD o Desarrollo Dirigido por Comportamiento) donde primero se escriben las pruebas antes que el código fuente.
+Es una **herramienta que permite ejecutar descripciones funcionales** en texto plano como pruebas de software automatizados. Cucumber **implementa la metodología Behaviour Driven Development** ([BDD o Desarrollo Dirigido por Comportamiento](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_comportamiento)) donde primero se escriben las pruebas antes que el código fuente.
 
 En tal sentido, el lenguaje usado por Cucumber para estas descripciones funcionales se denomina Gherkin. 
 
@@ -59,54 +59,52 @@ Se define como un **Lenguaje Específico de Dominio, que puede ser entendido por
 
 ![Ejemplo Gherkin](gherkin2.png?classes=center-block)
 
-## ¿Qué es Rest - Assured?
+## ¿Qué es Rest-Assured?
 
 Rest-Assured es un Java DSL (Domain Specific Language) construido sobre la capa HTTP Builder que permite simplificar la construcción de pruebas sobre una API REST. Es decir, tiene una sintaxis DSL que sigue el formato Given – When – Then como Gherkin para implementar pruebas.
 
 En tal sentido, se considera un framework que fue desarrollado por Jayway que tiene características bastante útiles como validación Xpath, JsonPath, MIME-Types, file upload, verificación de cabeceras, respuestas, cookies y muchas otras opciones.  
 
-## EJEMPLO
-Para que lo expuesto no se quede en teórica hagamos un ejemplo probando, verificando un API Rest público, utilizando las herramientas y metodología mencionada. 
+## Implementación
+Para que lo expuesto sea mejor comprendido implementemos un ejemplo para probar y verificar un API Rest público utilizando las herramientas mencionadas y la metodología BDD. 
 
 #### Precondiciones 
 Primeramente descargamos e instalamos Java y Gradle como gestor de dependencias.
 
-* Java 11 - [Descargar](http://jdk.java.net/java-se-ri/11)
-* Gradle 5.6.4 -  [Descargar](https://gradle.org/releases/)
+* [Java 11](http://jdk.java.net/java-se-ri/11)
+* [Gradle 5.6.4](https://gradle.org/releases/)
 
-Por otro lado, necesitamos de una cliente capaz de hacer peticiones al API Rest como Postman con el fin de obtener la mayor información posible. Sin embargo, es importante mencionar que Postman es mucho más que un cliente rest, pero nos podría servir para hacer el análisis de nuestro API a probar. 
+Por otro lado, necesitamos de una cliente capaz de hacer peticiones al API Rest como Postman con el fin de obtener la mayor información posible. Sin embargo, es importante mencionar que Postman es mucho más que un cliente rest, pero nos podría servir para hacer el análisis previo. 
 
-* Postman - [Descargar](https://www.postman.com/)
+* [Postman](https://www.postman.com/)
 
-Adicionalmente podemos usar el IDE de nuestra preferencia, pero Intellij IDEA en su versión gratuita tiene lo suficiente para llevar a cabo nuestras pruebas. 
+Adicionalmente podemos usar el IDE de nuestra preferencia, pero Intellij IDEA en su versión gratuita tiene lo suficiente para llevar a cabo las pruebas. 
 
-* IntelliJ IDEA 2020.2.2 Community - [Descargar](https://www.jetbrains.com/es-es/idea/download/#section=windows)
+* [IntelliJ IDEA 2020.2.2 Community](https://www.jetbrains.com/es-es/idea/download/#section=windows)
 
-Usaremos Cucumber con Gherkin para realizar los test, por lo que instalaremos en el IDE dos plugins que nos ayudarán a formatear código Gherkin y generar código java.
+Usaremos Cucumber con Gherkin para realizar los test, por lo que es muy importnate instalar dos plugins en nuestro IDE, que nos ayudarán a formatear código Gherkin y generar código java, estos son:
 
 * Gherkin
 * Cucumber for Java
 
 ![Plugins](plugin-gherkin.png?classes=center-block)
 
-Así mismo, se deben adicionar variables de entorno para Java y Gradle. Por ello, se deberá tener una configuración de la siguiente manera donde en el caso de Windows se vería de esta forma.
+Así mismo, se deben adicionar variables de entorno para Java y Gradle. En el caso de Windows se vería de esta forma.
 
 * JAVA_HOME=C:\Program Files\Java\jdk-11.0.8
 * GRADLE_HOME =C:\gradle-5.6.4
 * Path
-** C:\gradle-5.6.4\bin
+* *  C:\gradle-5.6.4\bin
 
-Posterior a ello, verificamos que podamos ejecutar en la consola los comandos siguientes.
+Posterior a ello, verificamos ejecutando en consola los comandos siguientes.
 
 ![Verificando Variables de entorno](verificar.png?classes=center-block)
 
-#### dummy.restapiexample.com y su API Rest
+#### API REST Pública - dummy.restapiexample.com 
 
-Para hacer nuestras pruebas, utilizaremos restapiexample.com la cual proporciona un API Rest público de prueba que nos permitirá registrar, actualizar, listar y eliminar empleados.
+Para hacer nuestras pruebas, utilizaremos **restapiexample.com** la cual proporciona un API Rest público de prueba que nos permitirá registrar, actualizar, listar y eliminar empleados.
 
-* http://dummy.restapiexample.com/
-
-En efecto, esta indica que los employees pueden ser manejados de la siguiente forma.
+* [http://dummy.restapiexample.com/](http://dummy.restapiexample.com/)
 
 * Get all employees
 * Get employee by Id
@@ -114,7 +112,9 @@ En efecto, esta indica que los employees pueden ser manejados de la siguiente fo
 * Update employee by Id
 * Delete employeeItem by Id
 
-En una primera instancia probaremos estas APIs con Postman, para ello creamos una nueva colección, seguidamente vamos añadiendo request por request incluyendo los detalles de la autenticación y creación de variables si fuera necesario. 
+![DummyRestAPI ejemplo](DummyRestAPIExample.png?classes=center-block)
+
+En una primera instancia exploramos y probaremos estas APIs con Postman. Una vez realizado esto, tenemos más detalle de los servicios mencionados.
 
 **a) Listar empleados**
 
@@ -124,7 +124,7 @@ En una primera instancia probaremos estas APIs con Postman, para ello creamos un
 * Requiere autenticación: No
 * Payload: Ninguno
 
-GET http://dummy.restapiexample.com/api/v1/employees
+**GET** [http://dummy.restapiexample.com/api/v1/employees](http://dummy.restapiexample.com/api/v1/employees)
 
 Response:
 ```json
@@ -144,13 +144,13 @@ Response:
 ```
 **b) Listar empleado**
 
-> URL: http://dummy.restapiexample.com/api/v1/employee/{id}
-> Formatos: json
-> Metodo HTTP: GET
-> Requiere autenticación: No
-> Payload: Ninguno
+* URL: http://dummy.restapiexample.com/api/v1/employee/{id}
+* Formatos: json
+* Metodo HTTP: GET
+* Requiere autenticación: No
+* Payload: Ninguno
 
-GET http://dummy.restapiexample.com/api/v1/employee/1
+**GET** [http://dummy.restapiexample.com/api/v1/employee/1](http://dummy.restapiexample.com/api/v1/employee/1)
 
 Response:
 ```json
@@ -167,13 +167,13 @@ Response:
 ```
 **c) Crear Empleado**
 
-> URL: http://dummy.restapiexample.com/api/v1/create
-> Formatos: json
-> Metodo HTTP: POST
-> Requiere autenticación: No
-> Payload: Employee Object
+* URL: http://dummy.restapiexample.com/api/v1/create
+* Formatos: json
+* Metodo HTTP: POST
+* Requiere autenticación: No
+* Payload: Employee Object
 
-POST http://dummy.restapiexample.com/api/v1/create
+**POST** [http://dummy.restapiexample.com/api/v1/create](http://dummy.restapiexample.com/api/v1/create)
 
 Content:
 ```json
@@ -197,13 +197,13 @@ Response:
 ```
 **d) Actualizar Empleado**
 
-> URL: http://dummy.restapiexample.com/api/v1/update/{id}
-> Formatos: json
-> Metodo HTTP: PUT
-> Requiere autenticación: No
-> Payload: Employee Object
+* URL: http://dummy.restapiexample.com/api/v1/update/{id}
+* Formatos: json
+* Metodo HTTP: PUT
+* Requiere autenticación: No
+* Payload: Employee Object
 
-PUT http://dummy.restapiexample.com/api/v1/update/21
+**PUT** [http://dummy.restapiexample.com/api/v1/update/21](http://dummy.restapiexample.com/api/v1/update/21)
 
 Content:
 ```json
@@ -226,13 +226,13 @@ Response:
 }
 ```
 **e) Eliminar Item**
-> URL: http://dummy.restapiexample.com/api/v1/delete/{id}
-> Formatos: xml, json
-> Metodo HTTP: DELETE
-> Requiere autenticación: No
-> Parámetros: Ninguno
+* URL: http://dummy.restapiexample.com/api/v1/delete/{id}
+* Formatos: xml, json
+* Metodo HTTP: DELETE
+* Requiere autenticación: No
+* Parámetros: Ninguno
 
-DELETE http://dummy.restapiexample.com/api/v1/delete/2
+**DELETE** [http://dummy.restapiexample.com/api/v1/delete/2](http://dummy.restapiexample.com/api/v1/delete/2)
 
 Response:
 ```json
@@ -242,13 +242,13 @@ Response:
 }
 ```
 
-### Creando el proyecto
+#### Creando el proyecto
 
 Intellij IDEA Community será suficiente para implementar y correr nuestras pruebas automatizadas, por lo que creamos un nuevo proyecto Gradle con Java. 
 
+![Creando nuevo proyecto gradle](newproject.png?classes=center-block)
 
-
-#### a) Dependencias y el build.gradle
+#### Dependencias y el build.gradle
 
 Las dependencias necesarias están especificadas en el archivo build.gradle además de establecer la tarea que correrá los tests y que generará el reporte.
 
@@ -317,7 +317,7 @@ task cucumber() {
    }
 }
 ```
-### b) Creando el clientapi Package
+#### Creando el clientapi Package
 
 ![clientapi package](clientapi-package.png?classes=center-block)
 
@@ -444,7 +444,7 @@ public class FactoryRequest {
    }
 }
 ```
-### c) Creando el util Package
+#### Creando el util Package
 
 ![Util package](utils-package.png?classes=center-block)
 
@@ -497,7 +497,7 @@ public class JsonUtils {
 }
 ```
 
-### d) Creando el test feature
+#### Creando el test feature
 
 ![Test feature](resources-package.png?classes=center-block)
 
@@ -569,7 +569,7 @@ El paquete resources alberga a todos nuestros archivos .feature que representa l
    """
    Then I expect the response code 200
 ```
-### e) Creando el runner Package
+#### Creando el runner Package
 
 ![Runner package](runnerpackage.png?classes=center-block)
 
@@ -652,7 +652,7 @@ public class RunnerCucumber {
 }
 ```
 
-### Ejecutando TEST
+### Ejecutando Pruebas
 
 Para ejecutar nuestros test, ejecutamos el siguiente comando desde nuestra consola el cual llama a una tarea que fue definida en el buid.gradle, esta tarea es correr los test automatizados para todos los escenarios que tengan el tag @Regression.
 gradle clean cucumber -Psuite=@Regression
@@ -700,7 +700,7 @@ Finalmente, ejecutamos la última clase creada para generar una mejor vista del 
 Ahora ya podemos visualizar los reportes desde cualquier navegador web.
 
 
-## Repositorio
+### Repositorio
 
 El código completo se encuentra en el siguiente repositorio.
 
