@@ -1,6 +1,6 @@
 ---
 title: 'API REST Testing con Cucumber y Rest Assured'
-media_order: 'clientapi-package.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png,gherkin2.png,apirest.png,apitestbanner.gif,DummyRestAPIExample.png,newproject.png'
+media_order: 'clientapi-package.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png,gherkin2.png,apirest.png,apitestbanner.gif,DummyRestAPIExample.png,newproject.png,stepdefiniitons.png'
 ---
 
 ![API REST Testing con Cucumber y Rest-Assured](apitestbanner.gif?classes=center-block)
@@ -126,7 +126,7 @@ En una primera instancia exploramos y probaremos estas API con Postman. Una vez 
 * Requiere autenticación: No
 * Payload: Ninguno
 
-**GET** [http://dummy.restapiexample.com/api/v1/employees](http://dummy.restapiexample.com/api/v1/employees)
+GET [http://dummy.restapiexample.com/api/v1/employees](http://dummy.restapiexample.com/api/v1/employees)
 
 Response:
 ```json
@@ -152,7 +152,7 @@ Response:
 * Requiere autenticación: No
 * Payload: Ninguno
 
-**GET** [http://dummy.restapiexample.com/api/v1/employee/1](http://dummy.restapiexample.com/api/v1/employee/1)
+GET [http://dummy.restapiexample.com/api/v1/employee/1](http://dummy.restapiexample.com/api/v1/employee/1)
 
 Response:
 ```json
@@ -175,7 +175,7 @@ Response:
 * Requiere autenticación: No
 * Payload: Employee Object
 
-**POST** [http://dummy.restapiexample.com/api/v1/create](http://dummy.restapiexample.com/api/v1/create)
+POST [http://dummy.restapiexample.com/api/v1/create](http://dummy.restapiexample.com/api/v1/create)
 
 Content:
 ```json
@@ -205,7 +205,7 @@ Response:
 * Requiere autenticación: No
 * Payload: Employee Object
 
-**PUT** [http://dummy.restapiexample.com/api/v1/update/21](http://dummy.restapiexample.com/api/v1/update/21)
+PUT [http://dummy.restapiexample.com/api/v1/update/21](http://dummy.restapiexample.com/api/v1/update/21)
 
 Content:
 ```json
@@ -234,7 +234,7 @@ Response:
 * Requiere autenticación: No
 * Parámetros: Ninguno
 
-**DELETE** [http://dummy.restapiexample.com/api/v1/delete/2](http://dummy.restapiexample.com/api/v1/delete/2)
+DELETE [http://dummy.restapiexample.com/api/v1/delete/2](http://dummy.restapiexample.com/api/v1/delete/2)
 
 Response:
 ```json
@@ -569,6 +569,9 @@ El paquete resources alberga a todos nuestros archivos .feature que representa l
    """
    Then I expect the response code 200
 ```
+![Generar StepDefinitions](stepdefiniitons.png?classes=center-block)
+
+
 #### Creando el runner Package
 
 ![Runner package](runnerpackage.png?classes=center-block)
@@ -655,8 +658,9 @@ public class RunnerCucumber {
 ### Ejecutando Pruebas
 
 Para ejecutar nuestros test, ejecutamos el siguiente comando desde nuestra consola el cual llama a una tarea que fue definida en el buid.gradle, esta tarea es correr los test automatizados para todos los escenarios que tengan el tag @Regression.
+```sh
 gradle clean cucumber -Psuite=@Regression
-
+```
 
 Así mismo, también el report.json fue generado una vez finalizados los test. Este puede ser utilizado como fuente de datos para usar plantillas de reportes y ver una presentación mejor organizada y limpia. Para ello, añadimos un ReportGenerator.java con las siguientes instrucciones. 
 ```java
@@ -704,6 +708,6 @@ Ahora ya podemos visualizar los reportes desde cualquier navegador web.
 
 El código completo se encuentra en el siguiente repositorio.
 
-* [https://github.com/gonzalohk/automation-api-testing-with-cucumber](https://github.com/gonzalohk/automation-api-testing-with-cucumber)
+* [https://github.com/gonzalohk/api-rest-testing-cucumber-restassured](https://github.com/gonzalohk/api-rest-testing-cucumber-restassured)
 
 Como se vio en este post,  Rest-Assured que permite simplificar la construcción de los pruebas API Rest, permitiendo la fácil manipulación de los endpoints. Por otro lado, aplicar una metodología BDD usando Cucumber para ejecutar descripciones funcionales de pruebas en texto plano en lenguaje Gherkin tiene muchas ventajs. En tal sentido, una de las principales es poder ser entendido por cualquier persona incluso sin conocimiento técnico y permitiendo verificaciones finales mas sencillas.
