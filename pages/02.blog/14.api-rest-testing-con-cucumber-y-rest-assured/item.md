@@ -44,28 +44,26 @@ Los códigos de estado HTTP (HTTP Status code) describen de forma abreviada la r
 
 
 ## ¿Qué es Cucumber?
-Es una **herramienta que permite ejecutar descripciones funcionales** en texto plano como pruebas de software automatizados. Cucumber ayuda a implementar la metodología Behaviour Driven Development (BDD o Desarrollo Dirigido por Comportamiento) donde primero se escriben las pruebas antes que el código fuente.
+Es una **herramienta que permite ejecutar descripciones funcionales** en texto plano como pruebas de software automatizados. Cucumber **implementa la metodología Behaviour Driven Development** (BDD o Desarrollo Dirigido por Comportamiento) donde primero se escriben las pruebas antes que el código fuente.
 
 En tal sentido, el lenguaje usado por Cucumber para estas descripciones funcionales se denomina Gherkin. 
 
-## ¿Qué es Gherkin?
-Se define como un Lenguaje Específico de Dominio, que puede ser entendido por humanos y por ordenadores. 
+## ¿Qué es  Gherkin?
+Se define como un **Lenguaje Específico de Dominio, que puede ser entendido por humanos y por ordenadores**. Para definir descripciones funcionales se necesitan de 5 palabras reservadas para construir nuestras pruebas :
 
-Para definir descripciones funcionales se necesitan de 5 palabras reservadas para construir nuestras pruebas :
-
-* Feature: Indica el nombre de forma clara de la funcionalidad que vamos a probar. Además se Incluye una descripción en forma de historia de usuario “Como [rol] quiero [característica] para que [los beneficios]”. 
-* Scenario: Describe cada escenario que vamos a probar, se deben probar distintos escenarios para una misma funcionalidad.
-* Given: Provee contexto para el escenario como el punto donde se ejecuta el test y pre requisitos en los datos.
-* When: Especifica el conjunto de acciones que lanzan el test y la interacción del usuario que acciona la funcionalidad que deseamos probar.
-* Then: Especifica el resultado esperado en el test.
+* **Feature** Indica el nombre de forma clara de la funcionalidad que vamos a probar. Incluye una descripción en forma de historia de usuario “Como [rol] quiero [característica] para que [los beneficios]”. 
+* **Scenario** Describe cada escenario que vamos a probar, se deben probar distintos escenarios para una misma funcionalidad.
+* **Given** Provee contexto para el escenario como el punto donde se ejecuta el test y pre requisitos en los datos.
+* **When** Especifica el conjunto de acciones que lanzan el test y la interacción del usuario que acciona la funcionalidad que deseamos probar.
+* **Then** Especifica el resultado esperado en el test para hacer nuestras verificaciones.
 
 ![Ejemplo Gherkin](gherkin2.png?classes=center-block)
 
-## ¿Rest - Assured?
+## ¿Qué es Rest - Assured?
 
-Rest-Assured es un Java DSL (Domain Specific Language) construido sobre la capa HTTP Builder que permite simplificar la construcción de test sobre una API REST. Es decir, tiene una sintaxis DSL que sigue el formato Given – When – Then como Gherkin.
+Rest-Assured es un Java DSL (Domain Specific Language) construido sobre la capa HTTP Builder que permite simplificar la construcción de pruebas sobre una API REST. Es decir, tiene una sintaxis DSL que sigue el formato Given – When – Then como Gherkin para implementar pruebas.
 
-Así mismo, se considera un framework que fue desarrollado por Jayway que tiene características bastante útiles como validación Xpath, JsonPath, MIME-Types, file upload, verificación de cabeceras, respuestas, cookies y muchas otras opciones.  
+En tal sentido, se considera un framework que fue desarrollado por Jayway que tiene características bastante útiles como validación Xpath, JsonPath, MIME-Types, file upload, verificación de cabeceras, respuestas, cookies y muchas otras opciones.  
 
 ## EJEMPLO
 Para que lo expuesto no se quede en teórica hagamos un ejemplo probando, verificando un API Rest público, utilizando las herramientas y metodología mencionada. 
