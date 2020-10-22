@@ -610,7 +610,7 @@ Una vez implementado esto, se deben crear los Steps Definitions que tienen el c�
 
 El paquete _runner_ se encarga de correr los test y es donde se añaden los steps definitions. En tal sentido, el _StepDefinitions.java_ es donde se implementan los tests que serán ejecutados y que están estrechamente relacionado al _EmployeesAPI.feature_
 
-La idea de los _StepDefinitions.java_ es programar cada uno de los Given - When – Then que se escribieron junto a tus pruebas y darles funcionalidad. Sin embargo, muchos de estos se repiten o tienen patrones muy similares que pueden ser mejor organizados. Es así que, gracias a expresiones regulares podemos simplificar y optimizar el código evitando renuncia. 
+La idea de los _StepDefinitions.java_ es programar cada uno de los Given - When – Then que se escribieron en las pruebas y darles funcionalidad. Sin embargo, muchos de estos se repiten o tienen patrones muy similares que pueden ser mejor organizados. Es así que, gracias a expresiones regulares podemos simplificar y optimizar el código evitando renuncia. 
 
 ```java
 package runner;
@@ -692,14 +692,14 @@ public class RunnerCucumber {
 ```
 ### Ejecutando Pruebas
 
-Para ejecutar nuestros test, ejecutamos el siguiente comando desde nuestra consola el cual llama a una tarea que fue definida en el _buid.gradle_, esta tarea es correr los test automatizados para todos los escenarios que tengan el tag _@Regression_.
+Para ejecutar nuestros test, ejecutamos el siguiente comando, que tiene la tarea de correr los test automatizados para todos los escenarios que tengan el tag _@Regression_.
 ```sh
 gradle clean cucumber -Psuite=@Regression
 ```
 
 ![Ejecucion Cucumber](ejecucion.png?classes=center-block)
 
-Así mismo, también se genera el _report.json_ finalizados los test. Este puede ser utilizado como fuente de datos para usar plantillas de reportes y ver una presentación mejor organizada y limpia. Para ello, añadimos un _ReportGenerator.java_ con las siguientes instrucciones. 
+Así mismo, también se genera el _report.json_ finalizados los test. Este puede ser utilizado como fuente de datos para usar plantillas de reportes y ver una presentación mejor organizada y limpia. Para ello, en el paquere _runner_ añadimos la clase _ReportGenerator.java_ con las siguientes instrucciones. 
 ```java
 package report;
 
@@ -736,7 +736,7 @@ public class ReportGenerator {
    }
 }
 ```
-Finalmente, ejecutamos de forma independiente la última clase creada para generar una mejor vista del reporte en formato html. Esto se verá de la siguiente manera. 
+Finalmente, ejecutamos de forma independiente la última clase creada para generar un reporte en formato html. Esto se verá de la siguiente manera. 
 
 ![Reporte Generado](report-sctructure.png?classes=center-block)
 
