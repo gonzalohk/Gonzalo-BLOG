@@ -454,7 +454,7 @@ public class FactoryRequest {
 
 ![Util package](utils-package.png?classes=center-block)
 
-El paquete útil solo contiene la clase JsonUtils.java, esta tiene funciones útiles para hacer operaciones básicas en cadenas en formato JSON que utilizaremos en las pruebas.
+El paquete útil solo contiene la clase _JsonUtils.java_, esta tiene funciones útiles para hacer operaciones básicas en cadenas en formato JSON que utilizaremos en las pruebas.
 ```java
 package utils;
 
@@ -683,7 +683,7 @@ Para ejecutar nuestros test, ejecutamos el siguiente comando desde nuestra conso
 ```sh
 gradle clean cucumber -Psuite=@Regression
 ```
-Así mismo, también se genera el _report.json_ finalizados los test. Este puede ser utilizado como fuente de datos para usar plantillas de reportes y ver una presentación mejor organizada y limpia. Para ello, añadimos un _ReportGenerator.jav_a con las siguientes instrucciones. 
+Así mismo, también se genera el _report.json_ finalizados los test. Este puede ser utilizado como fuente de datos para usar plantillas de reportes y ver una presentación mejor organizada y limpia. Para ello, añadimos un _ReportGenerator.java_ con las siguientes instrucciones. 
 ```java
 package report;
 
@@ -735,4 +735,4 @@ El código completo se encuentra en el siguiente repositorio.
 * [https://github.com/gonzalohk/api-rest-testing-cucumber-restassured](https://github.com/gonzalohk/api-rest-testing-cucumber-restassured)
 
 
-Rest-Assured que permite simplificar la construcción de los pruebas API Rest, permitiendo la fácil manipulación de los endpoints.Aplicar una metodología BDD usando Cucumber para ejecutar descripciones funcionales con Gherkin tiene muchas ventajas. 
+Finalmente, vemos que Rest Assured que permite simplificar la construcción de los pruebas API Rest permitiendo la fácil manipulación de los endpoints. También aplicar una metodología BDD usando Cucumber para ejecutar descripciones funcionales con Gherkin resulta interesante, pero aplica una nueva capa en el desarrollo. Sin embargo, considero que es una buena forma de implementar API test pudiendo ser personalizados e implementados a media, a pesar que herramientas como Postman podría realizar casi lo mismo pero limitándose a la estructura de la herramienta.
