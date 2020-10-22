@@ -1,6 +1,6 @@
 ---
 title: 'API REST Testing con Cucumber y Rest Assured'
-media_order: 'clientapi-package.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png,gherkin2.png,apirest.png,apitestbanner.gif,DummyRestAPIExample.png,newproject.png,stepdefiniitons.png'
+media_order: 'clientapi-package.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png,gherkin2.png,apirest.png,apitestbanner.gif,DummyRestAPIExample.png,newproject.png,report-sctructure.png,report-features.png'
 ---
 
 ![API REST Testing con Cucumber y Rest-Assured](apitestbanner.gif?classes=center-block)
@@ -119,7 +119,7 @@ En efecto, nos permitirá registrar, actualizar, listar y eliminar empleados.
 
 En una primera instancia exploramos y probaremos estas API con Postman. Una vez realizado esto ya se tiene más detalle de los servicios mencionados.
 
-**a) Listar empleados**
+###### a) Listar Empleados
 
 * URL: http://dummy.restapiexample.com/api/v1/employees
 * Formato: json
@@ -145,7 +145,7 @@ Response:
 	]
 }
 ```
-**b) Listar empleado**
+###### b) Listar Empleado
 
 * URL: http://dummy.restapiexample.com/api/v1/employee/{id}
 * Formatos: json
@@ -168,7 +168,7 @@ Response:
 	}
 }
 ```
-**c) Crear Empleado**
+###### c) Crear Empleado
 
 * URL: http://dummy.restapiexample.com/api/v1/create
 * Formatos: json
@@ -198,7 +198,7 @@ Response:
     }
 }
 ```
-**d) Actualizar Empleado**
+###### d) Actualizar Empleado
 
 * URL: http://dummy.restapiexample.com/api/v1/update/{id}
 * Formatos: json
@@ -228,7 +228,7 @@ Response:
     }
 }
 ```
-###### e) Eliminar Item
+###### e) Eliminar Empleado
 * URL: http://dummy.restapiexample.com/api/v1/delete/{id}
 * Formatos: xml, json
 * Metodo HTTP: DELETE
@@ -253,7 +253,9 @@ Intellij IDEA Community será suficiente para implementar y correr nuestras prue
 
 #### Dependencias y el build.gradle
 
-Las dependencias necesarias están especificadas en el archivo _build.gradle_ además de establecer la tarea que correrá los tests y que generará el reporte. En tal sentido, necesitamos ser capaz de ejecutar requests y manipular responses a una API Rest, para ello agregamos. 
+Las dependencias necesarias están especificadas en el archivo _build.gradle_, también se establece la tarea que correrá los tests y que generará el reporte. 
+
+Para ser capaces de ejecutar requests y manipular responses a una API Rest agregamos. 
 * rest-assured v4.3.1
 * rest-assured-common v4.3.1
 * json-path v4.3.1
@@ -265,7 +267,7 @@ Así mismo, escribiremos las pruebas en lenguaje Gherkin que sera ejecutado por 
 * cucumber-java v1.2.5
 * cucumber-junit v1.2.5
 
-Por otro lado, será sumamente útil el visualizar reportes acerca de la ejecución de nuestras pruebas, por ello agregamos.
+Por otro lado, será sumamente útil el visualizar reportes acerca de la ejecución de nuestras pruebas, por ello adicionamos.
 * cucumber-reporting v5.3.1
 
 ```gradle
@@ -324,7 +326,7 @@ task cucumber() {
 
 Ahora bien, en el paquete _clientapi_ crearemos clases capaces de hacer las peticiones a un API cualquiera. Para ello, hacemos uso de clases proporcionadas por rest-assured.
 
-Las peticiones de tipo POST, PUT, DELETE y GET tienen un comportamiento similar, pero una implementación algo diferente. En tal sentido, el patrón de diseño Factory resulta útil en esta ocasión donde el RequestClient.java inicializara el cliente y describe el comportamiento de los request siendo estas sus clases hijas.  
+Las peticiones de tipo POST, PUT, DELETE y GET tienen un comportamiento similar, pero una implementación algo diferente. En tal sentido, el patrón de diseño Factory resulta útil en esta ocasión donde el _IRequest.java_ describe el comportamiento de los request.
 ```java
 package clientapi;
 
@@ -334,7 +336,9 @@ public interface IRequest {
    Response send(String url,String payload);
 }
 ```
-Post.java
+Con ayuda de RestAssured la implementación de las peticiones se simplifican mucho, pero lo interesante es seguir un formato Given – When – Then. Sin embargo, para este ejemplo no explotaremos mucho esta potencialidad más que para hacer las peticiones a un Endpoint con un Payload en particular.
+
+_Post.java_
 ```java
 package clientapi;
 
@@ -355,7 +359,7 @@ public class Post  implements IRequest{
    }
 }
 ```
-Get.java
+_Get.java_
 ```java
 package clientapi;
 
@@ -376,7 +380,7 @@ public class Get implements IRequest{
    }
 }
 ```
-Put.java
+_Put.java_
 ```java
 package clientapi;
 
@@ -397,7 +401,7 @@ public class Put implements IRequest{
    }
 }
 ```
-Delete.java
+_Delete.java_
 ```java
 package clientapi;
 
@@ -417,9 +421,10 @@ public class Delete implements IRequest {
    }
 }
 ```
-Finalmente el FactoryRequest.java será el encargado de fabricar nuestros request de una forma más organizada sin tener código redundante.
+No obstante, estas clases tiene una implementación mínima pero pueden ser extendidas mucho en funcionalidad.
 
-FactoryRequest.java
+El _FactoryRequest.java_ será el encargado de fabricar nuestros request de una forma más organizada sin tener código redundante.
+
 ```java
 package clientapi;
 
@@ -449,6 +454,7 @@ public class FactoryRequest {
 
 ![Util package](utils-package.png?classes=center-block)
 
+El paquete útil solo contiene la clase JsonUtils.java, esta tiene funciones útiles para hacer operaciones básicas en cadenas en formato JSON que utilizaremos en las pruebas.
 ```java
 package utils;
 
@@ -502,7 +508,12 @@ public class JsonUtils {
 
 ![Test feature](resources-package.png?classes=center-block)
 
-El paquete resources alberga a todos nuestros archivos .feature que representa los test en lenguaje Gherkins. En tal sentido, el EmployeesAPI.feature representa las pruebas que haremos con todo.ly
+El paquete resources alberga a todos nuestros archivos .feature que representa los test en lenguaje Gherkins. En tal sentido, el EmployeesAPI.feature representa las pruebas que haremos con http://dummy.restapiexample.com/api/
+
+Seguidamente, realizamos la descripción en lenguaje Gherkin, donde se describe un escenario a probar, se indica el método HTTP a usar, el Endpoint y el Payload necesario. Al finalizar cada prueba se realiza la verificacion correspondiente en el status code y el response esperado. 
+
+###### TEST Crear Nuevo Empleado
+
 ```gherkin
  Feature: Employee CRUD feature
  As a user
@@ -533,6 +544,9 @@ El paquete resources alberga a todos nuestros archivos .feature que representa l
      | name | salary | age |
      | jimmmy plaza | 2800 | 55 |
 ```
+Nótese que hay propiedades en el response que son dinámicos como el ID que son difíciles de ser evaluado por lo que indicamos que son EXCLUDE y será ignorados gracias a nuestra implementación en _JsonUtils.java_
+
+###### TEST Eliminar Empleado
 ```gherkin
  @Regression
  Scenario: delete employee by id
@@ -542,6 +556,7 @@ El paquete resources alberga a todos nuestros archivos .feature que representa l
    """
    Then I expect the response code 200
 ```
+###### TEST Actualizar Empleado
 ```gherkin
  @Regression
  Scenario: update employee data
@@ -552,6 +567,7 @@ El paquete resources alberga a todos nuestros archivos .feature que representa l
    """
    Then I expect the response code 200
 ```
+###### TEST Listar Empleado
 ```gherkin
  @Regression
  Scenario: get an employee data by id
@@ -561,6 +577,7 @@ El paquete resources alberga a todos nuestros archivos .feature que representa l
    """
    Then I expect the response code 200
 ```
+###### TEST Listar Empleados
 ```gherkin
  @Regression
  Scenario: get employees
@@ -570,14 +587,18 @@ El paquete resources alberga a todos nuestros archivos .feature que representa l
    """
    Then I expect the response code 200
 ```
-![Generar StepDefinitions](stepdefiniitons.png?classes=center-block)
+Una vez implementado esto, se deben crear los Steps Definitions que tienen el código fuente de nuestras pruebas. Los plugins que instalamos en el IDE nos ayudaran a generar código fuente.
 
+![Generar StepDefinitions](stepdefiniitons.png?classes=center-block)
 
 #### Creando el runner Package
 
 ![Runner package](runnerpackage.png?classes=center-block)
 
-El paquete runner se encarga de correr los test y se añaden los steps definitions. El StepDefinitions.java es en donde se implementan los tests que serán ejecutados y que están estrechamente relacionado al EmployeesAPI.feature.
+El paquete _runner_ se encarga de correr los test y es donde se añaden los steps definitions. En tal sentido, el _StepDefinitions.java_ es donde se implementan los tests que serán ejecutados y que están estrechamente relacionado al _EmployeesAPI.feature_
+
+La idea de los _StepDefinitions.java_ es programar cada uno de los Given - When – Then que se escribieron junto a tus pruebas y darles funcionalidad. Sin embargo, muchos de estos se repiten o tienen patrones muy similares que pueden ser mejor organizados. Es así que, gracias a expresiones regulares podemos simplificar y optimizar el código evitando renuncia. 
+
 ```java
 package runner;
 
@@ -638,7 +659,8 @@ public class StepDefinitions {
    }
 }
 ```
-Runnercucumber.java
+El _RunnerCucumber.java_ es la clase principal de nuestras pruebas donde se acostumbre a implementar los hooks (@Before/@After), pero en estas pruebas no serán necesarias.
+
 ```java
 package runner;
 
@@ -655,15 +677,13 @@ public class RunnerCucumber {
    public void after(){}
 }
 ```
-
 ### Ejecutando Pruebas
 
-Para ejecutar nuestros test, ejecutamos el siguiente comando desde nuestra consola el cual llama a una tarea que fue definida en el buid.gradle, esta tarea es correr los test automatizados para todos los escenarios que tengan el tag @Regression.
+Para ejecutar nuestros test, ejecutamos el siguiente comando desde nuestra consola el cual llama a una tarea que fue definida en el _buid.gradle_, esta tarea es correr los test automatizados para todos los escenarios que tengan el tag _@Regression_.
 ```sh
 gradle clean cucumber -Psuite=@Regression
 ```
-
-Así mismo, también el report.json fue generado una vez finalizados los test. Este puede ser utilizado como fuente de datos para usar plantillas de reportes y ver una presentación mejor organizada y limpia. Para ello, añadimos un ReportGenerator.java con las siguientes instrucciones. 
+Así mismo, también se genera el _report.json_ finalizados los test. Este puede ser utilizado como fuente de datos para usar plantillas de reportes y ver una presentación mejor organizada y limpia. Para ello, añadimos un _ReportGenerator.jav_a con las siguientes instrucciones. 
 ```java
 package report;
 
@@ -700,10 +720,13 @@ public class ReportGenerator {
    }
 }
 ```
-Finalmente, ejecutamos la última clase creada para generar una mejor vista del reporte en archivos .html Esto se verá de la siguiente manera. 
+Finalmente, ejecutamos de forma independiente la última clase creada para generar una mejor vista del reporte en formato html. Esto se verá de la siguiente manera. 
+
+![Reporte Generado](report-sctructure.png?classes=center-block)
 
 Ahora ya podemos visualizar los reportes desde cualquier navegador web.
 
+![Cucumber Report](report-features.png?classes=center-block)
 
 ### Repositorio
 
@@ -711,4 +734,5 @@ El código completo se encuentra en el siguiente repositorio.
 
 * [https://github.com/gonzalohk/api-rest-testing-cucumber-restassured](https://github.com/gonzalohk/api-rest-testing-cucumber-restassured)
 
-Como se vio en este post,  Rest-Assured que permite simplificar la construcción de los pruebas API Rest, permitiendo la fácil manipulación de los endpoints. Por otro lado, aplicar una metodología BDD usando Cucumber para ejecutar descripciones funcionales de pruebas en texto plano en lenguaje Gherkin tiene muchas ventajs. En tal sentido, una de las principales es poder ser entendido por cualquier persona incluso sin conocimiento técnico y permitiendo verificaciones finales mas sencillas.
+
+Rest-Assured que permite simplificar la construcción de los pruebas API Rest, permitiendo la fácil manipulación de los endpoints.Aplicar una metodología BDD usando Cucumber para ejecutar descripciones funcionales con Gherkin tiene muchas ventajas. 
