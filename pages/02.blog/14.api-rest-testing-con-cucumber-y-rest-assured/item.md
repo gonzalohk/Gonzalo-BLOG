@@ -1,6 +1,19 @@
 ---
 title: 'API REST Testing con Cucumber y Rest Assured'
 media_order: 'clientapi-package.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png,gherkin2.png,apirest.png,apitestbanner.gif,DummyRestAPIExample.png,newproject.png,report-sctructure.png,cucumberreport.png,ejecucion.png'
+published: true
+date: '20-10-2020 19:16'
+publish_date: '20-10-2020 19:16'
+metadata:
+    '"Keywords"': '"Automation","QA Automation","API Rest Testing","API Test Cucumber","Cucumber"'
+taxonomy:
+    category:
+        - QA
+        - 'QA Automation'
+    tag:
+        - Cucumber
+        - 'API Rest'
+        - Gherkin
 ---
 
 ![API REST Testing con Cucumber y Rest-Assured](apitestbanner.gif?classes=center-block)
