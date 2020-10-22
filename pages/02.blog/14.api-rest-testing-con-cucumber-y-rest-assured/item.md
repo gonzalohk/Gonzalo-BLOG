@@ -40,7 +40,7 @@ Los códigos de estado HTTP (HTTP Status code) describen de forma abreviada la r
 * 2XX Peticiones correctas
 * 3XX Redirecciones
 * 4XX Errores del cliente
-* 5XX Errores de servidor
+* 5XX Errores del servidor
 
 
 ## ¿Qué es Cucumber?
@@ -51,25 +51,26 @@ En tal sentido, el lenguaje usado por Cucumber para estas descripciones funciona
 ## ¿Qué es  Gherkin?
 Se define como un **Lenguaje Específico de Dominio, que puede ser entendido por humanos y por ordenadores**. Para definir descripciones funcionales se necesitan de 5 palabras reservadas para construir nuestras pruebas :
 
-* **Feature** Indica el nombre de forma clara de la funcionalidad que vamos a probar. Incluye una descripción en forma de historia de usuario “Como [rol] quiero [característica] para que [los beneficios]”. 
+* **Feature** Indica el nombre de forma clara la funcionalidad que vamos a probar. Incluye una descripción en forma de historia de usuario “Como [_rol_] quiero [_característica_] para que [_los beneficios_]”. 
 * **Scenario** Describe cada escenario que vamos a probar, se deben probar distintos escenarios para una misma funcionalidad.
-* **Given** Provee contexto para el escenario como el punto donde se ejecuta el test y pre requisitos en los datos.
+* **Given** Provee contexto para el escenario como el punto donde se ejecuta el test y pre-requisitos en los datos.
 * **When** Especifica el conjunto de acciones que lanzan el test y la interacción del usuario que acciona la funcionalidad que deseamos probar.
 * **Then** Especifica el resultado esperado en el test para hacer nuestras verificaciones.
 
 ![Ejemplo Gherkin](gherkin2.png?classes=center-block)
 
+
 ## ¿Qué es Rest-Assured?
 
-Rest-Assured es un Java DSL (Domain Specific Language) construido sobre la capa HTTP Builder que permite simplificar la construcción de pruebas sobre una API REST. Es decir, tiene una sintaxis DSL que sigue el formato Given – When – Then como Gherkin para implementar pruebas.
+[Rest-Assured](https://www.javadoc.io/doc/io.rest-assured/rest-assured/latest/io/restassured/RestAssured.html) es un Java DSL (Domain Specific Language) construido sobre la capa HTTP Builder que permite simplificar la construcción de pruebas sobre una API REST. Es decir, tiene una sintaxis DSL que sigue el formato Given – When – Then como Gherkin para implementar pruebas.
 
-En tal sentido, se considera un framework que fue desarrollado por Jayway que tiene características bastante útiles como validación Xpath, JsonPath, MIME-Types, file upload, verificación de cabeceras, respuestas, cookies y muchas otras opciones.  
+En tal sentido, se considera un framework que tiene características bastante útiles como validación Xpath, JsonPath, MIME-Types, file upload, verificación de cabeceras, respuestas, cookies y muchas otras opciones. Este fue desarrollado por Jayway.
 
 ## Implementación
-Para que lo expuesto sea mejor comprendido implementemos un ejemplo para probar y verificar un API Rest público utilizando las herramientas mencionadas y la metodología BDD. 
+Para que lo expuesto sea mejor comprendido implementemos un ejemplo para probar y verificar un API Rest público. Todo esto utilizando las herramientas mencionadas y la metodología BDD. 
 
 #### Precondiciones 
-Primeramente descargamos e instalamos Java y Gradle como gestor de dependencias.
+Inicialmente descargamos e instalamos Java y Gradle como gestor de dependencias.
 
 * [Java 11](http://jdk.java.net/java-se-ri/11)
 * [Gradle 5.6.4](https://gradle.org/releases/)
@@ -100,9 +101,9 @@ Posterior a ello, verificamos ejecutando en consola los comandos siguientes.
 
 ![Verificando Variables de entorno](verificar.png?classes=center-block)
 
-#### API REST Pública - dummy.restapiexample.com 
+#### API REST Pública
 
-Para hacer nuestras pruebas, utilizaremos **restapiexample.com** la cual proporciona un API Rest público de prueba,
+Para hacer nuestras pruebas, utilizaremos **restapiexample.com** la cual proporciona un API Rest público de prueba.
 
 * [http://dummy.restapiexample.com/](http://dummy.restapiexample.com/)
 
@@ -227,7 +228,7 @@ Response:
     }
 }
 ```
-**e) Eliminar Item**
+##### e) Eliminar Item
 * URL: http://dummy.restapiexample.com/api/v1/delete/{id}
 * Formatos: xml, json
 * Metodo HTTP: DELETE
