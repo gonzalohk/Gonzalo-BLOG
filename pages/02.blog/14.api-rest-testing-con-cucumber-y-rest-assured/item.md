@@ -508,7 +508,7 @@ public class JsonUtils {
 
 ![Test feature](resources-package.png?classes=center-block)
 
-El paquete resources alberga a todos nuestros archivos .feature que representa los test en lenguaje Gherkins. En tal sentido, el EmployeesAPI.feature representa las pruebas que haremos con http://dummy.restapiexample.com/api/
+El paquete resources alberga a todos nuestros archivos .feature que representa los test en lenguaje Gherkins. En tal sentido, el EmployeesAPI.feature representa las pruebas que haremos con restapiexample.com
 
 Seguidamente, realizamos la descripción en lenguaje Gherkin, donde se describe un escenario a probar, se indica el método HTTP a usar, el Endpoint y el Payload necesario. Al finalizar cada prueba se realiza la verificacion correspondiente en el status code y el response esperado. 
 
