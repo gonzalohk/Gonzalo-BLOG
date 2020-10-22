@@ -228,7 +228,7 @@ Response:
     }
 }
 ```
-##### e) Eliminar Item
+###### e) Eliminar Item
 * URL: http://dummy.restapiexample.com/api/v1/delete/{id}
 * Formatos: xml, json
 * Metodo HTTP: DELETE
