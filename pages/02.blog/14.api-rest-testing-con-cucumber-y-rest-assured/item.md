@@ -116,7 +116,7 @@ Posterior a ello, verificamos ejecutando en consola los comandos siguientes.
 
 #### API REST Pública
 
-Para hacer nuestras pruebas, utilizaremos **restapiexample.com** la cual proporciona un API Rest público de prueba. No presenta autenticación porque es un API de prueba, pero en cualquier otro proyecto si lo tiene, por lo que se debe ser implementar más adelante.
+Para hacer nuestras pruebas, utilizaremos **restapiexample.com** la cual proporciona un API Rest público de prueba. No presenta **autenticación** porque es un API de prueba, pero en cualquier otro proyecto si lo tiene, por lo que se debe ser implementar más adelante.
 
 * [http://dummy.restapiexample.com/](http://dummy.restapiexample.com/)
 
