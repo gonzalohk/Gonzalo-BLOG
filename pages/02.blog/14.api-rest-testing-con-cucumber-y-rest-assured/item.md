@@ -1,6 +1,6 @@
 ---
 title: 'API REST Testing con Cucumber y Rest Assured'
-media_order: 'clientapi-package.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png,gherkin2.png,apirest.png,apitestbanner.gif,DummyRestAPIExample.png,newproject.png,report-sctructure.png,report-features.png'
+media_order: 'clientapi-package.png,plugin-gherkin.png,report-package.png,resources-package.png,runnerpackage.png,stepdefiniitons.png,utils-package.png,verificar.png,gherkin2.png,apirest.png,apitestbanner.gif,DummyRestAPIExample.png,newproject.png,report-sctructure.png,cucumberreport.png,ejecucion.png'
 ---
 
 ![API REST Testing con Cucumber y Rest-Assured](apitestbanner.gif?classes=center-block)
@@ -683,6 +683,9 @@ Para ejecutar nuestros test, ejecutamos el siguiente comando desde nuestra conso
 ```sh
 gradle clean cucumber -Psuite=@Regression
 ```
+
+![Ejecucion Cucumber](ejecucion.png?classes=center-block)
+
 Así mismo, también se genera el _report.json_ finalizados los test. Este puede ser utilizado como fuente de datos para usar plantillas de reportes y ver una presentación mejor organizada y limpia. Para ello, añadimos un _ReportGenerator.java_ con las siguientes instrucciones. 
 ```java
 package report;
@@ -726,7 +729,8 @@ Finalmente, ejecutamos de forma independiente la última clase creada para gener
 
 Ahora ya podemos visualizar los reportes desde cualquier navegador web.
 
-![Cucumber Report](report-features.png?classes=center-block)
+![Cucumber Report](cucumberreport.png?classes=center-block)
+
 
 ### Repositorio
 
