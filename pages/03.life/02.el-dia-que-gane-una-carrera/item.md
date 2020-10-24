@@ -1,5 +1,17 @@
 ---
 title: 'El día que gane una carrera'
+published: true
+date: '24-10-2020 09:06'
+publish_date: '24-10-2020 09:06'
+metadata:
+    '"keywords"': '"Running Bolivia","Running","La Paz","Carreras de montaña"'
+taxonomy:
+    category:
+        - RUNNING
+        - SKYRUNNING
+    tag:
+        - Chacaltaya
+        - 'Skyrunning Bolivia'
 ---
 
 Se preguntarán que hago en un pódium de una carrera de skyrunning y más aún en un primer lugar. Es una historia no muy interesante, pero que quisiera escribir.
