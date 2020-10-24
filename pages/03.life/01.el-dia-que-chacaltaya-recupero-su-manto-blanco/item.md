@@ -5,7 +5,7 @@ published: true
 date: '03-08-2020 10:58'
 publish_date: '03-08-2020 10:58'
 metadata:
-    keywords: '"chacaltaya","ciclismo","escalada 5200","MTB Chacaltaya"'
+    '"keywords"': '"chacaltaya","ciclismo","escalada 5200","MTB Chacaltaya"'
 taxonomy:
     category:
         - MTB
