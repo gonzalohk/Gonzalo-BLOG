@@ -7,8 +7,8 @@ metadata:
     '"keywords"': '"Running Bolivia","Running","La Paz","Carreras de montaña"'
 taxonomy:
     category:
-        - RUNNING
-        - SKYRUNNING
+        - Running
+        - 'Sky Running'
     tag:
         - Chacaltaya
         - 'Skyrunning Bolivia'
