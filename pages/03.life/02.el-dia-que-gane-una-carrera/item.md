@@ -32,7 +32,7 @@ En marzo del 2020 (última carrera antes de la cuarentena) ellos organizaron la 
 
 ![SnowRunning](snowrunning-poster.jpg?classes=center-block)
 
-![SnowRunning Pic](chacaltaya.jpg?classes=center-block)
+
 En un inicio pensé inscribirse la categoría 33km, pero esta es igual o más dura a una maratón sin contar factores como la altura o el frío extremo y correr este tipo de carreras sin experiencia previa o entrenamiento específico realmente es una locura que puede llevar a lesiones, por lo que pensé en 15km, pero tambien pense que al ser mi primera vez en este tipo de carreras y sin accesorios o equipo especial no era la mejor opción y me inscribi a lo que es 8km para quienes estábamos empezando o era nuestra primera vez en este tipo de carrera. 
 
 ![Milluni](huayna.jpg?classes=center-block)
