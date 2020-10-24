@@ -1,6 +1,6 @@
 ---
 title: 'El día que gane una carrera'
-media_order: 'chacaltaya.jpg,podium.jpg,huayna.jpg,carrera.jpg,carrera-lejos.jpg,meta.jpg,represa.jpg,montana.jpg,snowrunning-poster.jpg'
+media_order: 'podium.jpg,huayna.jpg,carrera.jpg,carrera-lejos.jpg,meta.jpg,represa.jpg,montana.jpg,snowrunning-poster.jpg'
 published: true
 date: '24-10-2020 09:06'
 publish_date: '24-10-2020 09:06'
@@ -64,4 +64,4 @@ Finalmente. empezaron a llegar quienes hicieron 15 km, luego quienes hicieron 33
 
 ![Montaña Atras Huayna Potosi](montana.jpg?classes=center-block)
 
-Me gustó mucho esta carrera, conocí a muchos corredores muy buenos con los que conversaba e incluso compartía comida entre ellos los Jukumaris de quienes escuche mucho, pero al fin conocí a algunos de ellos. Espero que más adelante se pueda volver a hacer este tipo de carreras pronto.
+Me gustó mucho esta carrera, conocí a muchos corredores muy buenos con los que conversaba e incluso compartía comida entre ellos los [Jukumarus](https://www.facebook.com/Jukumaruclub) de quienes escuche mucho, pero al fin conocí a algunos de ellos. Espero que más adelante se pueda volver a hacer este tipo de carreras pronto.
