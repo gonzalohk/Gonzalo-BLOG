@@ -25,15 +25,17 @@ Me dedique a hacer bicicleta varias años y estaba relativamente en buena forma 
 
 En efecto, ya con un cariño al correr fui a decenas de carreras locales en asfalto hasta  duatlones, pero aún el tipo de carrera que me llamaba la atención eran las skyrunning (Ojo que tienen varias sub-disciplinas). [i3ImpactoSocial](http://www.i3impactosocial.com/our-solutions/deporte-x-bolivia) y  [SkyRunning Bolivia](https://www.facebook.com/skyrunningbolivia) son de los primeros en organizar carreras de este tipo en montaña tipo Sky, vertical. Creo que de las que más escuche fueron en el salar de  Uyuni, Illimani, Sorata, el Death Road (subida obviamente) y entre muchas otras los últimos años. 
 
-![Milluni](huayna.jpg?classes=center-block)
-
 En tal sentido, vi que SkyRunning  Bolivia ya había empezado su calendario de carreras y pues me puse a investigar más. Encontré que está asociado a federaciones internacionales siendo los encargados de seleccionar a los atletas de Bolivia de esta disciplina a los mundiales. De hecho curioseando más, me llamó la atención la cantidad de fotografías, videos donde se ve a deportistas corriendo por cerros, saltando rocas, con equipo diferente desde zapatillas especiales, mochilas, bastones, etc. En resumen, un mundo nuevo que resulta muy increíble y definitivamente decido participar. 
 
 En marzo del 2020 (última carrera antes de la cuarentena) ellos organizaron la Snowrunning Chacaltaya que consiste en hacer un ascenso corriendo por el Chacaltaya y las montañas que la rodean pueden ver un video muy bonito de un competidor por [aqui](https://www.facebook.com/freddy.g.sirpacasas/videos/2541552539282183). Se tienen 3 categorías: 33k, 15k,  8k. 
 
+
 ![SnowRunning](snowrunning-poster.jpg?classes=center-block)
 
+
 En un inicio pensé inscribirse la categoría 33km, pero esta es igual o más dura a una maratón sin contar factores como la altura o el frío extremo y correr este tipo de carreras sin experiencia previa o entrenamiento específico realmente es una locura que puede llevar a lesiones, por lo que pensé en 15km, pero tambien pense que al ser mi primera vez en este tipo de carreras y sin accesorios o equipo especial no era la mejor opción y me inscribi a lo que es 8km para quienes estábamos empezando o era nuestra primera vez en este tipo de carrera. 
+
+![Milluni](huayna.jpg?classes=center-block)
 
 La partida fue en Milluni, pero previamente los buses partieron en la ciudad de el Alto en la parada del teleférico Rojo, yo conozco la ruta muy bien la misma no es muy lejos debe estar alrededor de 30 minutos. Ya en el punto de partida, los primeros en salir fueron los de la primera categoría de 33 km donde todos se notaban muy motivados y deberían porque el simple hecho de mencionar Chacaltaya está al límite de la locura. Más abajo ya partimos quienes estábamos en un categoría de 15km y 8km. 
 
@@ -58,4 +60,8 @@ Nunca había llegado primero a la meta, la verdad se siente muy bien por más qu
 
 ![Represa](represa.jpg?classes=center-block)
 
-Finalmente. empezaron a llegar quienes hicieron 15 km, luego quienes hicieron 33 km donde realmente se los veían muy muy agotados y no era para menos los vi llegar en 4, 5, 6, 7, 8 horas. Todos teníamos una sensación de mucho respeto a ellos considerando lo temprano que salieron a correr, el clima, la nieve y como siempre la altura a la que corren. Me gustó mucho esta carrera, conocí a muchos corredores muy buenos con los que conversaba e incluso compartía comida entre ellos los Jukumaris de quienes escuche mucho, pero al fin conocí a algunos de ellos. Espero que más adelante se pueda volver a hacer este tipo de carreras pronto.
+Finalmente. empezaron a llegar quienes hicieron 15 km, luego quienes hicieron 33 km donde realmente se los veían muy muy agotados y no era para menos los vi llegar en 4, 5, 6, 7, 8 horas. Todos teníamos una sensación de mucho respeto a ellos considerando lo temprano que salieron a correr, el clima, la nieve y como siempre la altura a la que corren. 
+
+![Montaña Atras Huayna Potosi](montana.jpg?classes=center-block)
+
+Me gustó mucho esta carrera, conocí a muchos corredores muy buenos con los que conversaba e incluso compartía comida entre ellos los Jukumaris de quienes escuche mucho, pero al fin conocí a algunos de ellos. Espero que más adelante se pueda volver a hacer este tipo de carreras pronto.
