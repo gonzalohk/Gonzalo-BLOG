@@ -35,7 +35,7 @@ Postman permite ejecutar y validar un conjunto de pruebas de forma automatizada 
 
 ![REST](apirest.png?classes=center-block)
 
-API REST define un conjunto de funciones para realizar solicitudes (Request) y recibir respuestas (Responses) a través del protocolo HTTP bajo una arquitectura cliente servidor.
+**API REST define un conjunto de funciones para realizar solicitudes (Request) y recibir respuestas (Responses) a través del protocolo HTTP** bajo una arquitectura cliente servidor.
 
 En efecto, API REST utiliza los métodos HTTP (HTTP verbs) para realizar las peticiones, cada uno tiene una función en particular.
  
@@ -83,7 +83,7 @@ En efecto, nos permitirá registrar, actualizar, listar, eliminar usuarios y mas
 
 Antes de implementar e iniciar cualquier prueba es fundamental explorar el API proporcionado con el fin de tener la mayor información posible.
 
-**a.	Adicionar nueva mascota **
+###### a.	Adicionar nueva mascota
 
 * URL: http://petstore.swagger.io/v2/pet
 * Formato: json
