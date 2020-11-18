@@ -1,8 +1,17 @@
 ---
 title: 'API REST Testing con Postman'
+date: '17-11-2020 14:41'
+publish_date: '17-11-2020 14:41'
+metadata:
+    '"Keywords"': '"Automation","QA Automation","API Rest Testing","API Test Postman","Postman"'
+taxonomy:
+    category:
+        - QA
+        - 'QA Automation'
+    tag:
+        - 'API Rest'
+        - Postman
 ---
-
-
 
 ## ¿Qué es POSTMAN ?
 
