@@ -32,16 +32,16 @@ Postman permite guardar/agrupar un conjunto de solicitudes (request), que se den
 Las variables nos ayudarán a guardar, recordar un valor para evitar escribir el mismo texto/ruta de forma repetitiva. Por lo que puede ser usado en los request y pruebas posteriores. Así mismo, estas pueden tener un ámbito global o de entorno. 
 
 * **Documentación de APIs** 
-Postman genera documentación de forma automática, utilizando la información de las peticiones y las descripciones que hayas introducido al crearlas. Esta puede ser pública o privada, teniendo limitantes en la versión gratuita. 
+Postman genera documentación de forma automática, utilizando la información de las peticiones y las descripciones introducidas. Esta puede ser pública o privada, teniendo limitantes en la versión gratuita. 
 
 * **Automatización de pruebas**
-Postman permite ejecutar y validar un conjunto de pruebas de forma automatizada utilizando un Collection Runner. Una vez ejecutado, se mostrará el resultado resumen, indicando el tiempo de respuesta y el estado HTTP devuelto por el servidor. Incluso pueden adicionarse add-ons como NewMan, para ejecutar los test en línea de comandos permitiendo trabajar con Jenkins, Travis y Docker.
+Postman permite ejecutar y validar un conjunto de pruebas de forma automatizada utilizando un Collection Runner. Una vez ejecutado, se mostrará el resultado resumen, indicando el tiempo de respuesta y el estado HTTP devuelto por el servidor. Incluso pueden adicionarse add-ons como Newman, para ejecutar los test en línea de comandos permitiendo trabajar con Jenkins, Travis y Docker.
 
 ## ¿Qué es API Rest?
 
 ![REST](apirest.png?classes=center-block)
 
-**API REST define un conjunto de funciones para realizar solicitudes (Request) y recibir respuestas (Responses)** a través del protocolo **HTTP** bajo una arquitectura **cliente servidor.**
+API REST define un **conjunto de funciones para realizar solicitudes (Request) y recibir respuestas (Responses)** a través del protocolo **HTTP** bajo una arquitectura **cliente servidor.**
 
 En efecto, API REST utiliza los métodos HTTP (HTTP verbs) para realizar las peticiones, cada uno tiene una función en particular.
  
@@ -64,7 +64,7 @@ Los códigos de estado HTTP (HTTP Status Code) describen de forma abreviada la r
 
 Inicialmente Postman fue ideado como una extensión Chrome que aún sigue disponible pero ya está deprecada debido a que cuenta con versiones nativas para Windows, Linux y MacOS. En efecto, debemos descargarlo e instalarlo desde: 
 
-* [https://www.postman.com/downloads/](https://www.postman.com/downloads/)
+* [Postman Instalador](https://www.postman.com/downloads/)
 
 Postman es gratuito, pero ofrece planes adicionales como Postman Pro con más ancho de banda para las pruebas y Postman Enterprise que puede integrar la herramienta en los sistemas de SSO de nuestra empresa, ambos permiten mayor número de visualizaciones de la documentación publicada de nuestros proyectos. 
 
@@ -96,9 +96,9 @@ Antes de implementar e iniciar cualquier prueba es fundamental explorar el API p
 * Método HTTP: POST
 * Requiere autenticación: No
 * Payload: Objeto Mascota
-
-POST [https://petstore.swagger.io/v2/pet](https://petstore.swagger.io/v2/pet)
-
+```sh
+POST https://petstore.swagger.io/v2/pet
+```
 Payload 
 ```json
 {
@@ -149,9 +149,9 @@ Response
 * Método HTTP: GET
 * Requiere autenticación: No
 * Payload: Ninguno
-
-GET [https://petstore.swagger.io/v2/pet/9222968140491081005](https://petstore.swagger.io/v2/pet/9222968140491081005)
-
+```sh
+GET https://petstore.swagger.io/v2/pet/9222968140491081005
+```
 Response
 ```json
 {
@@ -180,9 +180,9 @@ Response
 * Método HTTP: DELETE
 * Requiere autenticación: No
 * Payload: Ninguno
-
-DELETE [https://petstore.swagger.io/v2/pet/9222968140491081004](https://petstore.swagger.io/v2/pet/9222968140491081004)
-
+```sh
+DELETE https://petstore.swagger.io/v2/pet/9222968140491081004
+```
 Response
 ```json
 {
@@ -210,7 +210,7 @@ Para crear el nuevo request, introducimos el nombre que tendrá junto a una desc
 
 ![POST Request ADD PET](08-saveRequest.png?classes=center-block)
 
-Posteriormente, se agrega la URL de la petición, indicamos el formato que tiene nuestro payload (en nuestro caso raw - JSON) y adicionamos el body (Pet Object). Una vez llenados correctamente estos campos podemos enviar la petición donde en la parte inferior se puede ver el response generado junto a detalles del mismo como el StatusCode, tiempo de ejecución y tamaño.
+Posteriormente, se agrega la URL de la petición, indicamos el formato que tiene nuestro payload (en nuestro caso raw - JSON) y adicionamos el body (Pet Object). Una vez llenados correctamente estos campos podemos enviar la petición, en la parte inferior se puede ver el response generado junto a detalles del mismo como el StatusCode, tiempo de ejecución y tamaño.
 
 ![POST Request ADD PET - creacion](09-addingRequest.png?classes=center-block)
 
@@ -242,19 +242,21 @@ pm.test("Body matches string", function () {
     pm.expect(jsonData.category.name).to.eql("cánidos");
 });
 ```
-En tal sentido, en la pestaña Tests se adiciona el código implementado con anterioridad. Este fue realizado en JS, pero Postman permite realizar el mismo en una variedad de lenguajes según la preferencia de cada uno el resultado será el mismo.
+En tal sentido, en la pestaña Tests se adiciona el código implementado con anterioridad. Este fue realizado en JS, pero Postman permite realizar el mismo en una variedad de lenguajes según la preferencia de cada uno, el resultado será el mismo.
 
 ![ADD Pet variables y pruebas](11-testingandsavevariables.png?classes=center-block)
 
-Es importante notar que almacenamos dos variables de entorno que será usadas en las peticiones posteriores debido a que estas son dinámicas y el utilizar datos estáticos no servirían para automatizar dichas pruebas. También se hace un pequeño artificio para convertir enteros gigantes a cadena y no existan problemas posteriores.
+Es importante notar que almacenamos dos variables de entorno que será usadas en las peticiones posteriores debido a que estas son dinámicas y el utilizar datos estáticos no servirían para automatizar dichas pruebas. 
 
 * idPetToTest
 * namePetToTest
 
+También se hace un pequeño artificio para convertir enteros gigantes a cadena y no existan problemas posteriores.
+
 ![ADD Pet Variables y pruebas 2](12-savevariables.png?classes=center-block)
 
 ##### Request - GET PET
-Para crear un nuevo request indicamos el nombre e ingresamos una descripción. Luego adicionamos la URL, se debe notar que ahora se hace uso de variables de entorno como {{idPetToTest}} que pueden ser concatenados fácilmente no solo al end point también puede adicionarse al body y al código de las pruebas. Todo ello con el objetivo de hacer pruebas más robustas y mantenibles.
+Para crear un nuevo request indicamos el nombre e ingresamos una descripción. Luego adicionamos la URL, se debe notar que ahora se hace uso de variables de entorno como {{idPetToTest}} que pueden ser concatenados fácilmente no solo al Endpoint también puede adicionarse al body y al código de las pruebas. Todo ello con el objetivo de hacer pruebas más robustas y mantenibles.
 
 ![GET Pet Request](13-get.png?classes=center-block)
 
@@ -277,8 +279,7 @@ pm.test("Body matches string", function () {
     pm.expect(pm.response.text()).to.include(pm.variables.get("namePetToTest"));
 });
 ```
-En esta ocasión no fue necesario almacenar variables por lo que hace hacen las pruebas directamente.
-
+En esta ocasión no fue necesario almacenar variables por lo que hacen las pruebas directamente.
 
 ![GET Pet Test](14-get-test.png?classes=center-block)
 
@@ -305,35 +306,34 @@ Como se puede visualizar, la prueba funciona correctamente, pero en caso de esta
 ![DELETE Pet Test](15-delete-test.png?classes=center-block)
 
 #### Variables Globales
-Las variables globales son útiles cuando no queremos repetir código con valores constantes y hacer de estas mantenibles. La URL del API es el mismo para todos los casos por lo que es conveniente convertirla a una variable global como se muestra a continuación. 
+Las variables globales son útiles cuando no queremos repetir código con valores constantes. La URL del API es el mismo para todos los casos por lo que es conveniente convertirla a una variable global como se muestra a continuación. 
 
 ![](16-variablesglobales.png?classes=center-block)
 
 En tan sentido, cambiaremos las URL de nuestras pruebas de la siguiente manera.
 
-* ADD PET - {{PETSTORE_API_URL}}
-* GET PET - {{PETSTORE_API_URL}}/{{idPetToTest}}
-* DELETE PET - {{PETSTORE_API_URL}}/{{idPetToTest}}
+* ADD PET : {{PETSTORE_API_URL}}
+* GET PET : {{PETSTORE_API_URL}}/{{idPetToTest}}
+* DELETE PET : {{PETSTORE_API_URL}}/{{idPetToTest}}
 
 #### Generando Documentación 
 La generación de documentación depende fuertemente de las descripciones/nombres que se pusieron al crear las colecciones, request y los responses ejemplo. En efecto, debemos asegurarnos guardar los responses obtenidos luego de enviar las peticiones, para que sean adicionados en la documentación.
 
 ![](17-generate-saveResponse.png?classes=center-block)
 
-Para generar la documentación nos dirigimos a la colección y la opción Publish Docs. Luego de seleccionar el template y otros estilos visuales el documento se verá publicado.
+Para generar la documentación nos dirigimos a la colección y la opción Publish Docs. Luego de seleccionar el template y otros estilos visuales el documento podrá ser publicado.
 
 ![](17-generate-doc.png?classes=center-block)
 
-En tal sentido, la documentación generada en el ejemplo implementado se encuentra en la siguiente dirección de manera pública.
+En tal sentido, la documentación generada en el ejemplo implementado se encuentra en la siguiente dirección de manera pública en internet.
 
-* [https://documenter.getpostman.com/view/13536986/TVes6m5R](https://documenter.getpostman.com/view/13536986/TVes6m5R)
+* [Mi documentación generada](https://documenter.getpostman.com/view/13536986/TVes6m5R)
 
-Documentación
 
 ![](18-docupublished.png?classes=center-block)
 
 #### Ejecutando Pruebas
-Luego de dirigirnos al Runner de Postman, seleccionamos la colección, los request que serán evaluados. También indicamos el environtment, numero de iteraciones y delay de las mismas. Para luego hacer clic en Run PETSTORE Collection.
+Luego de dirigirnos al Collection Runner de Postman, seleccionamos la colección y los request que serán evaluados. También indicamos el environtment, numero de iteraciones y delay de las mismas. Para luego hacer clic en Run PETSTORE Collection.
 
 ![](19-runner-config.png?classes=center-block)
 
@@ -341,12 +341,12 @@ Seguidamente, se corren las pruebas y se ven los resultados en tiempo real indic
 
 ![](19-runner-run.png?classes=center-block)
 
-Así mismo, puede también visualizarse un cuadro resumen de la ejecución.
+Así mismo, se puede visualizar un cuadro resumen de la ejecución.
 
 ![](19-runner-summary.png?classes=center-block)
 
 #### Ejecutando Pruebas con Newman
-La ejecución de prueba en la terminal puse ser realizada con [Newman](https://www.npmjs.com/package/newman) e incluso esto puede ser integrado fácilmente a [Jenkins](https://www.jenkins.io/). Por lo tanto, escalado a un ambiente más automatizado y real de desarrollo.
+La ejecución de prueba en la terminal se realiza con [Newman](https://www.npmjs.com/package/newman) e incluso esto puede ser integrado fácilmente a [Jenkins](https://www.jenkins.io/) o [Travis](https://travis-ci.org/) o [Docker](https://www.docker.com/). Por lo tanto, podria ser escalado a un ambiente más automatizado y real de desarrollo.
 
 Para instalarlo simplemente se requiere de [NodeJS](https://nodejs.org/en/). Newman se instala ejecutando:
 ```sh
@@ -356,7 +356,7 @@ Ahora bien, es necesarios el archivo .JSON de la colección, por lo que debe ser
 
 ![](20-export.png?classes=center-block)
 
-Adicionalmente, también las variables de entorno deben ser exportadas en formato .JSON.
+Adicionalmente, también las variables de entorno deben ser exportadas.
 
 ![](20-export-globals.png?classes=center-block)
 
