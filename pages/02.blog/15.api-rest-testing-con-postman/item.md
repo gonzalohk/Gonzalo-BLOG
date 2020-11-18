@@ -20,14 +20,19 @@ taxonomy:
 
 Es una **herramienta que permite realizar peticiones HTTP a cualquier API**. Es decir, permite probar, consumir y depurar **REST, SOAP y GraphQL.**  
 
-Postman es una herramienta útil en el desarrollo permitiendo consumir y comprobar el correcto funcionamiento de los servicios que se llevan implementado. En tal sentido, más allá de las funcionalidades mencionadas, este permite organizar las peticiones en colecciones, automatizar pruebas, generar documentación e incluso crear mocks de APIs. No obstante, Postman tiene una versión de pago con funcionalidades como la monitorización, trabajo sincronizado en equipo que pueden ser muy bien explotadas. Describamos algunas de sus características 
+Postman es una herramienta útil en el desarrollo permitiendo consumir y comprobar el correcto funcionamiento de los servicios que se llevan implementado. En tal sentido, más allá de las funcionalidades mencionadas, este permite organizar las peticiones en colecciones, automatizar pruebas, generar documentación e incluso crear mocks de APIs. 
+
+Sin embargo, Postman tiene una versión de pago con funcionalidades como la monitorización, trabajo sincronizado en equipo, mayor límite de vistas a la documentación, etc que pueden ser muy bien explotadas. Describamos algunas de sus características:
 
 * **Colecciones** 
 Postman permite guardar/agrupar un conjunto de solicitudes (request), que se denominan Collections. Estas son carpetas en distintos niveles que organizan nuestras peticiones HTTP.
+
 * **Variables de entorno y globales** 
 Las variables nos ayudarán a guardar, recordar un valor para evitar escribir el mismo texto/ruta de forma repetitiva. Por lo que puede ser usado en los request y pruebas posteriores. Así mismo, estas pueden tener un ámbito global o de entorno. 
+
 * **Documentación de APIs** 
 Postman genera documentación de forma automática, utilizando la información de las peticiones y las descripciones que hayas introducido al crearlas. Esta puede ser pública o privada, teniendo limitantes en la versión gratuita. 
+
 * **Automatización de pruebas**
 Postman permite ejecutar y validar un conjunto de pruebas de forma automatizada utilizando un Collection Runner. Una vez ejecutado, se mostrará el resultado resumen, indicando el tiempo de respuesta y el estado HTTP devuelto por el servidor. Incluso pueden adicionarse add-ons como NewMan, para ejecutar los test en línea de comandos permitiendo trabajar con Jenkins, Travis y Docker.
 
@@ -83,7 +88,7 @@ En efecto, nos permitirá registrar, actualizar, listar, eliminar usuarios y mas
 
 Antes de implementar e iniciar cualquier prueba es fundamental explorar el API proporcionado con el fin de tener la mayor información posible.
 
-###### a.	ADICIONAR NUEVA MASCOTA
+###### ADICIONAR NUEVA MASCOTA
 
 * URL: http://petstore.swagger.io/v2/pet
 * Formato: json
@@ -135,7 +140,7 @@ Response
 }
 ```
 
-##### b) Obtener mascota por Id
+##### OBTENER MASCOTA POR ID
 
 * URL: https://petstore.swagger.io/v2/pet/{petId}
 * Formatos: json
@@ -166,8 +171,7 @@ Response
     "status": "available"
 }
 ```
-
-**c) Eliminar mascota por Id**
+##### ELIMINAR MASCOTA POR ID
 
 * URL: https://petstore.swagger.io/v2/pet/{petId}
 * Formatos: json
@@ -187,25 +191,32 @@ Response
 ```
 ### Implementando Pruebas
 
-Ahora que se conoce la API a ser evaluada, iniciamos Postman seleccionando el workspace de nuestra preferencia donde crearemos las colecciones y peticiones. En este ejemplo, se utilizará el workspace compartido del equipo para que más usuario puedan trabajar en el mismo proyecto.
+Ahora que se conoce la API a ser evaluada, iniciamos Postman seleccionando el workspace de nuestra preferencia donde crearemos las colecciones y peticiones. En este ejemplo, se utilizará el workspace compartido del equipo para que varios usuarios puedan trabajar en el mismo proyecto.
 
 ![Team Workspace](02-create-workspace.png?classes=center-block)
 
-Creamos una nueva colección que agrupara todas las peticiones necesarias para realizar nuestras pruebas. Para ello, nos dirigimos a agregar colección. 
+Creamos una nueva colección que agrupara todas las peticiones necesarias para realizar nuestras pruebas. 
 
 ![Crear Collection](06-create-collection.png?classes=center-block)
 
-Se adicionaran las peticiones mencionadas anteriormente, nos dirigimos a adicionar requests (petición), introducimos el nombre junto a una descripción del mismo, mientras más detallada y completa sea esta mejor será la documentación generada.
+PETSTORE-Collection agrupará las peticiones mencionadas anteriormente, nos dirigimos a la opcion Add Requests (petición).
 
 ![Adicionar Request](07-addRequest.png?classes=center-block)
 
-##### ADD Pet
+##### Request - ADD PET
+Para crear el nuevo request, introducimos el nombre que tendrá junto a una descripción del mismo. La descripción es muy importante porque mientras más detallada/completa sea mejor será la documentación generada.
 
 ![POST Request ADD PET](08-saveRequest.png?classes=center-block)
 
+Posteriormente, se agrega la URL de la petición, indicamos el formato que tiene nuestro payload (en nuestro caso raw - JSON) y adicionamos el body (Pet Object). Una vez llenados correctamente estos campos podemos enviar la petición donde en la parte inferior se puede ver el response generado junto a detalles del mismo como el StatusCode, tiempo de ejecución y tamaño.
+
 ![POST Request ADD PET - creacion](09-addingRequest.png?classes=center-block)
 
-Posteriormente realizamos las pruebas pertinentes, comprobando el correcto StatusCode (200), el tiempo de respusta deberia ser menor a 200ms y comprobamos que se el responde tiene los valores correctos en los campos solicitados.
+Adicionalmente realizamos las pruebas pertinentes, comprobando el StatusCode obtenido, el tiempo de respuesta y evaluando valores del response. Es decir, se implementaran tres pruebas:
+
+* Status code is 200
+* Response time is less than 200ms
+* Body matches string
 
 ```js
 let responseBigIntsChangedToStrings = pm.response.text().replace(/([^"\w-])([-0-9.]{8,100})([^"\w-])/g, '$1\"$2\"$3');
@@ -231,7 +242,9 @@ pm.test("Body matches string", function () {
 ```
 ![ADD Pet variables y pruebas](11-testingandsavevariables.png?classes=center-block)
 
-Comprobamos que las varibles del entorno denominado TEST fueron almacenados de forma correcta.
+Finalmente, almacenaremos dos variables de entorno que será usadas en las peticiones posteriores debido a que estas son dinámicas y el utilizar datos estáticos no servirian para automatizar dichas pruebas.
+* idPetToTest
+* namePetToTest
 
 ![ADD Pet Variables y pruebas 2](12-savevariables.png?classes=center-block)
 
