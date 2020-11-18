@@ -370,6 +370,6 @@ newman run PETSTORE-Collection.postman_collection.json -e TEST.postman_environme
 
 
 En este texto, notamos que Postman es una de las herramientas más populares e utilizadas para las pruebas de API, se diferencia de las demás por tener colecciones, colaboración en equipo, integración continua, generación de documentación, etc. Así mismo, crear una cuenta para hacer la gestión en la nube de nuestras pruebas es una ventaja importante. A pesar de que las pruebas se hicieron con una cuenta gratuita resulta sorprendente la cantidad de acciones que se pueden realizar. 
+
+
 Considero que hacer uso de Postman representaría una gran ventaja en nuestros proyectos sean estos pequeños o grandes por el valor agregado que suma en nuestras implementaciones por lo que creo que es útil abordar más sobre el tema y darle una oportunidad. 
-
-
