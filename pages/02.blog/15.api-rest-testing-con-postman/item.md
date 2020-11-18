@@ -67,7 +67,7 @@ Postman es gratuito, pero ofrece planes adicionales como Postman Pro con más an
 Luego de instalarlo, puede usarse únicamente de forma local, pero se recomienda crear una cuenta de usuario para gestionar nuestros request, sincronizarlos y guardarlos en la nube para usarlos más adelante. Así mismo, se pueden crear en equipos de trabajo que permitirán a varios usuarios ver/editar colecciones, request en un mismo workspace compartido.
 
 ### PetStore Swagger
-Para realizar las pruebas, utilizaremos un API ejemplo proporcionado por Swagger de manera pública que se denomina [petstore.swagger.io](https://petstore.swagger.io/). No presenta autenticación aunque puede ser configurada si fueran necesarias.
+Para realizar las pruebas, utilizaremos un API público ejemplo proporcionado por Swagger que se denomina [petstore.swagger.io](https://petstore.swagger.io/). Este no presenta autenticación aunque puede ser configurada si fuera necesario.
 
 ![Swagger PetStore](03-swagger.png?classes=center-block)
 
@@ -82,13 +82,16 @@ En efecto, nos permitirá registrar, actualizar, listar, eliminar usuarios y mas
 * Eliminar mascota por Id (DELETE /pet/{petId})
 
 Antes de implementar e iniciar cualquier prueba es fundamental explorar el API proporcionado con el fin de tener la mayor información posible.
-a.	Adicionar nueva mascota 
+
+**a.	Adicionar nueva mascota **
+
 * URL: http://petstore.swagger.io/v2/pet
 * Formato: json
 * Método HTTP: POST
 * Requiere autenticación: No
 * Payload: Objeto Mascota
 POST https://petstore.swagger.io/v2/pet
+
 Payload 
 ```json
 {
@@ -131,12 +134,15 @@ Response
     "status": "available"
 }
 ```
-b) Obtener mascota por Id
+
+**b) Obtener mascota por Id**
+
 * URL: https://petstore.swagger.io/v2/pet/{petId}
 * Formatos: json
 * Método HTTP: GET
 * Requiere autenticación: No
 * Payload: Ninguno
+
 GET https://petstore.swagger.io/v2/pet/9222968140491081005
 
 Response
@@ -160,7 +166,9 @@ Response
     "status": "available"
 }
 ```
-c) Eliminar mascota por Id
+
+**c) Eliminar mascota por Id**
+
 * URL: https://petstore.swagger.io/v2/pet/{petId}
 * Formatos: json
 * Método HTTP: DELETE
@@ -169,7 +177,7 @@ c) Eliminar mascota por Id
 
 DELETE https://petstore.swagger.io/v2/pet/9222968140491081004
 
-Response:
+Response
 ```json
 {
     "code": 200,
@@ -187,12 +195,11 @@ Creamos una nueva colección que agrupara todas las peticiones necesarias para r
 
 ![Crear Collection](06-create-collection.png?classes=center-block)
 
-
-Se adicionan las peticiones mencionadas anteriormente. En tal sentido, nos dirigimos a adicionar requests (petición), introducimos el nombre junto a una descripción del mismo, mientras más detallada y completa sea esta, mejor será la documentación generada.
+Se adicionaran las peticiones mencionadas anteriormente, nos dirigimos a adicionar requests (petición), introducimos el nombre junto a una descripción del mismo, mientras más detallada y completa sea esta mejor será la documentación generada.
 
 ![Adicionar Request](07-addRequest.png?classes=center-block)
 
-**GET**
+##### ADD Pet
 
 ![POST Request ADD PET](08-saveRequest.png?classes=center-block)
 
@@ -228,17 +235,53 @@ Comprobamos que las varibles del entorno denominado TEST fueron almacenados de f
 
 ![ADD Pet Variables y pruebas 2](12-savevariables.png?classes=center-block)
 
-** GET **
-![](13-get.png)!
-[](14-get-test.png)
+##### GET PET
+![GET Pet Request](13-get.png?classes=center-block)
+![GET Pet Test](14-get-test.png?classes=center-block)
 
-** DELETE **
-![](15-delete.png)
-![](15-delete-test.png)
+##### DELETE PET
+![DELETE Pet Request](15-delete.png?classes=center-block)
+![DELETE Pet Test](15-delete-test.png?classes=center-block)
+
+#### Variables Globlales
+![](16-variablesglobales.png)
+![](16-varglobal-1.png)
+![](16-varglobal-2.png)
+![](16-varglobal-3.png)
+
+#### Generando Documentación 
+
+![](17-generate-saveResponse.png)
+
+![](17-generate-doc.png)
+
+* [https://documenter.getpostman.com/view/13536986/TVes6m5R](https://documenter.getpostman.com/view/13536986/TVes6m5R)
+
+
+![](18-docupublished.png)
 
 
 
-https://documenter.getpostman.com/view/13536986/TVes6m5R
+#### Ejecutar Pruebas
 
+![](19-runner-config.png)
+
+![](19-runner-run.png)
+
+![](19-runner-summary.png)
+
+#### Ejecutar Pruebas desde la terminal con Newman
+
+```sh
 npm install -g newman
+```
+
+![](20-export.png)
+![](20-export-2.png)
+![](20-export-globals.png)
+
+![](21-running-newman.png)
+
+
+
 
