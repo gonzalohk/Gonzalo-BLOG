@@ -83,7 +83,7 @@ En efecto, nos permitirá registrar, actualizar, listar, eliminar usuarios y mas
 
 Antes de implementar e iniciar cualquier prueba es fundamental explorar el API proporcionado con el fin de tener la mayor información posible.
 
-###### a.	Adicionar nueva mascota
+###### a.	ADICIONAR NUEVA MASCOTA
 
 * URL: http://petstore.swagger.io/v2/pet
 * Formato: json
