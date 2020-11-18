@@ -1,5 +1,6 @@
 ---
 title: 'API REST Testing con Postman'
+media_order: 'apitestbanner.gif,01-create-account.png,02-create-workspace.png,03-swagger.png,04-pets.png,05-workspace.png,06-create-collection.png,07-addRequest.png,08-saveRequest.png,09-addingRequest.png,10-saving-var.png,11-testingandsavevariables.png,12-savevariables.png,13-get.png,14-get-test.png,15-delete.png,15-delete-test.png,16-varglobal-1.png,16-varglobal-2.png,16-varglobal-3.png,16-variablesglobales.png,17-generate-doc.png,17-generate-saveResponse.png,18-docupublished.png,19-runner-config.png,19-runner-run.png,19-runner-summary.png,20-export.png,20-export-2.png,20-export-3.png,20-export-globals.png,21-running-newman.png'
 date: '17-11-2020 14:41'
 publish_date: '17-11-2020 14:41'
 metadata:
@@ -12,6 +13,8 @@ taxonomy:
         - 'API Rest'
         - Postman
 ---
+
+![API REST Testing con Postman](apitestbanner.gif?classes=center-block)
 
 ## ¿Qué es POSTMAN ?
 
@@ -65,13 +68,22 @@ https://www.postman.com/downloads/
 
 Postman es gratuito, pero ofrece planes adicionales como Postman Pro con más ancho de banda para las pruebas y Postman Enterprise que puede integrar la herramienta en los sistemas de SSO de nuestra empresa, ambos permiten mayor número de visualizaciones de la documentación publicada de nuestros proyectos. 
 
+![Postman Crear Cuenta](01-create-account.png?classes=center-block)
+
 Luego de instalarlo, puede usarse únicamente de forma local, pero se recomienda crear una cuenta de usuario para gestionar nuestros request, sincronizarlos y guardarlos en la nube para usarlos más adelante. Así mismo, se pueden crear en equipos de trabajo que permitirán a varios usuarios ver/editar colecciones, request en un mismo workspace compartido.
 
 ### Ejemplo
 ### The PetStore Swagger
-Para las pruebas, utilizaremos un API ejemplo proporcionado por Swagger de manera pública que se denomina [https://petstore.swagger.io/](https://petstore.swagger.io/). No presenta autenticación aunque puede ser configurada si fueran necesarias.
+Para las pruebas, utilizaremos un API ejemplo proporcionado por Swagger de manera pública que se denomina [petstore.swagger.io](https://petstore.swagger.io/). No presenta autenticación aunque puede ser configurada si fueran necesarias.
 
-* https://petstore.swagger.io/
+* [https://petstore.swagger.io/](https://petstore.swagger.io/)
+
+
+![Swagger PetStore](03-swagger.png?classes=center-block)
+
+
+![Swagger PetStore PetAPI](04-pets.png?classes=center-block)
+
 
 En efecto, nos permitirá registrar, actualizar, listar, eliminar usuarios y mascotas. Por otro lado, también permite gestionar las órdenes de compra de mascotas. Para las pruebas nos enfocaremos en las mascotas y particularmente en tres de sus servicios.
 
@@ -81,11 +93,11 @@ En efecto, nos permitirá registrar, actualizar, listar, eliminar usuarios y mas
 
 Antes de implementar e iniciar cualquier prueba es fundamental explorar el API proporcionado con el fin de tener la mayor información posible.
 a.	Adicionar nueva mascota 
-•	URL: http://petstore.swagger.io/v2/pet
-•	Formato: json
-•	Método HTTP: POST
-•	Requiere autenticación: No
-•	Payload: Objeto Mascota
+* URL: http://petstore.swagger.io/v2/pet
+* Formato: json
+* Método HTTP: POST
+* Requiere autenticación: No
+* Payload: Objeto Mascota
 POST https://petstore.swagger.io/v2/pet
 Payload 
 ```json
@@ -130,12 +142,13 @@ Response
 }
 ```
 b) Obtener mascota por Id
-•	URL: https://petstore.swagger.io/v2/pet/{petId}
-•	Formatos: json
-•	Método HTTP: GET
-•	Requiere autenticación: No
-•	Payload: Ninguno
+* URL: https://petstore.swagger.io/v2/pet/{petId}
+* Formatos: json
+* Método HTTP: GET
+* Requiere autenticación: No
+* Payload: Ninguno
 GET https://petstore.swagger.io/v2/pet/9222968140491081005
+
 Response
 ```json
 {
@@ -158,12 +171,14 @@ Response
 }
 ```
 c) Eliminar mascota por Id
-•	URL: https://petstore.swagger.io/v2/pet/{petId}
-•	Formatos: json
-•	Método HTTP: DELETE
-•	Requiere autenticación: No
-•	Payload: Ninguno
+* URL: https://petstore.swagger.io/v2/pet/{petId}
+* Formatos: json
+* Método HTTP: DELETE
+* Requiere autenticación: No
+* Payload: Ninguno
+
 DELETE https://petstore.swagger.io/v2/pet/9222968140491081004
+
 Response:
 ```json
 {
@@ -175,6 +190,26 @@ Response:
 ### Implementando Pruebas
 
 Ahora que se conoce la API a ser evaluada, iniciamos Postman seleccionando el workspace de nuestra preferencia donde crearemos las colecciones y peticiones. En este ejemplo, se utilizará el workspace compartido del equipo para que más usuario puedan trabajar en el mismo proyecto.
+
+![Team Workspace](02-create-workspace.png?classes=center-block)
+
+Creamos una nueva colección que agrupara todas las peticiones necesarias para realizar nuestras pruebas. Para ello, nos dirigimos a agregar colección. 
+
+![Crear Collection](06-create-collection.png?classes=center-block)
+
+
+Se adicionan las peticiones mencionadas anteriormente. En tal sentido, nos dirigimos a adicionar requests (petición), introducimos el nombre junto a una descripción del mismo, mientras más detallada y completa sea esta, mejor será la documentación generada.
+
+![Adicionar Request](07-addRequest.png?classes=center-block)
+
+**GET**
+
+![POST Request ADD PET](08-saveRequest.png?classes=center-block)
+
+![POST Request ADD PET - creacion](09-addingRequest.png?classes=center-block)
+
+Posteriormente realizamos las pruebas pertinentes, comprobando el correcto StatusCode (200), el tiempo de respusta deberia ser menor a 200ms y comprobamos que se el responde tiene los valores correctos en los campos solicitados.
+
 ```js
 let responseBigIntsChangedToStrings = pm.response.text().replace(/([^"\w-])([-0-9.]{8,100})([^"\w-])/g, '$1\"$2\"$3');
 let jsonResponse = [...responseBigIntsChangedToStrings.matchAll(/{.*}/g)];
@@ -197,15 +232,20 @@ pm.test("Body matches string", function () {
     pm.expect(jsonData.category.name).to.eql("cánidos");
 });
 ```
-Creamos una nueva colección que agrupara todas las peticiones necesarias para realizar nuestras pruebas. Para ello, nos dirigimos a agregar colección. 
+![ADD Pet variables y pruebas](11-testingandsavevariables.png?classes=center-block)
 
-Se adicionan las peticiones mencionadas anteriormente. En tal sentido, nos dirigimos a adicionar requests (petición), introducimos el nombre junto a una descripción del mismo, mientras más detallada y completa sea esta, mejor será la documentación generada.
+Comprobamos que las varibles del entorno denominado TEST fueron almacenados de forma correcta.
 
-POST
+![ADD Pet Variables y pruebas 2](12-savevariables.png?classes=center-block)
 
-GET 
+** GET **
+![](13-get.png)!
+[](14-get-test.png)
 
-DELETE
+** DELETE **
+![](15-delete.png)
+![](15-delete-test.png)
+
 
 
 https://documenter.getpostman.com/view/13536986/TVes6m5R
