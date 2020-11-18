@@ -135,7 +135,7 @@ Response
 }
 ```
 
-**b) Obtener mascota por Id**
+##### b) Obtener mascota por Id
 
 * URL: https://petstore.swagger.io/v2/pet/{petId}
 * Formatos: json
