@@ -348,7 +348,7 @@ Así mismo, puede también visualizarse un cuadro resumen de la ejecución.
 #### Ejecutando Pruebas con Newman
 La ejecución de prueba en la terminal puse ser realizada con [Newman](https://www.npmjs.com/package/newman) e incluso esto puede ser integrado fácilmente a [Jenkins](https://www.jenkins.io/). Por lo tanto, escalado a un ambiente más automatizado y real de desarrollo.
 
-Para instalarlo simplemente se requiere de [NodeJS](https://nodejs.org/en/). Newman se instala ejecutado:
+Para instalarlo simplemente se requiere de [NodeJS](https://nodejs.org/en/). Newman se instala ejecutando:
 ```sh
 npm install -g newman
 ```
