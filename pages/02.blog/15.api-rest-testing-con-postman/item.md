@@ -1,6 +1,6 @@
 ---
 title: 'API REST Testing con Postman'
-media_order: 'apitestbanner.gif,01-create-account.png,02-create-workspace.png,03-swagger.png,04-pets.png,05-workspace.png,06-create-collection.png,07-addRequest.png,08-saveRequest.png,09-addingRequest.png,10-saving-var.png,11-testingandsavevariables.png,12-savevariables.png,13-get.png,14-get-test.png,15-delete.png,15-delete-test.png,16-varglobal-1.png,16-varglobal-2.png,16-varglobal-3.png,16-variablesglobales.png,17-generate-doc.png,17-generate-saveResponse.png,18-docupublished.png,19-runner-config.png,20-export.png,20-export-2.png,20-export-3.png,20-export-globals.png,21-running-newman.png,apirest.png'
+media_order: 'apitestbanner.gif,01-create-account.png,02-create-workspace.png,03-swagger.png,04-pets.png,05-workspace.png,06-create-collection.png,07-addRequest.png,08-saveRequest.png,09-addingRequest.png,10-saving-var.png,11-testingandsavevariables.png,12-savevariables.png,13-get.png,14-get-test.png,15-delete.png,15-delete-test.png,16-varglobal-1.png,16-varglobal-2.png,16-varglobal-3.png,16-variablesglobales.png,17-generate-doc.png,17-generate-saveResponse.png,18-docupublished.png,20-export.png,20-export-2.png,20-export-3.png,20-export-globals.png,21-running-newman.png,apirest.png,19-runner-run.png,19-runner-summary.png'
 date: '17-11-2020 14:41'
 publish_date: '17-11-2020 14:41'
 metadata:
