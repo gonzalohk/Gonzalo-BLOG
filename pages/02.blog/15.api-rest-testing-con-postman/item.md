@@ -191,6 +191,7 @@ Response
     "message": "9222968140491081004"
 }
 ```
+
 ### Implementando Pruebas
 
 Ahora que se conoce la API a ser evaluada, iniciamos Postman seleccionando el workspace de nuestra preferencia donde crearemos las colecciones y peticiones. En este ejemplo, se utilizará el workspace compartido del equipo para que varios usuarios puedan trabajar en el mismo proyecto.
