@@ -1,6 +1,6 @@
 ---
 title: 'API REST Testing con Postman'
-media_order: 'apitestbanner.gif,01-create-account.png,02-create-workspace.png,03-swagger.png,04-pets.png,05-workspace.png,06-create-collection.png,07-addRequest.png,08-saveRequest.png,09-addingRequest.png,10-saving-var.png,11-testingandsavevariables.png,12-savevariables.png,13-get.png,14-get-test.png,15-delete.png,15-delete-test.png,16-varglobal-1.png,16-varglobal-2.png,16-varglobal-3.png,16-variablesglobales.png,17-generate-doc.png,17-generate-saveResponse.png,18-docupublished.png,19-runner-config.png,19-runner-run.png,19-runner-summary.png,20-export.png,20-export-2.png,20-export-3.png,20-export-globals.png,21-running-newman.png'
+media_order: 'apitestbanner.gif,01-create-account.png,02-create-workspace.png,03-swagger.png,04-pets.png,05-workspace.png,06-create-collection.png,07-addRequest.png,08-saveRequest.png,09-addingRequest.png,10-saving-var.png,11-testingandsavevariables.png,12-savevariables.png,13-get.png,14-get-test.png,15-delete.png,15-delete-test.png,16-varglobal-1.png,16-varglobal-2.png,16-varglobal-3.png,16-variablesglobales.png,17-generate-doc.png,17-generate-saveResponse.png,18-docupublished.png,19-runner-config.png,19-runner-run.png,19-runner-summary.png,20-export.png,20-export-2.png,20-export-3.png,20-export-globals.png,21-running-newman.png,apirest.png'
 date: '17-11-2020 14:41'
 publish_date: '17-11-2020 14:41'
 metadata:
@@ -18,29 +18,23 @@ taxonomy:
 
 ## ¿Qué es POSTMAN ?
 
-**Es una herramienta que permite realizar peticiones HTTP a cualquier API**. Es decir, permite probar, consumir y depurar REST, SOAP y GraphQL  
+**Es una herramienta que permite realizar peticiones HTTP a cualquier API**. Es decir, permite probar, consumir y depurar **REST, SOAP y GraphQL.**  
 
-Postman es una herramienta útil en el desarrollo permitiendo consumir y comprobar el correcto funcionamiento de los servicios que se llevan implementado. En tal sentido, más allá de las funcionalidades mencionadas, este permite organizar las peticiones en colecciones, automatizar pruebas, generar documentación e incluso crear mocks de APIs. No obstante, Postman tiene una versión de pago con funcionalidades como la monitorización, trabajo sincronizado en equipo que pueden ser muy bien explotadas.
+Postman es una herramienta útil en el desarrollo permitiendo consumir y comprobar el correcto funcionamiento de los servicios que se llevan implementado. En tal sentido, más allá de las funcionalidades mencionadas, este permite organizar las peticiones en colecciones, automatizar pruebas, generar documentación e incluso crear mocks de APIs. No obstante, Postman tiene una versión de pago con funcionalidades como la monitorización, trabajo sincronizado en equipo que pueden ser muy bien explotadas. Describamos algunas de sus características 
 
-Describamos algunas de sus características 
-
-**a.	Colecciones**
-
+* **Colecciones** 
 Postman permite guardar/agrupar un conjunto de solicitudes (request), que se denominan Collections. Estas son carpetas en distintos niveles que organizan nuestras peticiones HTTP.
-
-**b.	Variables de entorno y globales**
-
+* **Variables de entorno y globales** 
 Las variables nos ayudarán a guardar, recordar un valor para evitar escribir el mismo texto/ruta de forma repetitiva. Por lo que puede ser usado en los request y pruebas posteriores. Así mismo, estas pueden tener un ámbito global o de entorno. 
-
-**c.	Documentación de APIs**
-
+* **Documentación de APIs** 
 Postman genera documentación de forma automática, utilizando la información de las peticiones y las descripciones que hayas introducido al crearlas. Esta puede ser pública o privada, teniendo limitantes en la versión gratuita. 
-
-**d.	Automatización de pruebas**
-
+* **Automatización de pruebas**
 Postman permite ejecutar y validar un conjunto de pruebas de forma automatizada utilizando un Collection Runner. Una vez ejecutado, se mostrará el resultado resumen, indicando el tiempo de respuesta y el estado HTTP devuelto por el servidor. Incluso pueden adicionarse add-ons como NewMan, para ejecutar los test en línea de comandos permitiendo trabajar con Jenkins, Travis y Docker.
 
 ## ¿Qué es API Rest?
+
+![REST](apirest.png?classes=center-block)
+
 API REST define un conjunto de funciones para realizar solicitudes (Request) y recibir respuestas (Responses) a través del protocolo HTTP bajo una arquitectura cliente servidor.
 
 En efecto, API REST utiliza los métodos HTTP (HTTP verbs) para realizar las peticiones, cada uno tiene una función en particular.
@@ -64,7 +58,7 @@ Los códigos de estado HTTP (HTTP Status Code) describen de forma abreviada la r
 
 Inicialmente Postman fue ideado como una extensión Chrome que aún sigue disponible pero ya está deprecada debido a que cuenta con versiones nativas para Windows, Linux y MacOS. En efecto, debemos descargarlo e instalarlo desde: 
 
-https://www.postman.com/downloads/
+* [https://www.postman.com/downloads/](https://www.postman.com/downloads/)
 
 Postman es gratuito, pero ofrece planes adicionales como Postman Pro con más ancho de banda para las pruebas y Postman Enterprise que puede integrar la herramienta en los sistemas de SSO de nuestra empresa, ambos permiten mayor número de visualizaciones de la documentación publicada de nuestros proyectos. 
 
@@ -72,12 +66,8 @@ Postman es gratuito, pero ofrece planes adicionales como Postman Pro con más an
 
 Luego de instalarlo, puede usarse únicamente de forma local, pero se recomienda crear una cuenta de usuario para gestionar nuestros request, sincronizarlos y guardarlos en la nube para usarlos más adelante. Así mismo, se pueden crear en equipos de trabajo que permitirán a varios usuarios ver/editar colecciones, request en un mismo workspace compartido.
 
-### Ejemplo
-### The PetStore Swagger
-Para las pruebas, utilizaremos un API ejemplo proporcionado por Swagger de manera pública que se denomina [petstore.swagger.io](https://petstore.swagger.io/). No presenta autenticación aunque puede ser configurada si fueran necesarias.
-
-* [https://petstore.swagger.io/](https://petstore.swagger.io/)
-
+### PetStore Swagger
+Para realizar las pruebas, utilizaremos un API ejemplo proporcionado por Swagger de manera pública que se denomina [petstore.swagger.io](https://petstore.swagger.io/). No presenta autenticación aunque puede ser configurada si fueran necesarias.
 
 ![Swagger PetStore](03-swagger.png?classes=center-block)
 
