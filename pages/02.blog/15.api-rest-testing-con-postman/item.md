@@ -95,7 +95,8 @@ Antes de implementar e iniciar cualquier prueba es fundamental explorar el API p
 * Método HTTP: POST
 * Requiere autenticación: No
 * Payload: Objeto Mascota
-POST https://petstore.swagger.io/v2/pet
+
+POST [https://petstore.swagger.io/v2/pet](https://petstore.swagger.io/v2/pet)
 
 Payload 
 ```json
@@ -148,7 +149,7 @@ Response
 * Requiere autenticación: No
 * Payload: Ninguno
 
-GET https://petstore.swagger.io/v2/pet/9222968140491081005
+GET [https://petstore.swagger.io/v2/pet/9222968140491081005](https://petstore.swagger.io/v2/pet/9222968140491081005)
 
 Response
 ```json
@@ -179,7 +180,7 @@ Response
 * Requiere autenticación: No
 * Payload: Ninguno
 
-DELETE https://petstore.swagger.io/v2/pet/9222968140491081004
+DELETE [https://petstore.swagger.io/v2/pet/9222968140491081004](https://petstore.swagger.io/v2/pet/9222968140491081004)
 
 Response
 ```json
@@ -252,7 +253,7 @@ Es importante notar que almacenamos dos variables de entorno que será usadas en
 ![ADD Pet Variables y pruebas 2](12-savevariables.png?classes=center-block)
 
 ##### Request - GET PET
-Al igual que el primer request indicamos el nombre e ingresamos una descripción. Se debe notar que ahora se hace uso de variables de entorno como {{idPetToTest}} que pueden ser concatenados facilmente a la URL, body y pruebas. Todo ello con el objetivo de hacer pruebas más robustas y mantenibles.
+Para crear un nuevo request indicamos el nombre e ingresamos una descripción. Luego adicinamos la URL, se debe notar que ahora se hace uso de variables de entorno como {{idPetToTest}} que pueden ser concatenados facilmente no solo al end point también puede adicionarse al body y al codigo de las pruebas.Todo ello con el objetivo de hacer pruebas más robustas y mantenibles.
 
 ![GET Pet Request](13-get.png?classes=center-block)
 
@@ -276,38 +277,64 @@ pm.test("Body matches string", function () {
 });
 ```
 En esta ocasión no fue necesario almacenar variables por lo que hace hacen las pruebas directamente.
+
+
 ![GET Pet Test](14-get-test.png?classes=center-block)
 
 ##### Request - DELETE PET
+Creamos el último request, donde detallamos la URL de forma similar al anterior request pero con un Https Verb diferente denominado DELETE.
+
 ![DELETE Pet Request](15-delete.png?classes=center-block)
+
+En este caso se validará.
+* Status code is 200
+* Response time is less than 200ms
+
+```js
+// Testing DELETE PET
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Response time is less than 200ms", function () {
+    pm.expect(pm.response.responseTime).to.be.below(200);
+});
+```
+Como se puede visualizar, la prueba funciona correctamente, pero en caso de esta fallar esta muestra un error en la parte inferior y en la consola de Postman. En nuestro caso, el request tarda más de 200ms por lo que no cumple el assert y representa un test fallido.
+
 ![DELETE Pet Test](15-delete-test.png?classes=center-block)
 
 #### Variables Globlales
-![](16-variablesglobales.png)
-![](16-varglobal-1.png)
-![](16-varglobal-2.png)
-![](16-varglobal-3.png)
+Las variables globales son útiles cuando no queremos repetir código con valores constantes y hacer de estas mantenbles. La url del API es el mismo para todos los casos por lo que es conveniente convertirla a una variable global como se muestra a continuación. 
+
+![](16-variablesglobales.png?classes=center-block)
+
+En tan sentido, cambiaremos las URL de nuestras pruebas de la siguiente manera.
+
+* ADD PET - {{PETSTORE_API_URL}}
+* GET PET - {{PETSTORE_API_URL}}/{{idPetToTest}}
+* DELETE PET - {{PETSTORE_API_URL}}/{{idPetToTest}}
 
 #### Generando Documentación 
+La generación de documentación depende fuertemente de las descripciones y nombres que se pusieron al crear las colecciones, request y los response ejemplo. En efecto, debemos asegurarnos guardar los responses obtenidos como ejemplo, para que sean adicionas en la documentación.
 
-![](17-generate-saveResponse.png)
+![](17-generate-saveResponse.png?classes=center-block)
 
-![](17-generate-doc.png)
+![](17-generate-doc.png?classes=center-block)
 
 * [https://documenter.getpostman.com/view/13536986/TVes6m5R](https://documenter.getpostman.com/view/13536986/TVes6m5R)
 
 
-![](18-docupublished.png)
+![](18-docupublished.png?classes=center-block)
 
 
 
 #### Ejecutar Pruebas
 
-![](19-runner-config.png)
+![](19-runner-config.png?classes=center-block)
 
-![](19-runner-run.png)
+![](19-runner-run.png?classes=center-block)
 
-![](19-runner-summary.png)
+![](19-runner-summary.png?classes=center-block)
 
 #### Ejecutar Pruebas desde la terminal con Newman
 
@@ -315,11 +342,11 @@ En esta ocasión no fue necesario almacenar variables por lo que hace hacen las 
 npm install -g newman
 ```
 
-![](20-export.png)
-![](20-export-2.png)
-![](20-export-globals.png)
+![](20-export.png?classes=center-block)
+![](20-export-2.png?classes=center-block)
+![](20-export-globals.png?classes=center-block)
 
-![](21-running-newman.png)
+![](21-running-newman.png?classes=center-block)
 
 
 
