@@ -18,7 +18,7 @@ taxonomy:
 
 ## ¿Qué es POSTMAN ?
 
-**Es una herramienta que permite realizar peticiones HTTP a cualquier API**. Es decir, permite probar, consumir y depurar **REST, SOAP y GraphQL.**  
+Es una **herramienta que permite realizar peticiones HTTP a cualquier API**. Es decir, permite probar, consumir y depurar **REST, SOAP y GraphQL.**  
 
 Postman es una herramienta útil en el desarrollo permitiendo consumir y comprobar el correcto funcionamiento de los servicios que se llevan implementado. En tal sentido, más allá de las funcionalidades mencionadas, este permite organizar las peticiones en colecciones, automatizar pruebas, generar documentación e incluso crear mocks de APIs. No obstante, Postman tiene una versión de pago con funcionalidades como la monitorización, trabajo sincronizado en equipo que pueden ser muy bien explotadas. Describamos algunas de sus características 
 
@@ -35,7 +35,7 @@ Postman permite ejecutar y validar un conjunto de pruebas de forma automatizada 
 
 ![REST](apirest.png?classes=center-block)
 
-**API REST define un conjunto de funciones para realizar solicitudes (Request) y recibir respuestas (Responses) a través del protocolo HTTP** bajo una arquitectura cliente servidor.
+**API REST define un conjunto de funciones para realizar solicitudes (Request) y recibir respuestas (Responses)** a través del protocolo **HTTP** bajo una arquitectura **cliente servidor.**
 
 En efecto, API REST utiliza los métodos HTTP (HTTP verbs) para realizar las peticiones, cada uno tiene una función en particular.
  
