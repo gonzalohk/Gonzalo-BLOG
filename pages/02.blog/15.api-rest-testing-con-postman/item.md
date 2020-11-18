@@ -201,7 +201,7 @@ Creamos una nueva colección que agrupara todas las peticiones necesarias para r
 
 ![Crear Collection](06-create-collection.png?classes=center-block)
 
-PETSTORE-Collection agrupará las peticiones mencionadas anteriormente, nos dirigimos a la opcion Add Requests.
+PETSTORE-Collection agrupará las peticiones mencionadas anteriormente, nos dirigimos a la opción Add Requests.
 
 ![Adicionar Request](07-addRequest.png?classes=center-block)
 
@@ -214,7 +214,7 @@ Posteriormente, se agrega la URL de la petición, indicamos el formato que tiene
 
 ![POST Request ADD PET - creacion](09-addingRequest.png?classes=center-block)
 
-Adicionalmente realizamos las pruebas pertinentes, comprobando el StatusCode obtenido, el tiempo de respuesta y evaluando valores del response. Es decir, se implementaran tres pruebas:
+Adicionalmente realizamos las pruebas pertinentes, comprobando el StatusCode obtenido, el tiempo de respuesta y evaluando valores del response. Es decir, se implementarán tres pruebas:
 
 * Status code is 200
 * Response time is less than 200ms
@@ -242,11 +242,11 @@ pm.test("Body matches string", function () {
     pm.expect(jsonData.category.name).to.eql("cánidos");
 });
 ```
-En tal sentido, en la pestaña Tests se adiciona el codigo implementado con anterioridad. Este fue realizado en JS, pero Postman permite realizar el mismo en una variedad de lenguajes según la preferencia de cada uno el resultado será el mismo.
+En tal sentido, en la pestaña Tests se adiciona el código implementado con anterioridad. Este fue realizado en JS, pero Postman permite realizar el mismo en una variedad de lenguajes según la preferencia de cada uno el resultado será el mismo.
 
 ![ADD Pet variables y pruebas](11-testingandsavevariables.png?classes=center-block)
 
-Es importante notar que almacenamos dos variables de entorno que será usadas en las peticiones posteriores debido a que estas son dinámicas y el utilizar datos estáticos no servirian para automatizar dichas pruebas. También se hace un pequeño artificio para convertir enteros gigantes a cadena y no existen problemas posteriores.
+Es importante notar que almacenamos dos variables de entorno que será usadas en las peticiones posteriores debido a que estas son dinámicas y el utilizar datos estáticos no servirían para automatizar dichas pruebas. También se hace un pequeño artificio para convertir enteros gigantes a cadena y no existan problemas posteriores.
 
 * idPetToTest
 * namePetToTest
@@ -254,7 +254,7 @@ Es importante notar que almacenamos dos variables de entorno que será usadas en
 ![ADD Pet Variables y pruebas 2](12-savevariables.png?classes=center-block)
 
 ##### Request - GET PET
-Para crear un nuevo request indicamos el nombre e ingresamos una descripción. Luego adicinamos la URL, se debe notar que ahora se hace uso de variables de entorno como {{idPetToTest}} que pueden ser concatenados facilmente no solo al end point también puede adicionarse al body y al codigo de las pruebas.Todo ello con el objetivo de hacer pruebas más robustas y mantenibles.
+Para crear un nuevo request indicamos el nombre e ingresamos una descripción. Luego adicionamos la URL, se debe notar que ahora se hace uso de variables de entorno como {{idPetToTest}} que pueden ser concatenados fácilmente no solo al end point también puede adicionarse al body y al código de las pruebas. Todo ello con el objetivo de hacer pruebas más robustas y mantenibles.
 
 ![GET Pet Request](13-get.png?classes=center-block)
 
@@ -305,7 +305,7 @@ Como se puede visualizar, la prueba funciona correctamente, pero en caso de esta
 ![DELETE Pet Test](15-delete-test.png?classes=center-block)
 
 #### Variables Globales
-Las variables globales son útiles cuando no queremos repetir código con valores constantes y hacer de estas mantenbles. La url del API es el mismo para todos los casos por lo que es conveniente convertirla a una variable global como se muestra a continuación. 
+Las variables globales son útiles cuando no queremos repetir código con valores constantes y hacer de estas mantenibles. La URL del API es el mismo para todos los casos por lo que es conveniente convertirla a una variable global como se muestra a continuación. 
 
 ![](16-variablesglobales.png?classes=center-block)
 
@@ -333,7 +333,7 @@ Documentación
 ![](18-docupublished.png?classes=center-block)
 
 #### Ejecutando Pruebas
-Luego de dirigirnos al Runner de Postman, seleccionamos la coleccion, los request que serán evaluados. También indicamos el environtment, numero de iteraciones y delay de las mismas. Para luego hacer clic en Run PETSTORE Collection.
+Luego de dirigirnos al Runner de Postman, seleccionamos la colección, los request que serán evaluados. También indicamos el environtment, numero de iteraciones y delay de las mismas. Para luego hacer clic en Run PETSTORE Collection.
 
 ![](19-runner-config.png?classes=center-block)
 
@@ -341,18 +341,18 @@ Seguidamente, se corren las pruebas y se ven los resultados en tiempo real indic
 
 ![](19-runner-run.png?classes=center-block)
 
-Asi mismo, puede tambien visualizarse un cuadro resumen de la ejecución.
+Así mismo, puede también visualizarse un cuadro resumen de la ejecución.
 
 ![](19-runner-summary.png?classes=center-block)
 
 #### Ejecutando Pruebas con Newman
-La ejecución de prueba en la terminal puse ser realizada con [Newman](https://www.npmjs.com/package/newman) e incluso esto puede ser integrado facilmente a [Jenkis](https://www.jenkins.io/). Por lo tanto, escalado a un ambiente más automatizado y real de desarrollo.
+La ejecución de prueba en la terminal puse ser realizada con [Newman](https://www.npmjs.com/package/newman) e incluso esto puede ser integrado fácilmente a [Jenkins](https://www.jenkins.io/). Por lo tanto, escalado a un ambiente más automatizado y real de desarrollo.
 
 Para instalarlo simplemente se requiere de [NodeJS](https://nodejs.org/en/). Newman se instala ejecutado:
 ```sh
 npm install -g newman
 ```
-Ahora bien, es necesarios el archivo .JSON de la coleccion, por lo que debe ser exportado.
+Ahora bien, es necesarios el archivo .JSON de la colección, por lo que debe ser exportado.
 
 ![](20-export.png?classes=center-block)
 
@@ -369,5 +369,7 @@ newman run PETSTORE-Collection.postman_collection.json -e TEST.postman_environme
 ![](21-running-newman.png?classes=center-block)
 
 
+En este texto, notamos que Postman es una de las herramientas más populares e utilizadas para las pruebas de API, se diferencia de las demás por tener colecciones, colaboración en equipo, integración continua, generación de documentación, etc. Así mismo, crear una cuenta para hacer la gestión en la nube de nuestras pruebas es una ventaja importante. A pesar de que las pruebas se hicieron con una cuenta gratuita resulta sorprendente la cantidad de acciones que se pueden realizar. 
+Considero que hacer uso de Postman representaría una gran ventaja en nuestros proyectos sean estos pequeños o grandes por el valor agregado que suma en nuestras implementaciones por lo que creo que es útil abordar más sobre el tema y darle una oportunidad. 
 
 
