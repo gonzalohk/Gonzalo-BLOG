@@ -316,7 +316,7 @@ En tan sentido, cambiaremos las URL de nuestras pruebas de la siguiente manera.
 * DELETE PET - {{PETSTORE_API_URL}}/{{idPetToTest}}
 
 #### Generando Documentación 
-La generación de documentación depende fuertemente de las descripciones y nombres que se pusieron al crear las colecciones, request y los response ejemplo. En efecto, debemos asegurarnos guardar los responses obtenidos como ejemplo, para que sean adicionados en la documentación.
+La generación de documentación depende fuertemente de las descripciones/nombres que se pusieron al crear las colecciones, request y los responses ejemplo. En efecto, debemos asegurarnos guardar los responses obtenidos luego de enviar las peticiones, para que sean adicionados en la documentación.
 
 ![](17-generate-saveResponse.png?classes=center-block)
 
