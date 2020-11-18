@@ -303,7 +303,7 @@ Como se puede visualizar, la prueba funciona correctamente, pero en caso de esta
 
 ![DELETE Pet Test](15-delete-test.png?classes=center-block)
 
-#### Variables Globlales
+#### Variables Globales
 Las variables globales son útiles cuando no queremos repetir código con valores constantes y hacer de estas mantenbles. La url del API es el mismo para todos los casos por lo que es conveniente convertirla a una variable global como se muestra a continuación. 
 
 ![](16-variablesglobales.png?classes=center-block)
@@ -315,36 +315,55 @@ En tan sentido, cambiaremos las URL de nuestras pruebas de la siguiente manera.
 * DELETE PET - {{PETSTORE_API_URL}}/{{idPetToTest}}
 
 #### Generando Documentación 
-La generación de documentación depende fuertemente de las descripciones y nombres que se pusieron al crear las colecciones, request y los response ejemplo. En efecto, debemos asegurarnos guardar los responses obtenidos como ejemplo, para que sean adicionas en la documentación.
+La generación de documentación depende fuertemente de las descripciones y nombres que se pusieron al crear las colecciones, request y los response ejemplo. En efecto, debemos asegurarnos guardar los responses obtenidos como ejemplo, para que sean adicionados en la documentación.
 
 ![](17-generate-saveResponse.png?classes=center-block)
 
+Para generar la documentación nos dirigimos a la colección y la opción Publish Docs. Luego de seleccionar el template y otros estilos visuales el documento se verá publicado.
+
 ![](17-generate-doc.png?classes=center-block)
+
+En tal sentido, la documentación generada en el ejemplo implementado se encuentra en la siguiente dirección de manera pública.
 
 * [https://documenter.getpostman.com/view/13536986/TVes6m5R](https://documenter.getpostman.com/view/13536986/TVes6m5R)
 
+Documentación
 
 ![](18-docupublished.png?classes=center-block)
 
-
-
-#### Ejecutar Pruebas
+#### Ejecutando Pruebas
+Luego de dirigirnos al Runner de Postman, seleccionamos la coleccion, los request que serán evaluados. También indicamos el environtment, numero de iteraciones y delay de las mismas. Para luego hacer clic en Run PETSTORE Collection.
 
 ![](19-runner-config.png?classes=center-block)
 
+Seguidamente, se corren las pruebas y se ven los resultados en tiempo real indicando si la prueba fue exitosa, el tiempo de ejecución y otros detalles citados de forma detallada.
+
 ![](19-runner-run.png?classes=center-block)
+
+Asi mismo, puede tambien visualizarse un cuadro resumen de la ejecución.
 
 ![](19-runner-summary.png?classes=center-block)
 
-#### Ejecutar Pruebas desde la terminal con Newman
+#### Ejecutando Pruebas con Newman
+La ejecución de prueba en la terminal puse ser realizada con [Newman](https://www.npmjs.com/package/newman) e incluso esto puede ser integrado facilmente a [Jenkis](https://www.jenkins.io/). Por lo tanto, escalado a un ambiente más automatizado y real de desarrollo.
 
+Para instalarlo simplemente se requiere de [NodeJS](https://nodejs.org/en/). Newman se instala ejecutado:
 ```sh
 npm install -g newman
 ```
+Ahora bien, es necesarios el archivo .JSON de la coleccion, por lo que debe ser exportado.
 
 ![](20-export.png?classes=center-block)
-![](20-export-2.png?classes=center-block)
+
+Adicionalmente, también las variables de entorno deben ser exportadas en formato .JSON.
+
 ![](20-export-globals.png?classes=center-block)
+
+Finalmente, ejecutamos Newman indicando los archivos exportados de la colección y las variables de entorno.
+
+```sh
+newman run PETSTORE-Collection.postman_collection.json -e TEST.postman_environment.json
+```
 
 ![](21-running-newman.png?classes=center-block)
 
