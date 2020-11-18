@@ -140,7 +140,7 @@ Response
 }
 ```
 
-##### OBTENER MASCOTA POR ID
+###### OBTENER MASCOTA POR ID
 
 * URL: https://petstore.swagger.io/v2/pet/{petId}
 * Formatos: json
@@ -171,7 +171,7 @@ Response
     "status": "available"
 }
 ```
-##### ELIMINAR MASCOTA POR ID
+###### ELIMINAR MASCOTA POR ID
 
 * URL: https://petstore.swagger.io/v2/pet/{petId}
 * Formatos: json
@@ -199,7 +199,7 @@ Creamos una nueva colección que agrupara todas las peticiones necesarias para r
 
 ![Crear Collection](06-create-collection.png?classes=center-block)
 
-PETSTORE-Collection agrupará las peticiones mencionadas anteriormente, nos dirigimos a la opcion Add Requests (petición).
+PETSTORE-Collection agrupará las peticiones mencionadas anteriormente, nos dirigimos a la opcion Add Requests.
 
 ![Adicionar Request](07-addRequest.png?classes=center-block)
 
@@ -240,19 +240,45 @@ pm.test("Body matches string", function () {
     pm.expect(jsonData.category.name).to.eql("cánidos");
 });
 ```
+En tal sentido, en la pestaña Tests se adiciona el codigo implementado con anterioridad. Este fue realizado en JS, pero Postman permite realizar el mismo en una variedad de lenguajes según la preferencia de cada uno el resultado será el mismo.
+
 ![ADD Pet variables y pruebas](11-testingandsavevariables.png?classes=center-block)
 
-Finalmente, almacenaremos dos variables de entorno que será usadas en las peticiones posteriores debido a que estas son dinámicas y el utilizar datos estáticos no servirian para automatizar dichas pruebas.
+Es importante notar que almacenamos dos variables de entorno que será usadas en las peticiones posteriores debido a que estas son dinámicas y el utilizar datos estáticos no servirian para automatizar dichas pruebas. También se hace un pequeño artificio para convertir enteros gigantes a cadena y no existen problemas posteriores.
+
 * idPetToTest
 * namePetToTest
 
 ![ADD Pet Variables y pruebas 2](12-savevariables.png?classes=center-block)
 
-##### GET PET
+##### Request - GET PET
+Al igual que el primer request indicamos el nombre e ingresamos una descripción. Se debe notar que ahora se hace uso de variables de entorno como {{idPetToTest}} que pueden ser concatenados facilmente a la URL, body y pruebas. Todo ello con el objetivo de hacer pruebas más robustas y mantenibles.
+
 ![GET Pet Request](13-get.png?classes=center-block)
+
+En este caso se validará
+* Status code is 200
+* Response time is less than 200ms
+* Body matches string
+
+```js
+let jsonData = pm.response.json();
+
+// Testing GET PET
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Response time is less than 200ms", function () {
+    pm.expect(pm.response.responseTime).to.be.below(200);
+});
+pm.test("Body matches string", function () {
+    pm.expect(pm.response.text()).to.include(pm.variables.get("namePetToTest"));
+});
+```
+En esta ocasión no fue necesario almacenar variables por lo que hace hacen las pruebas directamente.
 ![GET Pet Test](14-get-test.png?classes=center-block)
 
-##### DELETE PET
+##### Request - DELETE PET
 ![DELETE Pet Request](15-delete.png?classes=center-block)
 ![DELETE Pet Test](15-delete-test.png?classes=center-block)
 
