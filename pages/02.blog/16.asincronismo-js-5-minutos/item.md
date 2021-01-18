@@ -1,5 +1,5 @@
 ---
-title: 'Entendiendo el Asincronismo en JavaScript en 5 minutos'
+title: 'Asincronismo en JavaScript en 5 minutos'
 media_order: 'callbackHell.jpeg,rickmortyapi.jpg,sincronoVsAsincrono.png,1_6Kh8PIAsUDrVPB60M1CSBA.gif'
 published: true
 metadata:
