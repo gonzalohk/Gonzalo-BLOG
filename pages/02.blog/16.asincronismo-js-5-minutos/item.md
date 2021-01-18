@@ -161,13 +161,14 @@ Por ello, nos planteamos tres ejercicios que requieren consultar la API, donde p
 Se hará uso de tres Endpoints para obtener la información requerida, estos son:  
 
 
-* Obtener todos los personajes
+```html
+Obtener todos los personajes
 GET https://rickandmortyapi.com/api/character
-* Obtener un personaje
+Obtener un personaje
 GET https://rickandmortyapi.com/api/character/{id}
-* Obtener ubicación
+Obtener ubicación
 GET https://rickandmortyapi.com/api/location/{id}
-
+```
 Para consumir la API mencionada se requiere de peticiones HTTP/HTTPS asíncronas, por lo que utilizaremos XMLHttpRequest (XHR) que es un objeto especial de JavaScript que permite hacer peticiones de forma nativa. Actualmente el estándar es fetch y existen muchas otras librerías para este mismo objetivo, pero XMLHttpRequest será suficiente para nuestros ejercicios. Pues veamos cómo sería la implementación y las diferencias que existen. 
 
 #### Implementación con Callbacks
