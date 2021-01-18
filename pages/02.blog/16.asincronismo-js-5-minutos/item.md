@@ -1,6 +1,6 @@
 ---
 title: 'Entendiendo el Asincronismo en JavaScript en 5 minutos'
-media_order: 'callbackHell.jpeg,rickmortyapi.jpg,sincronoVsAsincrono.png'
+media_order: 'callbackHell.jpeg,rickmortyapi.jpg,sincronoVsAsincrono.png,1_6Kh8PIAsUDrVPB60M1CSBA.gif'
 published: true
 metadata:
     '"Keywords"': '"JS","Promises","Asincronismo","Callback","Async/Await", "Sincrono Asincrono JavaScript"'
@@ -12,7 +12,7 @@ taxonomy:
         - JavaScript
 ---
 
-![Entendiendo el Asincronismo en JavaScript en 5 minutos](portada.gif?classes=center-block)
+![Entendiendo el Asincronismo en JavaScript en 5 minutos](1_6Kh8PIAsUDrVPB60M1CSBA.gif?classes=center-block)
 
 Cuando comenzamos a programar usualmente implementamos tareas de forma síncrona, donde una tarea se ejecuta detrás de otra de manera secuencial, de modo que el flujo del programa es sencillo y resuelve problemas elementales. Pero, más adelante necesitaremos implementar programas más complejos, donde existirán tareas asíncronas ejecutándose hasta que ocurra un determinado suceso y finalizando en un tiempo desconocido. En efecto, tareas síncronas como asíncronas conviven en nuestros programas por lo que conocer y aplicar correctamente estos conceptos es importante.
 
