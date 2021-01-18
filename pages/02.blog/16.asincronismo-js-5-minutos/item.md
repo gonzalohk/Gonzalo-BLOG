@@ -1,5 +1,6 @@
 ---
 title: 'Entendiendo el Asincronismo en JavaScript en 5 minutos'
+media_order: 'callbackHell.jpeg,portada.gif,rickmortyapi.jpg,sincronoVsAsincrono.png'
 published: true
 metadata:
     '"Keywords"': '"JS","Promises","Asincronismo","Callback","Async/Await", "Sincrono Asincrono JavaScript"'
@@ -11,6 +12,7 @@ taxonomy:
         - JavaScript
 ---
 
+![Entendiendo el Asincronismo en JavaScript en 5 minutos](portada.gif?classes=center-block)
 
 Cuando comenzamos a programar usualmente implementamos tareas de forma síncrona, donde una tarea se ejecuta detrás de otra de manera secuencial, de modo que el flujo del programa es sencillo y resuelve problemas elementales. Pero, más adelante necesitaremos implementar programas más complejos, donde existirán tareas asíncronas ejecutándose hasta que ocurra un determinado suceso y finalizando en un tiempo desconocido. En efecto, tareas síncronas como asíncronas conviven en nuestros programas por lo que conocer y aplicar correctamente estos conceptos es importante.
 
@@ -21,6 +23,8 @@ Para entender el asincronismo en JavaScript, previamente debemos tener en claro 
 Imaginemos que hacemos una cola para ingresar al cine, este es un proceso **síncrono**, mientras hacemos la cola no podemos adelantarnos, tampoco podemos salir de la fila a hacer otra actividad como comprar palomitas o perderíamos nuestro lugar, por lo que debemos esperar nuestro turno hasta que las personas delante nuestro ingresen.
 
 Sin embargo, sucederá algo diferente en un restaurante donde llamamos a un mesero para que atienda nuestra orden, este es un proceso **asíncrono**, los cocineros prepararan nuestros platillos y serán entregados en un futuro inmediato. Sin embargo, al esperar podemos seguir realizando acciones como charlar y beber de modo que esperar la comida no representa una actividad bloqueante.
+
+![Sincrono vs Asincrono](sincronoVsAsincrono.png?classes=center-block)
 
 Por otro lado, necesitaremos ejecutar múltiples tareas todo el tiempo, dependiendo del lenguaje o tecnologías que dispongamos este podría ser paralelo o concurrente, esto último dependerá de la cantidad de medios de ejecución.  
 
@@ -75,6 +79,9 @@ document.getElementById("btn1").addEventListener("click", function() {
 });
 ```
 Una gran ventaja de los Callbacks es la compatibilidad con todos los navegadores y una sintaxis relativamente sencilla.  Por otro lado, se tiende a anidar demasiados Callbacks debido al crecimiento natural de nuestros proyectos, provocando un Callback Hell o pirámide que producen código ilegible difícil de mantener. Una buena práctica recomienda no tener más de tres niveles anidados.
+
+![Callback Hell](callbackHell.jpeg?classes=center-block)
+
 
 ## Promises
 
@@ -139,6 +146,8 @@ console.log('another instruction 2');
 Async/Await tiene la gran ventaja de tener una sintaxis simple que además permite el uso de try/catch para el manejo de errores. No obstante, al ser una implementación relativamente reciente necesita de algún transpilador para ser usado en nuestros proyectos.
 
 ### Ejemplo - Rick And Morty API
+
+![Rick And Morty API](rickmortyapi.jpg?classes=center-block)
 
 Veamos un ejemplo un poco más real donde queremos consumir un API, de modo tal que tomaremos como ejemplo [https://rickandmortyapi.com/](https://rickandmortyapi.com/), la cual es muy popular para realizar pruebas. Esta API tiene mucha información referente a la serie de Rick And Morty con respecto a personajes, dimensiones y locaciones. 
 
