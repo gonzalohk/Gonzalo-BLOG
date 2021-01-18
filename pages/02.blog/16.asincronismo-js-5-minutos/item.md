@@ -145,7 +145,8 @@ console.log('another instruction 2');
 ```
 Async/Await tiene la gran ventaja de tener una sintaxis simple que además permite el uso de try/catch para el manejo de errores. No obstante, al ser una implementación relativamente reciente necesita de algún transpilador para ser usado en nuestros proyectos.
 
-### Ejemplo - Rick And Morty API
+
+## Ejemplo - Rick And Morty API
 
 ![Rick And Morty API](rickmortyapi.jpg?classes=center-block)
 
