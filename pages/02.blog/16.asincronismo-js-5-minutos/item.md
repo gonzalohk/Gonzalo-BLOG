@@ -118,7 +118,7 @@ somethingWillHappen()
 ```
 Ahora bien, las promesas tienen una sintaxis fácil de comprender incluso en situaciones complejas a diferencia de los Callbacks y mejor aun permitiendo hacer el manejo de errores. Sin embargo, las promesas fueron introducidas con el estándar ES2015 o ES6 lo que significa que no es compatible con todos los navegadores por lo que se necesita de un transpilador para garantizar la compatibilidad de nuestros proyectos.
 
-## Async Await
+## Async/Await
 
 Es una especificación introducida en ES2017 o ES8 que permite escribir promesas más fácilmente, permitiendo el tratamiento de procesos asíncronos usando las palabras reservadas async/await. En efecto, se considera [Syntax Sugar](https://en.wikipedia.org/wiki/Syntactic_sugar) debido a que en el fondo no es más que una **implementación de Promises que permite escribir código asíncrono en JavaScript como si se tratara de simple código síncrono**.
 
