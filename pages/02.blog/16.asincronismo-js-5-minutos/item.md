@@ -96,7 +96,7 @@ Así mismo, cuando una promesa es disparada esta ingresa a un estado el cual pue
 * Fulfilled: significa que la operación se completó satisfactoriamente.
 * Rejected: significa que la operación falló.
 
-Una promesa inicialmente tiene el estado Pending, si se llama a Resolve la promesa pasa a estar Fulfilled, pero si se llama a Reject esta pasa a estar como Rejected. Cuando una promesa es rechazada obtenemos un error que nos indica la razón. En tal sentido, si una promesa se resuelve entonces se ejecuta la función que pasamos al método .then, si la promesa es rechazada entonces se ejecuta la función que pasamos a .catch, de esta forma podemos controlar el flujo de datos.
+Una promesa inicialmente tiene el estado Pending, si se llama a Resolve la promesa pasa a estar Fulfilled, pero si se llama a Reject esta pasa a estar como Rejected. Cuando una promesa es rechazada obtenemos un error que nos indica la razón. En tal sentido, si una promesa se resuelve entonces se ejecuta la función que pasamos al método **.then**, si la promesa es rechazada entonces se ejecuta la función que pasamos a **.catch**, de esta forma podemos controlar el flujo de datos.
 
 * Then: en caso de éxito.
 * Catch: en caso de fracaso.
