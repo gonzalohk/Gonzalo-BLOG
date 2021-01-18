@@ -1,6 +1,6 @@
 ---
 title: 'Entendiendo el Asincronismo en JavaScript en 5 minutos'
-media_order: 'callbackHell.jpeg,portada.gif,rickmortyapi.jpg,sincronoVsAsincrono.png'
+media_order: 'callbackHell.jpeg,rickmortyapi.jpg,sincronoVsAsincrono.png'
 published: true
 metadata:
     '"Keywords"': '"JS","Promises","Asincronismo","Callback","Async/Await", "Sincrono Asincrono JavaScript"'
