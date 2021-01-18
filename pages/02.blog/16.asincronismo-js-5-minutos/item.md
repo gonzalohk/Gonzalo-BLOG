@@ -35,7 +35,7 @@ Para comprender mejor lo anterior imaginemos que estamos en el cine, queremos co
 
 ## JavaScript Asíncrono y Concurrente.
 
-JavaScript es un lenguaje de programación asíncrono, concurrente, no bloqueante bajo un solo hilo de ejecución. Este concepto tan conocido indica que JavaScript además de ejecutar una secuencia de instrucciones de manera ordenada es capaz de ejecutar tareas que no obtienen un resultado inmediatamente, pudiendo devolver el control al programa sin bloquearlo y todo aquello con un único medio de ejecución.
+**JavaScript es un lenguaje de programación asíncrono, concurrente, no bloqueante bajo un solo hilo de ejecución**. Este concepto tan conocido indica que JavaScript además de ejecutar una secuencia de instrucciones de manera ordenada es capaz de ejecutar tareas que no obtienen un resultado inmediatamente, pudiendo devolver el control al programa sin bloquearlo y todo aquello con un único medio de ejecución.
 
 Con lo señalado anteriormente nos surgen muchas interrogantes, pero básicamente ¿cómo puede un lenguaje de un solo subproceso ser no bloqueante, concurrente y asincrónico? Esto es gracias a la manera en que fue diseñado e implementado el JavaScript Runtime a través del Event Loop, Call Stack, CallBack Queue y Task Queue. En un post anterior ya escribimos al respecto [The Javascript Runtime](https://gonzalohk.xyz/blog/el-javascript-runtime), sería muy importante leerlo.
 
@@ -54,7 +54,7 @@ JavaScript proporciona tres maneras de implementar asincronismo utilizando Callb
 
 ## Callbacks
 
-Un Callback es una función que se pasa a otra función como un argumento o parámetro, que luego se invoca dentro de la función externa para completar algún tipo de rutina o acción. La función que admite una función como parámetro se denominan High-order Function. 
+**Un Callback es una función que se pasa a otra función como un argumento o parámetro**, que luego se invoca dentro de la función externa para completar algún tipo de rutina o acción. La función que admite una función como parámetro se denominan High-order Function. 
 ```js
 function add(a,b){
     return a + b;
@@ -85,7 +85,7 @@ Una gran ventaja de los Callbacks es la compatibilidad con todos los navegadores
 
 ## Promises
 
-Una promesa se considera un objeto especial JavaScript que representa la terminación o el fracaso de una operación asíncrona. Para tener el concepto algo más claro imaginemos a una promesa como una especie de Karma donde si tú haces algo, en consecuencia obtendrás algo, ahora o en un futuro. Es decir, con las promesas ejecutamos código asíncrono capaz de obtener una respuesta exitosa o fallida en ese instante o en un futuro.
+Una promesa se considera **un objeto especial JavaScript que representa la terminación o el fracaso de una operación asíncrona**. Para tener el concepto algo más claro imaginemos a una promesa como una especie de Karma donde si tú haces algo, en consecuencia obtendrás algo, ahora o en un futuro. Es decir, con las promesas ejecutamos código asíncrono capaz de obtener una respuesta exitosa o fallida en ese instante o en un futuro.
 
 Para la creación de promesas se necesita del constructor denominado Promise que recibe una función Ejecutora. Dicha función recibe dos argumentos Resolve y Reject que nos permiten indicar si la promesa se resolvió o rechazó. 
 
@@ -120,7 +120,7 @@ Ahora bien, las promesas tienen una sintaxis fácil de comprender incluso en sit
 
 ## Async Await
 
-Es una especificación introducida en ES2017 o ES8 que permite escribir promesas más fácilmente, permitiendo el tratamiento de procesos asíncronos usando las palabras reservadas async/await. En efecto, se considera Syntax Sugar debido a que en el fondo no es más que una implementación de Promises que permite escribir código asíncrono en JavaScript como si se tratara de simple código síncrono.
+Es una especificación introducida en ES2017 o ES8 que permite escribir promesas más fácilmente, permitiendo el tratamiento de procesos asíncronos usando las palabras reservadas async/await. En efecto, se considera [Syntax Sugar](https://en.wikipedia.org/wiki/Syntactic_sugar) debido a que en el fondo no es más que una **implementación de Promises que permite escribir código asíncrono en JavaScript como si se tratara de simple código síncrono**.
 
 La palabra clave async se coloca previamente a una función, para definirla como una función asíncrona o async function. Cualquier función definida de este modo puede utilizarse junto a la palabra clave await para manejarla. Es decir, await permite esperar a que se resuelva la promesa, mientras otras tareas puedan seguir realizándose en el programa.
 ```js
