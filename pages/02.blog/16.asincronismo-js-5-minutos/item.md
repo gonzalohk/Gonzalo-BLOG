@@ -54,7 +54,7 @@ JavaScript proporciona tres maneras de implementar asincronismo utilizando Callb
 
 ## Callbacks
 
-**Un Callback es una función que se pasa a otra función como un argumento o parámetro**, que luego se invoca dentro de la función externa para completar algún tipo de rutina o acción. La función que admite una función como parámetro se denominan High-order Function. 
+Un Callback es una **función que se pasa a otra función como un argumento o parámetro**, que luego se invoca dentro de la función externa para completar algún tipo de rutina o acción. La función que admite una función como parámetro se denominan High-order Function. 
 ```js
 function add(a,b){
     return a + b;
