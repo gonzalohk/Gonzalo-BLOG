@@ -1,6 +1,6 @@
 ---
 title: 'La primera carrera de MTB en el salar de Uyuni'
-media_order: 'uyunichallengeLogo.jpg,uyunichallengeRecorrido.gif,uyunichallengeTren.jpg,uyuni.jpg,stravaUyuni.jpg,IUyuni.jpg'
+media_order: 'uyunichallengeLogo.jpg,uyunichallengeRecorrido.gif,uyunichallengeTren.jpg,uyuni.jpg,stravaUyuni.jpg,IUyuni.jpg,en-Carrera.jpg,en-Carrera-2.jpg'
 published: true
 date: '01-04-2021 03:27'
 publish_date: '01-04-2021 03:27'
@@ -14,10 +14,10 @@ taxonomy:
         - 'Challenge Bolivia'
 ---
 
+![La primera carrera de MTB en el salar de Uyuni](IUyuni.jpg?classes=center-block)
+
 
 Una de las carreras que más disfruté sin duda fue el **Uyuni Challenge 2019** dejenme contarles como fue mi experiencia y cómo es que se llevó a cabo por primera vez una carrera de MTB en el salar de Uyuni.
-
-![La primera carrera de MTB en el salar de Uyuni](IUyuni.jpg?classes=center-block)
 
 Uyuni es el mayor desierto de sal continuo y el más alto del mundo, con una superficie de 10582 km² a 3650 msnm en el suroeste de Bolivia en el departamento de Potosí.  El salar de Uyuni es uno de los destinos más atractivos para los turistas que llegan a Bolivia desde todo el mundo, en un solo año se registran alrededor de 300000 visitantes en su mayoría de países europeos y asiáticos. Pueden ver fotos increíbles y opiniones desde [aquí](https://www.tripadvisor.es/Attraction_Review-g317033-d316550-Reviews-Salar_de_Uyuni-Uyuni_Potosi_Department.html)
 
@@ -46,7 +46,15 @@ Meses después un par de días antes de la carrera partimos de La Paz rumbo a Uy
 
 El día de la carrera luego de desayunar muy temprano y conocer a unos amigos ciclistas de Warnes nos fuimos al punto de encuentro donde esperaba los vehiculos que nos llevarían al punto de partida siendo este nuestro apoyo y vehículo de regreso. Al igual que en el desayuno fue agradable conocer a otros amigos de Santa Cruz, charlando sobre lo que escuchamos/no escuchamos de la carrera y sobretodo disfrutando la experiencia. Una vez ya en el punto de encuentro en Colchani más propiamente en el hotel Cristal Samaña, llegaban ciclistas de todo el país en particular de Sucre, Tarija y Santa Cruz, pero al igual que el día anterior se sentía un frio que te llegaba hasta los huesos por más que ya amaneció y se tenía en cielo despejado se decidió retrasar una hora la partida y era muy entendible debido a la temperatura que aún seguía bajo cero. 
 
-Luego de esperar con calma organizando las herramientas, comida y posibles repuestos finalmente partimos. Esta fue otra experiencia donde primero se tuvo una salida en caravana para luego ubicarnos en las banderas donde se hizo la partida oficial rumbo a la isla del pescado o también llamado [Incahuasi] (https://es.wikipedia.org/wiki/Incahuasi_(Bolivia)), para luego volver por el mismo camino al Hotel Cristal Samaña donde fue la meta. Ahora si lo pensamos bien esta es una carrera de fondo donde necesariamente se tiene que trabajar en equipo, haciendo un tren o abanico que logre cortar el viento, mantener el ritmo y sobretodo ahorrar energía para llegar a la meta. Afortunadamente me encontré en grupo con el que nos entendimos muy bien debido a que iban a mi ritmo, todos colaboraban y sobre todo existía ese espíritu de llegar a la meta y obtener los mejores puestos. Estuvimos a muy poco de encontrar al pelotón élite, pero perdimos a dos compañeros en la ida quienes dejaron el grupo, encontramos un grupo con el cual acompañarnos de los cuales se desprendieron en par de ciclistas a quienes seguimos, esta fue una experiencia increíble porque fuerzas ya no habían, pero algo hacía que sigamos pedaleando a buen ritmo y formando un pequeño tren de tres ciclistas. La siguiente es una foto que nos tomaron:
+Luego de esperar con calma organizando las herramientas, comida y posibles repuestos finalmente partimos. Esta fue otra experiencia donde primero se tuvo una salida en caravana para luego ubicarnos en las banderas donde se hizo la partida oficial rumbo a la isla del pescado o también llamado [Incahuasi] (https://es.wikipedia.org/wiki/Incahuasi_(Bolivia)), para luego volver por el mismo camino al Hotel Cristal Samaña donde fue la meta. 
+
+![Caravana](en-Carrera.jpg?classes=center-block)
+
+Ahora si lo pensamos bien esta es una carrera de fondo donde necesariamente se tiene que trabajar en equipo, haciendo un tren o abanico que logre cortar el viento, mantener el ritmo y sobretodo ahorrar energía para llegar a la meta. Afortunadamente me encontré en grupo con el que nos entendimos muy bien debido a que iban a mi ritmo, todos colaboraban y sobre todo existía ese espíritu de llegar a la meta y obtener los mejores puestos. 
+
+![Tren en carrera](en-Carrera-2.jpg?classes=center-block)
+
+Estuvimos a muy poco de encontrar al pelotón élite, pero perdimos a dos compañeros en la ida quienes dejaron el grupo, encontramos un grupo con el cual acompañarnos de los cuales se desprendieron en par de ciclistas a quienes seguimos, esta fue una experiencia increíble porque fuerzas ya no habían, pero algo hacía que sigamos pedaleando a buen ritmo y formando un pequeño tren de tres ciclistas. La siguiente es una foto que nos tomaron:
 
 ![Tren llegando a la Isla del Pescado](uyunichallengeTren.jpg?classes=center-block)
 
