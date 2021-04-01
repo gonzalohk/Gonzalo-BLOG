@@ -22,17 +22,22 @@ Uyuni es el mayor desierto de sal continuo y el más alto del mundo, con una sup
 
 Hace unos años las carreras de MTB se han popularizado mucho en Bolivia al igual que la afición por este deporte en todo el mundo, por lo que hay muchas competencias o desafíos para todos los gustos y niveles. Sin embargo, nunca se había escuchado alguna que proponía hacerlo en un salar, aunque si ya antes se había hecho algo similar para carreras trail. En efecto, el 2018 se planeaba hacer una carrera de MTB de 3 días en Uyuni que incluía al salar al buen estilo de las carreras EPIC, según leía la convocatoria estaba más enfocada a turistas organizada por una agencia, pero lastimosamente nunca se realizó, quizá por la poca difusión y el costo elevado. Así que, la emoción y ganas correr por allí se fueron.
 
-El año siguiente 2019, navegando por FB vi en muchos grupos de ciclismo que se prometía una carrera en el Salar de Uyuni denominado el [Uyuni Challenge 2019](https://www.eventrid.bo/eventos/bikelover/uyuni-challenge-2019). Este reto tenía ya el aval del municipio de Uyuni junto a varios sponsors importantes incluyendo el Hotel de Sal Cristal Samaña y organizada por ciclista conocidos de Sucre. En tal sentido, esta carrera proponía competir recorriendo el Salar en dos modalidades en diversas categorías según edades.
+El año siguiente 2019, navegando por FB vi en muchos grupos de ciclismo que se prometía una carrera en el Salar de Uyuni denominado el [Uyuni Challenge 2019](https://www.eventrid.bo/eventos/bikelover/uyuni-challenge-2019). 
+
+
+![Uyuni Challenge 2019](uyunichallengeLogo.jpg?classes=center-block)
+
+
+Este reto tenía ya el aval del municipio de Uyuni junto a varios sponsors importantes incluyendo el Hotel de Sal Cristal Samaña y organizada por ciclista conocidos de Sucre. En tal sentido, esta carrera proponía competir recorriendo el Salar en dos modalidades en diversas categorías según edades.
 
 * 140 km Competitivo (Hotel Cristal Samaña - Isla Incahuasi - Hotel Cristal Samaña) 
 * 70 km Ciclo paseo (Hotel Cristal Samaña - Isla Incahuasi)
 
 Es así que sin pensarlo dos veces me inscribí de inmediato donde fui solo a competir, es decir si mis amigos ciclistas, pero acompañado de una persona muy importante para mí. 
 
-![Uyuni Challenge 2019](uyunichallengeLogo.jpg?classes=center-block)
-
 
 ![Uyuni Challenge 2019 Recorrido](uyunichallengeRecorrido.gif?classes=center-block)
+
 
 Meses después un par de días antes de la carrera partimos de La Paz rumbo a Uyuni, porque se debía recoger el maillot, el número y por su puesto explorar por lo menos el lugar de partida. Es así que, ya en Uyuni desde muy temprano desayunamos con un frío brutal bajo cero debido a la temporada en la que nos encontrábamos, luego en la mañana nos dedicamos a pasear y comer. Uyuni es ese tipo de pueblo pequeño con todos los servicios por la alta afluencia turística, pero al mismo tiempo con un ambiente hostil al ser un lugar altiplánico a gran altura. En tal sentido, volvimos al hostal para luego ir en la tarde al [hotel de sal Cristal Samaña](https://hotelcristalsamana.com.bo/) el cual era un auspiciador principal de la carrera. Por ello, pensando erróneamente que era cerca tomamos un bus a Colchani, ya allí por la tarde nos encontramos con un pueblo casi fantasma, no como en la mañana donde hay mucho turista comprando artesanías, pero grande fue la sorpresa que al ver el GPS y recién ubicar el hotel, este se encontraba como a 8 km, que no es mucho pero para el clima y el viento que había lo hacían difícil por lo que fue una muy mala idea no ir en taxi o ir el día de la carrera directamente muy temprano (muchos hicieron eso). Afortunadamente ya en medio camino una familia de mexicanos nos ayudó a llegar al hotel porque ellos estaban yendo al Salar de paso, fue genial conversar con ellos y pues ¡Que suerte! Una vez recogido el kit de la carrera (número, maillot, productos de los auspiciadores), nos fuimos en el primer taxi que vimos que volvía a Uyuni para no sufrir de nuevo la extensa caminata. Luego de ello quisimos pasear, pero la verdad que era muy difícil con tanto y repito tanto frío, así que solo fuimos a cenar y a dormir temprano para el gran día.
 
