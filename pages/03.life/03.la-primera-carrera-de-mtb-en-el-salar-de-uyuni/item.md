@@ -14,10 +14,10 @@ taxonomy:
         - 'Challenge Bolivia'
 ---
 
-![La primera carrera de MTB en el salar de Uyuni](IUyuni.jpg?classes=center-block)
-
 
 Una de las carreras que más disfruté sin duda fue el **Uyuni Challenge 2019** dejenme contarles como fue mi experiencia y cómo es que se llevó a cabo por primera vez una carrera de MTB en el salar de Uyuni.
+
+![La primera carrera de MTB en el salar de Uyuni](IUyuni.jpg?classes=center-block)
 
 Uyuni es el mayor desierto de sal continuo y el más alto del mundo, con una superficie de 10582 km² a 3650 msnm en el suroeste de Bolivia en el departamento de Potosí.  El salar de Uyuni es uno de los destinos más atractivos para los turistas que llegan a Bolivia desde todo el mundo, en un solo año se registran alrededor de 300000 visitantes en su mayoría de países europeos y asiáticos. Pueden ver fotos increíbles y opiniones desde [aquí](https://www.tripadvisor.es/Attraction_Review-g317033-d316550-Reviews-Salar_de_Uyuni-Uyuni_Potosi_Department.html)
 
