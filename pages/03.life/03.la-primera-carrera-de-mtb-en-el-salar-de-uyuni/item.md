@@ -1,6 +1,6 @@
 ---
 title: 'La primera carrera de MTB en el salar de Uyuni'
-media_order: 'uyunichallengeLogo.jpg,uyunichallengeTren.jpg,uyuni.jpg,stravaUyuni.jpg,IUyuni.jpg,en-Carrera.jpg,en-Carrera-2.jpg,uyuniportada.jpg,hotel.jpg,uyunichallengeRecorrido.jpg'
+media_order: 'uyunichallengeLogo.jpg,uyunichallengeTren.jpg,uyuni.jpg,stravaUyuni.jpg,IUyuni.jpg,en-Carrera.jpg,en-Carrera-2.jpg,uyuniportada.jpg,hotel.jpg,uyunichallengeRecorrido.jpg,en-Carrera-3.jpg'
 published: true
 date: '01-04-2021 03:27'
 publish_date: '01-04-2021 03:27'
@@ -49,7 +49,7 @@ En tal sentido, volvimos al hostal para luego ir en la tarde al [hotel de sal Cr
 
 El día de la carrera luego de desayunar muy temprano y conocer a unos amigos ciclistas de Warnes nos fuimos al punto de encuentro donde esperaba los vehiculos que nos llevarían al punto de partida siendo este nuestro apoyo y vehículo de regreso. Al igual que en el desayuno fue agradable conocer a otros amigos de Santa Cruz, charlando sobre lo que escuchamos/no escuchamos de la carrera y sobretodo disfrutando la experiencia. Una vez ya en el punto de encuentro en Colchani más propiamente en el hotel Cristal Samaña, llegaban ciclistas de todo el país en particular de Sucre, Tarija y Santa Cruz, pero al igual que el día anterior se sentía un frio que te llegaba hasta los huesos por más que ya amaneció y se tenía en cielo despejado se decidió retrasar una hora la partida y era muy entendible debido a la temperatura que aún seguía bajo cero. 
 
-Luego de esperar con calma organizando las herramientas, comida y posibles repuestos finalmente partimos. Esta fue otra experiencia donde primero se tuvo una salida en caravana para luego ubicarnos en las banderas donde se hizo la partida oficial rumbo a la isla del pescado o también llamado [Incahuasi] (https://es.wikipedia.org/wiki/Incahuasi_(Bolivia)), para luego volver por el mismo camino al Hotel Cristal Samaña donde fue la meta. 
+Luego de esperar con calma organizando las herramientas, comida y posibles repuestos finalmente partimos. Esta fue otra experiencia donde primero se tuvo una salida en caravana para luego ubicarnos en las banderas donde se hizo la partida oficial rumbo a la isla del pescado o también llamado [Incahuasi](https://es.wikipedia.org/wiki/Incahuasi_(Bolivia)), para luego volver por el mismo camino al Hotel Cristal Samaña donde fue la meta. 
 
 ![Caravana](en-Carrera.jpg?classes=center-block)
 
@@ -59,6 +59,7 @@ Ahora si lo pensamos bien esta es una carrera de fondo donde necesariamente se t
 
 Estuvimos a muy poco de encontrar al pelotón élite, pero perdimos a dos compañeros en la ida quienes dejaron el grupo, encontramos un grupo con el cual acompañarnos de los cuales se desprendieron en par de ciclistas a quienes seguimos, esta fue una experiencia increíble porque fuerzas ya no habían, pero algo hacía que sigamos pedaleando a buen ritmo y formando un pequeño tren de tres ciclistas.
 
+![Puesto de hidratacion](en-Carrera-3.jpg?classes=center-block)
 
 Todo iba bien incluso solo faltaban los últimos 15km, pero en el último puesto de abastecimiento de agua/comida perdí el equilibrio al querer tomar un plátano al vuelo y caí perdiendo el control de mi manillar (caída tonta), más bien solo con raspones, pero perdiendo el freno delantero al estirar el cable, con raspones en la bici (esto fue lo que más dolió) y la base de mi GoPro rota. Como no había de otro me levanté y seguí adelante pero ya no puede encontrar a mis dos compañeros con los que compartí más de 100 km de ruta de casualidad. En efecto, ellos también estaban disputando el podio en sus categorías así que no tenían de otra.
 
