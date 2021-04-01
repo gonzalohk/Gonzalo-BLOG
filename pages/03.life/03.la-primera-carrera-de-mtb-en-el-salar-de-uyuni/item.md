@@ -14,9 +14,9 @@ taxonomy:
         - 'Challenge Bolivia'
 ---
 
-Una de las carreras que más disfruté sin duda fue el **Uyuni Challenge 2019** dejenme contarles como fue mi experiencia y cómo es que se llevó a cabo por primera vez una carrera de MTB en el salar de Uyuni.
+![Uyuni Challenge](uyuniportada.jpg?classes=center-block)
 
-![Uyuni Challenge](uyuniportada.jpg)
+Una de las carreras que más disfruté sin duda fue el **Uyuni Challenge 2019** dejenme contarles como fue mi experiencia y cómo es que se llevó a cabo por primera vez una carrera de MTB en el salar de Uyuni.
 
 Uyuni es el mayor desierto de sal continuo y el más alto del mundo, con una superficie de 10582 km² a 3650 msnm en el suroeste de Bolivia en el departamento de Potosí.  El salar de Uyuni es uno de los destinos más atractivos para los turistas que llegan a Bolivia desde todo el mundo, en un solo año se registran alrededor de 300000 visitantes en su mayoría de países europeos y asiáticos. Pueden ver fotos increíbles y opiniones desde [aquí](https://www.tripadvisor.es/Attraction_Review-g317033-d316550-Reviews-Salar_de_Uyuni-Uyuni_Potosi_Department.html)
 
@@ -53,9 +53,8 @@ Ahora si lo pensamos bien esta es una carrera de fondo donde necesariamente se t
 
 ![Tren en carrera](en-Carrera-2.jpg?classes=center-block)
 
-Estuvimos a muy poco de encontrar al pelotón élite, pero perdimos a dos compañeros en la ida quienes dejaron el grupo, encontramos un grupo con el cual acompañarnos de los cuales se desprendieron en par de ciclistas a quienes seguimos, esta fue una experiencia increíble porque fuerzas ya no habían, pero algo hacía que sigamos pedaleando a buen ritmo y formando un pequeño tren de tres ciclistas. La siguiente es una foto que nos tomaron:
+Estuvimos a muy poco de encontrar al pelotón élite, pero perdimos a dos compañeros en la ida quienes dejaron el grupo, encontramos un grupo con el cual acompañarnos de los cuales se desprendieron en par de ciclistas a quienes seguimos, esta fue una experiencia increíble porque fuerzas ya no habían, pero algo hacía que sigamos pedaleando a buen ritmo y formando un pequeño tren de tres ciclistas.
 
-![Tren llegando a la Isla del Pescado](uyunichallengeTren.jpg?classes=center-block)
 
 Todo iba bien incluso solo faltaban los últimos 15km, pero en el último puesto de abastecimiento de agua/comida perdí el equilibrio al querer tomar un plátano al vuelo y caí perdiendo el control de mi manillar (caída tonta), más bien solo con raspones, pero perdiendo el freno delantero al estirar el cable, con raspones en la bici (esto fue lo que más dolió) y la base de mi GoPro rota. Como no había de otro me levanté y seguí adelante pero ya no puede encontrar a mis dos compañeros con los que compartí más de 100 km de ruta de casualidad. En efecto, ellos también estaban disputando el podio en sus categorías así que no tenían de otra.
 
