@@ -1,6 +1,6 @@
 ---
 title: 'La primera carrera de MTB en el salar de Uyuni'
-media_order: 'uyunichallengeLogo.jpg,uyunichallengeRecorrido.gif,uyunichallengeTren.jpg,uyuni.jpg,stravaUyuni.jpg'
+media_order: 'uyunichallengeLogo.jpg,uyunichallengeRecorrido.gif,uyunichallengeTren.jpg,uyuni.jpg,stravaUyuni.jpg,IUyuni.jpg'
 published: true
 date: '01-04-2021 03:27'
 publish_date: '01-04-2021 03:27'
@@ -13,6 +13,9 @@ taxonomy:
         - 'MTB Bolivia'
         - 'Challenge Bolivia'
 ---
+
+![La primera carrera de MTB en el salar de Uyuni](IUyuni.jpg?classes=center-block)
+
 
 Una de las carreras que más disfruté sin duda fue el **Uyuni Challenge 2019** dejenme contarles como fue mi experiencia y cómo es que se llevó a cabo por primera vez una carrera de MTB en el salar de Uyuni.
 
