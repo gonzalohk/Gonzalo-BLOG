@@ -14,8 +14,6 @@ taxonomy:
         - 'Challenge Bolivia'
 ---
 
-![Uyuni Challenge](uyuniportada.jpg?classes=center-block)
-
 Una de las carreras que más disfruté sin duda fue el **Uyuni Challenge 2019** dejenme contarles como fue mi experiencia y cómo es que se llevó a cabo por primera vez una carrera de MTB en el salar de Uyuni.
 
 Uyuni es el mayor desierto de sal continuo y el más alto del mundo, con una superficie de 10582 km² a 3650 msnm en el suroeste de Bolivia en el departamento de Potosí.  El salar de Uyuni es uno de los destinos más atractivos para los turistas que llegan a Bolivia desde todo el mundo, en un solo año se registran alrededor de 300000 visitantes en su mayoría de países europeos y asiáticos. Pueden ver fotos increíbles y opiniones desde [aquí](https://www.tripadvisor.es/Attraction_Review-g317033-d316550-Reviews-Salar_de_Uyuni-Uyuni_Potosi_Department.html)
@@ -41,11 +39,13 @@ Es así que sin pensarlo dos veces me inscribí de inmediato donde fui solo a co
 
 Meses después un par de días antes de la carrera partimos de La Paz rumbo a Uyuni, porque se debía recoger el maillot, el número y por su puesto explorar por lo menos el lugar de partida. Es así que, ya en Uyuni desde muy temprano desayunamos con un frío brutal bajo cero debido a la temporada en la que nos encontrábamos, luego en la mañana nos dedicamos a pasear y comer. Uyuni es ese tipo de pueblo pequeño con todos los servicios por la alta afluencia turística, pero al mismo tiempo con un ambiente hostil al ser un lugar altiplánico a gran altura. 
 
+![Uyuni Challenge](uyuniportada.jpg?classes=center-block)
+
+En tal sentido, volvimos al hostal para luego ir en la tarde al [hotel de sal Cristal Samaña](https://hotelcristalsamana.com.bo/) el cual era un auspiciador principal de la carrera. Por ello, pensando erróneamente que era cerca tomamos un bus a Colchani, ya allí por la tarde nos encontramos con un pueblo casi fantasma, no como en la mañana donde hay mucho turista comprando artesanías, pero grande fue la sorpresa que al ver el GPS y recién ubicar el hotel, este se encontraba como a 8 km, que no es mucho pero para el clima y el viento que había lo hacían difícil por lo que fue una muy mala idea no ir en taxi o ir el día de la carrera directamente muy temprano (muchos hicieron eso). Afortunadamente ya en medio camino una familia de mexicanos nos ayudó a llegar al hotel porque ellos estaban yendo al Salar de paso, fue genial conversar con ellos y pues ¡Que suerte! Una vez recogido el kit de la carrera (número, maillot, productos de los auspiciadores), nos fuimos en el primer taxi que vimos que volvía a Uyuni para no sufrir de nuevo la extensa caminata. Luego de ello quisimos pasear, pero la verdad que era muy difícil con tanto y repito tanto frío, así que solo fuimos a cenar y a dormir temprano para el gran día.
+
 
 ![Hotel Cristal Samaña](hotel.jpg?classes=center-block)
 
-
-En tal sentido, volvimos al hostal para luego ir en la tarde al [hotel de sal Cristal Samaña](https://hotelcristalsamana.com.bo/) el cual era un auspiciador principal de la carrera. Por ello, pensando erróneamente que era cerca tomamos un bus a Colchani, ya allí por la tarde nos encontramos con un pueblo casi fantasma, no como en la mañana donde hay mucho turista comprando artesanías, pero grande fue la sorpresa que al ver el GPS y recién ubicar el hotel, este se encontraba como a 8 km, que no es mucho pero para el clima y el viento que había lo hacían difícil por lo que fue una muy mala idea no ir en taxi o ir el día de la carrera directamente muy temprano (muchos hicieron eso). Afortunadamente ya en medio camino una familia de mexicanos nos ayudó a llegar al hotel porque ellos estaban yendo al Salar de paso, fue genial conversar con ellos y pues ¡Que suerte! Una vez recogido el kit de la carrera (número, maillot, productos de los auspiciadores), nos fuimos en el primer taxi que vimos que volvía a Uyuni para no sufrir de nuevo la extensa caminata. Luego de ello quisimos pasear, pero la verdad que era muy difícil con tanto y repito tanto frío, así que solo fuimos a cenar y a dormir temprano para el gran día.
 
 El día de la carrera luego de desayunar muy temprano y conocer a unos amigos ciclistas de Warnes nos fuimos al punto de encuentro donde esperaba los vehiculos que nos llevarían al punto de partida siendo este nuestro apoyo y vehículo de regreso. Al igual que en el desayuno fue agradable conocer a otros amigos de Santa Cruz, charlando sobre lo que escuchamos/no escuchamos de la carrera y sobretodo disfrutando la experiencia. Una vez ya en el punto de encuentro en Colchani más propiamente en el hotel Cristal Samaña, llegaban ciclistas de todo el país en particular de Sucre, Tarija y Santa Cruz, pero al igual que el día anterior se sentía un frio que te llegaba hasta los huesos por más que ya amaneció y se tenía en cielo despejado se decidió retrasar una hora la partida y era muy entendible debido a la temperatura que aún seguía bajo cero. 
 
