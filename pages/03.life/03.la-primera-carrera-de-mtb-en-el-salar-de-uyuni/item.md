@@ -1,6 +1,6 @@
 ---
 title: 'La primera carrera de MTB en el salar de Uyuni'
-media_order: 'uyunichallengeLogo.jpg,uyunichallengeRecorrido.gif,uyunichallengeTren.jpg,uyuni.jpg'
+media_order: 'uyunichallengeLogo.jpg,uyunichallengeRecorrido.gif,uyunichallengeTren.jpg,uyuni.jpg,stravaUyuni.jpg'
 published: true
 date: '01-04-2021 03:27'
 publish_date: '01-04-2021 03:27'
@@ -14,7 +14,7 @@ taxonomy:
         - 'Challenge Bolivia'
 ---
 
-Una de las carreras que más disfruté sin duda fue el Uyuni Challenge dejenme contarles como fue mi experiencia y cómo es que se llevó a cabo por primera vez una carrera de MTB en el salar de Uyuni.
+Una de las carreras que más disfruté sin duda fue el **Uyuni Challenge 2019** dejenme contarles como fue mi experiencia y cómo es que se llevó a cabo por primera vez una carrera de MTB en el salar de Uyuni.
 
 Uyuni es el mayor desierto de sal continuo y el más alto del mundo, con una superficie de 10582 km² a 3650 msnm en el suroeste de Bolivia en el departamento de Potosí.  El salar de Uyuni es uno de los destinos más atractivos para los turistas que llegan a Bolivia desde todo el mundo, en un solo año se registran alrededor de 300000 visitantes en su mayoría de países europeos y asiáticos. Pueden ver fotos increíbles y opiniones desde [aquí](https://www.tripadvisor.es/Attraction_Review-g317033-d316550-Reviews-Salar_de_Uyuni-Uyuni_Potosi_Department.html)
 
@@ -48,5 +48,7 @@ Luego de esperar con calma organizando las herramientas, comida y posibles repue
 ![Tren llegando a la Isla del Pescado](uyunichallengeTren.jpg?classes=center-block)
 
 Todo iba bien incluso solo faltaban los últimos 15km, pero en el último puesto de abastecimiento de agua/comida perdí el equilibrio al querer tomar un plátano al vuelo y caí perdiendo el control de mi manillar (caída tonta), más bien solo con raspones, pero perdiendo el freno delantero al estirar el cable, con raspones en la bici (esto fue lo que más dolió) y la base de mi GoPro rota. Como no había de otro me levanté y seguí adelante pero ya no puede encontrar a mis dos compañeros con los que compartí más de 100 km de ruta de casualidad. En efecto, ellos también estaban disputando el podio en sus categorías así que no tenían de otra, adolorido y cansado mantuve el ritmo,  llegue a las banderas donde ya solo quedaba pocos kilómetros para el hotel de sal (meta) así que con mi último aliento pedalee adivinando el camino, llegue en buen tiempo aunque casado y cuestionando porque había hecho la ruta larga a un ritmo tan exigente (una especie de arrepentimiento que es usual cuando se hacen carreras largas), pero al mismo tiempo feliz por concluir y llegar 5to en mi categoría con un tiempo aceptable. Ese mismo rato quien era mi enamorada me recibió alegre teniendo un momento bonito y muy feliz sin duda fue lo mejor de la carrera más allá de todo lo contado. Luego ya descansando nos saludamos e intercambiamos números con quienes corrimos en el grupo que se formó tan espontáneamente, aunque preocupados por mi caída, pero a la vez alegres porque logramos buen tiempo y más ellos que habían conseguido los podios que deseaban. También pude documentar la carrera con mi cámara por lo que subí un video a mi canal que espero disfruten [aquí](https://www.youtube.com/watch?v=3JtNf-8P-0Y&t=93s&ab_channel=GonzaloOsco).
+
+![Strava Uyuni](stravaUyuni.jpg?classes=center-block)
 
 Finalmente, volvimos a Uyuni, dejamos el equipaje con el personal amable del Hotel Julia (donde nos hospedamos ese par de días) y cenamos una muy merecida cena para ya luego volver a La Paz. Esta fue una carrera especial por todas las experiencias vividas en tan poco tiempo sin olvidar el paisaje, ambiente y compañerismo de personas con tu misma o más locura. No dudaría en recomendar este reto para vivir tan increíble experiencia que a propósito también repetí el 2020, pero esa ya es otra historia.
